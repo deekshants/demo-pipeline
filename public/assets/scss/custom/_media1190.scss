@@ -1,0 +1,135 @@
+@media only screen and (max-width: 1190px) {
+
+
+
+
+  .hm-md-grid-wrap{
+    flex-wrap: wrap;
+  }
+  .hm-md-wrap-reverse{
+    flex-wrap: wrap-reverse;
+  }
+  
+  .hm-md-img-size-48{
+    width: 48px;      
+  }
+  .hm-md-img-size-40{
+    width: 40px;      
+  }
+
+
+  /* -----------text style start----------------- */
+    @each $size in $textsizes {
+      .hm-md-text-size-#{$size} {
+        font-size: #{$size}px;
+      }
+    }
+
+    .hm-md-text-center{
+        text-align: center;
+    }
+    .hm-md-text-left{
+        text-align: left;
+    }
+    .hm-md-text-right{
+        text-align: right;
+    }
+  /* -----------border style start----------------- */
+    @each $side in $sides{
+      .hm-md-line-#{$side} {
+        border-#{$side}: 1px solid #eee;
+      }
+    }
+
+    @each $side in $sides{
+      .hm-md-line-#{$side}-none {
+        border-#{$side}: none;
+      }
+    }
+
+    @each $side in $sides{
+      .hm-md-line-semi-black-#{$side} {
+        border-#{$side}: 1px solid rgba(0,0,0,.2);
+      }
+    }
+
+    @each $side in $sides{
+      .hm-md-line-semi-white-#{$side} {
+        border-#{$side}: 1px solid rgba(255,255,255,.5);
+      }
+    }
+
+    @each $side in $sides{
+      .hm-md-line-semi-white-#{$side}-none {
+        border-#{$side}: none;
+      }
+    }
+    .hm-md-line-none{
+      border:none;
+    }
+
+  /* -----------space style start----------------- */
+    @each $space in $spaceamounts {
+      .hm-md-mr-#{$space} {
+        margin: #{$space}px;
+      }
+      .hm-md-pd-#{$space} {
+        padding: #{$space}px;
+      }
+    }
+
+    @each $space in $spaceamounts {
+      @each $side in $sides {
+        .hm-md-#{str-slice($side, 0, 1)}mr-#{$space} {
+          margin-#{$side}: #{$space}px;
+        }
+      
+        .hm-md-#{str-slice($side, 0, 1)}pd-#{$space} {
+          padding-#{$side}: #{$space}px;
+        }
+      }
+    }
+
+    @each $space in $spaceamounts {
+      .hm-md-vmr-#{$space} {
+        margin-top: #{$space}px;
+        margin-bottom: #{$space}px;
+      }
+      .hm-md-vpd-#{$space} {
+        padding-top: #{$space}px;
+        padding-bottom: #{$space}px;
+      }
+    }
+
+    @each $space in $spaceamounts {
+      .hm-md-hmr-#{$space} {
+        margin-left: #{$space}px;
+        margin-right: #{$space}px;
+      }
+
+      .hm-md-hpd-#{$space} {
+        padding-left: #{$space}px;
+        padding-right: #{$space}px;
+      }
+    }
+
+  /* -----------other style start----------------- */
+    .hm-md-view-inline{
+        display: inline-block;
+    }
+
+    .hm-md-view-block{
+        display: block;
+    } 
+
+    .hm-md-w-full{
+      width: 100%;
+    }
+
+    .hm-md-show{
+      display: block;
+    }
+    .hm-md-hide{
+      display: none;
+    }
+}

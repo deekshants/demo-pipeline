@@ -1,0 +1,16 @@
+@each $size in $minheights{
+  .hm-max-h-#{$size} {
+    max-height: #{$size}px;
+  }
+}
+
+
+@each $size in $minheights{
+  .hm-min-h-#{$size} {
+    min-height: #{$size}px;
+  }
+}
+.hm-min-h-full-vh{
+  min-height: 100vh;  
+}
+

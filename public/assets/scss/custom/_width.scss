@@ -1,0 +1,23 @@
+
+/* -----------min width style start----------------- */
+.hm-w-full{
+  width:100%;
+}
+
+@each $size in $minwidths{
+  .hm-min-w-#{$size} {
+    min-width: #{$size}px;
+  }
+}
+/* -----------min width style end----------------- */
+
+/* -----------max width style start----------------- */
+@each $size in $maxwidths{
+  .hm-max-w-#{$size} {
+    max-width: #{$size}px;
+  }
+}
+.hm-max-w-full {
+    max-width: 100%;
+}
+/* -----------max width style end----------------- */

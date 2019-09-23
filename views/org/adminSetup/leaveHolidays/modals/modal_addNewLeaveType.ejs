@@ -1,0 +1,362 @@
+<section class="hm-side-panel-wrapper" id="panelAddLeaveType">
+    <div class="hm-side-panel">
+        <header class="hm-side-panel-header border-bottom">
+            <div class="row no-gutters px-3">
+                <div class="pt-2 pr-2">
+                    <i class="material-icons">add</i>
+                </div>
+                <div class="col text-truncate">
+                    <h4 class="hm-text-normal">Add New Leave Type</h4>
+                </div>
+                <div class="pl-3">
+                    <button class="btn  btn-fab btn-link btn-round" onclick="closeSidePanel('#panelAddLeaveType');">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="hm-side-panel-body  p-4">
+            <div class="hm-wizard-wrapper" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                    <div class="col-12 col-md-4 border-right">
+                        <div class="hm-wizard-step-wrapper hm-step-vertical">
+                            <div class="hm-wizard-step active" hm-step="1">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        1
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Basic Info  
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="hm-wizard-step " hm-step="2">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        2
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Leave Quota  
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="hm-wizard-step " hm-step="3">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        3
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Leave Allotment 
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="hm-wizard-step" hm-step="4">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        4
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Applying For Leave 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hm-wizard-step" hm-step="5">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        5
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Leaves Restrictions 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hm-wizard-step" hm-step="6">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        6
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Holidays & Weekoffs  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hm-wizard-step" hm-step="7">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        7
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Leave Approval 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hm-wizard-step" hm-step="8">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        8
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Year End Processing 
+                                    </div>
+                                </div>
+                            </div> 
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-8 ">
+                        <div class="hm-wizard-content-wrapper">
+                            <!-- step-1 -->
+                            <section class="hm-step-content active" hm-step-content="1">
+                               <div class="px-3">
+                                   <h3 class="hm-tmr-0">
+                                       1.Basic Info
+                                   </h3>
+                                   <div>
+                                       <div class="form-group">
+                                            <label for=""><sup class="text-danger">*</sup>Title</label>
+                                            <input type="text" class="form-control" id="" required="">
+                                            <div class="hm-input-error-msg">
+                                                Required Field!
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="label-control"><sup class="text-danger">*</sup> Calendar Year Start From</label>
+                                            <input type="text" class="form-control datetimepicker" required="" />
+                                            <div class="hm-input-error-msg">
+                                                Required Field!
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Description</label>
+                                            <textarea class="form-control" id="" rows="1"></textarea>
+                                        </div>
+                                        <div>
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                                Next
+                                            </button>
+                                        </div>
+                                   </div>
+                               </div>
+                            </section>
+
+                            <!-- step-2 -->
+                            <section class="hm-step-content " hm-step-content="2">
+                                <div class="px-3">
+                                    <h3 class="hm-tmr-0">
+                                        2.Leave Quota
+                                    </h3>
+                                    <div>
+                                        <p>
+                                            Whate is the annual quata  for an employee of  this [title] leave? 
+                                        </p>
+                                        <div class="">
+                                            <div class="row no-gutters align-items-end mb-3">
+                                                
+                                                <div class="form-check form-check-radio">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="lvAnnualQuota"  value="" checked="">
+                                                        Limit to
+                                                        <span class="circle">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="pl-3">
+                                                    <input type="number" class="form-control" min="1" max="365" placeholder="Days" value="1">
+                                                </div>
+                                                <p>
+                                                     days per year
+                                                </p>
+                                                
+                                            </div>
+                                            
+                                           
+                                            <div class="form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="lvAnnualQuota"  value="">
+                                                    Unlimited 
+                                                    <span class="circle">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                                <i class="material-icons hm-help-tip hm-text-size-16 hm-valign-middle" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">live_help</i>
+                                            </div>
+                                        </div>
+                                      
+                                        <div>
+                                            <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                                Previous
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </section>
+                            <section class="hm-step-content " hm-step-content="3">
+                                <div class="px-3">
+                                    <h3 class="hm-tmr-0">
+                                        2.Leaves Allotment
+                                    </h3>
+                                    <div>
+                                        <p>
+                                            How will quota of leaves assign to an employee?
+                                        </p>
+                                        <div class="" >
+                                           
+                                            <div class="form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="lvQuotaAvail"  hm-watch="radio"  checked="">
+                                                    Entire leave quota can be availed anytime during the year 
+                                                    <span class="circle">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="lvQuotaAvail"   hm-watch="radio" hm-extra-view="#leaveInterval">
+                                                    Leave are earn at regular intervals 
+                                                    <span class="circle">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="hide" id="leaveInterval">
+                                                <div class="row no-gutters align-items-end mb-3">
+                                                    
+                                                    <div class="pl-3">
+                                                        <input type="number" class="form-control" min="1" max="365" placeholder="Days" value="1">
+                                                    </div>
+                                                    <p>
+                                                         day(s) 
+                                                    </p>
+                                                    <div class="pl-3">
+                                                        <select id="" class="form-control">
+                                                            <option>Monthly</option>
+                                                            <option>Quaterly</option>
+                                                            <option>Half Yearly</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-check pb-3">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="checkbox" value="" hm-watch="checkbox" hm-extra-view="#example">
+                                                    Option Holiday
+                                                    <span class="form-check-sign">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
+                                                <i class="material-icons hm-help-tip hm-text-size-16 hm-valign-middle" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">live_help</i>
+                                            </div>
+                                            <div class="hide" id="example">
+                                                hello
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-4">
+                                            <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                                Previous
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="hm-step-content " hm-step-content="4">
+                                444444444444
+                                <div>
+                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        Next
+                                    </button>
+                                </div>
+                            </section>
+                            <section class="hm-step-content " hm-step-content="5">
+                                555555555555555
+                                <div>
+                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        Next
+                                    </button>
+                                </div>
+                            </section>
+                            <section class="hm-step-content " hm-step-content="6">
+                                66666666666
+                                <div>
+                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        Next
+                                    </button>
+                                </div>
+                            </section>
+                            <section class="hm-step-content " hm-step-content="7">
+                                777777777777777
+                                <div>
+                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        Next
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section class="hm-step-content" hm-step-content="8">
+                                888888888888888
+                                <div>
+                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        Previous
+                                    </button>
+
+                                </div>
+                            </section>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</section>

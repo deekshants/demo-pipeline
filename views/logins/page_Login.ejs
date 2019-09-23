@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="hm">
+    <main class="hm-main-view">
+        <section class="ml-auto mr-auto hm-max-w-500 px-3">
+            <div class="mt-5">
+                <div class="text-center">   
+                    <a href="">
+                        <img src="<%= baseUrl %>/img/logo.png" alt="" height="21">
+                    </a>
+                </div>
+            </div>
+
+            <div class="card p-4">
+                <div class="row no-gutters">
+                    <div class="col text-truncate">
+                        <h3 class=" text-uppercase hm-mr-0">
+                            Login 
+                        </h3>
+                    </div>
+                    <div class="pl-3">
+
+                    </div>
+                </div>
+
+                <form class="form" method="" action="">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="your-company-url" required="">
+                            <div class="input-group-append">
+                                <span class="input-group-text" >.hrm.com</span>
+                            </div>
+                        </div>
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+                    <div class="mt-4 ">
+                        <div class="row no-gutters">
+                            <div class="col text-truncate">
+
+                            </div>
+                            <div class="pl-3">
+                                <a href="/company/login" class="btn btn-primary">
+                                    Continue
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="text-center">
+                <a href="/signup">Signup</a>
+                <span class="text-muted">
+                    For Company. 
+                </span>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+        <script>
+
+        </script>
+    </footer>
+</body>
+</html>

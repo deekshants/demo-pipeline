@@ -1,0 +1,48 @@
+
+    @import 'theme';
+
+    
+.hm{
+    @import 'override';
+
+    //specific
+    @import 'simple-tab';
+    @import 'step-wizard';
+    @import 'user-circle';
+    @import 'toast';
+    @import 'spinner'; 
+    @import 'top-menu';
+    @import 'side-menu';
+    @import 'side-panel';
+    @import 'donut-svg';
+    @import 'other-components';
+    @import 'responsive-table';
+
+    // general
+    @import 'link';
+    @import 'cursor';
+    @import 'scroll';
+    @import 'display';
+	@import 'typography';
+    @import 'background';
+    @import 'radius';
+    @import 'width';
+    @import 'height';
+    @import 'border';
+    @import 'space';
+
+
+    // media query
+	@import 'media1190';
+	@import 'media767';
+}
+
+.hm-has-top-menu .hm-main-view, .hm.hm-has-top-menu .hm-main-view{
+    margin-top: 60px;
+}
+.hm-has-side-menu .hm-main-view, .hm.hm-has-side-menu .hm-main-view{
+    margin-left: 80px;
+}
+.hm-has-side-menu .hm-navbar, .hm.hm-has-side-menu  .hm-navbar{
+    margin-left: 80px;
+}

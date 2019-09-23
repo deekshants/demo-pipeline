@@ -1,0 +1,113 @@
+@each $size in $textsizes {
+  .hm-text-size-#{$size} {
+    font-size: #{$size}px;
+  }
+}
+
+.hm-text-center{
+    text-align: center;
+}
+.hm-text-left{
+    text-align: left;
+}
+.hm-text-right{
+    text-align: right;
+}
+.hm-text-justify{
+    text-align: justify;
+}
+.hm-text-uppercase {
+    text-transform: uppercase;
+}
+.hm-text-break-word {
+    white-space: normal;
+    word-break: break-word;
+}
+.hm-text-hyphenate {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+.hm-text-break-all {
+    white-space: normal;
+    word-break: break-all;
+}
+.hm-text-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.hm-text-thin {
+    font-weight: 300;
+}
+.hm-text-thick {
+    font-weight: 600;
+}
+.hm-text-normal{
+    font-weight: normal;
+}
+
+
+.hm-text-default {
+    color: $txtDefault;
+}
+.hm-text-dark-blue {
+    color: $txtDarkBlue;
+}
+.hm-text-gray {
+    color: $txtGray;
+}
+.hm-text-weak {
+    color: $txtWeak; 
+}
+.hm-text-blue {
+    color: $txtBlue;
+}
+.hm-text-orange {
+    color: $txtOrange;
+}
+.hm-text-red {
+    color: $txtSFred;
+}
+.hm-text-green {
+    color: $txtGreen;
+}
+.hm-text-dull {
+    color: $txtDull;
+}
+.hm-text-white {
+    color: $white;
+}
+
+.hm-text-size-normal {
+    font-size: normal;
+}
+.hm-text-size-inherit {
+    font-size: inherit;
+}
+
+
+
+.hm-text-height-1 {
+    line-height: 1;
+}
+
+.hm-text-height-2x {
+    line-height: 1.5em;
+}
+.hm-text-height-3x {
+    line-height: 2em;
+}
+.hm-text-height-4x {
+    line-height: 3em;
+}
+.hm-text-height-normal {
+    line-height: normal;
+}
+
+.hm-valign-middle{
+    vertical-align: middle;
+}

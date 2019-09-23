@@ -1,0 +1,85 @@
+.hm-toast-fixed-top{
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.hm-toast-absolute-top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.hm-toast-wrapper{
+  margin: 0 auto;
+  max-width: 44rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+.hm-toast{
+  margin: 0 auto;
+  border-radius: .25rem;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 188, 212, 0.6);
+  background: linear-gradient(60deg, #26c6da, #0097a7);
+  padding: .75rem .75rem;
+  max-width: 40rem;
+  position: relative;
+}
+
+.hm-toast-inner{
+  display: flex;
+}
+.hm-toast-msg{
+  color: white;
+  line-height: 1.5rem;
+  flex: 1 1 0%;
+  min-width: 0;
+  padding-top: .2rem;
+  padding-left: .5rem;
+  padding-right: .75rem;
+      overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.hm-toast-msg ul{
+  margin: 0;
+  padding-left: .75rem;
+}
+.hm-toast-icons, .hm-toast-action{
+  flex: none;
+  color: white;
+}
+.hm-toast-action{
+  cursor: pointer;
+}
+
+.hm-close{
+  border: none;
+  background: none;
+  color:white;
+  outline:none;
+  padding: 0;
+  font-family: 'Arial', Segoe UI Symbol;
+  cursor: pointer;
+}
+.hm-toast + .hm-toast{
+  margin-top: .5rem;
+}
+.hm-theme-error{
+  background: linear-gradient(60deg, #ef5350, #d32f2f);
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(244, 67, 54, 0.6);
+}
+.hm-theme-success{
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(76, 175, 80, 0.6);
+  background: linear-gradient(60deg, #1ec9b3, #66bb6a);
+}
+.hm-theme-warning{
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(255, 152, 0, 0.6);
+  background: linear-gradient(60deg, #ffa726, #f57c00);
+}
+

@@ -1,0 +1,41 @@
+.hm-side-panel-wrapper{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    display: none; 
+    overflow: hidden;
+    outline: 0;
+    background: rgba(0,0,0,.5);
+}
+.hm-side-panel{
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 800px;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+    margin-left: auto;
+    justify-content: center;
+    height: 100%;
+    transform: translateX(100%);
+    transition: all ease .25s;
+}
+
+.hm-side-panel-body{
+    flex-basis: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.hm-side-panel-wrapper.active .hm-side-panel{
+    transform: translateX(0);
+    transition: all ease .25s;
+}

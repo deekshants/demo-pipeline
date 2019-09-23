@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+<style>
+
+
+</style>
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+
+    <main class="hm-main-view">
+        <div class="p-3">   
+            
+            <section class="hm-tab-wrapper">
+                
+                    <div class="row no-gutters">
+                        <div class="pr-3" style="width: 250px;">
+                            <div class="card pr-3 py-3 hm-tmr-0">
+                                <div class="hm-tab-nav-wrapper">
+                                    <div class="hm-setup-menu-item hm-tab-link active" hmtab="setupCompanyInfo">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Company Settings
+                                        </div> 
+                                        <small> 
+                                            General Info
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item hm-tab-link" hmtab="setupLeaves">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Leave & Holidays
+                                        </div> 
+                                        <small> 
+                                            Plan Leaves and Holidays 
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item ">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Employee
+                                        </div> 
+                                        <small> 
+                                            Manage Employees Data
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item ">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Onboarding & Exit
+                                        </div> 
+                                        <small> 
+                                            Welcome and Re.targetaving
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item ">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Payroll Setup
+                                        </div> 
+                                        <small> 
+                                            Payment and PaysliP settings
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item ">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Timesneet
+                                        </div> 
+                                        <small> 
+                                            Manage Timesneet, Approval and Billing
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item ">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Roles & Permissions
+                                        </div> 
+                                        <small> 
+                                            Manage roles and Permissions
+                                        </small>
+                                    </div>
+                                    <div class="hm-setup-menu-item ">
+                                        <div class="hm-setup-menu-item-sub">   
+                                            Imports Data
+                                        </div> 
+                                        <small> 
+                                            Import external data
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col text-truncate">
+                            <div class="hm-tab-content-wrapper">
+                            <!-- company info -->
+                                <div class="hm-tab-content active" hmtab="setupCompanyInfo">
+                                    <% include company/view_CompanySetting %>
+                                </div>
+                                <!-- leaves -->
+                                <div class="hm-tab-content" hmtab="setupLeaves">
+                                    <% include leaveHolidays/view_LeavesHolidays %>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+        <script>
+            
+            
+            $(document).ready(function(){
+                
+            });
+        </script>
+    </footer>
+    <script>
+
+
+    </script>
+</body>
+</html>

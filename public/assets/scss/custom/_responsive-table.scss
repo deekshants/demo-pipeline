@@ -1,0 +1,21 @@
+@media (max-width: 768px){
+    .hm-respon-two-col-tbl.ui.table:not(.unstackable) thead{
+        display: none;
+    }
+    .hm-respon-two-col-tbl.ui.table:not(.unstackable) tbody td:before{
+        display: block;
+        position: absolute;
+        left: 2em;
+        content: attr(head-title);
+        color: #999;
+        width: 45%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .hm-respon-two-col-tbl.ui.table:not(.unstackable) tbody td{
+        display: block;
+        width: 50%;
+        padding: 0.5em 0.75em 0.5em 50% !important;
+    }
+}

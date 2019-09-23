@@ -1,0 +1,17 @@
+a.hm-link-white, 
+.hm-link-white a, 
+a.hm-link-white:hover, 
+.hm-link-white a:hover{
+    color: white;
+}
+
+.hm-link-btn{
+    background: none;
+    border: none;
+    outline: none;
+}
+.hm-link-nodeco,
+.hm-link-nodeco:hover,
+.hm-link-nodeco:focus{
+    text-decoration: none;
+}

@@ -1,0 +1,22 @@
+.hm-is-relative{
+	position: relative;
+}
+.hm-is-absolute{
+	position: absolute;
+}
+.hm-is-fixed{
+	position: fixed;
+}
+
+.hm-grid-inline{
+    display: inline-flex;
+}
+.hm-view-inline{
+    display: inline-block;
+}
+.hm-view-block{
+    display: block;
+}
+.hm-hide, .hide{
+  display:none;
+}

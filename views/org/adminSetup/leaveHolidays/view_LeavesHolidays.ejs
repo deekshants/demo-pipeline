@@ -1,0 +1,197 @@
+<div class="card p-3 hm-tmr-0">
+    <section class="hm-tab-wrapper">
+        <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+            <div class=" hm-tab-link active btn" hmtab="holidays">
+                Holidays
+            </div>
+            <div class=" hm-tab-link  btn" hmtab="planLeaves">
+                Leaves Setup
+            </div>
+            <div class=" hm-tab-link  btn" hmtab="notify">
+                Approval Notification
+            </div>
+        </div>
+        <div class="hm-tab-content-wrapper">
+            <div class="hm-tab-content active" hmtab="holidays">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Holidays List
+                        </h3>
+                        <p>
+                            Manage all holidays list for employee
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="col text-truncate">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
+                                    Add Holiday
+                                </button>
+                                
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>   
+                    <table class="table table-hover" align="left">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Makar Sankranti</td>
+                                <td>15/01/2019</td>
+                                <td>Optional</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Republic Day</td>
+                                <td>26/01/2019</td>
+                                <td>-</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="hm-tab-content " hmtab="planLeaves">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Leaves Setup
+                        </h3>
+                        <p>
+                            Manage diffrent type of leave for employee.
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="col text-truncate">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddLeaveType');">
+                                    Add Leave
+                                </button>
+                               
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table class="table table-hover" align="left">
+                            <thead>
+                            <tr>
+                                <th scope="col">Leave Type</th>
+                                <th scope="col">Quota</th>
+                                <th scope="col">Allotment Policy</th>
+                                <th scope="col">Year End</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Paid Leaves</td>
+                                <td>12 Days</td>
+                                <td>2 days monthly</td>
+                                <td>All Leaves Will Expires</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                    <button class="btn btn-white">
+                                        <i class="material-icons">file_copy</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="hm-tab-content" hmtab="notify">
+                33333333333333
+            </div>
+        </div>
+    </section>
+</div>
+
+<% include ../leaveHolidays/modals/modal_addNewHolidays %>
+<% include ../leaveHolidays/modals/modal_addNewLeaveType %>

@@ -1,0 +1,103 @@
+.hm-wizard-step-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.hm-wizard-step-wrapper.hm-step-vertical{
+    flex-direction: column;
+}
+
+.hm-wizard-step{
+    position: relative;
+    max-width: 100%;
+}
+.hm-wizard-stretch .hm-wizard-step{
+    flex-basis: 0;
+    flex-grow: 1;
+}
+.hm-wizard-step:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 16px;
+    background: #ddd;
+}
+
+.hm-wizard-step-inner{
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    margin-right: 1.5rem;
+}
+
+.hm-step-vertical .hm-wizard-step-inner{
+    padding-left: 0;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+    margin-right: 0;
+    margin-bottom: 1.5rem;
+}
+.hm-step-vertical .hm-wizard-step:after{
+    width: 1px;
+    height: 100%;
+    left: 16px;
+    top: 0;
+}
+.hm-wizard-step-wrapper .hm-wizard-step:last-child:after{
+    display: none;
+}
+.hm-wizard-step-count, .hm-wizard-step-check{
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: normal;
+    position: relative;
+    z-index: 1;
+}
+.hm-wizard-step-count{
+    background: #bbb;
+}
+.hm-wizard-step-text{
+    color: #999;
+}
+.hm-wizard-step-check{
+    background: #4caf50;
+    display: none;
+}
+.hm-wizard-step-check i{
+    line-height: 32px;
+}
+.hm-wizard-step.active .hm-wizard-step-count{
+    background: #9c27b0;
+    box-shadow: 0 4px 5px 0 rgba(156,39,176,.14), 0 1px 10px 0 rgba(156,39,176,.12), 0 2px 4px -1px rgba(156,39,176,.2);
+}
+.hm-wizard-step.active .hm-wizard-step-text{
+    font-weight: bold;
+    color: inherit;
+}
+
+.hm-wizard-step.done .hm-wizard-step-count{
+    display: none;
+}
+.hm-wizard-step.done .hm-wizard-step-check{
+    display: block;
+}
+.hm-wizard-step.done .hm-wizard-step-text{
+    font-weight: inherit;
+    color: inherit;
+}
+.hm-step-content{
+    display: none;
+}
+.hm-step-content.active{
+    display: block;
+}

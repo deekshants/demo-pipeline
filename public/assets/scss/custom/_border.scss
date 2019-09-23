@@ -1,0 +1,78 @@
+@each $side in $sides{
+  .hm-line-#{$side} {
+    border-#{$side}: 1px solid #eee;
+  }
+}
+
+@each $side in $sides{
+  .hm-line-semi-white-#{$side} {
+    border-#{$side}: 1px solid rgba(255,255,255,.5);
+  }
+}
+
+@each $side in $sides{
+  .hm-line-semi-black-#{$side} {
+    border-#{$side}: 1px solid rgba(0,0,0,.2);
+  }
+}
+
+@each $side in $sides{
+  .hm-line-dotted#{$side} {
+    border-#{$side}: 1px dotted #eee;
+  }
+}
+
+@each $side in $sides{
+  .hm-line-semi-black-dotted-#{$side} {
+    border-#{$side}: 1px dotted rgba(0,0,0,.2);
+  }
+}
+
+@each $side in $sides{
+  .hm-line-dashed#{$side} {
+    border-#{$side}: 1px dashed #eee;
+  }
+}
+
+@each $side in $sides{
+  .hm-line-semi-black-dashed-#{$side} {
+    border-#{$side}: 1px dashed rgba(0,0,0,.2);
+  }
+}
+.hm-line-around{
+	border:1px solid #eee;
+}
+.hm-line-dotted-around{
+  border:1px dotted #eee;
+}
+.hm-line-semi-black-dotted-around{
+  border:1px dotted rgba(0,0,0,.2);
+}
+.hm-line-dashed-around{
+  border:1px dashed #eee;
+}
+.hm-line-semi-black-dashed-around{
+  border:1px dashed rgba(0,0,0,.2);
+}
+.hm-line-none{
+	border:none;
+}
+.hm-first-line-top-0 > li:first-child{
+	border-top: none;
+}
+.hm-first-p-top-0 > li:first-child{
+	padding-top: 0;
+}
+.hm-first--m-top-0 > li:first-child{
+	margin-top: 0;
+}
+
+.hm-last-line-bottom-0 > li:last-child{
+	border-bottom: none;
+}
+.hm-last-p-bottom-0 > li:last-child{
+	padding-bottom: 0;
+}
+.hm-last--m-bottom-0 > li:last-child{
+	margin-bottom: 0;
+}

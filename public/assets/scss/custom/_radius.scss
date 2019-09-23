@@ -1,0 +1,5 @@
+@each $size in $radiussizes {
+  .hm-radius-#{$size} {
+    border-radius: #{$size}px;
+  }
+}

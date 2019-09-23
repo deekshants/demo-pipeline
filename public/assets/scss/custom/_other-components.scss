@@ -1,0 +1,49 @@
+/* --------------------company setup vertical tab------------------------ */
+
+.hm-setup-menu-item{
+    padding: .5rem 1rem .5rem .5rem;
+    border-radius: 0 500px 500px 0;
+    margin-bottom: .5rem;
+}
+.hm-setup-menu-item:hover{
+    background: linear-gradient(90deg, #dcf6ff, #f2c5fc);
+}
+
+.hm-setup-menu-item.active{
+    color: inherit;
+    background: #f2c5fc; /* Old browsers */
+    background: linear-gradient(90deg, #dcf6ff, #f2c5fc);
+    box-shadow: inset -1px 1px 4px rgba(204, 51, 153, 0.2);
+}
+.hm-setup-menu-item.active .hm-setup-menu-item-sub{
+    font-weight: bold;
+}
+
+/* --------------------hm tab------------------------ */
+
+.hm-tab-link{
+    cursor: pointer;
+}
+
+.hm-tab-content{
+    display: none;
+}
+.hm-tab-content.active{
+    display: block;
+}
+
+/* --------------------error ------------------------ */
+.hm-input-error-msg{
+    
+    font-size: 80%;
+    color: #f44336;
+    display: none;
+}
+.hm-has-error .hm-input-error-msg{
+    display: block;
+}
+
+.hm-has-error .form-control {
+    background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #f44336 1px, rgba(210, 210, 210, 0) 1px);
+}
+
