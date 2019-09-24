@@ -40,12 +40,12 @@
                                             Plan Leaves and Holidays 
                                         </small>
                                     </div>
-                                    <div class="hm-setup-menu-item ">
+                                    <div class="hm-setup-menu-item hm-tab-link" hmtab="setupEmployee">
                                         <div class="hm-setup-menu-item-sub">   
-                                            Employee
+                                            Employee Settings
                                         </div> 
                                         <small> 
-                                            Manage Employees Data
+                                            Manage Employee Settings
                                         </small>
                                     </div>
                                     <div class="hm-setup-menu-item ">
@@ -94,14 +94,17 @@
                         </div>
                         <div class="col text-truncate">
                             <div class="hm-tab-content-wrapper">
-                            <!-- company info -->
+                                <!-- company info -->
                                 <div class="hm-tab-content active" hmtab="setupCompanyInfo">
                                     <% include company/view_CompanySetting %>
                                 </div>
                                 <!-- leaves -->
                                 <div class="hm-tab-content" hmtab="setupLeaves">
                                     <% include leaveHolidays/view_LeavesHolidays %>
-                                    
+                                </div>
+                                <!-- setup employee -->
+                                <div class="hm-tab-content" hmtab="setupEmployee">
+                                    <% include employees/view_EmployeeSettings %>
                                 </div>
                             </div>
                         </div>

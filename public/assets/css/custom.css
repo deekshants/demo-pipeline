@@ -16,6 +16,9 @@
   .hm .table thead th {
     font-weight: normal;
     color: #999; }
+  .hm .form-check .form-check-label {
+    white-space: normal;
+    line-height: 1.5; }
   .hm .hm-simple-tab-nav {
     display: flex;
     border-bottom: 1px solid #ddd; }
@@ -366,6 +369,8 @@
   .hm .hm-side-panel-wrapper.active .hm-side-panel {
     transform: translateX(0);
     transition: all ease .25s; }
+  .hm .hm-side-panel.hm-side-panel-large {
+    width: 1000px; }
   .hm .hm-donut-wrapper {
     display: inline-block;
     position: relative; }
