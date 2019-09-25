@@ -1,132 +1,189 @@
-<div class="card p-3 hm-tmr-0 ">
-    <div class="">
-        <h3 class="hm-mr-0">
-            Company Settings
-        </h3>
-        <p>
-            General Infoabout company , this information used on login page.
-        </p>
-    </div>
-    <div class=" ">
-        <form class="">
-            <div class="row">
-                <div class="col-12 col-md-5 ">
-                    <div class="form-group ">
-                        <label class="bmd-label-floating"><sup class="text-danger">*</sup>Company Name</label>
-                        <input type="text" class="form-control" value="Athenalogics Solution Pvt. Ltd." required="">
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label class="bmd-label-floating"><sup class="text-danger">*</sup> Company Domain / Short Name   </label>
-                        <input type="text" class="form-control" value="Athena" required="">
-                        <span class="bmd-help hm-text-dull">Max 20 letter</span>
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label class="bmd-label-floating">Company Website</label>
-                        <input type="text" class="form-control" value=" www.athenalogics.com">
-                    </div>
+<div class="card p-3 hm-tmr-0">
+    <section class="hm-tab-wrapper">
+        <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+            <div class=" hm-tab-link active btn" hmtab="companySettings">
+                Company Settings
+            </div>
+            <div class=" hm-tab-link  btn" hmtab="locations">
+                Locations
+            </div>
+          
+        </div>
+        <div class="hm-tab-content-wrapper">
+            <div class="hm-tab-content active" hmtab="companySettings">
+                <div class="pt-2">
+                    <h3 class="hm-mr-0">
+                        Company Settings
+                    </h3>
+                    <p>
+                        General details about company.
+                    </p>
+                </div>
+                <div class=" ">
+                    <form class="">
+                        <div class="row">
+                            <div class="col-12 col-md-5 ">
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Company Name</label>
+                                    <input type="text" class="form-control" value="Athenalogics Solution Pvt. Ltd." required="">
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup> Company Domain / Short Name   </label>
+                                    <input type="text" class="form-control" value="Athena" required="">
+                                    <span class="bmd-help hm-text-dull">Max 20 letter</span>
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating">Company Website</label>
+                                    <input type="text" class="form-control" value=" www.athenalogics.com">
+                                </div>
 
-                    <div class="form-group form-file-upload ">
-                        <input type="file" multiple="" class="inputFileHidden">
-                        <div class="input-group">
-                            <input type="text" class="form-control inputFileVisible" placeholder="Upload Logo">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-fab btn-round btn-primary">
-                                    <i class="material-icons">attach_file</i>
+                                
+                            </div>
+                            <div class="col-12 col-md-1"></div>
+                            <div class="col-12 col-md-6">
+
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating">Office Phone</label>
+                                    <input type="tel" class="form-control" >
+                                </div>
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating">Office Email</label>
+                                    <input type="email" class="form-control" >
+                                </div>
+                                <div class="form-group form-file-upload ">
+                                    <input type="file" multiple="" class="inputFileHidden">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control inputFileVisible" placeholder="Upload Logo">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="btn btn-fab btn-round btn-primary">
+                                                <i class="material-icons">attach_file</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+
+                               
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <button class="btn btn-primary">
+                                Save Changes
+                            </button>
+                            <button class="btn btn-white" type="button">
+                                Cancel
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="hm-tab-content " hmtab="locations">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Locations
+                        </h3>
+                        <p>
+                            Manage diffrent locations.
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="col text-truncate">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewLocation');">
+                                    Add Location
                                 </button>
-                            </span>
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-1"></div>
-                <div class="col-12 col-md-6">
-
-                    
-                    <div class="form-group">
-                        <label for="" class=""><sup class="text-danger">*</sup>Country</label>
-                        <select id="" class="form-control" required="">
-                            <option selected disabled="">Choose...</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                    <div class="form-group ">
-                        <label class="bmd-label-floating"><sup class="text-danger">*</sup>Address</label>
-                        <input type="text" class="form-control" required="">
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-4">
-                            <div class="form-group ">
-                                <label class="bmd-label-floating"><sup class="text-danger">*</sup>City</label>
-                                <input type="text" class="form-control" required="">
-                                <div class="hm-input-error-msg">
-                                    Required Field!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group ">
-                                <label class="bmd-label-floating"><sup class="text-danger">*</sup>State</label>
-                                <input type="text" class="form-control" required="">
-                                <div class="hm-input-error-msg">
-                                    Required Field!
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-4">
-                            <div class="form-group ">
-                                <label class="bmd-label-floating"><sup class="text-danger">*</sup>Zip</label>
-                                <input type="text" class="form-control" required="">
-                                <div class="hm-input-error-msg">
-                                    Required Field!
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-
-                    <div class="row mt-4">
-                        <div class="col-12 col-md-6">
-                            <div class="form-group ">
-                                <label class="bmd-label-floating">Office Phone</label>
-                                <input type="tel" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="form-group ">
-                                <label class="bmd-label-floating">Office Email</label>
-                                <input type="email" class="form-control" >
-                            </div>
-                        </div>
-                    </div>
-
-
+                <div>   
+                    <table class="table table-hover" align="left">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col" width="50%">Address</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Athena Jaipur</td>
+                                <td>
+                                    Mansarovar Plaza, #433, 4th Floor, Madhyam marg,, Mansarovar, Jaipur, Rajasthan 302020
+                                    
+                                </td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Delete">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Athena Delhi</td>
+                                <td>
+                                    Mansarovar Plaza, #433, 4th Floor, Colony, Delhi
+                                </td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Delete">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                          
+                        </tbody>
+                    </table>
                 </div>
-
             </div>
+           
+        </div>
+    </section>
+</div>
 
-            <div>
-                <button class="btn btn-primary">
-                    Save Changes
-                </button>
-                <button class="btn btn-white" type="button">
-                    Cancel
-                </button>
-            </div>
-        </form>
-    </div>
-    </div>
+<% include ../company/modals/modal_addNewLocation %>

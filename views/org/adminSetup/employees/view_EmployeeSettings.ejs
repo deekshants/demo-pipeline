@@ -8,11 +8,9 @@
                 Departments
             </div>
             <div class=" hm-tab-link  btn" hmtab="empDefaults">
-                Employees Defaults
+                Employee Defaults
             </div>
-            <div class=" hm-tab-link  btn" hmtab="locations">
-                Locations
-            </div>
+            
             <div class=" hm-tab-link  btn" hmtab="documents">
                 Documents
             </div>
@@ -74,19 +72,17 @@
                     <table class="table table-hover" align="left">
                         <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Type</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Last Modify</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Makar Sankranti</td>
+                                <td>Software Engineer</td>
                                 <td>15/01/2019</td>
-                                <td>Optional</td>
                                 <td class="td-actions">
-                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                    <button class="btn btn-white"title="Edit">
                                         <i class="material-icons">edit</i>
                                     </button>
                                     <button class="btn btn-white" title="Delete">
@@ -95,11 +91,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Republic Day</td>
-                                <td>26/01/2019</td>
-                                <td>-</td>
+                                <td>QA</td>
+                                <td>15/01/2019</td>
                                 <td class="td-actions">
-                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                    <button class="btn btn-white"title="Edit">
                                         <i class="material-icons">edit</i>
                                     </button>
                                     <button class="btn btn-white" title="Delete">
@@ -107,6 +102,7 @@
                                     </button>
                                 </td>
                             </tr>
+                          
                         </tbody>
                     </table>
                 </div>
@@ -160,35 +156,41 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div>   
                     <table class="table table-hover" align="left">
-                            <thead>
+                        <thead>
                             <tr>
-                                <th scope="col">Leave Type</th>
-                                <th scope="col">Quota</th>
-                                <th scope="col">Allotment Policy</th>
-                                <th scope="col">Year End</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Last Modify</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Paid Leaves</td>
-                                <td>12 Days</td>
-                                <td>2 days monthly</td>
-                                <td>All Leaves Will Expires</td>
+                                <td>HR</td>
+                                <td>15/01/2019</td>
                                 <td class="td-actions">
-                                    <button class="btn btn-white">
-                                        <i class="material-icons" title="Edit">edit</i>
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
                                     </button>
                                     <button class="btn btn-white" title="Delete">
                                         <i class="material-icons">delete</i>
                                     </button>
-                                    <button class="btn btn-white" title="Clone">
-                                        <i class="material-icons">file_copy</i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>IT</td>
+                                <td>15/01/2019</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Delete">
+                                        <i class="material-icons">delete</i>
                                     </button>
                                 </td>
                             </tr>
+                          
                         </tbody>
                     </table>
                 </div>
@@ -197,166 +199,74 @@
                 <div class="">
                     <div class="pt-2">
                         <h3 class="hm-mr-0">
-                            Employees Defaults
+                            Employee Defaults
                         </h3>
                         <p>
-                            Manage employees defaults settings.
+                            Employee defaults for new recruits.
                         </p>
                     </div>
-                    <div>   
-                        <div class="row no-gutters">
-                            <div class="col text-truncate">
-                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewDepartment');">
-                                    Add Department
+                    <div class="mt-4">   
+                        <form >
+                            <div class="row">
+                                <div class="col-12 col-lg-3 ">
+                                    <div class="row align-items-end">
+                                        <div class="col-12 col-md-8 ">
+                                            <div class="form-group ">
+                                                <label class=""><sup class="text-danger">*</sup>Probation Period</label>
+                                                <input type="number" class="form-control"  required="" placeholder="0" min="1">
+                                                <div class="hm-input-error-msg">
+                                                    Required Field!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 ">
+                                            <div class="form-group">
+                                                <select id="" class="form-control">
+                                                    <option>Days</option>
+                                                    <option>Months</option>
+                                                    <option>Years</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-1">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="" class="">Work Type</label>
+                                        <select id="" class="form-control">
+                                            <option>Permanent</option>
+                                            <option>....</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="" class="">Time Type</label>
+                                        <select id="" class="form-control">
+                                            <option>Full Time</option>
+                                            <option>....</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <button class="btn btn-primary">
+                                    Save Changes
+                                </button>
+                                <button class="btn btn-white" type="button">
+                                    Cancel
                                 </button>
                             </div>
-                            <div>
-                                <div class="pt-1 px-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text hm-hpd-8">
-                                                <i class="material-icons">search</i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control " placeholder="Search...">
-                                        <span class="input-group-btn hide">
-                                            <button class="btn  btn-white  hm-pd-5">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                               <div class="nav-item dropdown dropleft">
-                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                      <i class="material-icons">more_horiz</i>
-                                   </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#0">Filter Data</a>
-                                        <a class="dropdown-item" href="#0">Import Data</a>
-                                        <a class="dropdown-item" href="#0">Export Data</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <div>
-                    <table class="table table-hover" align="left">
-                            <thead>
-                            <tr>
-                                <th scope="col">Leave Type</th>
-                                <th scope="col">Quota</th>
-                                <th scope="col">Allotment Policy</th>
-                                <th scope="col">Year End</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Paid Leaves</td>
-                                <td>12 Days</td>
-                                <td>2 days monthly</td>
-                                <td>All Leaves Will Expires</td>
-                                <td class="td-actions">
-                                    <button class="btn btn-white">
-                                        <i class="material-icons" title="Edit">edit</i>
-                                    </button>
-                                    <button class="btn btn-white" title="Delete">
-                                        <i class="material-icons">delete</i>
-                                    </button>
-                                    <button class="btn btn-white" title="Clone">
-                                        <i class="material-icons">file_copy</i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                
             </div>
-            <div class="hm-tab-content " hmtab="locations">
-                <div class="">
-                    <div class="pt-2">
-                        <h3 class="hm-mr-0">
-                            Locations
-                        </h3>
-                        <p>
-                            Manage diffrent locations.
-                        </p>
-                    </div>
-                    <div>   
-                        <div class="row no-gutters">
-                            <div class="col text-truncate">
-                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewDepartment');">
-                                    Add Department
-                                </button>
-                            </div>
-                            <div>
-                                <div class="pt-1 px-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text hm-hpd-8">
-                                                <i class="material-icons">search</i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control " placeholder="Search...">
-                                        <span class="input-group-btn hide">
-                                            <button class="btn  btn-white  hm-pd-5">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="">
-                               <div class="nav-item dropdown dropleft">
-                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                      <i class="material-icons">more_horiz</i>
-                                   </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#0">Filter Data</a>
-                                        <a class="dropdown-item" href="#0">Import Data</a>
-                                        <a class="dropdown-item" href="#0">Export Data</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <table class="table table-hover" align="left">
-                            <thead>
-                            <tr>
-                                <th scope="col">Leave Type</th>
-                                <th scope="col">Quota</th>
-                                <th scope="col">Allotment Policy</th>
-                                <th scope="col">Year End</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Paid Leaves</td>
-                                <td>12 Days</td>
-                                <td>2 days monthly</td>
-                                <td>All Leaves Will Expires</td>
-                                <td class="td-actions">
-                                    <button class="btn btn-white">
-                                        <i class="material-icons" title="Edit">edit</i>
-                                    </button>
-                                    <button class="btn btn-white" title="Delete">
-                                        <i class="material-icons">delete</i>
-                                    </button>
-                                    <button class="btn btn-white" title="Clone">
-                                        <i class="material-icons">file_copy</i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+           
             <div class="hm-tab-content " hmtab="documents">
                 <div class="">
                     <div class="pt-2">
@@ -368,76 +278,22 @@
                         </p>
                     </div>
                     <div>   
-                        <div class="row no-gutters">
-                            <div class="col text-truncate">
-                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewDepartment');">
-                                    Add Department
-                                </button>
-                            </div>
-                            <div>
-                                <div class="pt-1 px-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text hm-hpd-8">
-                                                <i class="material-icons">search</i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control " placeholder="Search...">
-                                        <span class="input-group-btn hide">
-                                            <button class="btn  btn-white  hm-pd-5">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                        </span>
+                       <div class="jumbotron jumbotron-fluid">
+                            <div class="container">
+                                <div class="row no-gutters">
+                                    <div class="pr-3">
+                                        <i class="fa fa-cog fa-spin fa-5x"></i>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="">
-                               <div class="nav-item dropdown dropleft">
-                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                      <i class="material-icons">more_horiz</i>
-                                   </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#0">Filter Data</a>
-                                        <a class="dropdown-item" href="#0">Import Data</a>
-                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    <div class="col text-truncate">
+                                        <h1 class="display-4">Under Construction Will Come Soon...  </h1>
+                                        <p class="lead">Manage employees documents</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <table class="table table-hover" align="left">
-                            <thead>
-                            <tr>
-                                <th scope="col">Leave Type</th>
-                                <th scope="col">Quota</th>
-                                <th scope="col">Allotment Policy</th>
-                                <th scope="col">Year End</th>
-                                <th scope="col">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Paid Leaves</td>
-                                <td>12 Days</td>
-                                <td>2 days monthly</td>
-                                <td>All Leaves Will Expires</td>
-                                <td class="td-actions">
-                                    <button class="btn btn-white">
-                                        <i class="material-icons" title="Edit">edit</i>
-                                    </button>
-                                    <button class="btn btn-white" title="Delete">
-                                        <i class="material-icons">delete</i>
-                                    </button>
-                                    <button class="btn btn-white" title="Clone">
-                                        <i class="material-icons">file_copy</i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                
             </div>
             <div class="hm-tab-content " hmtab="notice">
                 <div class="">
@@ -452,8 +308,8 @@
                     <div>   
                         <div class="row no-gutters">
                             <div class="col text-truncate">
-                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewDepartment');">
-                                    Add Department
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewNoticePeriod');">
+                                    Add Notice Periods
                                 </button>
                             </div>
                             <div>
@@ -492,19 +348,22 @@
                     <table class="table table-hover" align="left">
                             <thead>
                             <tr>
-                                <th scope="col">Leave Type</th>
-                                <th scope="col">Quota</th>
-                                <th scope="col">Allotment Policy</th>
-                                <th scope="col">Year End</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Duration</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Paid Leaves</td>
-                                <td>12 Days</td>
-                                <td>2 days monthly</td>
-                                <td>All Leaves Will Expires</td>
+                                <td>
+                                    <span>
+                                        General Notice Period
+                                    </span>
+                                    <span class="badge badge-pill badge-info">
+                                        default
+                                    </span>
+                                </td>
+                                <td>60 Days</td>
                                 <td class="td-actions">
                                     <button class="btn btn-white">
                                         <i class="material-icons" title="Edit">edit</i>
@@ -512,8 +371,22 @@
                                     <button class="btn btn-white" title="Delete">
                                         <i class="material-icons">delete</i>
                                     </button>
-                                    <button class="btn btn-white" title="Clone">
-                                        <i class="material-icons">file_copy</i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Trainee Notice Period
+                                    </span>
+                                    
+                                </td>
+                                <td>6 Months</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Delete">
+                                        <i class="material-icons">delete</i>
                                     </button>
                                 </td>
                             </tr>
@@ -525,5 +398,9 @@
         </div>
     </section>
 </div>
+
+<% include ../employees/modals/modal_addNewJobTitle %>
+<% include ../employees/modals/modal_addNewDepartment %>
+<% include ../employees/modals/modal_addNewNoticePeriod %>
 
 

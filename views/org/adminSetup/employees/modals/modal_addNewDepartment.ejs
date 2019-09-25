@@ -1,0 +1,38 @@
+<section class="hm-side-panel-wrapper" id="panelAddNewDepartment">
+    <div class="hm-side-panel hm-side-panel-small">
+        <header class="hm-side-panel-header border-bottom">
+            <div class="row no-gutters px-3">
+                <div class="pt-2 pr-2">
+                    <i class="material-icons">add</i>
+                </div>
+                <div class="col text-truncate">
+                    <h4 class="hm-text-normal"> Add Department</h4>
+                </div>
+                <div class="pl-3">
+                    <button class="btn  btn-fab btn-link btn-round" onclick="closeSidePanel('#panelAddNewDepartment');">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="hm-side-panel-body  p-4">
+            <div class="form-group">
+                <label for=""><sup class="text-danger">*</sup>Department Title</label>
+                <input type="text" class="form-control" id="" required="">
+                <div class="hm-input-error-msg">
+                    Required Field!
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="">Description</label>
+                <textarea class="form-control" id="" rows="1"></textarea>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Department Added Successfully !', 'success', '#panelAddNewDepartment')">Add Department</button>
+                <button type="button" class="btn btn-white" hmclose="panel" onclick="closeSidePanel('#panelAddNewDepartment');">Close</button>
+            </div>
+        </div>
+        
+    </div>
+</section>

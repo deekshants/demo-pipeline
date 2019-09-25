@@ -48,7 +48,7 @@
                                             Manage Employee Settings
                                         </small>
                                     </div>
-                                    <div class="hm-setup-menu-item ">
+                                    <div class="hm-setup-menu-item hm-tab-link" hmtab="setupOnboardExit">
                                         <div class="hm-setup-menu-item-sub">   
                                             Onboarding & Exit
                                         </div> 
@@ -61,7 +61,7 @@
                                             Payroll Setup
                                         </div> 
                                         <small> 
-                                            Payment and PaysliP settings
+                                            Payment and pay slips settings
                                         </small>
                                     </div>
                                     <div class="hm-setup-menu-item ">
@@ -105,6 +105,10 @@
                                 <!-- setup employee -->
                                 <div class="hm-tab-content" hmtab="setupEmployee">
                                     <% include employees/view_EmployeeSettings %>
+                                </div>
+                                <!-- setup OnboardingExit -->
+                                <div class="hm-tab-content" hmtab="setupOnboardExit">
+                                    <% include onboardingExit/view_OnboardExitSettings %>
                                 </div>
                             </div>
                         </div>
