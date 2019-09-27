@@ -32,5 +32,8 @@ router.get('/create-password', function(req, res) {
 router.get('/org/admin-setup', function(req, res) {
     res.render('org/adminSetup/page_AdminSetup', {baseUrl: process.env.BASE_URL});
 });
+router.get('/org/employees', function(req, res) {
+    res.render('org/orgEmployees/page_orgEmployees', {baseUrl: process.env.BASE_URL});
+});
 
 module.exports = router;

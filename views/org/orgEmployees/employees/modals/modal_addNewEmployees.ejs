@@ -1,0 +1,254 @@
+<section class="hm-side-panel-wrapper " id="panelAddEmployee">
+    <div class="hm-side-panel">
+        <header class="hm-side-panel-header border-bottom">
+            <div class="row no-gutters px-3">
+                <div class="pt-2 pr-2">
+                    <i class="material-icons">add</i>
+                </div>
+                <div class="hm-col">
+                    <h4 class="hm-text-normal">Add New Employee</h4>
+                </div>
+                <div class="pl-3">
+                    <button class="btn  btn-fab btn-link btn-round" onclick="closeSidePanel('#panelAddEmployee');">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="hm-side-panel-body  px-4">
+            <div class="hm-wizard-wrapper" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                    <div class="col-12 col-md-3 border-right">
+                        <div class="hm-wizard-step-wrapper hm-step-vertical">
+                            <div class="hm-wizard-step active" hm-step="1">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        1
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Basic Info  
+                                    </div>
+                                </div>
+                            </div> 
+
+                            <div class="hm-wizard-step " hm-step="2">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        2
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Job Details
+                                    </div>
+                                </div>
+                            </div> 
+                            
+
+                        </div>
+
+                    </div>
+                    <div class="col-12 col-md-9 ">
+                        <div class="hm-wizard-content-wrapper">
+                            <!-- step-1 -->
+                            <section class="hm-step-content active" hm-step-content="1">
+                                <div class="px-3">
+                                    <h3>
+                                        Basic Info
+                                    </h3>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    <label for=""><sup class="text-danger">*</sup>First Name</label>
+                                                    <input type="text" class="form-control" id="" required="">
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    <label for=""><sup class="text-danger">*</sup>Last Name</label>
+                                                    <input type="text" class="form-control" id="" required="">
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for=""><sup class="text-danger">*</sup>Email</label>
+                                            <input type="email" class="form-control" id="" required="">
+                                            <div class="hm-input-error-msg">
+                                                Required Field!
+                                            </div>
+                                        </div>
+                                        
+                                        <div>
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- step-2 -->
+                            <section class="hm-step-content " hm-step-content="2">
+                                <div class="px-3">
+                                    <h3>
+                                        Job Details
+                                    </h3>
+                                    <section class="mb-4">
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                
+                                                    <label for="" class="pt-2">EmployeeID</label>
+                                                
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <div class="form-group hm-tpd-0">
+                                                    <input type="text" class="form-control" id="" value="E025Y2019" readonly="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                
+                                                    <label for="" class="pt-2"><sup class="text-danger">*</sup> Date Of Joining</label>
+                                                
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <div class="form-group hm-tpd-0">
+                                                    <input type="text" class="form-control datetimepicker" required="" />
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                
+                                                    <label for="" class="pt-2"><sup class="text-danger">*</sup>Location</label>
+                                                
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <div class="form-group hm-tpd-0">
+                                                    <select id="" class="form-control" required="">
+                                                        <option>Athena Jaipur</option>
+                                                        <option>Athena Delhi</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                
+                                                    <label for="" class="pt-2"><sup class="text-danger">*</sup>Work Type</label>
+                                                
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <div class="form-group hm-tpd-0">
+                                                    <select id="" class="form-control" required="">
+                                                        <option>Permanent</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                
+                                                    <label for="" class="pt-2"><sup class="text-danger">*</sup>Time Type</label>
+                                                
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <div class="form-group hm-tpd-0">
+                                                    <select id="" class="form-control" required="">
+                                                        <option>Full Time</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-3">
+                                                
+                                                    <label for="" class="pt-2"><sup class="text-danger">*</sup>Shift</label>
+                                                
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <div class="form-group hm-tpd-0">
+                                                    <select id="" class="form-control" required="">
+                                                        <option>Regular Shift</option>
+                                                        <option>...</option>
+                                                    </select>
+                                                    <div class="hm-input-error-msg">
+                                                        Required Field!
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   
+                                       
+                                        
+                                      
+                                       
+                                       
+                                        
+                                        
+                                        
+                                    </section>
+                                   
+                                    <div>
+                                        <div class="mt-4">
+                                            <div class="row no-gutters">
+                                                <div class="hm-col">
+                                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                                        Previous
+                                                    </button>
+                                                </div>
+                                                <div class="pl-3">
+                                                    <button type="button" class="btn btn-white" onclick="">
+                                                        Draft
+                                                    </button>
+                                                    <span class="text-muted px-3">
+                                                        or
+                                                    </span>
+                                                    <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Invitation Sent Successfully !', 'success', '#panelAddEmployee')">
+                                                        Send Invitation
+                                                        <i class="material-icons">send</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

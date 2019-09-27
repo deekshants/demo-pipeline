@@ -58,7 +58,7 @@
 
 select.form-control {
   &:not([size]):not([multiple]) {
-    height: $input-height;
+    height: 36px;
   }
 
   &:focus::-ms-value {

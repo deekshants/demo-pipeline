@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+<style>
+
+
+</style>
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+
+    <main class="hm-main-view">
+        <div class="p-3">   
+            <div class="card p-3 hm-tmr-0">
+                <section class="hm-tab-wrapper">
+                    <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                        <div class=" hm-tab-link active btn" hmtab="orgEmployees">
+                            Employees
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empDirectory">
+                            Directory
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empProfApproval">
+                            Profiles Approval <span class="badge badge-pill badge-info">3</span>
+                        </div>
+                    </div>
+                    <div class="hm-tab-content-wrapper">
+                        <div class="hm-tab-content active" hmtab="orgEmployees">
+                            <% include employees/view_employees %>
+                        </div>
+                        <div class="hm-tab-content" hmtab="empDirectory">
+                            <% include empDirectory/view_empDirectory %>
+                        </div>
+                        <div class="hm-tab-content" hmtab="empProfApproval">
+                            <% include empProfilesApproval/view_empProfApproval %>
+                        </div>
+                    </div>
+                </section>
+            </div>
+           
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+        <script>
+            
+            
+            $(document).ready(function(){
+                
+            });
+        </script>
+    </footer>
+    <script>
+
+
+    </script>
+</body>
+</html>
