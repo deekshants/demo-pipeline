@@ -72,7 +72,7 @@
                                             Manage Timesneet, Approval and Billing
                                         </small>
                                     </div>
-                                    <div class="hm-setup-menu-item ">
+                                    <div class="hm-setup-menu-item hm-tab-link" hmtab="setupRolesPermissions">
                                         <div class="hm-setup-menu-item-sub">   
                                             Roles & Permissions
                                         </div> 
@@ -92,7 +92,7 @@
                             </div>
 
                         </div>
-                        <div class="col text-truncate">
+                        <div class="hm-col">
                             <div class="hm-tab-content-wrapper">
                                 <!-- company info -->
                                 <div class="hm-tab-content active" hmtab="setupCompanyInfo">
@@ -109,6 +109,10 @@
                                 <!-- setup OnboardingExit -->
                                 <div class="hm-tab-content" hmtab="setupOnboardExit">
                                     <% include onboardingExit/view_OnboardExitSettings %>
+                                </div>
+                                <!-- setup Roles and Permissions -->
+                                <div class="hm-tab-content" hmtab="setupRolesPermissions">
+                                    <% include rolesPermissions/view_RolesPermissionsSettings %>
                                 </div>
                             </div>
                         </div>

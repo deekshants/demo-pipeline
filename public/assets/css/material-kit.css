@@ -1909,7 +1909,8 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25); }
   .btn.disabled, .btn:disabled {
-    opacity: 0.65;
+    opacity: 0.4;
+    cursor: not-allowed;
     box-shadow: none; }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer; }
