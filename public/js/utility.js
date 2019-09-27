@@ -1,6 +1,7 @@
 /*--------------start function------------------*/
 $(document).ready(function(){
     activeSideMenuParentLink();
+    activeSideMenuChildLink()
     InitRadioExtraView();
     InitCheckboxExtraView();
 });
@@ -163,6 +164,12 @@ function activeSideMenuParentLink(){
         var ele = '[hm-url="'+parent+'"]'
         $(ele).addClass('active');
     }
+}
+function activeSideMenuChildLink(){
+    $('.hm-side-menu-outer .hm-side-submenu-item').removeClass('active');
+    var path = location.pathname;
+    var ele = $('.hm-side-menu-outer [href="'+path+'"]');
+    $(ele).addClass('active');
 }
 
         

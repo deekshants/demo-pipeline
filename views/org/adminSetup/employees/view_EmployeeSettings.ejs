@@ -11,6 +11,9 @@
                 Employee Defaults
             </div>
             
+            <div class=" hm-tab-link  btn" hmtab="empNumberSeries">
+                Employee Number
+            </div>
             <div class=" hm-tab-link  btn" hmtab="documents">
                 Documents
             </div>
@@ -264,6 +267,94 @@
                 </div>
                 
             </div>
+            <div class="hm-tab-content " hmtab="empNumberSeries">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Employee Number Series
+                        </h3>
+                        <p>
+                            Manage employee Number Series.
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddEmpNumberSeries');">
+                                    Add Number Series
+                                </button>
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>   
+                    <table class="table table-hover" align="left">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    2019 Series
+                                    <span class="badge badge-pill badge-info">
+                                        default
+                                    </span>
+                                </td>
+                                <td>Active</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2018 Series</td>
+                                <td>Active</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
            
             <div class="hm-tab-content " hmtab="documents">
                 <div class="">
@@ -399,6 +490,7 @@
 
 <% include ../employees/modals/modal_addNewJobTitle %>
 <% include ../employees/modals/modal_addNewDepartment %>
+<% include ../employees/modals/modal_addNewEmpNumberSeries %>
 <% include ../employees/modals/modal_addNewNoticePeriod %>
 
 
