@@ -57,11 +57,11 @@ function showToast(option){
     }
 
     $(wrapper).on('click', '.hm-close', function(){
-        $(this).closest('.hm-toast').remove();
-//clearTimeout(watch);
-if(option.afterClose){
-    option.afterClose();
-}  
+    $(this).closest('.hm-toast').remove();
+    //clearTimeout(watch);
+    if(option.afterClose){
+        option.afterClose();
+    }  
 });
 
     $(wrapper).append(toast);
