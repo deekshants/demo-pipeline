@@ -8,6 +8,9 @@ $(document).ready(function(){
 $('.hm-tab-link').click(function(){
    hmTab();
 });
+$('[hm-direct-step="wizard"]').click(function(){
+   hmWizardDirectStep();
+});
 $('.hm-side-menu-link').click(function(){
    hmSideMenuLink();
 });
@@ -191,50 +194,31 @@ function closeSidePanel(id){
 }
 
 /*------------------------------------wizard js -----------------------------------*/ 
-function hmWizardPrev(){
-    var parent = $(event.target).closest('.hm-wizard-wrapper');
-    var currentStep = $(event.target).closest('.hm-step-content');
-    var stepCount = currentStep.attr('hm-step-content');
-    var stepEle = $('.hm-wizard-step-wrapper',parent).first().find('[hm-step="'+stepCount+'"]');
-    currentStep.removeClass('active');
-    currentStep.prev().addClass('active');
-    stepEle.removeClass('active');
-    stepEle.prev().removeClass('done');
-    stepEle.prev().addClass('active');
-}
-function hmWizardNext(){
-    var parent = $(event.target).closest('.hm-wizard-wrapper');
-    var currentStep = $(event.target).closest('.hm-step-content');
-    var stepCount = currentStep.attr('hm-step-content');
-    var stepEle = $('.hm-wizard-step-wrapper',parent).first().find('[hm-step="'+stepCount+'"]');
-    currentStep.removeClass('active');
-    currentStep.next().addClass('active');
-    stepEle.removeClass('active');
-    stepEle.addClass('done');
-    stepEle.next().addClass('active');
+
+
+
+function hmWizardDirectStep(){
+    var eleCurrent = $(event.target).closest('.hm-wizard-step');
+    var currentStep = eleCurrent.attr('hm-step');
+    var parent = eleCurrent.closest('.hm-wizard-wrapper').attr('id');
+    var parent = '#'+parent;
+    hmWizardJumpStep({
+        wrapperId : parent,
+        step : currentStep
+    });
 }
 
-function hmWizardJumpStep(stepCount){
-    var step;
-    var eleCurrent;
-    if(stepCount){
-        step = stepCount;
-        eleCurrent = $(event.target).closest('.hm-wizard-step-wrapper').find('[hm-step="'+step+'"]');
+function hmWizardJumpStep(option){
+    var stepCount = $(option.wrapperId+" .hm-wizard-step-wrapper").first().find('[hm-step="'+option.step+'"]');
+    var stepContent = $(option.wrapperId+" .hm-wizard-content-wrapper").first().find('[hm-step-content="'+option.step+'"]');
+    $(option.wrapperId+" .hm-wizard-step-wrapper").first().find('.hm-wizard-step').removeClass('active');
+    $(option.wrapperId+" .hm-wizard-step-wrapper").first().find('.hm-wizard-step').removeClass('done');
+    $(option.wrapperId+" .hm-wizard-content-wrapper").first().find('.hm-step-content').removeClass('active');
+    $(stepCount).addClass('active');
+    $(stepContent).addClass('active');
+    if($(option.wrapperId).hasClass('hm-wizard-with-mark-done')){
+        $(stepCount).prevAll().addClass('done');  
     }
-    else{
-        step = eleCurrent.attr('hm-step');
-        eleCurrent = $(event.target).closest('.hm-wizard-step');
-    }
-    var parent = eleCurrent.closest('.hm-wizard-wrapper');
-    var allContent = $('.hm-wizard-content-wrapper',parent).first();
-    eleCurrent.prevAll().removeClass('active');
-    eleCurrent.prevAll().addClass('done');
-    eleCurrent.nextAll().removeClass('active');
-    eleCurrent.nextAll().removeClass('done');
-    eleCurrent.removeClass('done');
-    eleCurrent.addClass('active');
-    $('.hm-step-content',allContent).removeClass('active');
-    $('[hm-step-content="'+step+'"]',allContent).first().addClass('active');
 }
 
 /*------------------------------------extra view radio checkbox js -----------------------------------*/

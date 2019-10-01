@@ -59,6 +59,8 @@
   .hm .hm-wizard-step {
     position: relative;
     max-width: 100%; }
+  .hm .hm-wizard-step[hm-direct-step] {
+    cursor: pointer; }
   .hm .hm-wizard-stretch .hm-wizard-step {
     flex-basis: 0;
     flex-grow: 1; }

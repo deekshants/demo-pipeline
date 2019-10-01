@@ -16,7 +16,7 @@
             </div>
         </header>
         <div class="hm-side-panel-body  px-4">
-            <div class="hm-wizard-wrapper" style="height: 100%;">
+            <div class="hm-wizard-wrapper hm-wizard-with-mark-done" style="height: 100%;" id="inviteEmployeeWizard">
                 <div class="row" style="height: 100%;">
                     <div class="col-12 col-md-3 border-right">
                         <div class="hm-wizard-step-wrapper hm-step-vertical">
@@ -91,7 +91,7 @@
                                         </div>
                                         
                                         <div>
-                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 2});">
                                                 Next
                                             </button>
                                         </div>
@@ -200,7 +200,7 @@
                                         <div class="mt-4">
                                             <div class="row no-gutters">
                                                 <div class="hm-col">
-                                                    <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                                    <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 1});">
                                                         Previous
                                                     </button>
                                                 </div>

@@ -16,11 +16,11 @@
             </div>
         </header>
         <div class="hm-side-panel-body  px-4">
-            <div class="hm-wizard-wrapper" style="height: 100%;">
+            <div class="hm-wizard-wrapper " style="height: 100%;" id="leaveTypeWizard">
                 <div class="row" style="height: 100%;">
                     <div class="col-12 col-md-3 border-right">
                         <div class="hm-wizard-step-wrapper hm-step-vertical">
-                            <div class="hm-wizard-step active" hm-step="1">
+                            <div class="hm-wizard-step active" hm-direct-step="wizard" hm-step="1">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         1
@@ -34,7 +34,7 @@
                                 </div>
                             </div> 
 
-                            <div class="hm-wizard-step " hm-step="2">
+                            <div class="hm-wizard-step " hm-direct-step="wizard" hm-step="2">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         2
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                             </div> 
-                            <div class="hm-wizard-step" hm-step="3">
+                            <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="3">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         3
@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hm-wizard-step" hm-step="4">
+                            <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="4">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         4
@@ -73,7 +73,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hm-wizard-step" hm-step="5">
+                            <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="5">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         5
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hm-wizard-step" hm-step="6">
+                            <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="6">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         6
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="hm-wizard-step" hm-step="7">
+                            <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="7">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         7
@@ -144,7 +144,7 @@
                                             <textarea class="form-control" id="" rows="1"></textarea>
                                         </div>
                                         <div>
-                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 2});">
                                                 Next
                                             </button>
                                         </div>
@@ -205,8 +205,6 @@
                                                     days per year
                                                 </p>
                                             </div>
-
-
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
                                                     <input class="form-check-input" type="radio" name="lvAnnualQuota"  value="">
@@ -265,9 +263,6 @@
                                         </div>
                                     </section>
 
-
-
-
                                     <section class="mb-4">
                                         <p>
                                             Does the credited Leave will expire after some time?
@@ -316,10 +311,10 @@
                                     </section>
                                     <div>
                                         <div class="mt-4">
-                                            <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                            <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 1});">
                                                 Previous
                                             </button>
-                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 3});">
                                                 Next
                                             </button>
                                         </div>
@@ -394,6 +389,96 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <style>
+                                            .hide{
+        display: none;
+    }
+   
+
+    .auto-input-wrapper{
+        position: relative;
+    }
+
+    .auto-input-wrapper input{
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 24px;
+    }
+    
+    .auto-icons{
+        position: absolute;
+        left: auto;
+        right: 5px;
+        top: 1px;
+        cursor: pointer;
+    }
+    .auto-list{
+        position: relative;
+        display: none;
+    }
+    .auto-list ul{
+        max-height: 160px;
+        overflow-y: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+        border: 1px solid #eee;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        background: white;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+    .auto-list ul li{
+        list-style: none;
+    }
+
+    .auto-option{
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .auto-current-option{
+        background: #eee;
+    }
+
+    .auto-input-has-value input{
+        background: #eee;
+        
+    }
+
+    .auto-input-error input{
+        color; red;
+        border: 1px solid red;
+    }
+    .auto-comp-active .auto-list {
+        display: block;
+    }
+
+    .auto-option:hover{
+        background: #eee;
+    }
+                                    </style>
+                                    <div id="example" class="form-group">
+                                        <label for="">Select User</label>
+                                        <div class="auto-input-wrapper">
+                                            <input class="form-control" type="text" placeholder="Search" >
+                                            <div class="auto-icons">
+                                                <i class="auto-icon-spin hide fa fa-spinner"></i>
+                                                <i class="auto-icon-search fa fa-search"></i>
+                                                <i class="auto-icon-close hide fa fa-times"></i>
+                                            </div>
+                                            <div class="auto-list">
+                                                <ul>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="hm-input-error-msg">
+
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Department</label>
                                         <input type="text" class="form-control">
@@ -424,10 +509,10 @@
                                     </div>
                                     <div>
                                         <div class="mt-4">
-                                            <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                            <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 2});">
                                                 Previous
                                             </button>
-                                            <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 4});">
                                                 Next
                                             </button>
                                         </div>
@@ -586,10 +671,10 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 3});">
                                             Previous
                                         </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">
                                             Next
                                         </button>
                                     </div>
@@ -685,10 +770,10 @@
 
 
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 4});">
                                             Previous
                                         </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 6});">
                                             Next
                                         </button>
                                     </div>
@@ -710,10 +795,10 @@
                                         </div>
                                     </section>
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">
                                             Previous
                                         </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardNext();">
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 7});">
                                             Next
                                         </button>
                                     </div>
@@ -759,7 +844,7 @@
                                         </div>
                                     </section>
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardPrev();">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 6});">
                                             Previous
                                         </button>
                                         <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Leave Type Added Successfully !', 'success', '#panelAddLeaveType')">
