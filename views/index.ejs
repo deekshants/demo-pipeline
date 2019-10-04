@@ -2,6 +2,7 @@
 <html>
 <head>
     <% include ./partials/head %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
 </head>
 
 <body class="hm hm-has-top-menu hm-has-side-menu">
@@ -14,37 +15,17 @@
 
     <main class="hm-main-view">
         <div class="p-3">
-            <style>
-                .hm-lookup-pills-wrapper{
-                    min-height: 36px;
-                    border-bottom: 2px solid #ddd;
-                    cursor: pointer;
-                }
-
-            </style>
-            <div>
-                <div class="form-group" id="example">
-                    <label for="" class=""><sup class="text-danger">*</sup>Country</label>
-                    <select id="" class="form-control" required="">
-                        <option>1111</option>
-                        <option>2222</option>
-                        <option>3333</option>
-                        <option>4444</option>
-                        <option>5555</option>
-                        <option>6666</option>
-                    </select>
-                    <div class="hm-lookup-pills-wrapper">
-                        
-                    </div>
-                    <div class="hm-lookup-results-wrapper" style="background: yellow;">
-                        
-                    </div>
-                    <div class="hm-input-error-msg">
-                        Required Field!
-                    </div>
+            
+            
+            
+            <div class="form-group">
+                <label class="bmd-label-static">Title</label>
+                <select id="aa" class="form-control dropdown-search"   multiple="multiple"></select>
+                <div class="hm-input-error-msg">
+                    Required Field!
                 </div>
             </div>
-
+            <img src="" alt="">
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <div class="row no-gutters">
@@ -63,88 +44,97 @@
 
     <footer>
         <% include ./partials/footer %>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
     </footer>
-    <script>
 
-        $(document).ready(function(){
-            hmLookup({ 
-                lookupId: '#example',
-                url: 'https://jsonplaceholder.typicode.com/users',
-                srchTerm: 'name'
-            });
+    
 
-            hml({ 
-                lookupId: '#example',
-                url: 'https://jsonplaceholder.typicode.com/users',
-                srchTerm: 'name'
-            });
-        });
+<script>
 
-        function hmLookup(option){
-           
-            var loopup = $(option.lookupId);
-            $('select', loopup).hide();
-            var resultsList = $('.hm-lookup-results-wrapper', loopup);
-
-            $('.hm-lookup-pills-wrapper',loopup).click(function(){
-                $.ajax({
-                  type:"GET",
-                  url:option.url,
-                  success: function(data) {
-                    //console.log(data);
-                    lookupListing(option.lookupId, data);
-                    //var liItem =                  data.filter(x=>x[option.srchTerm].toLowerCase().includes(term.toLowerCase()));
-                    //window[option.listingFn](option, liItem, autoInput);
-                  },
-                  error: function() {
-                    //$(ele).addClass('auto-comp-active');
-                    //$(autoSpin).addClass('hide');
-                  }
-                });
-            });
-        }
-
-        function lookupListing(id, data){
-            $.each(data, function(n, item){
-                let HTML = `<p class="" hm-lookup-item-id="`+item.id+`"> ` + item.name+ `</p>`;
-                
-                $(id+' .hm-lookup-results-wrapper').append(HTML).click(function(){
-                    lookupSelect(id, this)
-                });
-                
-                
-                //$(this).bind(lookupSelect(id, this))
-            });
-        }
-        function lookupSelect(id, ele){
-            let HTML = `<span class="hm-pill" > ` + $(ele).text()+ `</span>`;
-            $(id+' .hm-lookup-pills-wrapper').append(HTML);
-        }
-
-        ;(function(global, $) {
-            var hml = function(option) {
-                return new hml.init(option);   
-            }
-
-            hml.prototype = {
         
-                // 'this' refers to the calling object at execution time
-                fullName: function() {
-                    return this;   
+
+
+$(document).ready(function(){
+
+    /*var data = [{
+        id: 0,
+        text: '<div style="color:green">enhancement</div>',
+        html: '<div style="color:green">enhancement</div><div><b>Select2</b> supports custom themes using the theme option so you can style Select2 to match the rest of your application.</div>',
+        title: 'enchancement'
+    }, {
+        id: 1,
+        text: '<div style="color:red">bug</div>',
+        html: '<div style="color:red">bug</div><div><small>This is some small text on a new line</small></div>',
+        title: 'bug'
+    }];*/
+    $.ajax({
+        type: 'GET',
+        contentType: 'application/json; charset=utf-8',
+        url:'https://reqres.in/api/users',
+        success: function(result) {
+            //console.log(result.data);
+            $("#aa").select2({
+                //maximumInputLength: 20,
+                //minimumInputLength: 1,
+                data: result.data,
+                //cache: true,
+                //multiple: true,
+              
+               
+                escapeMarkup: function(markup) {
+                    return markup;
+                },
+                templateResult: function(data) {
+                    return '<span>'+data.first_name+'</span>';
+                },
+                templateSelection: function(data) {
+                    return '<span>'+data.first_name+'</span>';
                 }
-            };
-            
+            });
+            //$('#aa').val(['1', '2']).trigger('change');
+        },  
+        error: function() {
+           
+        }
+    });
+    //$("#aa").select2("val", ["1", "2"]);
 
-            // the actual object is created here, allowing us to 'new' an object without calling 'new'
-            hml.init = function(option) {
-                var self = this;
-                //var self.option = option;
-            }
-            
-            // trick borrowed from jQuery so we don't have to use the 'new' keyword
-            hml.init.prototype = hml.prototype;
+   /* $( "#aa" ).select2({        
+  ajax: {
+    url: "https://reqres.in/api/users",
+    dataType: 'json',
+    delay: 0,
+    data: function (params) {
+      return {
+        q: params.term // search term
+      };
+    },
+    processResults: function (data) {
+      // parse the results into the format expected by Select2.
+      // since we are using custom formatting functions we do not need to
+      // alter the remote JSON data
+      return {
+        results: $.map(data.data, function(obj) {
+            return { id: obj.id, text: obj.first_name };
+        })
 
-        }(window, jQuery));
+      };
+
+    },
+    cache: false
+  },
+  minimumInputLength: 1
+});*/
+
+
+
+});
+
+
+
+    
+
+        
 </script>
 </body>
 </html>
