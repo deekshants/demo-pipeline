@@ -2,7 +2,7 @@
 <html>
 <head>
     <% include ./partials/head %>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" /> -->
 </head>
 
 <body class="hm hm-has-top-menu hm-has-side-menu">
@@ -20,7 +20,7 @@
             
             <div class="form-group">
                 <label class="bmd-label-static">Title</label>
-                <select id="aa" class="form-control dropdown-search"   multiple="multiple"></select>
+                <select id="aa" class="form-control dropdown-search"  multiple="multiple" ></select>
                 <div class="hm-input-error-msg">
                     Required Field!
                 </div>
@@ -67,7 +67,7 @@ $(document).ready(function(){
         html: '<div style="color:red">bug</div><div><small>This is some small text on a new line</small></div>',
         title: 'bug'
     }];*/
-    $.ajax({
+    /*$.ajax({
         type: 'GET',
         contentType: 'application/json; charset=utf-8',
         url:'https://reqres.in/api/users',
@@ -96,35 +96,51 @@ $(document).ready(function(){
         error: function() {
            
         }
-    });
+    });*/
     //$("#aa").select2("val", ["1", "2"]);
 
-   /* $( "#aa" ).select2({        
-  ajax: {
-    url: "https://reqres.in/api/users",
-    dataType: 'json',
-    delay: 0,
-    data: function (params) {
-      return {
-        q: params.term // search term
-      };
-    },
-    processResults: function (data) {
-      // parse the results into the format expected by Select2.
-      // since we are using custom formatting functions we do not need to
-      // alter the remote JSON data
-      return {
-        results: $.map(data.data, function(obj) {
-            return { id: obj.id, text: obj.first_name };
-        })
+    $( "#aa" ).select2({        
+            ajax: {
+                 url: "https://api.github.com/search/repositories",
+                dataType: 'json',
+                delay: 25,
 
-      };
+              
+                data: function (params) {
+                  return {
+                    q: params.term, // search term
+                    page: params.page
+                  };
+                },
+                processResults: function (data, params) {
+                  // parse the results into the format expected by Select2
+                  // since we are using custom formatting functions we do not need to
+                  // alter the remote JSON data, except to indicate that infinite
+                  // scrolling can be used
+                  console.log(data, params);
+                  params.page = params.page || 1;
 
-    },
-    cache: false
-  },
-  minimumInputLength: 1
-});*/
+                  return {
+                    results: data.items,
+                    pagination: {
+                      more: (params.page * 30) < data.total_count
+                    }
+                  };
+                },
+            cache: false
+        },
+        minimumInputLength: 1,
+        escapeMarkup: function(markup) {
+            return markup;
+        },
+        templateResult: function(data) {
+            return '<div>'+data.full_name+'</div>';
+        },
+        templateSelection: function(data) {
+            return '<div class="text-truncate hm-max-w-150">'+data.full_name+'</div>';
+        } 
+    });
+    $('#aa').val(['36', '37']).trigger('change');
 
 
 
