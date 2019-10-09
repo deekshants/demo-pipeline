@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+<style>
+
+
+</style>
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <aside>
+        <% include ../partials/side-menu %>
+    </aside>
+
+    <main class="hm-main-view">
+        <div class="p-3">   
+            <div class="card hm-tmr-0 hm-bmr-15 ">
+                <div>
+                    <div class="row no-gutters">
+                        <div class="">
+                            <img src="https://i2.wp.com/float8ion.com/wp-content/uploads/2015/12/random-user-31.jpg" alt="" height="180" style="border-top-left-radius: 6px; border-bottom-left-radius: 6px;">
+                        </div>
+                        <div class="p-3 hm-col">
+                            <div class="row no-gutters">
+                                <div class="hm-col">
+                                    <h3 class="hm-mr-0">User Name</h3>
+                                </div>
+                                <div class="pl-3">
+                                    <button class="btn btn-info btn-sm">
+                                       Invite
+                                    </button>
+                                </div>
+                                <div class="pl-3">
+                                   <div class="nav-item dropdown dropleft">
+                                        <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white  hm-mr-0" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                          <i class="material-icons">more_horiz</i>
+                                       </a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#0">Disable Login</a>
+                                            <a class="dropdown-item" href="#0">Initiate Exit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-muted hm-text-size-12">
+                                <div class="">
+                                    <span class="pr-3">
+                                        <i class="fa fa-map-marker"></i>
+                                        Athena Jaipur
+                                    </span>
+                                    <span class="pr-3">
+                                        <i class="fa fa-envelope"></i>
+                                        user@email.com
+                                    </span>
+                                    <span class="pr-3">
+                                        <i class="fa fa-phone"></i>
+                                        1234567890
+                                    </span>
+                                </div>
+                            </div>
+                            <div class=" hm-line-top">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-lg-2 pt-3">
+                                        <div class="text-muted hm-text-size-11">
+                                            Employee No.
+                                        </div>
+                                        <div class="hm-text-size-13 ">
+                                            016Y2017
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-3 pt-3">
+                                        <div class="text-muted hm-text-size-11">
+                                            Job Title
+                                        </div>
+                                        <div class="hm-text-size-13 ">
+                                            Senior Software Developer
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-2 pt-3">
+                                        <div class="text-muted hm-text-size-11">
+                                            Depertment
+                                        </div>
+                                        <div class="hm-text-size-13 ">
+                                            IT
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-lg-2 pt-3">
+                                        <div class="text-muted hm-text-size-11">
+                                            Reporting To
+                                        </div>
+                                        <div class="hm-text-size-13 ">
+                                            Some User
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12 col-lg-3 pt-3">
+                                        <div class="text-muted hm-text-size-11">
+                                            Profile Complition
+                                        </div>
+                                        <div>
+                                            <div class="progress-container progress-primary">
+                                                <span class="progress-badge">30%</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="card pb-3 hm-tmr-0">
+                <section class="hm-tab-wrapper">
+                    <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                        <div class=" hm-tab-link active btn" hmtab="empDetailsBasic">
+                            Basic
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empDetailsJob">
+                            Job
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empDetailsFinance">
+                            Finance
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empDetailsDoc">
+                            Documents
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empDetailsAssets">
+                            Assets
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="empDetailsPerf">
+                            Performance
+                        </div>
+                    </div>
+                    <div class="hm-tab-content-wrapper">
+                        <div class="hm-tab-content active" hmtab="empDetailsBasic">
+                            <% include basic/view_empDetailsBasic %>
+                        </div>
+                        <div class="hm-tab-content" hmtab="empDetailsJob">
+                            <% include job/view_empDetailsJob %>
+                        </div>
+                        <div class="hm-tab-content" hmtab="empDetailsFinance">
+                            
+                        </div>
+                        <div class="hm-tab-content" hmtab="empDetailsDoc">
+                            
+                        </div>
+                        <div class="hm-tab-content" hmtab="empDetailsAssets">
+                            
+                        </div>
+                        <div class="hm-tab-content" hmtab="empDetailsPerf">
+                            
+                        </div>
+                    </div>
+                </section>
+            </div>
+           
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+        <script>
+            
+            
+            $(document).ready(function(){
+                
+            });
+        </script>
+    </footer>
+    <script>
+
+
+    </script>
+</body>
+</html>

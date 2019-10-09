@@ -2,7 +2,6 @@
 <html>
 <head>
     <% include ./partials/head %>
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" /> -->
 </head>
 
 <body class="hm hm-has-top-menu hm-has-side-menu">
@@ -15,9 +14,6 @@
 
     <main class="hm-main-view">
         <div class="p-3">
-            
-            
-            
             <div class="form-group">
                 <label class="bmd-label-static">Title</label>
                 <select id="aa" class="form-control dropdown-search"  multiple="multiple" ></select>
@@ -25,7 +21,8 @@
                     Required Field!
                 </div>
             </div>
-            <img src="" alt="">
+
+            
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
                     <div class="row no-gutters">
@@ -44,68 +41,18 @@
 
     <footer>
         <% include ./partials/footer %>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
     </footer>
-
-    
 
 <script>
 
-        
-
-
 $(document).ready(function(){
 
-    /*var data = [{
-        id: 0,
-        text: '<div style="color:green">enhancement</div>',
-        html: '<div style="color:green">enhancement</div><div><b>Select2</b> supports custom themes using the theme option so you can style Select2 to match the rest of your application.</div>',
-        title: 'enchancement'
-    }, {
-        id: 1,
-        text: '<div style="color:red">bug</div>',
-        html: '<div style="color:red">bug</div><div><small>This is some small text on a new line</small></div>',
-        title: 'bug'
-    }];*/
-    /*$.ajax({
-        type: 'GET',
-        contentType: 'application/json; charset=utf-8',
-        url:'https://reqres.in/api/users',
-        success: function(result) {
-            //console.log(result.data);
-            $("#aa").select2({
-                //maximumInputLength: 20,
-                //minimumInputLength: 1,
-                data: result.data,
-                //cache: true,
-                //multiple: true,
-              
-               
-                escapeMarkup: function(markup) {
-                    return markup;
-                },
-                templateResult: function(data) {
-                    return '<span>'+data.first_name+'</span>';
-                },
-                templateSelection: function(data) {
-                    return '<span>'+data.first_name+'</span>';
-                }
-            });
-            //$('#aa').val(['1', '2']).trigger('change');
-        },  
-        error: function() {
-           
-        }
-    });*/
-    //$("#aa").select2("val", ["1", "2"]);
 
     $( "#aa" ).select2({        
             ajax: {
-                 url: "https://api.github.com/search/repositories",
+                url: "https://api.github.com/search/repositories",
                 dataType: 'json',
                 delay: 25,
-
-              
                 data: function (params) {
                   return {
                     q: params.term, // search term
@@ -140,7 +87,7 @@ $(document).ready(function(){
             return '<div class="text-truncate hm-max-w-150">'+data.full_name+'</div>';
         } 
     });
-    $('#aa').val(['36', '37']).trigger('change');
+    
 
 
 
