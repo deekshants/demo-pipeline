@@ -18,7 +18,34 @@
 .hm-setup-menu-item.active .hm-setup-menu-item-sub{
     font-weight: bold;
 }
+/* --------------------user image uploder------------------------ */
+.hm-user-img-wrapper{
+    display: block;
+    cursor: pointer;
+    width: 180px;
+    height: 180px;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    background: #eee;
+    overflow: hidden;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.hm-user-img-wrapper input{
+    display: none;
+}
+.hm-user-img-wrapper img{
+    max-height: 100%;
+}
 
+.hm-user-img-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+}
 /* --------------------hm tab------------------------ */
 
 .hm-tab-link{

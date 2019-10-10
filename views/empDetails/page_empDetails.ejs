@@ -3,10 +3,7 @@
 <head>
     <% include ../partials/head %>
 </head>
-<style>
 
-
-</style>
 <body class="hm hm-has-top-menu hm-has-side-menu">
     <header>
         <% include ../partials/header %>
@@ -14,14 +11,18 @@
     <aside>
         <% include ../partials/side-menu %>
     </aside>
-
+    
     <main class="hm-main-view">
         <div class="p-3">   
             <div class="card hm-tmr-0 hm-bmr-15 ">
                 <div>
                     <div class="row no-gutters">
                         <div class="">
-                            <img src="https://i2.wp.com/float8ion.com/wp-content/uploads/2015/12/random-user-31.jpg" alt="" height="180" style="border-top-left-radius: 6px; border-bottom-left-radius: 6px;">
+                            <label class="hm-user-img-wrapper">
+                                <img src="https://i2.wp.com/float8ion.com/wp-content/uploads/2015/12/random-user-31.jpg" id="userProfileImg" height="180"/>
+                                <div class="hm-user-img-icon"><i class="material-icons">edit</i></div>
+                                <input type="file" class="" id="userImgInput" accept="image/x-png,image/jpeg"/>
+                            </label>
                         </div>
                         <div class="p-3 hm-col">
                             <div class="row no-gutters">
@@ -166,20 +167,50 @@
            
         </div>
     </main>
-
+    <% include basic/modals/modal_cropSaveUserImg %>
     <footer>
         <% include ../partials/footer %>
-        <script>
-            
-            
-            $(document).ready(function(){
-                
-            });
-        </script>
     </footer>
     <script>
-
-
+        $(document).ready(function(){
+            var $uploadCrop, rawImg;
+            $('#userImgInput').on('change', function () {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        rawImg = e.target.result;
+                        $('#modalCropUserProfileImg').modal('show');
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+                else {
+                    swal("Sorry - you're browser doesn't support the FileReader API");
+                } 
+            });
+            $uploadCrop = $('#cropAreaWrapper').croppie({
+                viewport: {
+                    width: 200,
+                    height: 200,
+                },
+                enforceBoundary: false,
+                enableExif: true
+            });
+            $('#modalCropUserProfileImg').on('shown.bs.modal', function(){
+                $uploadCrop.croppie('bind', {
+                    url: rawImg
+                });
+            });
+            $('#cropAndSave').on('click', function (ev) {
+                $uploadCrop.croppie('result', {
+                    type: 'base64',
+                    format: 'jpeg'
+                }).then(function (resp) {
+                    $('#userProfileImg').attr('src', resp);
+                    $('#modalCropUserProfileImg').modal('hide');
+                });
+            });
+            
+        });
     </script>
 </body>
 </html>

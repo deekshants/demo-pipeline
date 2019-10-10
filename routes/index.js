@@ -14,6 +14,9 @@ router.get('/', function(req, res, next) {
 router.get('/signup', function(req, res) {
     res.render('signups/page_Signup', {baseUrl: process.env.BASE_URL});
 });
+router.get('/signup-step2', function(req, res) {
+    res.render('signups/page_SignupStep2', {baseUrl: process.env.BASE_URL});
+});
 router.get('/company/signup', function(req, res) {
     res.render('signups/page_SignupWithDomain', {baseUrl: process.env.BASE_URL});
 });

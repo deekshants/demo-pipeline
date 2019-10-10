@@ -9498,14 +9498,14 @@ fieldset[disabled][disabled] .has-rose .form-control, .has-rose .form-control.di
     font-size: 0.875rem; }
   .bmd-form-group .bmd-label-floating,
   .bmd-form-group .bmd-label-placeholder {
-    top: 2.3125rem; }
+    top: 2.1125rem; }
   .bmd-form-group .is-focused .bmd-label-floating,
   .bmd-form-group .is-filled .bmd-label-floating {
-    top: 1rem;
+    top: 0.8rem;
     left: 0;
     font-size: 0.6875rem; }
   .bmd-form-group .bmd-label-static {
-    top: 0.35rem;
+    top: 0.15rem;
     left: 0;
     font-size: 0.875rem; }
   .bmd-form-group .bmd-help {
@@ -9638,16 +9638,16 @@ label {
 
 .bmd-label-floating,
 .bmd-label-placeholder {
-  top: 2.3125rem; }
+  top: 2.1125rem; }
 
 .is-focused .bmd-label-floating,
 .is-filled .bmd-label-floating {
-  top: 1rem;
+  top: 0.8rem;
   left: 0;
   font-size: 0.6875rem; }
 
 .bmd-label-static {
-  top: 0.35rem;
+  top: 0.15rem;
   left: 0;
   font-size: 0.875rem; }
 
@@ -11432,7 +11432,7 @@ footer {
       box-shadow: none; } }
   .card .card-header {
     border-radius: 3px;
-    padding: 1rem 15px;
+    padding: 0.8rem 15px;
     margin-left: 15px;
     margin-right: 15px;
     margin-top: -30px;
@@ -11613,7 +11613,7 @@ footer {
   min-height: 420px; }
 
 .card-login .social-line {
-  margin-top: 1rem;
+  margin-top: 0.8rem;
   text-align: center;
   padding: 0; }
   .card-login .social-line .btn {

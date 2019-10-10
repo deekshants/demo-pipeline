@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="hm">
+    <main class="hm-main-view">
+       <section class="hm-mr-0-auto hm-max-w-800">
+            <div class="text-center pt-5">
+                <a href="">
+                    <img src="<%= baseUrl %>/img/logo.png" alt="" height="24">
+                </a>
+            </div>
+
+            <div class="card p-4">
+                
+                <h3 class="blockquote">
+                    <span class="text-muted legened">
+                        Domain Registration For: 
+                    </span>
+                   
+                    <span class="title">
+                        athena.hrm.com
+                    </span>
+                </h3>
+                <form class="form" method="" action="">
+                    <div class="">
+                        
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>First Name</label>
+                                    <input type="text" class="form-control">
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Last Name</label>
+                                    <input type="text" class="form-control">
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Company Name</label>
+                                    <input type="text" class="form-control">
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Business Email</label>
+                                    <input type="email" class="form-control">
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Password</label>
+                                    <input type="password" class="form-control" required="">
+                                    <span class="bmd-help hm-text-dull">Minimum 6 characters.</span>
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Confirm Password</label>
+                                    <input type="password" class="form-control" required="">
+                                    <span class="bmd-help hm-text-dull">Minimum 6 characters. </span>
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class=" mt-4 ">
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value=""> Accept 
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                    <a href="">Terms & Conditions</a>
+                                </div>
+                            </div>
+                            <div class="pl-3">
+                                <button type="button" class="btn btn-primary " onclick="dummyRegistration()">
+                                    Register Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+            <div class="text-center">
+                <span class="text-muted">
+                    Already have an account?
+                </span>
+                <a href="/login">Login here.</a>
+            </div>
+
+        </section>
+        
+    </main>
+    <footer>
+        <% include ../partials/footer %>
+        <script>
+
+        </script>
+    </footer>
+</body>
+</html>
