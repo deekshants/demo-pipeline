@@ -698,13 +698,115 @@
                                     <h3>
                                         Leave Approval
                                     </h3>
-
                                     <section class="mb-4">
-                                        <div class="row no-gutters align-items-end mb-2">
+                                        <div >
+                                           
                                             <p>
-                                                Leave Duration(s) Allowed :
+                                                Approval is required for this Leave?
                                             </p>
+                                            <div>
+                                                <div class="form-check form-check-radio">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="lvApprovalReq"   hm-watch="radio" checked="">
+                                                        No, Employee can take this Leave without approval.
+                                                        <span class="circle">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check form-check-radio">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="lvApprovalReq"   hm-watch="radio" hm-extra-view="#leaveApprovalReq">
+                                                        Yes, Approval is required.
+                                                        <span class="circle">
+                                                            <span class="check"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="hide mb-5 ml-5" id="leaveApprovalReq">
+                                                    <style>
+                                                        .hm-leave-approval-level-wrapper{
+                                                            position: relative;
+                                                        }
+                                                        .hm-leave-approval-level-wrapper .badge{
+                                                            position: relative;
+                                                            z-index: 10;
+                                                        }
+                                                        .hm-leave-approval-level-wrapper:before{
+                                                            content: '';
+                                                            position: absolute;
+                                                            width: 1px;
+                                                            
+                                                            border: 1px dashed #00bcd4;
+                                                            left: 15px;
+                                                            top:10px;
+                                                            bottom: -25px;
+                                                            z-index: 5px;
+                                                        }
+                                                    </style>
+                                                    <div class="hm-leave-approval-level-wrapper">
+                                                        <!-- level -->
+                                                        <div class="mb-4">
+                                                            <div class="row no-gutters">
+                                                                <div class="hm-col">
+                                                                    <div class="hm-text-normal">
+                                                                        <span class="badge badge-pill badge-info">Level 1</span>  Approvers
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pl-3">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
+                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
+                                                            </div>
+                                                        </div>
+                                                        <!-- level -->
+                                                        <div class="mb-4">
+                                                            <div class="row no-gutters">
+                                                                <div class="hm-col">
+                                                                    <div class="hm-text-normal">
+                                                                        <span class="badge badge-pill badge-info">Level 2</span>  Approvers
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pl-3">
+                                                                    <button class="btn btn-white hm-mr-0 hm-pd-5" title="Delete Level">
+                                                                        <i class="material-icons">close</i>
+                                                                    </button> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
+                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
+                                                            </div>
+                                                        </div>
+                                                        <!-- level -->
+                                                        <!-- <div class="mb-4">
+                                                            <div class="row no-gutters">
+                                                                <div class="hm-col">
+                                                                    <div class="hm-text-normal">
+                                                                        <span class="badge badge-pill badge-info">Level 3</span>  Approvers
+                                                                    </div>
+                                                                </div>
+                                                                <div class="pl-3">
+                                                                    <button class="btn btn-white hm-mr-0 hm-pd-5" title="Delete Level">
+                                                                        <i class="material-icons">close</i>
+                                                                    </button> 
+                                                                </div>
+                                                            </div>
+                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
+                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
+                                                            </div>
+                                                        </div> -->
+                                                    </div>
+                                                    <div>
+                                                        <button class="btn btn-white btn-sm">
+                                                            Add New Level
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        
                                     </section>
                                     <div>
                                         <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">

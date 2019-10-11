@@ -7,7 +7,6 @@
             <div class=" hm-tab-link  btn" hmtab="locations">
                 Locations
             </div>
-          
         </div>
         <div class="hm-tab-content-wrapper">
             <div class="hm-tab-content active" hmtab="companySettings">
@@ -22,14 +21,7 @@
                 <div class=" ">
                     <form class="">
                         <div class="row">
-                            <div class="col-12 col-md-5 ">
-                                <div class="form-group ">
-                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Company Name</label>
-                                    <input type="text" class="form-control" value="Athenalogics Solution Pvt. Ltd." required="">
-                                    <div class="hm-input-error-msg">
-                                        Required Field!
-                                    </div>
-                                </div>
+                            <div class="col-12 col-md-4 ">
                                 <div class="form-group ">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup> Company Domain </label>
                                     <div class="input-group">
@@ -38,55 +30,49 @@
                                             <span class="input-group-text">.hrm.com</span>
                                         </div>
                                     </div>
-                                    
-                                    <div class="hm-input-error-msg">
-                                        Required Field!
-                                    </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="bmd-label-floating">Company Website</label>
                                     <input type="text" class="form-control" value=" www.athenalogics.com">
                                 </div>
-
-                                
                             </div>
-                            <div class="col-12 col-md-1"></div>
-                            <div class="col-12 col-md-6">
-
+                           
+                            <div class="col-12 col-md-4">
                                 <div class="form-group ">
-                                    <label class="bmd-label-floating">Office Phone</label>
-                                    <input type="tel" class="form-control" >
+                                    <label class="bmd-label-floating"><sup class="text-danger">*</sup>Company Name</label>
+                                    <input type="text" class="form-control" value="Athenalogics Solution Pvt. Ltd." required="">
+                                    <div class="hm-input-error-msg">
+                                        Required Field!
+                                    </div>
                                 </div>
                                 <div class="form-group ">
                                     <label class="bmd-label-floating">Office Email</label>
                                     <input type="email" class="form-control" >
                                 </div>
-                                <div class="form-group form-file-upload ">
-                                    <input type="file" multiple="" class="inputFileHidden">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control inputFileVisible" placeholder="Upload Logo">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-fab btn-round btn-primary">
-                                                <i class="material-icons">attach_file</i>
-                                            </button>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                
-                                
-
-                               
-
                             </div>
-
+                            
+                            <div class="col-12 col-md-4">
+                                <div class="pb-2">    
+                                    <div class="text-muted hm-text-size-11">
+                                        Company Logo
+                                    </div>
+                                    <label class="hm-company-logo-wrapper">
+                                        <img src="<%= baseUrl %>/img/company-logo-placeholder-img.png" id="editCompanyLogo" height="50"/>
+                                        <div class="hm-edit-logo-icon"><i class="material-icons">edit</i></div>
+                                        <input type="file" class="hide" id="companyLogoInput" accept="image/x-png,image/jpeg"/>
+                                    </label>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="bmd-label-floating">Office Phone</label>
+                                    <input type="tel" class="form-control" >
+                                </div>
+                            </div>
                         </div>
 
                         <div>
                             <button class="btn btn-primary">
                                 Save Changes
                             </button>
-                           
                         </div>
                     </form>
                 </div>
@@ -190,3 +176,4 @@
 </div>
 
 <% include ../company/modals/modal_addNewLocation %>
+<% include ../company/modals/modal_cropSaveCompanyLogo %>

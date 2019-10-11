@@ -127,13 +127,46 @@
     </footer>
 
     <script>
-            
-            
         $(document).ready(function(){
-
+            var $uploadLogo, rawLogo;
+            $('#companyLogoInput').on('change', function () {
+                if (this.files && this.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        rawLogo = e.target.result;
+                        $('#modalCropCompanyLogo').modal('show');
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+                else {
+                    swal("Sorry - you're browser doesn't support the FileReader API");
+                } 
+            });
+            $uploadLogo = $('#cropLogoWrapper').croppie({
+                viewport: {
+                    width: 100,
+                    height: 50,
+                },
+                fillColor: '#fff',
+                enforceBoundary: false,
+                enableExif: true
+            });
+            $('#modalCropCompanyLogo').on('shown.bs.modal', function(){
+                $uploadLogo.croppie('bind', {
+                    url: rawLogo
+                });
+            });
+            $('#cropAndSaveLogo').on('click', function (ev) {
+                $uploadLogo.croppie('result', {
+                    type: 'base64',
+                    format: 'png'
+                }).then(function (resp) {
+                    $('#editCompanyLogo').attr('src', resp);
+                    $('#modalCropCompanyLogo').modal('hide');
+                });
+            });
             
         });
-
     </script>
    
 </body>

@@ -17,6 +17,7 @@ background: #ccc;
   /***********************************/
   /* --------------------company setup vertical tab------------------------ */
   /* --------------------user image uploder------------------------ */
+  /* --------------------company logo uploder------------------------ */
   /* --------------------hm tab------------------------ */
   /* --------------------error ------------------------ */
   /* -----------min width style start----------------- */
@@ -617,6 +618,22 @@ background: #ccc;
     right: 10px;
     color: #fff;
     text-shadow: 0 0 10px #000; }
+  .hm .hm-company-logo-wrapper {
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    margin: 0;
+    position: relative;
+    text-align: center;
+    background: #eee;
+    border-radius: 4px;
+    margin-right: 30px; }
+  .hm .hm-edit-logo-icon {
+    position: absolute;
+    bottom: 0;
+    right: -24px;
+    color: #9c27b0; }
   .hm .hm-tab-link {
     cursor: pointer; }
   .hm .hm-tab-content {
