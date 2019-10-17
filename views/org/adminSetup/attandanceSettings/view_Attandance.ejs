@@ -1,0 +1,328 @@
+<div class="card p-3 hm-tmr-0">
+    <section class="hm-tab-wrapper">
+        <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+            <div class=" hm-tab-link active btn" hmtab="workShifts">
+                Work Shifts
+            </div>
+            <div class=" hm-tab-link  btn" hmtab="weekOffs">
+                Week Offs
+            </div>
+            <div class=" hm-tab-link  btn" hmtab="TimeTracking">
+                Time Tracking Policies
+            </div>
+        </div>
+        <div class="hm-tab-content-wrapper">
+            <div class="hm-tab-content active" hmtab="workShifts">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Work Shifts
+                        </h3>
+                        <p>
+                            Manage all work shifts for employee
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewShift');">
+                                    Add Shift
+                                </button>
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>   
+                    <table class="table table-hover" align="left">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Timimg</th>
+                                <th scope="col">Applied To</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>
+                                        General Shift
+                                    </span>
+                                    <span class="badge badge-pill badge-info">
+                                        default
+                                    </span>
+                                </td>
+                                <td>09:00 AM  - 06:00 PM</td>
+                                <td>12 Employees</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Archived">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Night Shift</td>
+                                <td>08:00 PM  - 05:00 AM</td>
+                                <td>12 Employees</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Archived">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="hm-tab-content " hmtab="weekOffs">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Weekly Offs
+                        </h3>
+                        <p>
+                            Manage week offs for employee.
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewWeekoff');">
+                                    Add Week off
+                                </button>
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table class="table table-hover" align="left">
+                            <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Week Off</th>
+                                <th scope="col">Applied To</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span>
+                                        General Weekoff
+                                    </span>
+                                    <span class="badge badge-pill badge-info">
+                                        default
+                                    </span>
+                                </td>
+                                <td>2nd Saturday + 4th Saturday + All Sundays</td>
+                                <td>12 Employees</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Archived">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span>
+                                        Managment Weekoff
+                                    </span>
+                                </td>
+                                <td>All Saturdays + All Sundays</td>
+                                <td>12 Employees</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Archived">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="hm-tab-content " hmtab="TimeTracking">
+                <div class="">
+                    <div class="pt-2">
+                        <h3 class="hm-mr-0">
+                            Time Tracking Policies
+                        </h3>
+                        <p>
+                            Manage time tracking policies for employee.
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewTimePolicy');">
+                                    Add Time Policy
+                                </button>
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <table class="table table-hover" align="left">
+                            <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Applied To</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <span>
+                                            General Time Tracking Policy
+                                        </span>
+                                        <span class="badge badge-pill badge-info">
+                                            default
+                                        </span>
+                                    </div>
+                                    <div class="hm-text-size-11 hm-text-dull">
+                                        Desctiption Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    </div>
+                                </td>
+                                <td>12 Employees</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Archived">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <span>
+                                            Flaxible Time Tracking Policy
+                                        </span>
+                                        
+                                    </div>
+                                    <div class="hm-text-size-11 hm-text-dull">
+                                        Desctiption Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    </div>
+                                </td>
+                                <td>12 Employees</td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white">
+                                        <i class="material-icons" title="Edit">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Archived">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+</div>
+
+
+<% include ../attandanceSettings/modals/modal_AddNewTimePolicy %>

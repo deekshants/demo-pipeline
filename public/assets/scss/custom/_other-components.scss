@@ -65,6 +65,25 @@
     right: -24px;
     color: #9c27b0;
 }
+/* --------------------leave approval level------------------------ */
+.hm-leave-approval-level-wrapper{
+    position: relative;
+}
+.hm-leave-approval-level-wrapper .badge{
+    position: relative;
+    z-index: 10;
+}
+.hm-leave-approval-level-wrapper:before{
+    content: '';
+    position: absolute;
+    width: 1px;
+    
+    border: 1px dashed #00bcd4;
+    left: 15px;
+    top:10px;
+    bottom: -25px;
+    z-index: 5px;
+}
 /* --------------------hm tab------------------------ */
 
 .hm-tab-link{
