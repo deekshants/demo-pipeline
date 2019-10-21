@@ -1,0 +1,71 @@
+<section class="hm-side-panel-wrapper" id="panelAddNewIpNetwork">
+    <div class="hm-side-panel">
+        <header class="hm-side-panel-header border-bottom">
+            <div class="row no-gutters px-3">
+                <div class="pt-2 pr-2">
+                    <i class="material-icons">add</i>
+                </div>
+                <div class="hm-col">
+                    <h4 class="hm-text-normal"> Add IP Network</h4>
+                </div>
+                <div class="pl-3">
+                    <button class="btn  btn-fab btn-link btn-round" onclick="closeSidePanel('#panelAddNewIpNetwork');">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="hm-side-panel-body  p-4">
+            <div class="form-group">
+                <label for=""><sup class="text-danger">*</sup>Title</label>
+                <input type="text" class="form-control" id="" required="">
+                <div class="hm-input-error-msg">
+                    Required Field!
+                </div>
+            </div>
+            <div class="form-group pb-4">
+                <label for="">Description</label>
+                <textarea class="form-control" id="" rows="2"></textarea>
+            </div>
+
+            
+            <div class="row">
+                <div class="col-12 col-md-6 ">
+                    <div class="form-group">
+                        <label class="label-control"><sup class="text-danger">*</sup>From IP Address</label>
+                        <input type="text" class="form-control" required="" />
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 ">
+                    <div class="form-group">
+                        <label class="label-control"><sup class="text-danger">*</sup>To IP Address</label>
+                        <input type="text" class="form-control" required="" />
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="text-muted">
+                    <small>
+                        Provide WAN IP address not LAN IP and ensure the IP address is static.
+                    </small>
+                </p>
+                <p class="text-muted">
+                    <small>
+                        Your current Ip Address : 192.168.1.10
+                    </small>
+                </p>
+            </div>
+           
+        </div>
+        <div class="hm-side-panel-footer px-3 py-2">
+            <button type="button" class="btn btn-primary" onclick="dummyPanelSave('IP Network Added Successfully !', 'success', '#panelAddNewIpNetwork')">Add Shift</button>
+            <button type="button" class="btn btn-white" hmclose="panel" onclick="closeSidePanel('#panelAddNewIpNetwork');">Close</button>
+        </div>
+    </div>
+</section>

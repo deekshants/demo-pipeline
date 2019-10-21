@@ -11182,8 +11182,7 @@ h2.title {
   .togglebutton, .togglebutton label, .togglebutton input, .togglebutton .toggle {
     user-select: none; }
   .togglebutton label {
-    cursor: pointer;
-    color: rgba(0,0,0, 0.26); }
+    cursor: pointer; }
     .form-group.is-focused .togglebutton label {
       color: rgba(0,0,0, 0.26); }
       .form-group.is-focused .togglebutton label:hover, .form-group.is-focused .togglebutton label:focus {

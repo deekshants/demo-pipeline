@@ -43,7 +43,7 @@
                                         <i class="material-icons">check</i>
                                     </div>
                                     <div class="hm-wizard-step-text">
-                                        Missing Punch In / Out
+                                        Late Arrival 
                                     </div>
                                 </div>
                             </div> 
@@ -69,18 +69,16 @@
                                         <i class="material-icons">check</i>
                                     </div>
                                     <div class="hm-wizard-step-text">
-                                        Late Arrival
+                                        Missing Punch Out
                                     </div>
                                 </div>
                             </div>
-                            
-
                         </div>
-
                     </div>
+
                     <div class="col-12 col-md-9 ">
                         <div class="hm-wizard-content-wrapper">
-                            <!-- step-1 -->
+                            
                             <section class="hm-step-content active" hm-step-content="1">
                                 <div class="px-3">
                                     <h3>
@@ -112,78 +110,18 @@
                             <section class="hm-step-content " hm-step-content="2">
                                 <div class="px-3">
                                     <h3>
-                                        Missing Punch In / Out
+                                        Late Arrival
                                     </h3>
-                                    <section class="mb-4">
-                                        <div>
-                                            <div class="row no-gutters align-items-end mb-3">
-                                                <p>
-                                                    Effective After
-                                                </p>
-                                                <div class="pl-3">
-                                                    <input type="number" class="form-control" min="1" max="365" placeholder="0" value="2">
-                                                </div>
-                                                <div class="pl-3">
-                                                    <select id="" class="form-control">
-                                                        <option>Days</option>
-                                                        <option>Months</option>
-                                                        <option>Years</option>
-                                                    </select>
-                                                </div>
-                                                <div class="pl-3">
-                                                    <select id="" class="form-control">
-                                                        <option>Date of Joining</option>
-                                                        <option>Date of Confirmation</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section class="mb-4">
+
+                                     <div class="mb-4">
                                         <p>
-                                            Whate is the annual quata  for an employee of  this [title] leave? 
+                                            Penalize (Mark LOP) for late arrival?
                                         </p>
                                         <div class="">
-                                            <div class="row no-gutters align-items-end mb-3">
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvAnnualQuota"  value="" checked="">
-                                                        Limit to
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="pl-3">
-                                                    <input type="number" class="form-control" min="1" max="365" placeholder="Days" value="1">
-                                                </div>
-                                                <p>
-                                                    days per year
-                                                </p>
-                                            </div>
-                                            <div class="form-check form-check-radio">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="lvAnnualQuota"  value="">
-                                                    Unlimited 
-                                                    <span class="circle">
-                                                        <span class="check"></span>
-                                                    </span>
-                                                </label>
-                                                <i class="material-icons hm-help-tip hm-text-size-16 hm-valign-middle" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">live_help</i>
-                                            </div>
-                                        </div>
-                                    </section>
-
-                                    <section class="mb-4">
-                                        <p>
-                                            How will quota of leaves assign to an employee?
-                                        </p>
-                                        <div class="" >
-
                                             <div class="form-check form-check-radio hm-bmr-15">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="lvQuotaAvail"  hm-watch="radio"  checked="">
-                                                    Entire leave quota can be availed anytime during the year 
+                                                    <input class="form-check-input" type="radio" name="lateArrival"  hm-watch="radio"  checked="">
+                                                        No.
                                                     <span class="circle">
                                                         <span class="check"></span>
                                                     </span>
@@ -191,89 +129,55 @@
                                             </div>
                                             <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="lvQuotaAvail"   hm-watch="radio" hm-extra-view="#leaveInterval">
-                                                    Leave are earn at regular intervals 
+                                                    <input class="form-check-input" type="radio" name="lateArrival"   hm-watch="radio" hm-extra-view="#lateArrivalRule">
+                                                        Yes, Mark as leave without pay (LOP).
                                                     <span class="circle">
                                                         <span class="check"></span>
                                                     </span>
                                                 </label>
                                             </div>
-                                            <div class="hide" id="leaveInterval">
-                                                <div class="row no-gutters align-items-end mb-3">
-                                                    <div class="pl-3">
-                                                        <input type="number" class="form-control" min="1" max="365" placeholder="Days" value="1">
+                                            
+                                            <div class="hide" id="lateArrivalRule">
+                                                <div class="pl-4">
+                                                    <div class="row no-gutters align-items-end mb-3">
+                                                        <p>
+                                                            If late arrival incidents exceed 
+                                                        </p>
+                                                        <div class="pl-3">
+                                                            <input type="number" class="form-control" min="1" max="365" placeholder="0" value="2">
+                                                        </div>
+                                                        <p>
+                                                             in a
+                                                        </p>
+                                                        <div class="px-2">
+                                                            <select id="" class="form-control">
+                                                                <option>Week</option>
+                                                                <option>Month</option>
+                                                                <option>Year</option>
+                                                            </select>
+                                                        </div>
+                                                        <p>
+                                                            then Mark as
+                                                        </p>
+                                                        <div class="pl-3">
+                                                            <input type="number" class="form-control" min="1" max="365" placeholder="0" value="0.5">
+                                                        </div>
+                                                        <p>
+                                                            LOP.
+                                                        </p>
                                                     </div>
-                                                    <p>
-                                                        Day(s) 
-                                                    </p>
-                                                    <div class="pl-3">
-                                                        <select id="" class="form-control">
-                                                            <option>Monthly</option>
-                                                            <option>Quaterly</option>
-                                                            <option>Half Yearly</option>
-                                                        </select>
-                                                    </div>
                                                 </div>
                                             </div>
-
                                         </div>
-                                    </section>
-
-                                    <section class="mb-4">
-                                        <p>
-                                            Does the credited Leave will expire after some time?
-                                        </p>
-                                        <div class="">
-                                            <div class="form-check form-check-radio">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="lvAllotmentExpire"  value="" checked="">
-                                                    No. Leave do not expire.
-                                                    <span class="circle">
-                                                        <span class="check"></span>
-                                                    </span>
-                                                </label>
-
-                                            </div>
-                                            <div class="row no-gutters align-items-end mb-3">
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvAllotmentExpire"  value="" >
-                                                        Yes. Leave will expire after 
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="pl-3">
-                                                    <input type="number" class="form-control" min="1" max="365" placeholder="Days" value="1">
-                                                </div>
-                                                <p>
-                                                    days from the date of allotment.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section class="mb-4">
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="">
-                                                No leave allotment when an employee is under notice period. 
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                            <i class="material-icons hm-help-tip hm-text-size-16 hm-valign-middle" data-toggle="tooltip" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">live_help</i>
-                                        </div>
-                                    </section>
+                                    </div>
                                     <div>
-                                        <div class="mt-4">
-                                            <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 1});">
-                                                Previous
-                                            </button>
-                                            <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 3});">
-                                                Next
-                                            </button>
-                                        </div>
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 1});">
+                                            Previous
+                                        </button>
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 3});">
+                                            Next
+                                        </button>
+                                        
                                     </div>
                                 </div>
                             </section>
@@ -282,99 +186,134 @@
                                     <h3>
                                         Effective Working Hour
                                     </h3>
-                                    <div class="row mb-3">
-                                        <div class="col-12 col-md-3">
-                                            <p>
-                                                Gender
-                                            </p>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <div class="form-check form-check-inline">
+                                    <div class="mb-4">
+                                        <p>
+                                            Penalize (Mark LOP) for shortage of effective hours?
+                                        </p>
+                                        <div class="">
+                                            <div class="form-check form-check-radio hm-bmr-15">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    Male
-                                                    <span class="form-check-sign">
+                                                    <input class="form-check-input" type="radio" name="shortEffectHours"  hm-watch="radio"  checked="">
+                                                        No.
+                                                    <span class="circle">
                                                         <span class="check"></span>
                                                     </span>
                                                 </label>
                                             </div>
-                                            <div class="form-check form-check-inline">
+                                            <div class="form-check form-check-radio">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    Female
-                                                    <span class="form-check-sign">
+                                                    <input class="form-check-input" type="radio" name="shortEffectHours"   hm-watch="radio" hm-extra-view="#shortEffecttHoursRule">
+                                                        Yes, Mark as leave without pay (LOP).
+                                                    <span class="circle">
                                                         <span class="check"></span>
                                                     </span>
                                                 </label>
                                             </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    Other
-                                                    <span class="form-check-sign">
-                                                        <span class="check"></span>
-                                                    </span>
-                                                </label>
+                                            
+                                            <div class="hide" id="shortEffecttHoursRule">
+                                                <div class="pl-4">
+                                                    <div class="my-5">
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="trackShortHourBy" checked="">
+                                                                Track Daily
+                                                                <span class="circle">
+                                                                    <span class="check"></span>
+                                                                </span>
+                                                            </label>
+                                                            <div class="">
+                                                                <div class="row no-gutters align-items-end mb-3">
+                                                                    <p>
+                                                                        If effective hour is less then 
+                                                                    </p>
+                                                                    <div class="pl-3">
+                                                                        <input type="number" class="form-control" min="1" max="100" placeholder="0" value="90">
+                                                                    </div>
+                                                                    <p>
+                                                                        % percent of shift timing
+                                                                    </p>
+                                                                </div>
+                                                                <div class="row no-gutters align-items-end mb-3">
+                                                                    <p>
+                                                                        and such incidents exceed
+                                                                    </p>
+                                                                    <div class="pl-3">
+                                                                        <input type="number" class="form-control" min="1" max="365" placeholder="0" value="2">
+                                                                    </div>
+                                                                    <p>
+                                                                        times in a
+                                                                    </p>
+                                                                    <div class="px-2">
+                                                                        <select id="" class="form-control">
+                                                                            <option>Week</option>
+                                                                            <option>Month</option>
+                                                                            <option>Year</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <p>
+                                                                        then Mark as
+                                                                    </p>
+                                                                    <div class="pl-3">
+                                                                        <input type="number" class="form-control" min="1" max="365" placeholder="0" value="0.5">
+                                                                    </div>
+                                                                    <p>
+                                                                        LOP.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                    <div class="my-5">
+                                                        <div class="form-check form-check-radio">
+                                                            <label class="form-check-label">
+                                                                <input class="form-check-input" type="radio" name="trackShortHourBy">
+                                                                Track Weekly
+                                                                <span class="circle">
+                                                                    <span class="check"></span>
+                                                                </span>
+                                                            </label>
+                                                            <div class="">
+                                                                <div class="row no-gutters align-items-end mb-3">
+                                                                    <p class="pt-3">
+                                                                        If weekly effective hours shorter then shift total weekly hours 
+                                                                    </p>
+                                                                </div>
+                                                                <div class="row no-gutters align-items-end mb-3">
+                                                                    <p>
+                                                                        and such incidents exceed
+                                                                    </p>
+                                                                    <div class="pl-3">
+                                                                        <input type="number" class="form-control" min="1" max="365" placeholder="0" value="2">
+                                                                    </div>
+                                                                    <p>
+                                                                        times in a
+                                                                    </p>
+                                                                    <div class="px-2">
+                                                                        <select id="" class="form-control">
+                                                                            <option>Month</option>
+                                                                            <option>Year</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <p>
+                                                                        then Mark as
+                                                                    </p>
+                                                                    <div class="pl-3">
+                                                                        <input type="number" class="form-control" min="1" max="365" placeholder="0" value="0.5">
+                                                                    </div>
+                                                                    <p>
+                                                                        LOP.
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mb-3">
-                                        <div class="col-12 col-md-3">
-                                            <p>
-                                                Marital Status
-                                            </p>
-                                        </div>
-                                        <div class="col-12 col-md-9">
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    Single
-                                                    <span class="form-check-sign">
-                                                        <span class="check"></span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check form-check-inline">
-                                                <label class="form-check-label">
-                                                    <input class="form-check-input" type="checkbox">
-                                                    Married
-                                                    <span class="form-check-sign">
-                                                        <span class="check"></span>
-                                                    </span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                    
-                                  
-                                    <div class="form-group">
-                                        <label for="">Department</label>
-                                        <input type="text" class="form-control">
-                                        <div class="hm-input-error-msg">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Designation</label>
-                                        <input type="text" class="form-control">
-                                        <div class="hm-input-error-msg">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Location</label>
-                                        <input type="text" class="form-control">
-                                        <div class="hm-input-error-msg">
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="">Role</label>
-                                        <input type="text" class="form-control">
-                                        <div class="hm-input-error-msg">
-
-                                        </div>
-                                    </div>
+                                    
                                     <div>
                                         <div class="mt-4">
                                             <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 2});">
@@ -390,332 +329,82 @@
                             <section class="hm-step-content " hm-step-content="4">
                                 <div class="px-3">
                                     <h3>
-                                        Late Arrival
+                                        Missing Punch Out
                                     </h3>
-
-                                    <section class="mb-4">
-                                        <div >
-                                           
-                                            <p>
-                                                Penalized (Deduct Leave) For late arrivals?
-                                            </p>
-                                            <div>
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lateArriveDeductLv"   hm-watch="radio" checked="">
-                                                        No.
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lateArriveDeductLv"   hm-watch="radio" hm-extra-view="#deductLeaveForLate">
-                                                        Yes, deduct leave as rule below.
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="hide mb-5 ml-5" id="deductLeaveForLate">
-                                                   
-                                                    <div class="hm-leave-approval-level-wrapper">
-                                                        <!-- level -->
-                                                        <div class="mb-4">
-                                                            <div class="row no-gutters">
-                                                                <div class="hm-col">
-                                                                    <div class="hm-text-normal">
-                                                                        <span class="badge badge-pill badge-info">Level 1</span>  Approvers
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pl-3">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
-                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
-                                                            </div>
-                                                        </div>
-                                                        <!-- level -->
-                                                        <div class="mb-4">
-                                                            <div class="row no-gutters">
-                                                                <div class="hm-col">
-                                                                    <div class="hm-text-normal">
-                                                                        <span class="badge badge-pill badge-info">Level 2</span>  Approvers
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pl-3">
-                                                                    <button class="btn btn-white hm-mr-0 hm-pd-5" title="Delete Level">
-                                                                        <i class="material-icons">close</i>
-                                                                    </button> 
-                                                                </div>
-                                                            </div>
-                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
-                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    <div>
-                                                        <button class="btn btn-white btn-sm">
-                                                            Add New Level
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </section>
-                                    <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 3});">
-                                            Previous
-                                        </button>
-                                        <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Time Policy Added Successfully !', 'success', '#panelAddNewTimePolicy')">
-                                            Done
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </section>
-                            <section class="hm-step-content " hm-step-content="5">
-                                <div class="px-3">
-                                    <h3>
-                                        Holidays & Weekends
-                                    </h3>
-
-                                    <section class="mb-4">
+                                    <div class="mb-4">
                                         <p>
-                                            Weekends Between Leave Period :
+                                            Penalize (Mark LOP) for missing puch outs?
                                         </p>
                                         <div class="">
-                                            <div class="row no-gutters align-items-end mb-2">
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvBtwWeekends" checked="">
-                                                        Count as leave: Count after leaves exceed
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="pl-3">
-                                                    <input type="number" class="form-control" min="1" max="365" placeholder="0">
-                                                </div>
-                                                <p>
-                                                    days.
-                                                </p>
-                                            </div>
-
-                                            <div class="form-check form-check-radio">
+                                            <div class="form-check form-check-radio hm-bmr-15">
                                                 <label class="form-check-label">
-                                                    <input class="form-check-input" type="radio" name="lvBtwWeekends" >
-                                                    Don't count as leave
+                                                    <input class="form-check-input" type="radio" name="missedPuchOut"  hm-watch="radio"  checked="">
+                                                        No.
                                                     <span class="circle">
                                                         <span class="check"></span>
                                                     </span>
                                                 </label>
                                             </div>
-                                        </div>
-                                    </section>
-
-                                    <section class="mb-4">
-                                        <p>
-                                            Holidays Between Leave Period :
-                                        </p>
-                                        <div class="">
-                                            <div class="row no-gutters align-items-end mb-2">
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvBtwHolidays" checked="">
-                                                        Count as leave: Count after leaves exceed
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="pl-3">
-                                                    <input type="number" class="form-control" min="1" max="365" placeholder="0">
-                                                </div>
-                                                <p>
-                                                    days.
-                                                </p>
+                                            <div class="form-check form-check-radio">
+                                                <label class="form-check-label">
+                                                    <input class="form-check-input" type="radio" name="missedPuchOut"   hm-watch="radio" hm-extra-view="#missedPuchOutRule">
+                                                        Yes, Mark as leave without pay (LOP).
+                                                    <span class="circle">
+                                                        <span class="check"></span>
+                                                    </span>
+                                                </label>
                                             </div>
-
-                                            <div class="mb-3">
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvBtwHolidays" >
-                                                        Don't count as leave
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-check">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox">
-                                                If half day leave is taken then this rule doesn’t apppled.
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </section>
-
-
-                                    <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 4});">
-                                            Previous
-                                        </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 6});">
-                                            Next
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </section>
-
-                            <section class="hm-step-content " hm-step-content="6">
-                                <div class="px-3">
-                                    <h3>
-                                        Leave Approval
-                                    </h3>
-                                    <section class="mb-4">
-                                        <div >
-                                           
-                                            <p>
-                                                Penalized (Deduct Leave) For late ariivals?
-                                            </p>
-                                            <div>
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvApprovalReq"   hm-watch="radio" checked="">
-                                                        No.
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="form-check form-check-radio">
-                                                    <label class="form-check-label">
-                                                        <input class="form-check-input" type="radio" name="lvApprovalReq"   hm-watch="radio" hm-extra-view="#leaveApprovalReq">
-                                                        Yes, deduct leave as rule below.
-                                                        <span class="circle">
-                                                            <span class="check"></span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <div class="hide mb-5 ml-5" id="leaveApprovalReq">
-                                                   
-                                                    <div class="hm-leave-approval-level-wrapper">
-                                                        <!-- level -->
-                                                        <div class="mb-4">
-                                                            <div class="row no-gutters">
-                                                                <div class="hm-col">
-                                                                    <div class="hm-text-normal">
-                                                                        <span class="badge badge-pill badge-info">Level 1</span>  Approvers
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pl-3">
-                                                                    
-                                                                </div>
-                                                            </div>
-                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
-                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
-                                                            </div>
+                                            
+                                            <div class="hide" id="missedPuchOutRule">
+                                                <div class="pl-4">
+                                                    <div class="row no-gutters align-items-end mb-3">
+                                                        <p>
+                                                            If missing punch outs incidents exceed 
+                                                        </p>
+                                                        <div class="pl-3">
+                                                            <input type="number" class="form-control" min="1" max="365" placeholder="0" value="2">
                                                         </div>
-                                                        <!-- level -->
-                                                        <div class="mb-4">
-                                                            <div class="row no-gutters">
-                                                                <div class="hm-col">
-                                                                    <div class="hm-text-normal">
-                                                                        <span class="badge badge-pill badge-info">Level 2</span>  Approvers
-                                                                    </div>
-                                                                </div>
-                                                                <div class="pl-3">
-                                                                    <button class="btn btn-white hm-mr-0 hm-pd-5" title="Delete Level">
-                                                                        <i class="material-icons">close</i>
-                                                                    </button> 
-                                                                </div>
-                                                            </div>
-                                                            <div class="hm-bg-dull p-3 hm-radius-8  ml-3 mt-2">
-                                                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
-                                                            </div>
+                                                        <p>
+                                                             in a
+                                                        </p>
+                                                        <div class="px-2">
+                                                            <select id="" class="form-control">
+                                                                <option>Week</option>
+                                                                <option>Month</option>
+                                                                <option>Year</option>
+                                                            </select>
                                                         </div>
-                                                        
-                                                    </div>
-                                                    <div>
-                                                        <button class="btn btn-white btn-sm">
-                                                            Add New Level
-                                                        </button>
+                                                        <p>
+                                                            then Mark as
+                                                        </p>
+                                                        <div class="pl-3">
+                                                            <input type="number" class="form-control" min="1" max="365" placeholder="0" value="0.5">
+                                                        </div>
+                                                        <p>
+                                                            LOP.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        
-                                    </section>
+                                    </div>
+                                    
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 5});">
-                                            Previous
-                                        </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 7});">
-                                            Next
-                                        </button>
+                                        <div class="mt-4">
+                                            <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 3});">
+                                                Previous
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Time Policy Added Successfully !', 'success', '#panelAddNewTimePolicy')">
+                                                Done
+                                            </button>
+                                            
+                                        </div>
                                     </div>
                                 </div>
-                            </section>
+                                
 
-                            <section class="hm-step-content" hm-step-content="7">
-                                <div class="px-3">
-                                    <h3>
-                                        Year End Processing
-                                    </h3>
-
-                                    <section class="mb-4">
-                                        <p>
-                                            At the end of the year :
-                                        </p>
-                                        <div class="form-check form-check-radio">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="lvBalYearEnd"  value="">
-                                                All Leave balances expire. 
-                                                <span class="circle">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-radio">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="lvBalYearEnd"  value="">
-                                                All Leave balances get paid to employee.
-                                                <span class="circle">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-radio">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="radio" name="lvBalYearEnd"  value="">
-                                                All Leave balances get carried forward to the next year.
-                                                <span class="circle">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </section>
-                                    <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#timePolicyWizard', step : 6});">
-                                            Previous
-                                        </button>
-                                        <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Time Policy Added Successfully !', 'success', '#panelAddNewTimePolicy')">
-                                            Done
-                                        </button>
-                                    </div>
-                                </div>
                             </section>
+                            
                         </div>
 
                     </div>

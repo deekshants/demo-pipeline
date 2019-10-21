@@ -18,6 +18,7 @@ background: #ccc;
   /* --------------------company setup vertical tab------------------------ */
   /* --------------------user image uploder------------------------ */
   /* --------------------company logo uploder------------------------ */
+  /* --------------------leave approval level------------------------ */
   /* --------------------hm tab------------------------ */
   /* --------------------error ------------------------ */
   /* -----------min width style start----------------- */
@@ -296,7 +297,8 @@ background: #ccc;
     color: #fff;
     font-weight: normal;
     position: relative;
-    z-index: 1; }
+    z-index: 1;
+    flex: none; }
   .hm .hm-wizard-step-count {
     background: #bbb; }
   .hm .hm-wizard-step-text {
@@ -634,6 +636,20 @@ background: #ccc;
     bottom: 0;
     right: -24px;
     color: #9c27b0; }
+  .hm .hm-leave-approval-level-wrapper {
+    position: relative; }
+  .hm .hm-leave-approval-level-wrapper .badge {
+    position: relative;
+    z-index: 10; }
+  .hm .hm-leave-approval-level-wrapper:before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    border: 1px dashed #00bcd4;
+    left: 15px;
+    top: 10px;
+    bottom: -25px;
+    z-index: 5px; }
   .hm .hm-tab-link {
     cursor: pointer; }
   .hm .hm-tab-content {
