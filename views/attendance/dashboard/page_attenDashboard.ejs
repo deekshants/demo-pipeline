@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+<style>
+
+
+</style>
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+    <style>
+        
+        .hm-atten-bar-wrapper{
+            position: relative;
+            height: 3px;
+            background: #eee;
+            display: flex;
+        }
+        .hm-atten-sub-bar{
+            position: relative;
+            height: 100%;
+            min-width: 24px; 
+        }
+        .hm-in-icon{
+            transform: rotate(-45deg);
+        }
+        .hm-out-icon{
+            transform: rotate(45deg);
+        }
+        .hm-atten-sub-bar.hm-bar-present{
+            background: #4caf50;
+        }
+        .hm-atten-sub-bar.hm-bar-late{
+            background: orange;
+        }
+        .hm-atten-sub-bar.hm-bar-ot{
+            background: #0099ff;
+        }
+        .hm-atten-sub-bar.hm-mis-out{
+            background: #ff6699;
+        }
+        .hm-atten-bar-dot{
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50% 50% 50% 0;
+            background: #aaa;
+            top: -11px;
+            transform: rotate(-45deg);
+        }
+        .hm-atten-bar-dot.hm-dot-in{
+            background: #4caf50;
+            left: 0;
+        }
+        .hm-atten-bar-dot.hm-dot-out{
+            background: #e64461;
+            right: 0;
+        }
+
+        .hm-atten-bg-holiday{
+            background: #f5f4a9;
+        }
+        .hm-atten-bg-leave{
+            background: #a9edf5;
+        }
+        .hm-atten-bg-wfh{
+            background: #dfb9fc;
+        }
+        .hm-atten-bg-absent{
+            background: #fec8cb;
+        }
+
+        .hm-bg-strips{
+            background-image: linear-gradient(45deg,rgba(0,0,0,.035) 25%,transparent 0,transparent 50%,rgba(0,0,0,.035) 0,rgba(0,0,0,.035) 75%,transparent 0,transparent);
+            background-size: 64px 64px;
+        }
+
+
+
+    </style>
+    <main class="hm-main-view">
+        <div class="p-3">   
+            <div class="card p-3 hm-tmr-0 hm-bmr-15">
+            </div>
+            <div class="card hm-tmr-0">
+                <div>
+
+                    <div>   
+                        <div class="table-responsive">
+                            <table class="table" align="left">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col" width="60%" class="text-center">Attendance</th>
+                                        <th scope="col">Total Hours</th>
+                                        <th scope="col">Log</th>
+                                        <th scope="col">Edit Request</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Tue, 2 Oct
+                                            </span>
+                                        </td>
+
+                                        <td>
+                                            <div>
+                                                <div>
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            06:30 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  04:30 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 70%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                06:30 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-exclamation-circle text-info"></i> Early Left
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Wed, 3 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div>
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 11:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  08:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-late" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-exclamation-circle text-info"></i> Late Arrive
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Thu, 4 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            11:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  09:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-ot" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                11:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Over Time
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Fri, 5 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            00:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            Missing Puch Out
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-mis-out" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                00:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="Punch Out Missing" class="fa fa-lg fa-exclamation-circle text-info"></i> Incomplete
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Sat, 6 Oct
+                                            </span>
+                                        </td>
+                                        <td class="hm-bg-strips">
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Sun, 7 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips">
+
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 01 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips hm-atten-bg-holiday">
+                                            <div class=" text-center  hm-text-normal">
+                                                Holiday : Govardhan Puja/Vishvakarma Day
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Sat, 6 Oct
+                                            </span>
+                                        </td>
+                                        <td class="hm-bg-strips">
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Sun, 7 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips">
+
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 01 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips hm-atten-bg-leave">
+                                            <div class=" text-center  hm-text-normal text-uppercase">
+                                                Leave
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Sat, 6 Oct
+                                            </span>
+                                        </td>
+                                        <td class="hm-bg-strips">
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Sun, 7 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips">
+
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 01 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips hm-atten-bg-absent">
+                                            <div class=" text-center  hm-text-normal text-uppercase ">
+                                                Absent
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 01 Oct
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips hm-atten-bg-wfh">
+                                            <div class=" text-center  hm-text-normal text-uppercase ">
+                                                Work From Home
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                Mon, 1 Oct
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            09:00 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                09:00 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+
+    </footer>
+    <script>
+
+
+    </script>
+</body>
+</html>
