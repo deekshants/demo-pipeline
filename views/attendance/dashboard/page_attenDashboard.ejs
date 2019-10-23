@@ -15,7 +15,20 @@
         <% include ../../partials/side-menu %>
     </aside>
     <style>
-        
+
+
+        .hm-atten-color-strip{
+            background: linear-gradient(to bottom, #4caf50 0%,#4caf50 49%,#dddddd 49%,#dddddd 100%);
+            height: 20px;
+            width: 4px;
+            display: inline-block; 
+            vertical-align: middle; 
+            margin-right: 5px;
+        }
+        .hm-atten-day{
+            display: inline-block;
+            min-width: 32px;
+        }
         .hm-atten-bar-wrapper{
             position: relative;
             height: 3px;
@@ -35,6 +48,9 @@
         }
         .hm-atten-sub-bar.hm-bar-present{
             background: #4caf50;
+        }
+        .hm-atten-sub-bar.hm-bar-halfday{
+            background: #79eab2;
         }
         .hm-atten-sub-bar.hm-bar-late{
             background: orange;
@@ -85,19 +101,59 @@
 
     </style>
     <main class="hm-main-view">
-        <div class="p-3">   
-            <div class="card p-3 hm-tmr-0 hm-bmr-15">
-            </div>
-            <div class="card hm-tmr-0">
+        <div class="p-3"> 
+            <div class="row">
+                <div class="col-12 col-md-8 col-lg-9">
+                    <div class="card hm-tmr-0">
                 <div>
-
+                    <div class="p-3">
+                        <div class="row no-gutters">
+                            <div>
+                                <button type="button" class="btn btn-sm btn-fab btn-white">
+                                    <i class="material-icons">chevron_left</i>
+                                </button>
+                                <span class="hm-text-size-16 px-3">October, 2019</span>
+                                <button type="button" class="btn btn-sm btn-fab btn-white">
+                                    <i class="material-icons">chevron_right</i>
+                                </button>
+                            </div>
+                            <div class="hm-col">
+                                <div class="text-center pt-2">
+                                    
+                                </div>
+                            </div>
+                            <div class="pl-3">
+                                <!-- <a href="#">
+                                    <i class="material-icons hm-text-size-16">edit</i> Attendance Request
+                                </a>
+                                &nbsp; | &nbsp; -->
+                                <span class="hm-text-dull">
+                                    Request:
+                                </span>
+                                <a href="#">
+                                    <i class="material-icons hm-text-size-16">home</i> Work from Home
+                                </a>
+                                <!-- <div class="btn-group btn-group-toggle hm-tmr-5" data-toggle="buttons">
+                                  <label class="btn btn-sm btn-secondary ">
+                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Weekly
+                                  </label>
+                                
+                                  <label class="btn btn-sm btn-secondary active">
+                                    <input type="radio" name="options" id="option3" autocomplete="off"> Monthly
+                                  </label>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
                     <div>   
                         <div class="table-responsive">
                             <table class="table" align="left">
                                 <thead>
                                     <tr>
                                         <th scope="col">Date</th>
-                                        <th scope="col" width="60%" class="text-center">Attendance</th>
+                                        <th scope="col" width="50%" class="text-center">
+                                            Shift : 10:00 AM &nbsp; &nbsp; To &nbsp; &nbsp; 07:00 PM  &nbsp; &nbsp;<small class="text-muted">Duration : 9 Hrs</small>
+                                        </th>
                                         <th scope="col">Total Hours</th>
                                         <th scope="col">Log</th>
                                         <th scope="col">Edit Request</th>
@@ -106,14 +162,16 @@
                                 <tbody>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Mon,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                Oct 1 
                                             </span>
                                         </td>
                                         <td>
                                             <div>
                                                 <div >
-
                                                     <div class="row no-gutters hm-line-bottom hm-text-size-12">
                                                         <div>
                                                             <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
@@ -142,7 +200,7 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -150,8 +208,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Tue,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Tue, 2 Oct
+                                                Oct 2 
                                             </span>
                                         </td>
 
@@ -187,7 +248,7 @@
                                             <i title="" class="fa fa-lg fa-exclamation-circle text-info"></i> Early Left
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -195,8 +256,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Wed,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Wed, 3 Oct
+                                                Oct 3 
                                             </span>
                                         </td>
                                         <td>
@@ -230,7 +294,7 @@
                                             <i title="" class="fa fa-lg fa-exclamation-circle text-info"></i> Late Arrive
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -238,8 +302,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Thu,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Thu, 4 Oct
+                                                Oct 4 
                                             </span>
                                         </td>
                                         <td>
@@ -273,15 +340,18 @@
                                             Over Time
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Fri,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Fri, 5 Oct
+                                                Oct 5 
                                             </span>
                                         </td>
                                         <td>
@@ -313,18 +383,21 @@
                                             </span>
                                         </td>
                                         <td>
-                                            <i title="Punch Out Missing" class="fa fa-lg fa-exclamation-circle text-info"></i> Incomplete
+                                            <i title="Punch Out Missing" class="fa fa-lg fa-exclamation-circle text-danger"></i> Incomplete
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sat,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Sat, 6 Oct
+                                                Oct 6 
                                             </span>
                                         </td>
                                         <td class="hm-bg-strips">
@@ -344,8 +417,11 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sun,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Sun, 7 Oct
+                                                Oct 7 
                                             </span>
                                         </td>
 
@@ -368,8 +444,58 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Mon,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                Oct 8 
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <div >
+
+                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 02:30 AM
+                                                        </div>
+                                                        <div class="hm-col text-center hm-text-dull">
+                                                            04:30 Hrs
+                                                        </div>
+                                                        <div>
+                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar hm-bar-halfday" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="hm-text-thick">
+                                                04:30 Hrs
+                                            </span>
+                                        </td>
+                                        <td>
+                                            Half day
+                                        </td>
+                                        <td class="td-actions">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Tue,
+                                            </span>
+                                            <span class="hm-text-thick">
+                                                Oct 9 
                                             </span>
                                         </td>
                                         <td>
@@ -404,59 +530,19 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
-                                                <i class="material-icons">edit</i>
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <span class="hm-text-thick">
-                                                Mon, 1 Oct
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <div >
-
-                                                    <div class="row no-gutters hm-line-bottom hm-text-size-12">
-                                                        <div>
-                                                            <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
-                                                        </div>
-                                                        <div class="hm-col text-center hm-text-dull">
-                                                            09:00 Hrs
-                                                        </div>
-                                                        <div>
-                                                            <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="hm-atten-bar-wrapper mb-4">
-                                                    <div class="hm-atten-sub-bar hm-bar-present" style="width: 100%;">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="hm-text-thick">
-                                                09:00 Hrs
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <i title="" class="fa fa-lg fa-check-circle text-success"></i>
-                                        </td>
-                                        <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Wed,
+                                            </span>
+
                                             <span class="hm-text-thick">
-                                                Mon, 01 Oct
+                                                 Oct 10 
                                             </span>
                                         </td>
 
@@ -478,8 +564,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Thu,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 11 
                                             </span>
                                         </td>
                                         <td>
@@ -514,7 +603,7 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -522,8 +611,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Fri,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 12 
                                             </span>
                                         </td>
                                         <td>
@@ -558,15 +650,18 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sat,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Sat, 6 Oct
+                                                 Oct 13 
                                             </span>
                                         </td>
                                         <td class="hm-bg-strips">
@@ -586,8 +681,11 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sun,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Sun, 7 Oct
+                                                 Oct 14 
                                             </span>
                                         </td>
 
@@ -609,8 +707,11 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Mon,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 15 
                                             </span>
                                         </td>
                                         <td>
@@ -645,15 +746,18 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Tue,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 16 
                                             </span>
                                         </td>
                                         <td>
@@ -688,7 +792,7 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -696,8 +800,11 @@
                                     
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Wed,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 01 Oct
+                                                 Oct 17 
                                             </span>
                                         </td>
 
@@ -719,8 +826,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Thu,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 18 
                                             </span>
                                         </td>
                                         <td>
@@ -755,7 +865,7 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -763,8 +873,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Fri,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 19 
                                             </span>
                                         </td>
                                         <td>
@@ -799,15 +912,18 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sat,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Sat, 6 Oct
+                                                 Oct 20 
                                             </span>
                                         </td>
                                         <td class="hm-bg-strips">
@@ -827,8 +943,11 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sun,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Sun, 7 Oct
+                                                 Oct 21 
                                             </span>
                                         </td>
 
@@ -850,8 +969,11 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Mon,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 22 
                                             </span>
                                         </td>
                                         <td>
@@ -886,15 +1008,18 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Tue,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 01 Oct
+                                                 Oct 23 
                                             </span>
                                         </td>
 
@@ -907,16 +1032,21 @@
 
                                         </td>
                                         <td>
-
+                                            Absent
                                         </td>
                                         <td class="td-actions">
-
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
+                                                <i class="material-icons">edit</i>
+                                            </button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Wed,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 24 
                                             </span>
                                         </td>
                                         <td>
@@ -951,7 +1081,7 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
                                         </td>
@@ -959,8 +1089,11 @@
 
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Thu,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 01 Oct
+                                                 Oct 25 
                                             </span>
                                         </td>
 
@@ -981,8 +1114,11 @@
                                     </tr>
                                     <tr>
                                         <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Fri,
+                                            </span>
                                             <span class="hm-text-thick">
-                                                Mon, 1 Oct
+                                                 Oct 26 
                                             </span>
                                         </td>
                                         <td>
@@ -1017,9 +1153,145 @@
                                             <i title="" class="fa fa-lg fa-check-circle text-success"></i>
                                         </td>
                                         <td class="td-actions">
-                                            <button class="btn btn-white" onclick="" title="Edit">
+                                            <button class="btn btn-white" onclick="" title="Attendance & Correction Request">
                                                 <i class="material-icons">edit</i>
                                             </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sat,
+                                            </span>
+                                            <span class="hm-text-thick">
+                                                 Oct 27 
+                                            </span>
+                                        </td>
+                                        <td class="hm-bg-strips">
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Sun,
+                                            </span>
+                                            <span class="hm-text-thick">
+                                                 Oct 28 
+                                            </span>
+                                        </td>
+
+                                        <td class="hm-bg-strips">
+                                            <div class=" text-center text-uppercase hm-text-normal">
+                                                Week Off
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="td-actions">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Mon,
+                                            </span>
+                                            <span class="hm-text-thick">
+                                                Oct 29 
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                           
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td class="td-actions">
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Tue,
+                                            </span>
+                                            <span class="hm-text-thick">
+                                                 Oct 30 
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                           
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td class="td-actions">
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="hm-text-dull hm-atten-day">
+                                                Wed,
+                                            </span>
+                                            <span class="hm-text-thick">
+                                                 Oct 31 
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                
+                                                <div class="hm-atten-bar-wrapper mb-4">
+                                                    <div class="hm-atten-sub-bar" style="width: 100%;">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                           
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td class="td-actions">
+                                          
                                         </td>
                                     </tr>
 
@@ -1031,6 +1303,148 @@
                 </div>
 
             </div>
+                </div>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="card  p-3 hm-tmr-0">
+                        <div class="row">
+                         
+                            <div class=" col-6">
+                                <div class="text-muted hm-text-size-12 pb-2">
+                                    Avg Sitting / Day
+                                </div>
+                                <div class="hm-text-thick hm-text-size-24">
+                                    6.35 Hrs
+                                </div>
+                            </div>
+                            <div class=" col-6 hm-line-left">
+                                <div class="text-muted hm-text-size-12 pb-2">
+                                    On Time Arrive
+                                </div>
+                                <div class="hm-text-thick hm-text-size-24">
+                                    80 %
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card  hm-tmr-0">
+                        <div class="p-3">
+                            Attendance Summary : October 2019
+                        </div>
+                        <div>
+                            <div class="table-responsive">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#4caf50;"></span> 
+                                                Presents
+                                        </td>
+                                        <td>
+                                            15
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:orange;"></span> 
+                                                Late Arrives
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                            <div>
+                                                <span class="hm-atten-color-strip"></span> 
+                                                Early Left
+                                            </div>
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#0099ff;"></span> 
+                                                Overtime
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#c27bf9;"></span> 
+                                                Work From Home
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#fa9090;"></span> 
+                                                Missing Punch
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#79eab2;"></span> 
+                                                Half Day Leaves
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#42e7fa;"></span> 
+                                                Leaves
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#f2f05c;"></span> 
+                                                Holidays
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:#ddd;"></span> 
+                                                Week Offs
+                                        </td>
+                                        <td>
+                                            8
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="80%">
+                                                <span class="hm-atten-color-strip" style="background:red;"></span> 
+                                                Absents
+                                        </td>
+                                        <td>
+                                            1
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            
+            
 
         </div>
     </main>
