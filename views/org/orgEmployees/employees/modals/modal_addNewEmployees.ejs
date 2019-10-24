@@ -47,7 +47,20 @@
                                     </div>
                                 </div>
                             </div> 
-                            
+                            <div class="hm-wizard-step " hm-step="3">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        3
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Job Policy
+                                    </div>
+                                </div>
+                            </div> 
+
 
                         </div>
 
@@ -81,7 +94,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="form-group">
                                             <label for=""><sup class="text-danger">*</sup>Email</label>
                                             <input type="email" class="form-control" id="" required="">
@@ -89,7 +102,7 @@
                                                 Required Field!
                                             </div>
                                         </div>
-                                        
+
                                         <div>
                                             <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 2});">
                                                 Next
@@ -104,7 +117,7 @@
                                     <h3>
                                         Job Details
                                     </h3>
-                                    <section class="mb-4">
+                                    <div class="mb-4">
                                         <div class="row">
                                             <div class="col-12 col-md-4">
                                                 <label for="" class="pt-2">Employee No. Series</label>
@@ -130,7 +143,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12 col-md-4">
-                                                    <label for="" class="pt-2"><sup class="text-danger">*</sup> Date Of Joining</label>
+                                                <label for="" class="pt-2"><sup class="text-danger">*</sup> Date Of Joining</label>
                                             </div>
                                             <div class="col-12 col-md-8">
                                                 <div class="form-group hm-tpd-0">
@@ -141,6 +154,26 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-4">
+                                                <label for="" class="pt-2">Probation Period</label>
+                                            </div>
+                                            <div class="col-12 col-md-8">
+                                                <div class="row no-gutters align-items-end mb-3">
+                                                    <div class="">
+                                                        <span class="bmd-form-group is-filled"><input type="number" class="form-control" min="1" max="365" placeholder="0" value="6"></span>
+                                                    </div>
+                                                    <div class="pl-3">
+                                                        <select id="" class="form-control">
+                                                            <option>Days</option>
+                                                            <option selected="">Months</option>
+                                                            <option>Years</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="row">
                                             <div class="col-12 col-md-4">
                                                 <label for="" class="pt-2">Location</label>
@@ -183,24 +216,106 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12 col-md-4">                                                
-                                                <label for="" class="pt-2">Shift</label>
+                                                <label for="" class="pt-2">Reporting Manger</label>
                                             </div>
                                             <div class="col-12 col-md-8">
                                                 <div class="form-group hm-tpd-0">
                                                     <select id="" class="form-control" >
-                                                        <option>Regular Shift</option>
+                                                        <option>Hemant Sen</option>
                                                         <option>...</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
-                                    </section>
-                                   
+
+                                    </div>
+                                    <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 1});">
+                                        Previous
+                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 3});">
+                                        Next
+                                    </button>
+
+
+                                </div>
+                            </section>
+                            <!-- step-3 -->
+                            <section class="hm-step-content " hm-step-content="3">
+                                <div class="px-3">
+                                    <h3>
+                                        Job Details
+                                    </h3>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">                                                
+                                            <label for="" class="pt-2">Shift</label>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="form-group hm-tpd-0">
+                                                <select id="" class="form-control" >
+                                                    <option>Regular Shift</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">                                                
+                                            <label for="" class="pt-2">Leave Plan</label>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="form-group hm-tpd-0">
+                                                <select id="" class="form-control" >
+                                                    <option>Employee Leave Plan</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">                                                
+                                            <label for="" class="pt-2">Week off</label>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="form-group hm-tpd-0">
+                                                <select id="" class="form-control" >
+                                                    <option>All Saturdays and All Sundays</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">                                                
+                                            <label for="" class="pt-2">Holidays Plan</label>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="form-group hm-tpd-0">
+                                                <select id="" class="form-control" >
+                                                    <option>Athena Jaipur Holidays</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">                                                
+                                            <label for="" class="pt-2">Attendance Tracking</label>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="form-group hm-tpd-0">
+                                                <select id="" class="form-control" >
+                                                    <option>Flexible Timing</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div>
                                         <div class="mt-4">
                                             <div class="row no-gutters">
                                                 <div class="hm-col">
-                                                    <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 1});">
+                                                    <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#inviteEmployeeWizard', step : 2});">
                                                         Previous
                                                     </button>
                                                 </div>

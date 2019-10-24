@@ -3,10 +3,7 @@
 <head>
     <% include ../../partials/head %>
 </head>
-<style>
 
-
-</style>
 <body class="hm hm-has-top-menu hm-has-side-menu">
     <header>
         <% include ../../partials/header %>
@@ -14,92 +11,7 @@
     <aside>
         <% include ../../partials/side-menu %>
     </aside>
-    <style>
-
-
-        .hm-atten-color-strip{
-            background: linear-gradient(to bottom, #4caf50 0%,#4caf50 49%,#dddddd 49%,#dddddd 100%);
-            height: 20px;
-            width: 4px;
-            display: inline-block; 
-            vertical-align: middle; 
-            margin-right: 5px;
-        }
-        .hm-atten-day{
-            display: inline-block;
-            min-width: 32px;
-        }
-        .hm-atten-bar-wrapper{
-            position: relative;
-            height: 3px;
-            background: #eee;
-            display: flex;
-        }
-        .hm-atten-sub-bar{
-            position: relative;
-            height: 100%;
-            min-width: 24px; 
-        }
-        .hm-in-icon{
-            transform: rotate(-45deg);
-        }
-        .hm-out-icon{
-            transform: rotate(45deg);
-        }
-        .hm-atten-sub-bar.hm-bar-present{
-            background: #4caf50;
-        }
-        .hm-atten-sub-bar.hm-bar-halfday{
-            background: #79eab2;
-        }
-        .hm-atten-sub-bar.hm-bar-late{
-            background: orange;
-        }
-        .hm-atten-sub-bar.hm-bar-ot{
-            background: #0099ff;
-        }
-        .hm-atten-sub-bar.hm-mis-out{
-            background: #ff6699;
-        }
-        .hm-atten-bar-dot{
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            border-radius: 50% 50% 50% 0;
-            background: #aaa;
-            top: -11px;
-            transform: rotate(-45deg);
-        }
-        .hm-atten-bar-dot.hm-dot-in{
-            background: #4caf50;
-            left: 0;
-        }
-        .hm-atten-bar-dot.hm-dot-out{
-            background: #e64461;
-            right: 0;
-        }
-
-        .hm-atten-bg-holiday{
-            background: #f5f4a9;
-        }
-        .hm-atten-bg-leave{
-            background: #a9edf5;
-        }
-        .hm-atten-bg-wfh{
-            background: #dfb9fc;
-        }
-        .hm-atten-bg-absent{
-            background: #fec8cb;
-        }
-
-        .hm-bg-strips{
-            background-image: linear-gradient(45deg,rgba(0,0,0,.035) 25%,transparent 0,transparent 50%,rgba(0,0,0,.035) 0,rgba(0,0,0,.035) 75%,transparent 0,transparent);
-            background-size: 64px 64px;
-        }
-
-
-
-    </style>
+   
     <main class="hm-main-view">
         <div class="p-3"> 
             <div class="row">
@@ -123,25 +35,12 @@
                                 </div>
                             </div>
                             <div class="pl-3">
-                                <!-- <a href="#">
-                                    <i class="material-icons hm-text-size-16">edit</i> Attendance Request
-                                </a>
-                                &nbsp; | &nbsp; -->
                                 <span class="hm-text-dull">
                                     Request:
                                 </span>
                                 <a href="#">
                                     <i class="material-icons hm-text-size-16">home</i> Work from Home
                                 </a>
-                                <!-- <div class="btn-group btn-group-toggle hm-tmr-5" data-toggle="buttons">
-                                  <label class="btn btn-sm btn-secondary ">
-                                    <input type="radio" name="options" id="option1" autocomplete="off" checked> Weekly
-                                  </label>
-                                
-                                  <label class="btn btn-sm btn-secondary active">
-                                    <input type="radio" name="options" id="option3" autocomplete="off"> Monthly
-                                  </label>
-                                </div> -->
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
                 Holidays
             </div>
             <div class=" hm-tab-link  btn" hmtab="planLeaves">
-                Leaves Setup
+                Leaves
             </div>
             <div class=" hm-tab-link  btn" hmtab="notify">
                 Approval Notification
@@ -18,244 +18,83 @@
                         <div class="row no-gutters">
                             <div class="hm-col">
                                 <h3 class="hm-mr-0">
-                                    Holidays List
+                                    Holidays Plan
                                 </h3>
                                 <p>
-                                    Manage all holidays list for employee
+                                    Add holidays plans and setup holidays under the plan
                                 </p>
                             </div>
                             <div class="pl-3">
-                                <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
-                                    Create Group
-                                </button>
+
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="accordion" id="accordHolidays">
-                        <div class=" mb-4 hm-radius-4 border">
-                            <div  id="holidaysGroup1" >
-                               <div class="p-2 border-bottom hm-bg-dull">
-                                   <div class="row no-gutters align-items-center">
-                                        <div class="hm-col">
-                                            <a href="#" data-toggle="collapse" data-target="#HolidaysCollapse1" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
-                                                <span>
-                                                     <i class="material-icons">keyboard_arrow_down</i>
-                                                </span>
-                                                 Group: Athena Jaipur Holidays
-                                                
-                                            </a>
-                                        </div>
-                                        <div class="pl-3">
-                                            <button type="button" class="btn btn-sm btn-fab btn-white" title="Edit">
-                                                <i class="material-icons">edit</i>
-                                            </button>
-                                        </div>
-                                        <div class="pl-3">
-                                            <div class="nav-item dropdown dropleft">
-                                                <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-sm btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                                  <i class="material-icons">more_horiz</i>
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#0">Archived</a>
-                                                    <a class="dropdown-item" href="#0">Import Data</a>
-                                                    <a class="dropdown-item" href="#0">Export Data</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                   </div>
-                               </div>
-                            </div>
-
-                            <div id="HolidaysCollapse1" class="collapse" aria-labelledby="holidaysGroup1" data-parent="#accordHolidays">
-                                <div >
-                                    <div class="p-2">   
-                                        <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
-                                            Add Holiday
+                <div>   
+                    <div class="row no-gutters">
+                        <div class="hm-col">
+                            <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewHolidaysPlan');">
+                                Add Plan
+                            </button>
+                        </div>
+                        <div>
+                            <div class="pt-1 px-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text hm-hpd-8">
+                                            <i class="material-icons">search</i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control " placeholder="Search...">
+                                    <span class="input-group-btn hide">
+                                        <button class="btn  btn-white  hm-pd-5">
+                                            <i class="material-icons">close</i>
                                         </button>
-                                    </div>
-                                    <div style="display: flex; max-height: 200px;" class="hm-scroll-y-auto">     
-                                        <table class="table table-sm table-hover" align="left">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Makar Sankranti</td>
-                                                    <td>15/01/2019</td>
-                                                    <td class="td-actions">
-                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                            <i class="material-icons">edit</i>
-                                                        </button>
-                                                        <button class="btn btn-white" title="Delete">
-                                                            <i class="material-icons">delete</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Republic Day</td>
-                                                    <td>26/01/2019</td>
-                                                    <td class="td-actions">
-                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                            <i class="material-icons">edit</i>
-                                                        </button>
-                                                        <button class="btn btn-white" title="Delete">
-                                                            <i class="material-icons">delete</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class=" mb-4 hm-radius-4 border">
-                            <div  id="holidaysGroup2" >
-                               <div class="p-2 border-bottom hm-bg-dull">
-                                   <div class="row no-gutters align-items-center">
-                                        <div class="hm-col">
-                                            <a href="#" data-toggle="collapse" data-target="#HolidaysCollapse2" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
-                                                <span>
-                                                     <i class="material-icons">keyboard_arrow_down</i>
-                                                </span>
-                                                 Group: Athena Delhi Holidays
-                                               
-                                            </a>
-                                        </div>
-                                        <div class="pl-3">
-                                            <button type="button" class="btn btn-sm btn-fab btn-white" title="Edit">
-                                                <i class="material-icons">edit</i>
-                                            </button>
-                                        </div>
-                                        <div class="pl-3">
-                                            <div class="nav-item dropdown dropleft">
-                                                <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-sm btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                                  <i class="material-icons">more_horiz</i>
-                                                </a>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#0">Archived</a>
-                                                    <a class="dropdown-item" href="#0">Import Data</a>
-                                                    <a class="dropdown-item" href="#0">Export Data</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                   </div>
-                               </div>
-                            </div>
-
-                            <div id="HolidaysCollapse2" class="collapse" aria-labelledby="holidaysGroup2" data-parent="#accordHolidays">
-                                <div >
-                                    <div class="p-2">   
-                                        <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
-                                            Add Holiday
-                                        </button>
-                                    </div>
-                                    <div style="display: flex; max-height: 200px;" class="hm-scroll-y-auto">     
-                                        <table class="table table-sm table-hover" align="left">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Date</th>
-                                                    <th scope="col">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Makar Sankranti</td>
-                                                    <td>15/01/2019</td>
-                                                    <td class="td-actions">
-                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                            <i class="material-icons">edit</i>
-                                                        </button>
-                                                        <button class="btn btn-white" title="Delete">
-                                                            <i class="material-icons">delete</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Republic Day</td>
-                                                    <td>26/01/2019</td>
-                                                    <td class="td-actions">
-                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                            <i class="material-icons">edit</i>
-                                                        </button>
-                                                        <button class="btn btn-white" title="Delete">
-                                                            <i class="material-icons">delete</i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        
-                    </div>
-                 <!--    <div>   
-                     <div class="row no-gutters">
-                         <div class="hm-col">
-                             <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
-                                 Add Holiday
-                             </button>
-                         </div>
-                         <div>
-                             <div class="pt-1 px-3">
-                                 <div class="input-group">
-                                     <div class="input-group-prepend">
-                                         <span class="input-group-text hm-hpd-8">
-                                             <i class="material-icons">search</i>
-                                         </span>
-                                     </div>
-                                     <input type="text" class="form-control " placeholder="Search...">
-                                     <span class="input-group-btn hide">
-                                         <button class="btn  btn-white  hm-pd-5">
-                                             <i class="material-icons">close</i>
-                                         </button>
-                                     </span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div class="">
+                        <div class="">
                             <div class="nav-item dropdown dropleft">
-                                 <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                   <i class="material-icons">more_horiz</i>
+                                <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_horiz</i>
                                 </a>
-                                 <div class="dropdown-menu">
-                                     <a class="dropdown-item" href="#0">Filter Data</a>
-                                     <a class="dropdown-item" href="#0">Import Data</a>
-                                     <a class="dropdown-item" href="#0">Export Data</a>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                                 </div> -->
-                <!-- <div>   
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#0">Filter Data</a>
+                                    <a class="dropdown-item" href="#0">Import Data</a>
+                                    <a class="dropdown-item" href="#0">Export Data</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>   
                     <table class="table table-hover" align="left">
                         <thead>
                             <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Date</th>
-                                <th scope="col">Type</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Applied To</th>
+                                <th scope="col">Setup</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Makar Sankranti</td>
-                                <td>15/01/2019</td>
-                                <td>Optional</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#holidaysSetup', '#entireAdminSetup')">
+                                        Athena Jaipur Holidays
+                                    </a>
+                                </td>
+                                <td>12 Employees</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#holidaysSetup', '#entireAdminSetup')">
+                                        Setup
+                                    </a>
+                                </td>
                                 <td class="td-actions">
-                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                    <button class="btn btn-white"  title="Edit">
                                         <i class="material-icons">edit</i>
                                     </button>
                                     <button class="btn btn-white" title="Delete">
@@ -264,11 +103,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>Republic Day</td>
-                                <td>26/01/2019</td>
-                                <td>-</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#holidaysSetup', '#entireAdminSetup')">
+                                        Athena Delhi Holidays
+                                    </a>
+                                </td>
+                                <td>12 Employees</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#holidaysSetup', '#entireAdminSetup')">
+                                        Setup
+                                    </a>
+                                </td>
                                 <td class="td-actions">
-                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                    <button class="btn btn-white"  title="Edit">
                                         <i class="material-icons">edit</i>
                                     </button>
                                     <button class="btn btn-white" title="Delete">
@@ -278,84 +125,117 @@
                             </tr>
                         </tbody>
                     </table>
-                </div> -->
+                </div>
+
             </div>
-        </div>
             <div class="hm-tab-content " hmtab="planLeaves">
                 <div class="">
                     <div class="pt-2">
-                        <h3 class="hm-mr-0">
-                            Leaves Setup
-                        </h3>
-                        <p>
-                            Manage diffrent type of leave for employee.
-                        </p>
-                    </div>
-                    <div>   
                         <div class="row no-gutters">
                             <div class="hm-col">
-                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddLeaveType');">
-                                    Add Leave
-                                </button>
+                                <h3 class="hm-mr-0">
+                                    Leaves Plan
+                                </h3>
+                                <p>
+                                    Add leaves plans and setup leaves under the plan
+                                </p>
                             </div>
-                            <div>
-                                <div class="pt-1 px-3">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text hm-hpd-8">
-                                                <i class="material-icons">search</i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control " placeholder="Search...">
-                                        <span class="input-group-btn hide">
-                                            <button class="btn  btn-white  hm-pd-5">
-                                                <i class="material-icons">close</i>
-                                            </button>
+                            <div class="pl-3">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>   
+                    <div class="row no-gutters">
+                        <div class="hm-col">
+                            <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewLeavesPlan');">
+                                Add Plan
+                            </button>
+                        </div>
+                        <div>
+                            <div class="pt-1 px-3">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text hm-hpd-8">
+                                            <i class="material-icons">search</i>
                                         </span>
                                     </div>
+                                    <input type="text" class="form-control " placeholder="Search...">
+                                    <span class="input-group-btn hide">
+                                        <button class="btn  btn-white  hm-pd-5">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </span>
                                 </div>
                             </div>
-                            <div class="">
-                               <div class="nav-item dropdown dropleft">
-                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                      <i class="material-icons">more_horiz</i>
-                                   </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#0">Filter Data</a>
-                                        <a class="dropdown-item" href="#0">Import Data</a>
-                                        <a class="dropdown-item" href="#0">Export Data</a>
-                                    </div>
+                        </div>
+                        <div class="">
+                            <div class="nav-item dropdown dropleft">
+                                <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_horiz</i>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#0">Filter Data</a>
+                                    <a class="dropdown-item" href="#0">Import Data</a>
+                                    <a class="dropdown-item" href="#0">Export Data</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
+
+                <div>   
                     <table class="table table-hover" align="left">
-                            <thead>
+                        <thead>
                             <tr>
-                                <th scope="col">Leave Type</th>
-                                <th scope="col">Quota</th>
-                                <th scope="col">Allotment Policy</th>
-                                <th scope="col">Year End</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Applied To</th>
+                                <th scope="col">Setup</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Paid Leaves</td>
-                                <td>12 Days</td>
-                                <td>2 days monthly</td>
-                                <td>All Leaves Will Expires</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#leavesSetup', '#entireAdminSetup')">
+                                        Employees Leaves Plan
+                                    </a>
+                                </td>
+                                <td>12 Employees</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#leavesSetup', '#entireAdminSetup')">
+                                        Setup
+                                    </a>
+                                </td>
                                 <td class="td-actions">
-                                    <button class="btn btn-white">
-                                        <i class="material-icons" title="Edit">edit</i>
+                                    <button class="btn btn-white"  title="Edit">
+                                        <i class="material-icons">edit</i>
                                     </button>
                                     <button class="btn btn-white" title="Delete">
                                         <i class="material-icons">delete</i>
                                     </button>
-                                    <button class="btn btn-white" title="Clone">
-                                        <i class="material-icons">file_copy</i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#leavesSetup', '#entireAdminSetup')">
+                                        Managment Leaves Plan
+                                    </a>
+                                </td>
+                                <td>12 Employees</td>
+                                <td>
+                                    <a href="#" onclick="hmToggleView('#leavesSetup', '#entireAdminSetup')">
+                                        Setup
+                                    </a>
+                                </td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"  title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Delete">
+                                        <i class="material-icons">delete</i>
                                     </button>
                                 </td>
                             </tr>
@@ -380,7 +260,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-8 ">
                                     <h4 class="hm-mr-0 hm-text-normal">
-                                       Recipients For Location : Athena Jaipur 
+                                        Recipients For Location : Athena Jaipur 
                                     </h4>
                                 </div>
                                 <div class="col-12 col-md-4 ">
@@ -401,7 +281,7 @@
                             <div class="row">
                                 <div class="col-12 col-md-8 ">
                                     <h4 class="hm-mr-0 hm-text-normal">
-                                      Recipients For Location : Athena Delhi
+                                        Recipients For Location : Athena Delhi
                                     </h4>
                                 </div>
                                 <div class="col-12 col-md-4 ">
@@ -423,5 +303,3 @@
     </section>
 </div>
 
-<% include ../leaveHolidays/modals/modal_addNewHolidays %>
-<% include ../leaveHolidays/modals/modal_addNewLeaveType %>

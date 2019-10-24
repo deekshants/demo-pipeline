@@ -17,8 +17,13 @@
 
     <main class="hm-main-view">
         <div class="p-3">   
-            
-            <section class="hm-tab-wrapper">
+            <div>
+                <% include leaveHolidays/view_SetupHolidays %>
+            </div>
+            <div>
+                <% include leaveHolidays/view_SetupLeaves %>
+            </div>
+            <section class="hm-tab-wrapper" id="entireAdminSetup">
                 
                     <div class="row no-gutters">
                         <div class="pr-3" style="width: 250px;">
@@ -133,6 +138,11 @@
             </section>
         </div>
     </main>
+    <!-- modals -->
+    <% include leaveHolidays/modals/modal_addNewLeavesPlan %>
+    <% include leaveHolidays/modals/modal_addNewHolidaysPlan %>
+    <% include leaveHolidays/modals/modal_addNewHolidays %>
+    <% include leaveHolidays/modals/modal_addNewLeaveType %>
 
     <footer>
         <% include ../../partials/footer %>

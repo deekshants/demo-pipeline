@@ -1,5 +1,5 @@
 <section class="hm-side-panel-wrapper" id="panelAddNewLocation">
-    <div class="hm-side-panel">
+    <div class="hm-side-panel hm-side-panel-small">
         <header class="hm-side-panel-header border-bottom">
             <div class="row no-gutters px-3">
                 <div class="pt-2 pr-2">
@@ -23,56 +23,24 @@
                     Required Field!
                 </div>
             </div>
+           
             <div class="form-group">
-                <label for="" class=""><sup class="text-danger">*</sup>Country</label>
-                <select id="" class="form-control" required="">
-                    <option>India</option>
-                    <option>...</option>
-                </select>
+                <label class=""><sup class="text-danger">*</sup>Address</label>
+                <textarea class="form-control" id="" rows="3" required=""></textarea>
                 <div class="hm-input-error-msg">
                     Required Field!
                 </div>
             </div>
             <div class="form-group ">
-                <label class=""><sup class="text-danger">*</sup>Address</label>
+                <label class="">Mail Alias</label>
                 <input type="text" class="form-control" required="">
-                <div class="hm-input-error-msg">
-                    Required Field!
-                </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="form-group ">
-                        <label class=""><sup class="text-danger">*</sup>City</label>
-                        <input type="text" class="form-control" required="">
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group ">
-                        <label class=""><sup class="text-danger">*</sup>State</label>
-                        <input type="text" class="form-control" required="">
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="form-group ">
-                        <label class=""><sup class="text-danger">*</sup>Zip</label>
-                        <input type="text" class="form-control" required="">
-                        <div class="hm-input-error-msg">
-                            Required Field!
-                        </div>
-                    </div>
-                </div>
+
+            <div>
+                <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Location Added Successfully !', 'success', '#panelAddNewLocation')">Add Location</button>
+                <button type="button" class="btn btn-white" hmclose="panel" onclick="closeSidePanel('#panelAddNewLocation');">Close</button>
             </div>
-        </div>
-        <div class="hm-side-panel-footer px-3 py-2">
-            <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Location Added Successfully !', 'success', '#panelAddNewLocation')">Add Location</button>
-            <button type="button" class="btn btn-white" hmclose="panel" onclick="closeSidePanel('#panelAddNewLocation');">Close</button>
+            
         </div>
     </div>
 </section>

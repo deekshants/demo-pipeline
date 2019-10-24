@@ -47,4 +47,12 @@ router.get('/employee-details', function(req, res) {
     res.render('empDetails/page_empDetails', {baseUrl: process.env.BASE_URL});
 });
 
+
+
+
+
+router.get('/extra', function(req, res) {
+    res.render('extra/page_extra', {baseUrl: process.env.BASE_URL});
+});
+
 module.exports = router;

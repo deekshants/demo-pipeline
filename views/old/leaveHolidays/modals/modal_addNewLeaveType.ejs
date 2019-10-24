@@ -47,7 +47,6 @@
                                     </div>
                                 </div>
                             </div> 
-                            
                             <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="3">
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
@@ -57,7 +56,7 @@
                                         <i class="material-icons">check</i>
                                     </div>
                                     <div class="hm-wizard-step-text">
-                                        Leave Restrictions 
+                                        Applicable For 
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +69,7 @@
                                         <i class="material-icons">check</i>
                                     </div>
                                     <div class="hm-wizard-step-text">
-                                        Holidays & Weekends  
+                                        Leave Restrictions 
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +82,7 @@
                                         <i class="material-icons">check</i>
                                     </div>
                                     <div class="hm-wizard-step-text">
-                                        Leave Approval 
+                                        Holidays & Weekends  
                                     </div>
                                 </div>
                             </div>
@@ -91,6 +90,19 @@
                                 <div class="hm-wizard-step-inner">
                                     <div class="hm-wizard-step-count mr-2">
                                         6
+                                    </div>
+                                    <div class="hm-wizard-step-check mr-2">
+                                        <i class="material-icons">check</i>
+                                    </div>
+                                    <div class="hm-wizard-step-text">
+                                        Leave Approval 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hm-wizard-step" hm-direct-step="wizard" hm-step="7">
+                                <div class="hm-wizard-step-inner">
+                                    <div class="hm-wizard-step-count mr-2">
+                                        7
                                     </div>
                                     <div class="hm-wizard-step-check mr-2">
                                         <i class="material-icons">check</i>
@@ -113,43 +125,23 @@
                                         Basic Info
                                     </h3>
                                     <div>
-                                        <div class="row">
-                                            <div class="col-12 col-md-6 ">
-                                                <div class="form-group">
-                                                    <label for=""><sup class="text-danger">*</sup>Title</label>
-                                                    <input type="text" class="form-control" id="" required="">
-                                                    <div class="hm-input-error-msg">
-                                                        Required Field!
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-md-6 ">
-                                                <div>
-                                                    <div class="form-check form-check-radio form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="lvType"  value="" checked="">
-                                                            Paid 
-                                                            <span class="circle">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check form-check-radio form-check-inline">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="radio" name="lvType" value="">
-                                                            Unpaid 
-                                                            <span class="circle">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                    </div>
-                                                </div>
+                                        <div class="form-group">
+                                            <label for=""><sup class="text-danger">*</sup>Title</label>
+                                            <input type="text" class="form-control" id="" required="">
+                                            <div class="hm-input-error-msg">
+                                                Required Field!
                                             </div>
                                         </div>
-                                        
+                                        <div class="form-group">
+                                            <label class="label-control"><sup class="text-danger">*</sup> Calendar Year Start From</label>
+                                            <input type="text" class="form-control datepicker" required="" />
+                                            <div class="hm-input-error-msg">
+                                                Required Field!
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label for="">Description</label>
-                                            <textarea class="form-control" id="" rows="2"></textarea>
+                                            <textarea class="form-control" id="" rows="1"></textarea>
                                         </div>
                                         <div>
                                             <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 2});">
@@ -329,20 +321,18 @@
                                     </div>
                                 </div>
                             </section>
-                            
                             <section class="hm-step-content " hm-step-content="3">
                                 <div class="px-3">
                                     <h3>
-                                        Leave Restrictions
+                                        Applicable For
                                     </h3>
-                                    
-                                    <section class="row mb-3">
-                                        <div class="col-12 col-md-4">
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-3">
                                             <p>
                                                 Gender
                                             </p>
                                         </div>
-                                        <div class="col-12 col-md-8">
+                                        <div class="col-12 col-md-9">
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
                                                     <input class="form-check-input" type="checkbox">
@@ -371,15 +361,14 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </section>
-
-                                    <section class="row mb-3">
-                                        <div class="col-12 col-md-4">
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-12 col-md-3">
                                             <p>
                                                 Marital Status
                                             </p>
                                         </div>
-                                        <div class="col-12 col-md-8">
+                                        <div class="col-12 col-md-9">
                                             <div class="form-check form-check-inline">
                                                 <label class="form-check-label">
                                                     <input class="form-check-input" type="checkbox">
@@ -399,16 +388,61 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </section>
+                                    </div>
+                    
+                                  
+                                    <div class="form-group">
+                                        <label for="">Department</label>
+                                        <input type="text" class="form-control">
+                                        <div class="hm-input-error-msg">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Designation</label>
+                                        <input type="text" class="form-control">
+                                        <div class="hm-input-error-msg">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Location</label>
+                                        <input type="text" class="form-control">
+                                        <div class="hm-input-error-msg">
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Role</label>
+                                        <input type="text" class="form-control">
+                                        <div class="hm-input-error-msg">
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="mt-4">
+                                            <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 2});">
+                                                Previous
+                                            </button>
+                                            <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 4});">
+                                                Next
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="hm-step-content " hm-step-content="4">
+                                <div class="px-3">
+                                    <h3>
+                                        Leave Restrictions
+                                    </h3>
+
                                     <section class="mb-4">
-                                        <div class="row mb-3">
-                                            <div class="col-12 col-md-4">
-                                                <p>
-                                                    Leave Duration(s) Allowed :
-                                                </p>
-                                            </div>
-                                            
-                                            <div class="col-12 col-md-8">
+                                        <div class="row no-gutters align-items-end mb-2">
+                                            <p>
+                                                Leave Duration(s) Allowed :
+                                            </p>
+                                            <div class="pl-3">
                                                 <div class="form-check form-check-inline">
                                                     <label class="form-check-label">
                                                         <input class="form-check-input" type="checkbox" checked="">
@@ -427,6 +461,7 @@
                                                         </span>
                                                     </label>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </section>
@@ -548,18 +583,17 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 2});">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 3});">
                                             Previous
                                         </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 4});">
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">
                                             Next
                                         </button>
                                     </div>
                                 </div>
 
                             </section>
-                            
-                            <section class="hm-step-content " hm-step-content="4">
+                            <section class="hm-step-content " hm-step-content="5">
                                 <div class="px-3">
                                     <h3>
                                         Holidays & Weekends
@@ -638,7 +672,7 @@
                                         <div class="form-check">
                                             <label class="form-check-label">
                                                 <input class="form-check-input" type="checkbox">
-                                                If half day leave is taken then this rule doesn’t applied.
+                                                If half day leave is taken then this rule doesn’t apppled.
                                                 <span class="form-check-sign">
                                                     <span class="check"></span>
                                                 </span>
@@ -648,10 +682,10 @@
 
 
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 3});">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 4});">
                                             Previous
                                         </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 6});">
                                             Next
                                         </button>
                                     </div>
@@ -659,7 +693,7 @@
 
                             </section>
 
-                            <section class="hm-step-content " hm-step-content="5">
+                            <section class="hm-step-content " hm-step-content="6">
                                 <div class="px-3">
                                     <h3>
                                         Leave Approval
@@ -739,17 +773,17 @@
                                         
                                     </section>
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 4});">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">
                                             Previous
                                         </button>
-                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 6});">
+                                        <button type="button" class="btn btn-primary" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 7});">
                                             Next
                                         </button>
                                     </div>
                                 </div>
                             </section>
 
-                            <section class="hm-step-content" hm-step-content="6">
+                            <section class="hm-step-content" hm-step-content="7">
                                 <div class="px-3">
                                     <h3>
                                         Year End Processing
@@ -788,7 +822,7 @@
                                         </div>
                                     </section>
                                     <div>
-                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 5});">
+                                        <button type="button" class="btn btn-white" onclick="hmWizardJumpStep({wrapperId : '#leaveTypeWizard', step : 6});">
                                             Previous
                                         </button>
                                         <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Leave Type Added Successfully !', 'success', '#panelAddLeaveType')">

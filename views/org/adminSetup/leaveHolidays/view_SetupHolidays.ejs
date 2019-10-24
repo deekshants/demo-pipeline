@@ -1,0 +1,97 @@
+<section id="holidaysSetup" class="hide">
+    <div class="card hm-tmr-0 p-3">
+        <div class=" border-bottom pb-2">
+            <div class="row no-gutters align-items-center">
+                <div class="pr-3">
+                    <button type="button" class="btn btn-fab btn-round btn-white" onclick="hmToggleView('#holidaysSetup', '#entireAdminSetup')">
+                        <i class="material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <div class="hm-col">
+                    <div class="hm-text-normal hm-text-size-16">
+                        <span class="hm-text-dull"> Setup:</span> Athena Jaipur Holidays
+                    </div>
+                    <div class="hm-text-size-12">
+                        Add, Edit and delete holidays 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">   
+            <div class="row no-gutters">
+                <div class="hm-col">
+                    <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
+                        Add Holiday
+                    </button>
+                </div>
+                <div>
+                    <div class="pt-1 px-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text hm-hpd-8">
+                                    <i class="material-icons">search</i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control " placeholder="Search...">
+                            <span class="input-group-btn hide">
+                                <button class="btn  btn-white  hm-pd-5">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="nav-item dropdown dropleft">
+                        <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_horiz</i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#0">Filter Data</a>
+                            <a class="dropdown-item" href="#0">Import Data</a>
+                            <a class="dropdown-item" href="#0">Export Data</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>   
+            <table class="table table-hover" align="left">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Makar Sankranti</td>
+                        <td>15/01/2019</td>
+                        <td class="td-actions">
+                            <button class="btn btn-white"  title="Edit">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button class="btn btn-white" title="Delete">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Republic Day</td>
+                        <td>26/01/2019</td>
+                        <td class="td-actions">
+                            <button class="btn btn-white"  title="Edit">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button class="btn btn-white" title="Delete">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
