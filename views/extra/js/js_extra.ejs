@@ -1,41 +1,47 @@
   <script>
-        $(document).ready(function(){
-            var $uploadCrop, rawImg;
-            $('#userImgInput').on('change', function () {
-                if (this.files && this.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        rawImg = e.target.result;
-                        $('#modalCropUserProfileImg').modal('show');
-                    }
-                    reader.readAsDataURL(this.files[0]);
-                }
-                else {
-                    swal("Sorry - you're browser doesn't support the FileReader API");
-                } 
-            });
-            $uploadCrop = $('#cropAreaWrapper').croppie({
-                viewport: {
-                    width: 200,
-                    height: 200,
-                },
-                enforceBoundary: false,
-                enableExif: true
-            });
-            $('#modalCropUserProfileImg').on('shown.bs.modal', function(){
-                $uploadCrop.croppie('bind', {
-                    url: rawImg
-                });
-            });
-            $('#cropAndSave').on('click', function (ev) {
-                $uploadCrop.croppie('result', {
-                    type: 'base64',
-                    format: 'jpeg'
-                }).then(function (resp) {
-                    $('#userProfileImg').attr('src', resp);
-                    $('#modalCropUserProfileImg').modal('hide');
-                });
-            });
-            
+    $(document).ready(function(){
+        $( "#aa" ).select2({        
+                ajax: {
+                    url: "https://api.github.com/search/repositories",
+                    dataType: 'json',
+                    delay: 25,
+                    data: function (params) {
+                      return {
+                        q: params.term, // search term
+                        page: params.page
+                      };
+                    },
+                    processResults: function (data, params) {
+                      // parse the results into the format expected by Select2
+                      // since we are using custom formatting functions we do not need to
+                      // alter the remote JSON data, except to indicate that infinite
+                      // scrolling can be used
+                      console.log(data, params);
+                      params.page = params.page || 1;
+
+                      return {
+                        results: data.items,
+                        pagination: {
+                          more: (params.page * 30) < data.total_count
+                        }
+                      };
+                    },
+                cache: false
+            },
+            minimumInputLength: 1,
+            escapeMarkup: function(markup) {
+                return markup;
+            },
+            templateResult: function(data) {
+                return '<div>'+data.full_name+'</div>';
+            },
+            templateSelection: function(data) {
+                return '<div class="text-truncate hm-max-w-150">'+data.full_name+'</div>';
+            } 
         });
-    </script>
+        
+
+
+
+    });
+</script>

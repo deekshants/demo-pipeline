@@ -274,3 +274,8 @@ function checkboxExtraView(){
        $(view).addClass('hide'); 
     }
 }
+
+/*--------------Toggle view js--------------*/
+function hmToggleView(id1, id2){
+    $(id1).add(id2).toggleClass('hide');
+}
