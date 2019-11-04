@@ -14,19 +14,43 @@
     <aside>
         <% include ../partials/side-menu %>
     </aside>
+    <style>
+        
+    </style>
 
     <main class="hm-main-view">
         <div class="p-3">
             <div class="my-5">
-                <div class="form-group">
-                    <label class="bmd-label-static">Title</label>
-                    <select id="aa" class="form-control dropdown-search"  multiple="multiple" ></select>
+                <div class="form-group hm-autocomp-single">
+                    <label class="">Single Choice No Ajax Autocomplete</label>
+                    <select id="noAjaxSingle" class="form-control" data-placeholder="Select an option" data-allow-clear="true">
+                        
+                    </select>
                     <div class="hm-input-error-msg">
                         Required Field!
                     </div>
                 </div>
 
-            </div> 
+                <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0">
+                    <label class="">Multi Choice No Ajax Autocomplete</label>
+                    <select id="noAjaxMulti" class="form-control"  multiple="multiple" ></select>
+                    <div class="hm-input-error-msg">
+                        Required Field!
+                    </div>
+                </div>
+               
+                
+                <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0">
+                    <label class="">Multi Choice With Ajax Autocomplete</label>
+                    <select id="withAjaxMulti" class="form-control"  multiple="multiple" ></select>
+                    <div class="hm-input-error-msg">
+                        Required Field!
+                    </div>
+                </div>
+
+                
+            </div>
+
             <div class="my-5">
                 <a href="#">
                     <i class="material-icons hm-text-size-16">edit</i> Attendance Request
@@ -36,6 +60,7 @@
                     <i class="material-icons hm-text-size-16">edit</i> Attendance Request
                 </a>
             </div>
+
             <div class="my-5">
                 <div class="btn-group btn-group-toggle hm-tmr-5" data-toggle="buttons">
                     <label class="btn btn-sm btn-secondary ">
@@ -47,97 +72,122 @@
                     </label>
                 </div>
             </div>
+
+            <div class="my-5">
+                <div class="hm-tab-wrapper">
+                    <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                        <div class="hm-tab-link btn active" hmtab="tab1" hm-hook="click" hm-action="hmTab">
+                            Tab 1
+                        </div>
+                        <div class="hm-tab-link btn" hmtab="tab2" onclick="fireOtherFnTab()">
+                            Tab 2
+                        </div>
+                    </div>
+                    <div class="hm-tab-content-wrapper">
+                        <div class="hm-tab-content active" hmtab="tab1">
+                            11111111111111111111111111
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur et quisquam, quod alias dicta omnis debitis maiores molestias unde fugit beatae quia tempora facilis, sint ipsum repellat officiis suscipit iure.
+                        </div>
+                        <div class="hm-tab-content " hmtab="tab2">
+                            2222222222222222222222222222
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem eius laboriosam. Consequuntur ullam eveniet praesentium repudiandae beatae, cum perferendis! Facilis eaque qui fugiat ullam sapiente asperiores, voluptates recusandae voluptate?
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="my-5">
                 <section class="">
-        <div class="">
-            <h4 class="title  hm-bmr-10">
-               Personal Details
-            </h4>
-        </div>
-        <div>
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-5">
-                    <div class="row py-2">
-                        <div class="col-12 col-md-4">
-                            <span class="text-muted">
-                                First Name
-                            </span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="hm-text-normal">
-                                Hemant    
+                    <div class="">
+                        <h4 class="title  hm-bmr-10">
+                            Personal Details
+                        </h4>
+                    </div>
+                    <div>
+                        <div class="row">
+                            <div class="col-12 col-md-12 col-lg-5">
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-4">
+                                        <span class="text-muted">
+                                            First Name
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="hm-text-normal">
+                                            Hemant    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-4">
+                                        <span class="text-muted">
+                                            Last Name
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="hm-text-normal">
+                                            Sen    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-4">
+                                        <span class="text-muted">
+                                            Date Of Birth
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="hm-text-normal">
+                                            10/12/2019    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-12 col-lg-2"></div>
+                            <div class="col-12 col-md-12 col-lg-5">
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-4">
+                                        <span class="text-muted">
+                                            Gender
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="hm-text-normal">
+                                            Male    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-4">
+                                        <span class="text-muted">
+                                            Blood Group
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="hm-text-normal">
+                                            B+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-12 col-md-4">
+                                        <span class="text-muted">
+                                            Marital Status
+                                        </span>
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <div class="hm-text-normal">
+                                            Unmarried   
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                    <div class="row py-2">
-                        <div class="col-12 col-md-4">
-                            <span class="text-muted">
-                                Last Name
-                            </span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="hm-text-normal">
-                                Sen    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-12 col-md-4">
-                            <span class="text-muted">
-                                Date Of Birth
-                            </span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="hm-text-normal">
-                                10/12/2019    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-2"></div>
-                <div class="col-12 col-md-12 col-lg-5">
-                    <div class="row py-2">
-                        <div class="col-12 col-md-4">
-                            <span class="text-muted">
-                                Gender
-                            </span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="hm-text-normal">
-                                Male    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-12 col-md-4">
-                            <span class="text-muted">
-                                Blood Group
-                            </span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="hm-text-normal">
-                                B+    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-2">
-                        <div class="col-12 col-md-4">
-                            <span class="text-muted">
-                                Marital Status
-                            </span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                            <div class="hm-text-normal">
-                                Unmarried   
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
+                </section>
             </div>
-        </div>
-    </section>
-            </div>
+
             <div class="my-5">
                 <div class="accordion" id="accordHolidays">
                     <div class=" mb-4 hm-radius-4 border">

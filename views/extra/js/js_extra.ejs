@@ -1,47 +1,187 @@
   <script>
+    
     $(document).ready(function(){
-        $( "#aa" ).select2({        
-                ajax: {
-                    url: "https://api.github.com/search/repositories",
-                    dataType: 'json',
-                    delay: 25,
-                    data: function (params) {
-                      return {
-                        q: params.term, // search term
-                        page: params.page
-                      };
-                    },
-                    processResults: function (data, params) {
-                      // parse the results into the format expected by Select2
-                      // since we are using custom formatting functions we do not need to
-                      // alter the remote JSON data, except to indicate that infinite
-                      // scrolling can be used
-                      console.log(data, params);
-                      params.page = params.page || 1;
-
-                      return {
-                        results: data.items,
-                        pagination: {
-                          more: (params.page * 30) < data.total_count
-                        }
-                      };
-                    },
-                cache: false
-            },
-            minimumInputLength: 1,
-            escapeMarkup: function(markup) {
-                return markup;
-            },
-            templateResult: function(data) {
-                return '<div>'+data.full_name+'</div>';
-            },
-            templateSelection: function(data) {
-                return '<div class="text-truncate hm-max-w-150">'+data.full_name+'</div>';
-            } 
-        });
-        
-
-
+      noAjaxSingleSelection();
+      noAjaxMultiSelection();
+      withAjaxMultiSelection();
 
     });
+
+  function fireOtherFnTab(){
+    alert('hello');
+    hmTab();
+  }
+
+  /*-------------------------------single select-------------------------*/
+  function withAjaxMultiSelection(){
+   $( "#withAjaxMulti" ).select2({        
+              ajax: {
+                  url: "https://api.github.com/search/repositories",
+                  dataType: 'json',
+                  delay: 25,
+                  data: function (params) {
+                    return {
+                      q: params.term, // search term
+                      page: params.page
+                    };
+                  },
+                  processResults: function (data, params) {
+                    // parse the results into the format expected by Select2
+                    // since we are using custom formatting functions we do not need to
+                    // alter the remote JSON data, except to indicate that infinite
+                    // scrolling can be used
+                    console.log(data, params);
+                    params.page = params.page || 1;
+
+                    return {
+                      results: data.items,
+                      pagination: {
+                        more: (params.page * 30) < data.total_count
+                      }
+                    };
+                  },
+              cache: false
+          },
+          minimumInputLength: 1,
+          escapeMarkup: function(markup) {
+              return markup;
+          },
+          templateResult: function(data) {
+              //return `<div>`+data.full_name+`</div>`;
+              return `<div class="hm-grid-inline">
+                          <div class="pr-2">
+                              <img class="hm-name-circle " src="https://i2.wp.com/float8ion.com/wp-content/uploads/2015/12/random-user-31.jpg" height="40">
+                          </div>
+                          <div class="hm-col hm-text-height-normal">
+                              <div class="text-truncate hm-max-w-200 hm-text-size-13">`
+                                  +data.full_name+
+                              `</div>
+                              <div class="hm-select-text-dull hm-text-size-11">
+                                  E016Y2017
+                              </div>
+                          </div>
+                      </div>`;
+          },
+          templateSelection: function(data) {
+              return `<div class="hm-grid-inline">
+                          <div class="pr-2">
+                              <img class="hm-name-circle " src="https://i2.wp.com/float8ion.com/wp-content/uploads/2015/12/random-user-31.jpg" height="40">
+                          </div>
+                          <div class="hm-col pr-2 hm-text-height-normal">
+                              <div class="text-truncate hm-max-w-200 hm-text-size-13">`
+                                  +data.full_name+
+                              `</div>
+                              <div class="hm-select-text-dull hm-text-size-11">
+                                  E016Y2017
+                              </div>
+                          </div>
+                      </div>`;
+          } 
+      });
+  }
+  /*-------------------------------single select-------------------------*/
+  function noAjaxSingleSelection(){
+    $.ajax({
+      type:"GET",
+      url:'https://reqres.in/api/users',
+      success: function(data) {
+        var htmlData = [];
+        var arr = data.data
+        $.each(arr, function(index, value) {
+          var html = {};
+          html.id = arr[index].id;
+          html.text = arr[index].first_name + arr[index].last_name;
+          html.html = `<div class="hm-grid-inline">
+                        <div class="pr-2">
+                          <img class="hm-name-circle" src="`+arr[index].avatar+`" height="32">
+                        </div>
+                        <div class="hm-col hm-text-height-normal hm-tpd-2">
+                          <div class="text-truncate hm-max-w-200 hm-text-size-13">`
+                            +arr[index].first_name + arr[index].last_name+
+                          `</div>
+                          <div class="hm-select-text-dull hm-text-size-11">
+                            `+arr[index].email+`
+                          </div>
+                        </div>
+                      </div>`;
+          html.title = arr[index].first_name + arr[index].last_name;
+          htmlData.push(html);
+        });
+        var placeholder = {};
+        placeholder.id = 'noValue';
+        placeholder.text = 'Select';
+        placeholder.html = `Select`;
+        placeholder.title = '';
+        htmlData.unshift(placeholder);
+        $("#noAjaxSingle").select2({
+          data: htmlData,
+          escapeMarkup: function(markup) {
+            return markup;
+          },
+          templateResult: function(data) {
+            return data.html;
+          },
+          templateSelection: function(data) {
+            return data.html;
+          }
+        })
+      },
+      error: function() {
+
+      }
+    });
+  }
+
+  /*-------------------------------multy select-------------------------*/
+  function noAjaxMultiSelection(){
+    $.ajax({
+      type:"GET",
+      url:'https://reqres.in/api/users',
+      success: function(data) {
+        var htmlData = [];
+        var arr = data.data
+        $.each(arr, function(index, value) {
+          var html = {};
+          html.id = arr[index].id;
+          html.text = arr[index].first_name + arr[index].last_name;
+          html.html = `<div class="hm-grid-inline">
+                        <div class="pr-2">
+                          <img class="hm-name-circle" src="`+arr[index].avatar+`" height="32">
+                        </div>
+                        <div class="hm-col hm-text-height-normal hm-tpd-2">
+                          <div class="text-truncate hm-max-w-200 hm-text-size-13">`
+                            +arr[index].first_name + arr[index].last_name+
+                          `</div>
+                          <div class="hm-select-text-dull hm-text-size-11">
+                            `+arr[index].email+`
+                          </div>
+                        </div>
+                      </div>`;
+          html.title = arr[index].first_name + arr[index].last_name;
+          htmlData.push(html);
+        });
+        var placeholder = {};
+        placeholder.id = 'noValue';
+        placeholder.text = 'Select';
+        placeholder.html = `Select`;
+        placeholder.title = '';
+        htmlData.unshift(placeholder);
+        $("#noAjaxMulti").select2({
+          data: htmlData,
+          escapeMarkup: function(markup) {
+            return markup;
+          },
+          templateResult: function(data) {
+            return data.html;
+          },
+          templateSelection: function(data) {
+            return data.html;
+          }
+        })
+      },
+      error: function() {
+
+      }
+    });
+  }
 </script>

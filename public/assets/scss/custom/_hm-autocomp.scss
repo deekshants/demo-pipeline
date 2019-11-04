@@ -1,0 +1,28 @@
+.hm-autocomp-reverse-close-btn .select2-selection__choice{
+    flex-direction: row-reverse;
+}
+.hm-autocomp-reverse-close-btn .select2-selection__rendered{
+    justify-content: flex-start;
+}
+
+.hm-autocomp-pill-padding-0 .select2-selection__choice,
+.hm-autocomp-pill-padding-0 .select2-container--default .select2-selection--multiple .select2-selection__choice,
+.hm-autocomp-pill-padding-0 .select2-container--default .select2-selection__choice
+{
+    padding: 0;
+}
+
+.hm-autocomp-close-btn-padding-10 .select2-selection__choice__remove{
+    padding: 10px;
+}
+.hm-autocomp-close-btn-padding-5 .select2-selection__choice__remove{
+    padding: 5px 10px;
+}
+.hm-autocomp-single .select2-container .select2-selection--single {
+    min-height: 36px;
+    height: auto;
+}
+
+.hm-autocomp-multi-bpd-5 .select2-selection.select2-selection--multiple{
+    padding-bottom: 5px;
+}

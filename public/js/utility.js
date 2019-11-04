@@ -1,19 +1,23 @@
 /*--------------start function------------------*/
 $(document).ready(function(){
-    activeSideMenuParentLink();
-    activeSideMenuChildLink()
+    $.each($('[hm-hook="ready"]').closest('[hm-action]'), function(index, value) {
+        window[$(value).attr('hm-action')]();
+    });
+});
+
+
+
+$(document).ready(function(){
+    //activeSideMenuParentLink();
+    //activeSideMenuChildLink();
     InitRadioExtraView();
     InitCheckboxExtraView();
 });
-$('.hm-tab-link').click(function(){
-   hmTab();
+$('[hm-hook="click"]').click(function(e){
+   var hmFn = $(e.target).closest('[hm-action]').attr('hm-action');
+   window[hmFn]();
 });
-$('[hm-direct-step="wizard"]').click(function(){
-   hmWizardDirectStep();
-});
-$('.hm-side-menu-link').click(function(){
-   hmSideMenuLink();
-});
+
 $('[data-toggle="tooltip"]').tooltip();
 
 $('.datepicker').datetimepicker({
@@ -209,9 +213,7 @@ function closeSidePanel(id){
     $('body').css('overflow', 'auto');
 }
 
-/*------------------------------------wizard js -----------------------------------*/ 
-
-
+/*------------------------------------wizard js -----------------------------------*/
 
 function hmWizardDirectStep(){
     var eleCurrent = $(event.target).closest('.hm-wizard-step');

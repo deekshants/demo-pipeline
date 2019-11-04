@@ -1,13 +1,13 @@
 <div class="card p-3 hm-tmr-0">
     <section class="hm-tab-wrapper">
         <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
-            <div class=" hm-tab-link active btn" hmtab="holidays">
+            <div class=" hm-tab-link active btn" hmtab="holidays" hm-hook="click" hm-action="hmTab">
                 Holidays
             </div>
-            <div class=" hm-tab-link  btn" hmtab="planLeaves">
+            <div class=" hm-tab-link  btn" hmtab="planLeaves" hm-hook="click" hm-action="hmTab">
                 Leaves
             </div>
-            <div class=" hm-tab-link  btn" hmtab="notify">
+            <div class=" hm-tab-link  btn" hmtab="notify" hm-hook="click" hm-action="hmTab">
                 Approval Notification
             </div>
         </div>
@@ -244,59 +244,50 @@
                 </div>
             </div>
             <div class="hm-tab-content" hmtab="notify">
-                <div class="">
-                    <div class="pt-2">
-                        <h3 class="hm-mr-0">
-                            Approval Notification
-                        </h3>
-                        <p>
-                            Send notification upon successful approval of each leave request in the entire organization. 
-                        </p>
+                <div class="row no-gutters">
+                    <div class="hm-col">
+                        <div class="pt-2">
+                            <h3 class="hm-mr-0">
+                                Approval Notification
+                            </h3>
+                            <p>
+                                Send notification upon successful approval of each leave request in the entire organization. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pl-3">
+                        <!-- <button type="button" class="btn btn-primary">
+                            Save
+                        </button> -->
                     </div>
                 </div>
+                
                 <div class="mt-4">
                     <section class="mb-4">
                         <div class="hm-bg-dull hm-radius-4 p-3 hm-min-h-100">
-                            <div class="row">
-                                <div class="col-12 col-md-8 ">
-                                    <h4 class="hm-mr-0 hm-text-normal">
-                                        Recipients For Location : Athena Jaipur 
-                                    </h4>
+                            <div>
+                                <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0 hm-autocomp-multi-bpd-5 ">
+                                    <label for="" class="hm-text-default hm-text-size-16">Recipients For Location : Athena Delhi</label>
+                                    <select  class="form-control multiSelect"  multiple="multiple" style="width: 100%;" data-placeholder="Select User"></select>
                                 </div>
-                                <div class="col-12 col-md-4 ">
-                                    <div class="text-right">
-                                        <button type="button" class="btn btn-fab btn-round btn-primary">
-                                            <i class="material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-2">
-                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
                             </div>
                         </div>
                     </section>
                     <section class="mb-4">
-                        <div class="hm-bg-dull hm-radius-4 p-3 hm-min-h-100">
-                            <div class="row">
-                                <div class="col-12 col-md-8 ">
-                                    <h4 class="hm-mr-0 hm-text-normal">
-                                        Recipients For Location : Athena Delhi
-                                    </h4>
+                        <div class="hm-bg-dull hm-radius-4 p-3">
+                            <div>
+                                <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0 hm-autocomp-multi-bpd-5 ">
+                                    <label for="" class="hm-text-default hm-text-size-16">Recipients For Location : Athena Delhi</label>
+                                    <select  class="form-control multiSelect"  multiple="multiple" style="width: 100%;" data-placeholder="Select User"></select>
                                 </div>
-                                <div class="col-12 col-md-4 ">
-                                    <div class="text-right">
-                                        <button type="button" class="btn btn-fab btn-round btn-primary">
-                                            <i class="material-icons">add</i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pt-2">
-                                <img src="<%= baseUrl %>/img/dummy-pill.png" alt="" class="pb-2 pr-2">
                             </div>
                         </div>
                     </section>
+                    <div class="text-right">
+                        <button type="button" class="btn btn-primary">
+                            Save
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

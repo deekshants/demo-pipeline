@@ -1,24 +1,24 @@
 
-<div class="hm-side-menu-outer">
+<div class="hm-side-menu-outer" hm-hook="ready" hm-action="activeSideMenuParentLink">
     <div class="text-center hm-vpd-8">
     	<a href="/">
             <img src="<%= baseUrl %>/img/logo-white.png" alt="logo" height="16">
         </a>
     </div>
-    <nav class="">
-    	<div class="hm-side-menu-link" hm-link="/" hm-url="/">
+    <nav class="" hm-hook="ready" hm-action="activeSideMenuChildLink">
+    	<div class="hm-side-menu-link" hm-link="/" hm-url="/" hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">home</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">Home</div>
 	    </div>
-	    <div class="hm-side-menu-link " >
+	    <div class="hm-side-menu-link" hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">person</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">Me</div>
 	    </div>
-	    <div class="hm-side-menu-link " hm-url="attendance">
+	    <div class="hm-side-menu-link " hm-url="attendance"hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">access_time</i> 
 	    	</div>
@@ -38,20 +38,20 @@
 				</a>
 	    	</div>
 	    </div>
-	    <div class="hm-side-menu-link " >
+	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">group</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">My Team</div>
 	    </div>
-	    <div class="hm-side-menu-link " >
+	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">attach_money</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">My Finances</div>
 	    </div>
 	    
-	    <div class="hm-side-menu-link  focus" hm-url="org">
+	    <div class="hm-side-menu-link  focus" hm-url="org"hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">apartment</i> 
 	    	</div>
@@ -90,19 +90,19 @@
 				
 	    	</div>	
 	    </div>
-	    <div class="hm-side-menu-link " >
+	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">work</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">Projects</div>
 	    </div>
-	    <div class="hm-side-menu-link " >
+	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">insert_chart</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">Performance</div>
 	    </div>
-	    <div class="hm-side-menu-link " >
+	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">receipt</i> 
 	    	</div>
