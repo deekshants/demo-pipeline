@@ -1,15 +1,11 @@
 /*--------------start function------------------*/
-$(document).ready(function(){
-    $.each($('[hm-hook="ready"]').closest('[hm-action]'), function(index, value) {
-        window[$(value).attr('hm-action')]();
-    });
-});
+
 
 
 
 $(document).ready(function(){
-    //activeSideMenuParentLink();
-    //activeSideMenuChildLink();
+    activeSideMenuParentLink();
+    activeSideMenuChildLink();
     InitRadioExtraView();
     InitCheckboxExtraView();
 });
