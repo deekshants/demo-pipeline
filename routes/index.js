@@ -41,15 +41,15 @@ router.get('/org/employees', function(req, res) {
 });
 
 router.get('/attendance/my-attendance', function(req, res) {
-    res.render('attendance/myAttendance/page_myAttendance', {baseUrl: process.env.BASE_URL});
+    res.render('attendance/myAttendance/page_MyAttendance', {baseUrl: process.env.BASE_URL});
 });
 
 router.get('/attendance/my-attendance-requests', function(req, res) {
-    res.render('attendance/myAttendanceRequests/page_myAttenReq', {baseUrl: process.env.BASE_URL});
+    res.render('attendance/myAttendanceRequests/page_MyAttenReq', {baseUrl: process.env.BASE_URL});
 });
 
 router.get('/attendance/my-wfh-requests', function(req, res) {
-    res.render('attendance/myWorkFromHomeRequests/page_myWFHReq', {baseUrl: process.env.BASE_URL});
+    res.render('attendance/myWorkFromHomeRequests/page_MyWFHReq', {baseUrl: process.env.BASE_URL});
 });
 
 router.get('/employee-details', function(req, res) {
