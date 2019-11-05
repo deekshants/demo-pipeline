@@ -1,0 +1,61 @@
+<section class="hm-side-panel-wrapper" id="panelAddNewAttenReq">
+    <div class="hm-side-panel">
+        <header class="hm-side-panel-header border-bottom">
+            <div class="row no-gutters px-3">
+                <div class="pt-2 pr-2">
+                    <i class="material-icons">add</i>
+                </div>
+                <div class="hm-col">
+                    <h4 class="hm-text-normal"> Add Attendance Request</h4>
+                </div>
+                <div class="pl-3">
+                    <button class="btn  btn-fab btn-link btn-round" onclick="closeSidePanel('#panelAddNewAttenReq');">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="hm-side-panel-body  p-4">
+            <div class="form-group">
+                <label class="label-control"><sup class="text-danger">*</sup> Date</label>
+                <input type="text" class="form-control datepicker" required="" />
+                <div class="hm-input-error-msg">
+                    Required Field!
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-12 col-md-6 ">
+                    <div class="form-group">
+                        <label class="label-control"><sup class="text-danger">*</sup> In Time</label>
+                        <input type="text" class="form-control timepicker" required="" />
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 ">
+                    <div class="form-group">
+                        <label class="label-control"><sup class="text-danger">*</sup> Out Time</label>
+                        <input type="text" class="form-control timepicker" required="" />
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="form-group">
+                <label class="">Comment</label>
+                <textarea class="form-control" id="" rows="3" ></textarea>
+                <div class="hm-input-error-msg">
+                    Required Field!
+                </div>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Request Added Successfully !', 'success', '#panelAddNewAttenReq')">Add Request</button>
+                <button type="button" class="btn btn-white" hmclose="panel" onclick="closeSidePanel('#panelAddNewAttenReq');">Close</button>
+            </div>
+        </div>
+    </div>
+</section>

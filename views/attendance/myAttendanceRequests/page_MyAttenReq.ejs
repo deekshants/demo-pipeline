@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+   
+    <main class="hm-main-view">
+        <div class="p-3"> 
+            <div class="card hm-tmr-0">
+                <div class="p-3">
+                    <div class="">
+                        <h3 class="hm-mr-0">
+                            Attendance Requests
+                        </h3>
+                        <p>
+                            Manage and view your attendances or punching requests.
+                        </p>
+                    </div>
+                    <div>   
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <button type="button" class="btn btn-primary" onclick="openSidePanel('#panelAddNewAttenReq');">
+                                    Add Request
+                                </button>
+                            </div>
+                            <div>
+                                <div class="pt-1 px-3">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                               <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                      <i class="material-icons">more_horiz</i>
+                                   </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Import Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>   
+                    <table class="table table-hover" align="left">
+                        <thead>
+                            <tr>
+                                <th scope="col">Date</th>
+                                <th scope="col" width="250px">Punch In/Out Time</th>
+                                <th scope="col" width="40%">Comment</th>
+                                <th scope="col">Approved By</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>03/06/2019</td>
+                                <td>
+                                    <span class="" title="In Time">
+                                        <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                    </span>
+                                    <span>&nbsp;-- &nbsp;</span>
+                                    <span class="" title="Out Time">
+                                        <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                    </span>
+                                </td>
+                                <td>
+                                    <div>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, temporibus quo aperiam unde voluptates nihil quibusdam
+                                    </div>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    <span class="badge badge-pill badge-warning">
+                                        Pendding
+                                    </span>
+                                </td>
+                                <td class="td-actions">
+                                    <button class="btn btn-white"title="Edit">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button class="btn btn-white" title="Delete">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>01/06/2019</td>
+                                <td>
+                                    <span class="" title="In Time">
+                                        <i class="fa fa-arrow-circle-down text-success hm-in-icon"></i> 10:00 AM
+                                    </span>
+                                    <span>&nbsp;-- &nbsp;</span>
+                                    <span class="" title="Out Time">
+                                        <i class="fa fa-arrow-circle-up text-danger hm-out-icon"></i>  07:00 PM
+                                    </span>
+                                </td>
+                                <td>
+                                    <div>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, temporibus quo aperiam unde voluptates nihil quibusdam
+                                    </div>
+                                </td>
+                                <td>
+                                    Ajay Hada
+                                </td>
+                                <td>
+                                    <span class="badge badge-pill badge-success">
+                                        Approved
+                                    </span>
+                                </td>
+                                <td class="td-actions">
+                                    
+                                </td>
+                            </tr>
+                            
+                          
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+        </div>
+    </main>
+        <% include modal/modal_addNewAttenReq %>
+    <footer>
+        <% include ../../partials/footer %>
+
+    </footer>
+    <script>
+
+
+    </script>
+</body>
+</html>
