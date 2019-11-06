@@ -1,0 +1,54 @@
+<section class="hm-side-panel-wrapper" id="panelTeamApproveWFHReq">
+    <div class="hm-side-panel hm-side-panel-small">
+        <header class="hm-side-panel-header border-bottom">
+            <div class="row no-gutters px-3">
+                <div class="pt-2 pr-2">
+                    <i class="material-icons">check</i>
+                </div>
+                <div class="hm-col">
+                    <h4 class="hm-text-normal"> Approve Work From Home Request</h4>
+                </div>
+                <div class="pl-3">
+                    <button class="btn  btn-fab btn-link btn-round" onclick="closeSidePanel('#panelTeamApproveWFHReq');">
+                        <i class="material-icons">close</i>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <div class="hm-side-panel-body p-4">
+            <div class="pb-4">
+                <div class="hm-bg-dull p-2 mb-3">
+                    <div class="hm-text-normal">Hemant Sen</div>
+                    <div class="">
+                        <div class="row no-gutters hm-text-size-11">
+                            <div class="pr-4">
+                                <span class="hm-text-dull">Location:</span>
+                                <span>Athena Jaipur</span>
+                            </div>
+                            <div class="pr-4">
+                                <span class="hm-text-dull">Department:</span>
+                                <span>IT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="">
+                    <span class="hm-text-dull">Work From Home Date:</span>
+                    <span>03/06/2019</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="">Comment</label>
+                <textarea class="form-control" id="" rows="2" ></textarea>
+                <div class="hm-input-error-msg">
+                    Required Field!
+                </div>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary" onclick="dummyPanelSave('Request Approved !', 'success', '#panelTeamApproveWFHReq')">Approved</button>
+                <button type="button" class="btn btn-white" hmclose="panel" onclick="closeSidePanel('#panelTeamApproveWFHReq');">Close</button>
+            </div>
+        </div>
+    </div>
+</section>

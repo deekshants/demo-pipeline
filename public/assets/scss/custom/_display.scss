@@ -8,6 +8,10 @@
 	position: fixed;
 }
 
+.hm-grid{
+    display: flex;
+}
+
 .hm-grid-inline{
     display: inline-flex;
 }
@@ -19,4 +23,16 @@
 }
 .hm-hide, .hide{
   display:none;
+}
+
+.hm-no-flex{
+    flex: none;
+}
+
+.hm-wrap{
+    flex-wrap: wrap;
+}
+
+.hm-wrap-reverse{
+    flex-wrap: wrap-reverse;
 }

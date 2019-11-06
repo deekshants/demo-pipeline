@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+
+    <main class="hm-main-view">
+        <div class="p-3">
+
+
+            <div class="row">
+                <div class="col-12 col-md-6 "> 
+                    <div class="card hm-tmr-0 hm-min-h-150">
+                        <div class="hm-tab-wrapper">
+                            <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                                <div class="hm-tab-link btn  active" hmtab="teamOff" hm-hook="click" hm-action="hmTab">
+                                    <span class=""> On Leave Today </span>
+                                    <span class="badge badge-pill badge-secondary">2</span> 
+                                </div>
+                                <div class="hm-tab-link btn " hmtab="teamNotComeYet" hm-hook="click" hm-action="hmTab">
+                                    <span>Not come yet Today</span>
+                                </div>
+                            </div>
+                            <div class="hm-tab-content-wrapper">
+                                <div class="hm-tab-content active" hmtab="teamOff">
+                                    <div class="p-3">
+                                        <div class="hm-scroll-x-auto pb-2">
+                                            <div class="hm-grid">
+                                                <div class="pr-4 hm-no-flex">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="pr-1">
+                                                            <span class="hm-name-circle" style="background: #66ccff;">hs</span>
+                                                        </div>
+                                                        <div class="hm-col">
+                                                            <div class="text-truncate">
+                                                                Hemant Sen
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="pr-4 hm-no-flex">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="pr-1">
+                                                            <span class="hm-name-circle" style="background: #ff66cc;">as</span>
+                                                        </div>
+                                                        <div class="hm-col">
+                                                            <div class="text-truncate">
+                                                                Ankit Sharma
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hm-tab-content " hmtab="teamNotComeYet">
+                                    <div class="p-3">
+                                        <div class="hm-text-dull text-center">
+                                            No Record !
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 "> 
+                    <div class="card hm-tmr-0 hm-min-h-150">
+                        <div class="hm-tab-wrapper">
+                            <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                                <div class="hm-tab-link btn  active" hmtab="teamLateArrive" hm-hook="click" hm-action="hmTab">
+                                    <span class=""> Late Arrive Today </span>
+                                    <span class="badge badge-pill badge-secondary">1</span> 
+                                </div>
+                                <div class="hm-tab-link btn " hmtab="teamWFH" hm-hook="click" hm-action="hmTab">
+                                    <span>Work From Home Today</span>
+                                </div>
+                            </div>
+                            <div class="hm-tab-content-wrapper">
+                                <div class="hm-tab-content active" hmtab="teamLateArrive">
+                                    <div class="p-3">
+                                        <div class="hm-scroll-x-auto pb-2">
+                                            <div class="hm-grid">
+                                                <div class="pr-4 hm-no-flex">
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="pr-1">
+                                                            <span class="hm-name-circle" style="background: #33cc99;">bs</span>
+                                                        </div>
+                                                        <div class="hm-col">
+                                                            <div class="text-truncate">
+                                                                Bharti Sharma
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="hm-tab-content " hmtab="teamWFH">
+                                    <div class="p-3">
+                                        <div class="hm-text-dull text-center">
+                                            No Record !
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="card hm-tmr-0">
+                <div class="">
+                    <div class="px-3 pt-3">
+                        <div class="row no-gutters">
+                            <div class="hm-col">
+                                <h3 class="hm-mr-0">
+                                    My Team
+                                </h3>
+                                <p class="">
+                                    Your team members.
+                                </p>
+                            </div>
+                            <div class="px-3"> 
+                                <div class="pt-1">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text hm-hpd-8">
+                                                <i class="material-icons">search</i>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control " placeholder="Search...">
+                                        <span class="input-group-btn hide">
+                                            <button class="btn  btn-white  hm-pd-5">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="nav-item dropdown dropleft">
+                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_horiz</i>
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div >
+
+                        <div>   
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Employee</th>
+                                        <th scope="col">Job Title</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Department</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Contact No.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="pr-1">
+                                                        <span class="hm-name-circle" style="background: #ff66cc;">as</span>
+                                                    </div>
+                                                    <div class="hm-col">
+                                                        <div class="text-truncate">
+                                                            Ankit Sharma
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Senior Software Developer</td>
+                                        <td>Athena Jaipur</td>
+                                        <td>IT</td>
+                                        <td>user@email.com</td>
+                                        <td>8696610921</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="pr-1">
+                                                        <span class="hm-name-circle" style="background: #33cc99;">bs</span>
+                                                    </div>
+                                                    <div class="hm-col">
+                                                        <div class="text-truncate">
+                                                            Bharti Sharma
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Senior Software Developer</td>
+                                        <td>Athena Jaipur</td>
+                                        <td>IT</td>
+                                        <td>user@email.com</td>
+                                        <td>8696610921</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="pr-1">
+                                                        <span class="hm-name-circle" style="background: #66ccff;">hs</span>
+                                                    </div>
+                                                    <div class="hm-col">
+                                                        <div class="text-truncate">
+                                                            <a href="/employee-details">Hemant Sen</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Senior Software Developer</td>
+                                        <td>Athena Jaipur</td>
+                                        <td>IT</td>
+                                        <td>user@email.com</td>
+                                        <td>8696610921</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+
+    </footer>
+
+</body>
+</html>

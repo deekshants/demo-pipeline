@@ -17,22 +17,51 @@
 	    		<i class="material-icons">person</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">Me</div>
+	    	<div class="hm-side-submenu p-2 hm-text-size-13">
+	    		<a class="hm-side-submenu-item" href="">
+					Dashboard
+				</a>
+				<hr>
+				<a class="hm-side-submenu-item" href="">
+					My Leaves
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					My Timesheet
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					My Expense
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					 My Compensation
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					 My Helpdesk
+				</a>
+				<hr>
+				<a class="hm-side-submenu-item" href="">
+					Reports
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					Analytics
+				</a>
+			</div>
 	    </div>
-	    <div class="hm-side-menu-link " hm-url="attendance"hm-hook="click" hm-action="hmSideMenuLink">
+	    <div class="hm-side-menu-link " hm-url="attendance" hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">access_time</i> 
 	    	</div>
 	    	<div class="hm-text-size-11 text-center">Attendance</div>
 	    	<div class="hm-side-submenu p-2 hm-text-size-13">
 	    		<a class="hm-side-submenu-item" href="/attendance/my-attendance">
-					My Attendance
+					Attendance
 				</a>
 				<a class="hm-side-submenu-item" href="/attendance/my-attendance-requests">
-					My Attendance Requests
+					Attendance Requests
 				</a>
 				<a class="hm-side-submenu-item" href="/attendance/my-wfh-requests">
-					My Work From Home Req.
+					Work From Home Req.
 				</a>
+				<hr>
 				<a class="hm-side-submenu-item" href="">
 					Reports
 				</a>
@@ -41,11 +70,45 @@
 				</a>
 	    	</div>
 	    </div>
-	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
+	    <div class="hm-side-menu-link " hm-url="myteam" hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
 	    		<i class="material-icons">group</i> 
 	    	</div>
-	    	<div class="hm-text-size-11 text-center">My Team</div>
+	    	<div class="hm-text-size-11 text-center">
+		    	My Team <sup class="text-info"><i class="fa fa-circle"></i></sup>
+		    </div>
+	    	<div class="hm-side-submenu p-2 hm-text-size-13">
+				
+	    		<a class="hm-side-submenu-item" href="/myteam/dashboard">
+					Dashboard
+				</a>
+				<hr>
+	    		<a class="hm-side-submenu-item" href="">
+					Timesheet Approvals 
+				</a>
+	    		<a class="hm-side-submenu-item" href="/myteam/attendance-approvals">
+					Attendance Approvals <sup class="text-info"><i class="fa fa-circle"></i></sup>
+				</a>
+				<a class="hm-side-submenu-item" href="/myteam/leave-approvals">
+					Leave Approvals 
+				</a>
+				<a class="hm-side-submenu-item" href="/myteam/wfh-approvals">
+					WFH Approvals <sup class="text-info"><i class="fa fa-circle"></i></sup>
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					Profile Approvals 
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					Expense Approvals 
+				</a>
+				<hr>
+	    		<a class="hm-side-submenu-item" href="">
+					Reports
+				</a>
+				<a class="hm-side-submenu-item" href="">
+					Analytics
+				</a>
+	    	</div>
 	    </div>
 	    <div class="hm-side-menu-link " hm-hook="click" hm-action="hmSideMenuLink">
 	    	<div class="text-center">
@@ -84,6 +147,7 @@
 				<a class="hm-side-submenu-item">
 					Helpdesk
 				</a>
+				<hr>
 				<a class="hm-side-submenu-item">
 					Analytics
 				</a>

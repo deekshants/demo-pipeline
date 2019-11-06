@@ -1231,6 +1231,8 @@ background: #ccc;
     position: absolute; }
   .hm .hm-is-fixed {
     position: fixed; }
+  .hm .hm-grid {
+    display: flex; }
   .hm .hm-grid-inline {
     display: inline-flex; }
   .hm .hm-view-inline {
@@ -1239,6 +1241,12 @@ background: #ccc;
     display: block; }
   .hm .hm-hide, .hm .hide {
     display: none; }
+  .hm .hm-no-flex {
+    flex: none; }
+  .hm .hm-wrap {
+    flex-wrap: wrap; }
+  .hm .hm-wrap-reverse {
+    flex-wrap: wrap-reverse; }
   .hm .hm-text-size-9 {
     font-size: 9px; }
   .hm .hm-text-size-10 {

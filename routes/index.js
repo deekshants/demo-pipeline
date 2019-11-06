@@ -52,6 +52,23 @@ router.get('/attendance/my-wfh-requests', function(req, res) {
     res.render('attendance/myWorkFromHomeRequests/page_MyWFHReq', {baseUrl: process.env.BASE_URL});
 });
 
+
+router.get('/myteam/dashboard', function(req, res) {
+    res.render('myTeam/teamDashboard/page_TeamDashboard', {baseUrl: process.env.BASE_URL});
+});
+
+router.get('/myteam/attendance-approvals', function(req, res) {
+    res.render('myTeam/teamAttendanceApprovals/page_TeamAttendanceApprovals', {baseUrl: process.env.BASE_URL});
+});
+
+router.get('/myteam/wfh-approvals', function(req, res) {
+    res.render('myTeam/teamWFHApprovals/page_TeamWFHApprovals', {baseUrl: process.env.BASE_URL});
+});
+
+router.get('/myteam/leave-approvals', function(req, res) {
+    res.render('myTeam/teamLeaveApprovals/page_TeamLeaveApprovals', {baseUrl: process.env.BASE_URL});
+});
+
 router.get('/employee-details', function(req, res) {
     res.render('empDetails/page_empDetails', {baseUrl: process.env.BASE_URL});
 });

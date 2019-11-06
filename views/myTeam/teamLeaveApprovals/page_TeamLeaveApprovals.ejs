@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+   
+    <main class="hm-main-view">
+        <div class="p-3"> 
+            <div class="card hm-tmr-0">
+                <div class="">
+                    <div class="p-3">
+                        <h3 class="hm-mr-0">
+                            Leave Requests For Approvals
+                        </h3>
+                        <p class="hm-mr-0">
+                            Manage and view team leave requests.
+                        </p>
+                    </div>
+                    <div class="">
+                        <div class="hm-tab-wrapper">
+                            <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                                <div class="hm-tab-link btn active" hmtab="teamLeavePending" hm-hook="click" hm-action="hmTab">
+                                    Pending Requests
+                                </div>
+                                <div class="hm-tab-link btn" hmtab="teamLeaveOther" hm-hook="click" hm-action="hmTab">
+                                    Past Requests
+                                </div>
+                            </div>
+                            <div class="hm-tab-content-wrapper">
+                                <div class="hm-tab-content active" hmtab="teamLeavePending">
+                                    <div>   
+                                        <table class="table table-hover" align="left">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Create On</th>
+                                                    <th scope="col">Employee</th>
+                                                    <th scope="col">Location</th>
+                                                    <th scope="col">Department</th>
+                                                    <th scope="col">Leave Type</th>
+                                                    <th scope="col">Leave Dates</th>
+                                                    <th scope="col" width="15%">Comment</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>03/06/2019</td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="pr-1">
+                                                                    <span class="hm-name-circle" style="background: #66ccff;">hs</span>
+                                                                </div>
+                                                                <div class="hm-col">
+                                                                    <div class="text-truncate">
+                                                                        Hemant Sen
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Athena Jaipur</td>
+                                                    <td>IT</td>
+                                                    <td>Casual Leave</td>
+                                                    <td>
+                                                        <span>03/06/19</span>
+                                                        <span>&nbsp;- To -&nbsp;</span>
+                                                        <span>04/06/19</span>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <span class="badge badge-pill badge-warning">
+                                                            Pendding
+                                                        </span>
+                                                    </td>
+                                                    <td class="td-actions">
+                                                        <button class="btn btn-success" onclick="openSidePanel('#panelTeamApproveLeaveReq');">
+                                                            <i class="material-icons" title="Approve">check</i>
+                                                        </button>
+                                                        <button class="btn btn-white" title="Reject" onclick="openSidePanel('#panelTeamRejectLeaveReq');">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>03/06/2019</td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="pr-1">
+                                                                    <span class="hm-name-circle" style="background: #ff66cc;">as</span>
+                                                                </div>
+                                                                <div class="hm-col">
+                                                                    <div class="text-truncate">
+                                                                        Ankit Sharma
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Athena Jaipur</td>
+                                                    <td>IT</td>
+                                                    <td>Casual Leave</td>
+                                                    <td>
+                                                        <span>03/06/19</span>
+                                                        <span>&nbsp;- To -&nbsp;</span>
+                                                        <span>04/06/19</span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <div>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <span class="badge badge-pill badge-warning">
+                                                            Pendding
+                                                        </span>
+                                                    </td>
+                                                    <td class="td-actions">
+                                                        <button class="btn btn-success" onclick="openSidePanel('#panelTeamApproveLeaveReq');">
+                                                            <i class="material-icons" title="Approve">check</i>
+                                                        </button>
+                                                        <button class="btn btn-white" title="Reject" onclick="openSidePanel('#panelTeamRejectLeaveReq');">
+                                                            <i class="material-icons">close</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="hm-tab-content " hmtab="teamLeaveOther">
+                                    <div class="px-3 pt-3">   
+                                        <div class="row no-gutters">
+                                            <div>
+                                                <div class="pt-1">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text hm-hpd-8">
+                                                                <i class="material-icons">search</i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control " placeholder="Search...">
+                                                        <span class="input-group-btn hide">
+                                                            <button class="btn  btn-white  hm-pd-5">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="hm-col">
+                                                
+                                            </div>
+                                            
+                                            <div class="">
+                                               <div class="nav-item dropdown dropleft">
+                                                    <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-round btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                                      <i class="material-icons">more_horiz</i>
+                                                   </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#0">Filter Data</a>
+                                                        <a class="dropdown-item" href="#0">Export Data</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>   
+                                        <table class="table table-hover" align="left">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Create On</th>
+                                                    <th scope="col">Employee</th>
+                                                    <th scope="col">Location</th>
+                                                    <th scope="col">Department</th>
+                                                    <th scope="col">Leave Type</th>
+                                                    <th scope="col">Leave Dates</th>
+                                                    <th scope="col" width="15%">Comment</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>03/06/2019</td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="pr-1">
+                                                                    <span class="hm-name-circle" style="background: #66ccff;">hs</span>
+                                                                </div>
+                                                                <div class="hm-col">
+                                                                    <div class="text-truncate">
+                                                                        Hemant Sen
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Athena Jaipur</td>
+                                                    <td>IT</td>
+                                                    <td>Casual Leave</td>
+                                                    <td>
+                                                        <span>03/06/19</span>
+                                                        <span>&nbsp;- To -&nbsp;</span>
+                                                        <span>04/06/19</span>
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <span class="badge badge-pill badge-success">
+                                                            Approved
+                                                        </span>
+                                                    </td>
+                                                    <td class="td-actions">
+                                                        
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>03/06/2019</td>
+                                                    <td>
+                                                        <div>
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="pr-1">
+                                                                    <span class="hm-name-circle" style="background: #ff66cc;">as</span>
+                                                                </div>
+                                                                <div class="hm-col">
+                                                                    <div class="text-truncate">
+                                                                        Ankit Sharma
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>Athena Jaipur</td>
+                                                    <td>IT</td>
+                                                    <td>Casual Leave</td>
+                                                    <td>
+                                                        <span>03/06/19</span>
+                                                        <span>&nbsp;- To -&nbsp;</span>
+                                                        <span>04/06/19</span>
+                                                    </td>
+                                                   
+                                                    <td>
+                                                        <div>
+                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                        </div>
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        <span class="badge badge-pill badge-danger">
+                                                            Rejected
+                                                        </span>
+                                                    </td>
+                                                    <td class="td-actions">
+                                                       
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+
+        </div>
+    </main>
+    <% include modal/modal_teamApproveLeaveReq %>
+    <% include modal/modal_teamRejectLeaveReq %>
+    <footer>
+        <% include ../../partials/footer %>
+
+    </footer>
+    
+</body>
+</html>

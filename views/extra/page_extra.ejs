@@ -15,347 +15,409 @@
         <% include ../partials/side-menu %>
     </aside>
     <style>
-        
+
     </style>
 
     <main class="hm-main-view">
         <div class="p-3">
-            <div class="my-5">
-                <div class="form-group hm-autocomp-single">
-                    <label class="">Single Choice No Ajax Autocomplete</label>
-                    <select id="noAjaxSingle" class="form-control" data-placeholder="Select an option" data-allow-clear="true">
-                        
-                    </select>
-                    <div class="hm-input-error-msg">
-                        Required Field!
+            <div class="card hm-tmr-0 p-3">
+                <div class="row">
+                    <div class="col-12 col-md-3 border-right">
+                        <div class="hm-text-dull pb-2">
+                            On Leave Today 
+                        </div>
+                        <div class="hm-text-thick hm-text-size-30">
+                            <a href="#">0</a>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-md-3 border-right">
+                        <div class="hm-text-dull pb-2">
+                            Not come yet Today
+                        </div>
+                        <div class="hm-text-thick hm-text-size-30">
+                            <a href="#">0</a>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-md-3 border-right">
+                        <div class="hm-text-dull pb-2">
+                            Late Arrive Today
+                        </div>
+                        <div class="hm-text-thick hm-text-size-30">
+                            <a href="#">0</a>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-md-3 border-right">
+                        <div class="hm-text-dull pb-2">
+                            Work From Home Today
+                        </div>
+                        <div class="hm-text-thick hm-text-size-30">
+                            <a href="#">0</a>
+                        </div> 
                     </div>
                 </div>
-
-                <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0">
-                    <label class="">Multi Choice No Ajax Autocomplete</label>
-                    <select id="noAjaxMulti" class="form-control"  multiple="multiple" ></select>
-                    <div class="hm-input-error-msg">
-                        Required Field!
-                    </div>
-                </div>
-               
+             
                 
-                <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0">
-                    <label class="">Multi Choice With Ajax Autocomplete</label>
-                    <select id="withAjaxMulti" class="form-control"  multiple="multiple" ></select>
-                    <div class="hm-input-error-msg">
-                        Required Field!
-                    </div>
-                </div>
+            </div>
+            <div class="card p-3 hm-tmr-0">
 
                 
-            </div>
-
-            <div class="my-5">
-                <a href="#">
-                    <i class="material-icons hm-text-size-16">edit</i> Attendance Request
-                </a>
-                &nbsp; | &nbsp;
-                <a href="#">
-                    <i class="material-icons hm-text-size-16">edit</i> Attendance Request
-                </a>
-            </div>
-
-            <div class="my-5">
-                <div class="btn-group btn-group-toggle hm-tmr-5" data-toggle="buttons">
-                    <label class="btn btn-sm btn-secondary ">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Weekly
-                    </label>
-
-                    <label class="btn btn-sm btn-secondary active">
-                        <input type="radio" name="options" id="option3" autocomplete="off"> Monthly
-                    </label>
-                </div>
-            </div>
-
-            <div class="my-5">
-                <div class="hm-tab-wrapper">
-                    <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
-                        <div class="hm-tab-link btn active" hmtab="tab1" hm-hook="click" hm-action="hmTab">
-                            Tab 1
-                        </div>
-                        <div class="hm-tab-link btn" hmtab="tab2" onclick="fireOtherFnTab()">
-                            Tab 2
-                        </div>
-                    </div>
-                    <div class="hm-tab-content-wrapper">
-                        <div class="hm-tab-content active" hmtab="tab1">
-                            11111111111111111111111111
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur et quisquam, quod alias dicta omnis debitis maiores molestias unde fugit beatae quia tempora facilis, sint ipsum repellat officiis suscipit iure.
-                        </div>
-                        <div class="hm-tab-content " hmtab="tab2">
-                            2222222222222222222222222222
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem eius laboriosam. Consequuntur ullam eveniet praesentium repudiandae beatae, cum perferendis! Facilis eaque qui fugiat ullam sapiente asperiores, voluptates recusandae voluptate?
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="my-5">
-                <section class="">
-                    <div class="">
-                        <h4 class="title  hm-bmr-10">
-                            Personal Details
-                        </h4>
-                    </div>
+                <div class="my-5">
+                    <!-- load more -->
                     <div>
-                        <div class="row">
-                            <div class="col-12 col-md-12 col-lg-5">
-                                <div class="row py-2">
-                                    <div class="col-12 col-md-4">
-                                        <span class="text-muted">
-                                            First Name
-                                        </span>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div class="hm-text-normal">
-                                            Hemant    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col-12 col-md-4">
-                                        <span class="text-muted">
-                                            Last Name
-                                        </span>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div class="hm-text-normal">
-                                            Sen    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col-12 col-md-4">
-                                        <span class="text-muted">
-                                            Date Of Birth
-                                        </span>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div class="hm-text-normal">
-                                            10/12/2019    
-                                        </div>
-                                    </div>
-                                </div>
+                        <button type="button" class="btn btn-secondary btn-block">
+                            Load More 10/100
+                        </button>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <!-- no record -->
+                    <div class="hm-bg-dull p-5 hm-radius-4 my-3">
+                        <div class="text-center">
+                            <div>
+                                <i class="material-icons">info</i>
                             </div>
-                            <div class="col-12 col-md-12 col-lg-2"></div>
-                            <div class="col-12 col-md-12 col-lg-5">
-                                <div class="row py-2">
-                                    <div class="col-12 col-md-4">
-                                        <span class="text-muted">
-                                            Gender
-                                        </span>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div class="hm-text-normal">
-                                            Male    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col-12 col-md-4">
-                                        <span class="text-muted">
-                                            Blood Group
-                                        </span>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div class="hm-text-normal">
-                                            B+    
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row py-2">
-                                    <div class="col-12 col-md-4">
-                                        <span class="text-muted">
-                                            Marital Status
-                                        </span>
-                                    </div>
-                                    <div class="col-12 col-md-8">
-                                        <div class="hm-text-normal">
-                                            Unmarried   
-                                        </div>
-                                    </div>
-                                </div>
-
+                            <div class="">
+                                No Record Found.
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+                <div class="my-5">
+                    <div class="form-group hm-autocomp-single">
+                        <label class="">Single Choice No Ajax Autocomplete</label>
+                        <select id="noAjaxSingle" class="form-control" data-placeholder="Select an option" data-allow-clear="true">
 
-            <div class="my-5">
-                <div class="accordion" id="accordHolidays">
-                    <div class=" mb-4 hm-radius-4 border">
-                        <div  id="holidaysGroup1" >
-                            <div class="p-2 border-bottom hm-bg-dull">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="hm-col">
-                                        <a href="#" data-toggle="collapse" data-target="#HolidaysCollapse1" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
-                                            <span>
-                                                <i class="material-icons">keyboard_arrow_down</i>
+                        </select>
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+
+                    <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0">
+                        <label class="">Multi Choice No Ajax Autocomplete</label>
+                        <select id="noAjaxMulti" class="form-control"  multiple="multiple" ></select>
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+
+
+                    <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0">
+                        <label class="">Multi Choice With Ajax Autocomplete</label>
+                        <select id="withAjaxMulti" class="form-control"  multiple="multiple" ></select>
+                        <div class="hm-input-error-msg">
+                            Required Field!
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="my-5">
+                    <a href="#">
+                        <i class="material-icons hm-text-size-16">edit</i> Attendance Request
+                    </a>
+                    &nbsp; | &nbsp;
+                    <a href="#">
+                        <i class="material-icons hm-text-size-16">edit</i> Attendance Request
+                    </a>
+                </div>
+
+                <div class="my-5">
+                    <div class="btn-group btn-group-toggle hm-tmr-5" data-toggle="buttons">
+                        <label class="btn btn-sm btn-secondary ">
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Weekly
+                        </label>
+
+                        <label class="btn btn-sm btn-secondary active">
+                            <input type="radio" name="options" id="option3" autocomplete="off"> Monthly
+                        </label>
+                    </div>
+                </div>
+
+                <div class="my-5">
+                    <div class="hm-tab-wrapper">
+                        <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                            <div class="hm-tab-link btn active" hmtab="tab1" hm-hook="click" hm-action="hmTab">
+                                Tab 1
+                            </div>
+                            <div class="hm-tab-link btn" hmtab="tab2" onclick="fireOtherFnTab()">
+                                Tab 2
+                            </div>
+                        </div>
+                        <div class="hm-tab-content-wrapper">
+                            <div class="hm-tab-content active" hmtab="tab1">
+                                11111111111111111111111111
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur et quisquam, quod alias dicta omnis debitis maiores molestias unde fugit beatae quia tempora facilis, sint ipsum repellat officiis suscipit iure.
+                            </div>
+                            <div class="hm-tab-content " hmtab="tab2">
+                                2222222222222222222222222222
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorem eius laboriosam. Consequuntur ullam eveniet praesentium repudiandae beatae, cum perferendis! Facilis eaque qui fugiat ullam sapiente asperiores, voluptates recusandae voluptate?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-5">
+                    <section class="">
+                        <div class="">
+                            <h4 class="title  hm-bmr-10">
+                                Personal Details
+                            </h4>
+                        </div>
+                        <div>
+                            <div class="row">
+                                <div class="col-12 col-md-12 col-lg-5">
+                                    <div class="row py-2">
+                                        <div class="col-12 col-md-4">
+                                            <span class="text-muted">
+                                                First Name
                                             </span>
-                                            Group: Athena Jaipur Holidays
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="hm-text-normal">
+                                                Hemant    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-12 col-md-4">
+                                            <span class="text-muted">
+                                                Last Name
+                                            </span>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="hm-text-normal">
+                                                Sen    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-12 col-md-4">
+                                            <span class="text-muted">
+                                                Date Of Birth
+                                            </span>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="hm-text-normal">
+                                                10/12/2019    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-2"></div>
+                                <div class="col-12 col-md-12 col-lg-5">
+                                    <div class="row py-2">
+                                        <div class="col-12 col-md-4">
+                                            <span class="text-muted">
+                                                Gender
+                                            </span>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="hm-text-normal">
+                                                Male    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-12 col-md-4">
+                                            <span class="text-muted">
+                                                Blood Group
+                                            </span>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="hm-text-normal">
+                                                B+    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row py-2">
+                                        <div class="col-12 col-md-4">
+                                            <span class="text-muted">
+                                                Marital Status
+                                            </span>
+                                        </div>
+                                        <div class="col-12 col-md-8">
+                                            <div class="hm-text-normal">
+                                                Unmarried   
+                                            </div>
+                                        </div>
+                                    </div>
 
-                                        </a>
-                                    </div>
-                                    <div class="pl-3">
-                                        <button type="button" class="btn btn-sm btn-fab btn-white" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                    </div>
-                                    <div class="pl-3">
-                                        <div class="nav-item dropdown dropleft">
-                                            <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-sm btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                                <i class="material-icons">more_horiz</i>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="my-5">
+                    <div class="accordion" id="accordHolidays">
+                        <div class=" mb-4 hm-radius-4 border">
+                            <div  id="holidaysGroup1" >
+                                <div class="p-2 border-bottom hm-bg-dull">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="hm-col">
+                                            <a href="#" data-toggle="collapse" data-target="#HolidaysCollapse1" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                                <span>
+                                                    <i class="material-icons">keyboard_arrow_down</i>
+                                                </span>
+                                                Group: Athena Jaipur Holidays
+
                                             </a>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#0">Archived</a>
-                                                <a class="dropdown-item" href="#0">Import Data</a>
-                                                <a class="dropdown-item" href="#0">Export Data</a>
+                                        </div>
+                                        <div class="pl-3">
+                                            <button type="button" class="btn btn-sm btn-fab btn-white" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </div>
+                                        <div class="pl-3">
+                                            <div class="nav-item dropdown dropleft">
+                                                <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-sm btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="material-icons">more_horiz</i>
+                                                </a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#0">Archived</a>
+                                                    <a class="dropdown-item" href="#0">Import Data</a>
+                                                    <a class="dropdown-item" href="#0">Export Data</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div id="HolidaysCollapse1" class="collapse" aria-labelledby="holidaysGroup1" data-parent="#accordHolidays">
-                            <div >
-                                <div class="p-2">   
-                                    <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
-                                        Add Holiday
-                                    </button>
-                                </div>
-                                <div style="display: flex; max-height: 200px;" class="hm-scroll-y-auto">     
-                                    <table class="table table-sm table-hover" align="left">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Date</th>
-                                                <th scope="col">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Makar Sankranti</td>
-                                                <td>15/01/2019</td>
-                                                <td class="td-actions">
-                                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-white" title="Delete">
-                                                        <i class="material-icons">delete</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Republic Day</td>
-                                                <td>26/01/2019</td>
-                                                <td class="td-actions">
-                                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-white" title="Delete">
-                                                        <i class="material-icons">delete</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div id="HolidaysCollapse1" class="collapse" aria-labelledby="holidaysGroup1" data-parent="#accordHolidays">
+                                <div >
+                                    <div class="p-2">   
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
+                                            Add Holiday
+                                        </button>
+                                    </div>
+                                    <div style="display: flex; max-height: 200px;" class="hm-scroll-y-auto">     
+                                        <table class="table table-sm table-hover" align="left">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Makar Sankranti</td>
+                                                    <td>15/01/2019</td>
+                                                    <td class="td-actions">
+                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button class="btn btn-white" title="Delete">
+                                                            <i class="material-icons">delete</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Republic Day</td>
+                                                    <td>26/01/2019</td>
+                                                    <td class="td-actions">
+                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button class="btn btn-white" title="Delete">
+                                                            <i class="material-icons">delete</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class=" mb-4 hm-radius-4 border">
-                        <div  id="holidaysGroup2" >
-                            <div class="p-2 border-bottom hm-bg-dull">
-                                <div class="row no-gutters align-items-center">
-                                    <div class="hm-col">
-                                        <a href="#" data-toggle="collapse" data-target="#HolidaysCollapse2" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
-                                            <span>
-                                                <i class="material-icons">keyboard_arrow_down</i>
-                                            </span>
-                                            Group: Athena Delhi Holidays
+                        <div class=" mb-4 hm-radius-4 border">
+                            <div  id="holidaysGroup2" >
+                                <div class="p-2 border-bottom hm-bg-dull">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="hm-col">
+                                            <a href="#" data-toggle="collapse" data-target="#HolidaysCollapse2" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                                <span>
+                                                    <i class="material-icons">keyboard_arrow_down</i>
+                                                </span>
+                                                Group: Athena Delhi Holidays
 
-                                        </a>
-                                    </div>
-                                    <div class="pl-3">
-                                        <button type="button" class="btn btn-sm btn-fab btn-white" title="Edit">
-                                            <i class="material-icons">edit</i>
-                                        </button>
-                                    </div>
-                                    <div class="pl-3">
-                                        <div class="nav-item dropdown dropleft">
-                                            <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-sm btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
-                                                <i class="material-icons">more_horiz</i>
                                             </a>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#0">Archived</a>
-                                                <a class="dropdown-item" href="#0">Import Data</a>
-                                                <a class="dropdown-item" href="#0">Export Data</a>
+                                        </div>
+                                        <div class="pl-3">
+                                            <button type="button" class="btn btn-sm btn-fab btn-white" title="Edit">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </div>
+                                        <div class="pl-3">
+                                            <div class="nav-item dropdown dropleft">
+                                                <a class="hm-dropdown-no-arrow  dropdown-toggle btn btn-fab btn-sm btn-white" data-toggle="dropdown" href="#0" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="material-icons">more_horiz</i>
+                                                </a>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="#0">Archived</a>
+                                                    <a class="dropdown-item" href="#0">Import Data</a>
+                                                    <a class="dropdown-item" href="#0">Export Data</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div id="HolidaysCollapse2" class="collapse" aria-labelledby="holidaysGroup2" data-parent="#accordHolidays">
-                            <div >
-                                <div class="p-2">   
-                                    <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
-                                        Add Holiday
-                                    </button>
-                                </div>
-                                <div style="display: flex; max-height: 200px;" class="hm-scroll-y-auto">     
-                                    <table class="table table-sm table-hover" align="left">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">Date</th>
-                                                <th scope="col">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Makar Sankranti</td>
-                                                <td>15/01/2019</td>
-                                                <td class="td-actions">
-                                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-white" title="Delete">
-                                                        <i class="material-icons">delete</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Republic Day</td>
-                                                <td>26/01/2019</td>
-                                                <td class="td-actions">
-                                                    <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
-                                                        <i class="material-icons">edit</i>
-                                                    </button>
-                                                    <button class="btn btn-white" title="Delete">
-                                                        <i class="material-icons">delete</i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div id="HolidaysCollapse2" class="collapse" aria-labelledby="holidaysGroup2" data-parent="#accordHolidays">
+                                <div >
+                                    <div class="p-2">   
+                                        <button type="button" class="btn btn-sm btn-primary" onclick="openSidePanel('#panelAddNewHoliday');">
+                                            Add Holiday
+                                        </button>
+                                    </div>
+                                    <div style="display: flex; max-height: 200px;" class="hm-scroll-y-auto">     
+                                        <table class="table table-sm table-hover" align="left">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Date</th>
+                                                    <th scope="col">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Makar Sankranti</td>
+                                                    <td>15/01/2019</td>
+                                                    <td class="td-actions">
+                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button class="btn btn-white" title="Delete">
+                                                            <i class="material-icons">delete</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Republic Day</td>
+                                                    <td>26/01/2019</td>
+                                                    <td class="td-actions">
+                                                        <button class="btn btn-white" onclick="openSidePanel('#panelAddNewHoliday');" title="Edit">
+                                                            <i class="material-icons">edit</i>
+                                                        </button>
+                                                        <button class="btn btn-white" title="Delete">
+                                                            <i class="material-icons">delete</i>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </main>
 
         <footer>
