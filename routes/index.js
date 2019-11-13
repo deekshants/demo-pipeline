@@ -69,6 +69,11 @@ router.get('/myteam/leave-approvals', function(req, res) {
     res.render('myTeam/teamLeaveApprovals/page_TeamLeaveApprovals', {baseUrl: process.env.BASE_URL});
 });
 
+
+router.get('/org/org-tree', function(req, res) {
+    res.render('org/orgTree/page_OrgTree', {baseUrl: process.env.BASE_URL});
+});
+
 router.get('/employee-details', function(req, res) {
     res.render('empDetails/page_empDetails', {baseUrl: process.env.BASE_URL});
 });

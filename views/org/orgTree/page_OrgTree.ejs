@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+    <style>
+        /* ############################################## SVG ################################# */
+        .hm-svg-text-dull-small{
+            font-size: 11px;
+            fill: #999;
+        }
+        .nodeRepresentsCurrentUser {
+            stroke: #00bcd4;
+            stroke-width: 2;
+        }
+        .link {
+            fill: none;
+            stroke: #bbb;
+            stroke-width: 1.5px;
+        }
+        .node {
+            cursor: pointer;
+            fill: white;
+        }
+        .node-collapse {
+            stroke: #9c27b0;
+            fill: #9c27b0;
+        }
+        .text-collapse {
+            fill: white;
+        }
+        .emp-name {
+            fill: #9c27b0;
+            font-size: 13px;
+            font-weight: normal;;
+        }
+        .emp-count,.emp-count-icon,.emp-position-name, .emp-area {
+            fill: #999;
+            font-size: 11px;
+        }
+        /* ############################### Tooltip css ########################### */
+
+      
+        .customTooltip-wrapper {
+            opacity: 0;
+            display: none;
+            position: absolute;
+        }
+
+        .customTooltip {
+            position: relative;
+            display: block;
+            width: 250px;
+            top: 160px;
+            z-index: 10;
+        }
+
+       
+
+
+
+        
+    </style>
+</head>
+
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+
+    <main class="hm-main-view">
+        <div class="p-3">
+            <section class="row no-gutters">
+                <div>
+                    <button type="button" class="btn btn-white" onclick="params.funcs.showMySelf()">
+                        Show Myself
+                    </button>
+                </div>
+                <div class="hm-col px-3">
+                    <div class="text-center hm-text-size-24 pt-2">
+                        Organization Structure
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-white btn-fab" onclick="params.funcs.toggleFullScreen()">
+                        <i class="material-icons">fullscreen</i>
+                    </button>
+                    <button type="button" class="btn btn-white btn-fab" onclick="params.funcs.search()">
+                        <i class="material-icons">search</i>
+                    </button>
+                </div>
+            </section>
+            
+            <section id="svgChart"></section>
+
+        </div>
+    </main>
+    <!-- modals -->
+    <% include modal/modal_orgTreeSearch %>
+
+    <footer>
+        <% include ../../partials/footer %>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+        <% include js/js_OrgTree %>
+    </footer>
+
+        
+   
+</body>
+</html>
