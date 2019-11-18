@@ -74,6 +74,10 @@ router.get('/org/org-tree', function(req, res) {
     res.render('org/orgTree/page_OrgTree', {baseUrl: process.env.BASE_URL});
 });
 
+router.get('/me/my-leaves', function(req, res) {
+    res.render('me/myLeaves/page_myLeaves', {baseUrl: process.env.BASE_URL});
+});
+
 router.get('/employee-details', function(req, res) {
     res.render('empDetails/page_empDetails', {baseUrl: process.env.BASE_URL});
 });

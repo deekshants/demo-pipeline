@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../../partials/head %>
+</head>
+
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../../partials/header %>
+    </header>
+    <aside>
+        <% include ../../partials/side-menu %>
+    </aside>
+
+    <main class="hm-main-view">
+        <div class="p-3">   
+            <div class="card  hm-tmr-0">
+                <section class="hm-tab-wrapper">
+                    <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+                        <div class=" hm-tab-link active btn" hmtab="myleaves" hm-hook="click" hm-action="hmTab">
+                            My Leaves
+                        </div>
+                        <div class=" hm-tab-link  btn" hmtab="leaveReq" hm-hook="click" hm-action="hmTab">
+                            <i class="material-icons">add</i> Add Request
+                        </div>
+                    </div>
+                    <div class="hm-tab-content-wrapper">
+                        <div class="hm-tab-content active" hmtab="myleaves">
+                            <% include empLeaves/view_empLeaves %>
+                        </div>
+                        <div class="hm-tab-content" hmtab="leaveReq">
+                            <% include addLeaveReq/view_addLeaveReq %>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../../partials/footer %>
+        <% include js/js_myLeaves %>
+    </footer>
+   
+</body>
+</html>
