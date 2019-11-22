@@ -62,6 +62,17 @@ function dummySuccessToast(msg){
     );
 }
 
+function dummySuccessToastAuto(msg){
+    showToast(
+      { 
+        eleWrapper: '#siteToast',
+        msg: msg,
+        theme: 'success',
+        autoClose: true
+      } 
+    );
+}
+
 
 /*-------------------------------single select-------------------------*/
   function dummyNoAjaxSingleSelection(){

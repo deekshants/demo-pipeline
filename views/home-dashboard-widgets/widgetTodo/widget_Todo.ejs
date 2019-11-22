@@ -1,0 +1,245 @@
+<section id="empTodoWidgetWarpper">
+    <div class="card hm-tmr-0 hm-widget-warpper" id="empTodoIncomplete">
+        <div class="hm-widget-color-bar" style="background: gold;"></div>
+        <div class="px-3 pt-2">
+            <div class="row no-gutters">
+                <div class="hm-col animate-wrapper">
+                    <h4 class="title hm-mr-0 animate-fade-left">
+                        To Do
+                    </h4>
+                </div>
+                <div>
+                    <a href="#" onclick="hmToggleView('#empTodoIncomplete', '#empTodoAll')">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 hm-widget-loader">
+            <div class='mb-4'>
+                <div class='hm-loading-line hm-loading-line-w-50'></div>
+                <div class='hm-loading-line'></div>
+            </div>
+            <div class='mb-4'>
+                <div class='hm-loading-line hm-loading-line-w-50'></div>
+                <div class='hm-loading-line'></div>
+            </div>
+            <div class='mb-4'>
+                <div class='hm-loading-line hm-loading-line-w-50'></div>
+                <div class='hm-loading-line'></div>
+            </div>
+            <div class='mb-4'>
+                <div class='hm-loading-line hm-loading-line-w-50'></div>
+                <div class='hm-loading-line'></div>
+            </div>
+        </div>
+        <div class="hm-widget-content hide">
+            <div class=" hm-scroll-y-auto" style="height: 282px;">
+                <div>
+                    <div class=" pb-1">
+                        <div class="row no-gutters">
+                            <div class="hm-lpd-10 pr-2">
+                                <i class="material-icons hm-text-dull hm-text-size-36" title="Auto Complete">stop</i>
+                            </div>
+                            <div class="hm-col pt-2">
+                                Complete The Basic Profile Information.
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" pb-1">
+                        <div class="row no-gutters">
+                            <div class="hm-lpd-10 pr-2">
+                                <i class="material-icons hm-text-dull hm-text-size-36" title="Auto Complete">stop</i>
+                            </div>
+                            <div class="hm-col pt-2">
+                                Timesheet Submission Is Due.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class=" pb-3">
+                        <div class="row no-gutters">
+                            <div class="pr-2">
+                                <div class="form-check hm-tmr-0">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="hm-col hm-tpd-10">
+                                Take a session on Javascript best practice.
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" pb-3">
+                        <div class="row no-gutters">
+                            <div class="pr-2">
+                                <div class="form-check hm-tmr-0">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <span class="form-check-sign">
+                                            <span class="check"></span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="hm-col hm-tpd-10">
+                                Introduce and assist new joinee in team
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="card hm-tmr-0  hide" id="empTodoAll">
+        <div class="p-2 hm-text-normal hm-line-bottom">
+            <div class="row no-gutters align-items-center">
+                <div class="pr-3">
+                    <button type="button" class="btn btn-fab btn-round btn-white btn-sm" onclick="hmToggleView('#empTodoIncomplete', '#empTodoAll')">
+                        <i class="material-icons">chevron_left</i>
+                    </button>
+                </div>
+                <div class="hm-col">
+                    <h4 class="title hm-mr-0">
+                        All To Do
+                    </h4>
+                </div>
+            </div>
+        </div>
+        <div class=" hm-scroll-y-auto" style="height: 265px;">
+            <div>
+                <div class=" pb-1">
+                    <div class="row no-gutters">
+                        <div class="hm-lpd-10 pr-2">
+                            <i class="material-icons hm-text-dull hm-text-size-36" title="Auto Complete">stop</i>
+                        </div>
+                        <div class="hm-col pt-2">
+                            Complete The Basic Profile Information.
+                        </div>
+                    </div>
+                </div>
+                <div class=" pb-1">
+                    <div class="row no-gutters">
+                        <div class="hm-lpd-10 pr-2">
+                            <i class="material-icons hm-text-dull hm-text-size-36" title="Auto Complete">stop</i>
+                        </div>
+                        <div class="hm-col pt-2">
+                            Timesheet Submission Is Due.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class=" pb-3">
+                    <div class="row no-gutters">
+                        <div class="pr-2">
+                            <div class="form-check hm-tmr-0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="hm-col hm-tpd-10">
+                            Take a session on Javascript best practice.
+                        </div>
+                    </div>
+                </div>
+                <div class=" pb-3">
+                    <div class="row no-gutters">
+                        <div class="pr-2">
+                            <div class="form-check hm-tmr-0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="hm-col hm-tpd-10">
+                            Introduce and assist new joinee in team
+                        </div>
+                    </div>
+                </div>
+                <div class=" pb-3">
+                    <div class="row no-gutters">
+                        <div class="pr-2">
+                            <div class="form-check hm-tmr-0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" checked="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="hm-col hm-tpd-10">
+                            Lorem ipsum dolor sit amet
+                        </div>
+                    </div>
+                </div>
+                <div class=" pb-3">
+                    <div class="row no-gutters">
+                        <div class="pr-2">
+                            <div class="form-check hm-tmr-0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" checked="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="hm-col hm-tpd-10">
+                            Lorem ipsum dolor sit amet
+                        </div>
+                    </div>
+                </div>
+                <div class=" pb-3">
+                    <div class="row no-gutters">
+                        <div class="pr-2">
+                            <div class="form-check hm-tmr-0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" checked="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="hm-col hm-tpd-10">
+                            Lorem ipsum dolor sit amet
+                        </div>
+                    </div>
+                </div>
+                <div class=" pb-3">
+                    <div class="row no-gutters">
+                        <div class="pr-2">
+                            <div class="form-check hm-tmr-0">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" value="" checked="">
+                                    <span class="form-check-sign">
+                                        <span class="check"></span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="hm-col hm-tpd-10">
+                            Lorem ipsum dolor sit amet
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
