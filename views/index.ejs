@@ -87,7 +87,7 @@
 
         
         .hm-loading-line {
-          border-radius: 4px;
+          border-radius: 500px;
           height: 10px;
           margin: 10px;
           -webkit-animation: pulse 1s infinite ease-in-out;
@@ -147,13 +147,14 @@
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetUpcomingHolidays/widget_UpcomingHolidays %>
                 </div>
-                
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetNotApproved/widget_NotApproved %>
                 </div>
-
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetQuickLinks/widget_QuickLinks %>
+                </div>
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetAnnouncements/widget_Announcements %>
                 </div>
             </div>
         </div>
@@ -172,6 +173,7 @@
               dummyWidgetLoader('#empTodoWidgetWarpper', 1500);
               dummyWidgetLoader('#QuickLinkWidgetWarpper', 1000);
               dummyWidgetLoader('#notApprovedWidgetWarpper', 1000);
+              dummyWidgetLoader('#AnnouncementsWidgetWrapper', 1000);
             });
         </script>
     </footer>
