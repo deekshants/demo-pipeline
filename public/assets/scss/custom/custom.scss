@@ -6,6 +6,7 @@
     @import 'override';
 
     //specific
+    @import 'skeleton-line';
     @import 'croppie';
     @import 'select2';
     @import 'hm-autocomp';
@@ -21,6 +22,7 @@
     @import 'attendance';
     @import 'other-components';
     @import 'responsive-table';
+    @import 'animation';
 
     // general
     @import 'link';
@@ -34,6 +36,7 @@
     @import 'height';
     @import 'border';
     @import 'space';
+    
 
 
     // media query

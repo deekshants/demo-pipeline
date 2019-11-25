@@ -5,6 +5,12 @@ $(document).ready(function(){
 
 });
 
+function dummyWidgetLoader(widgetId, time){
+    setTimeout(function(){
+        $('.hm-widget-loader', widgetId).add('.hm-widget-content', widgetId).toggleClass('hide');
+    }, time);
+}
+
 
 function dummyLogin(){
     showLoader('#siteLoader');

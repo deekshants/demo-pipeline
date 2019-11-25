@@ -1,0 +1,47 @@
+.hm-loading-line {
+  border-radius: 500px;
+  height: 10px;
+  margin: 10px;
+  -webkit-animation: pulse 1s infinite ease-in-out;
+          animation: pulse 1s infinite ease-in-out;
+}
+
+.hm-loading-line-w-80 {
+  width: 80%;
+}
+.hm-loading-line-w-75 {
+  width: 75%;
+}
+.hm-loading-line-w-70 {
+  width: 70%;
+}
+.hm-loading-line-w-50 {
+  width: 50%;
+}
+.hm-loading-line-w-25 {
+  width: 25%;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}

@@ -18,6 +18,35 @@
 .hm-setup-menu-item.active .hm-setup-menu-item-sub{
     font-weight: bold;
 }
+/* --------------------widget style------------------------ */
+.hm-widget-warpper{
+    position: relative;
+    min-height: 322px;
+}
+.hm-widget-color-bar{
+    position: absolute;
+    height: 90%;
+    width: 6px;
+    top: 5%;
+    left: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: #aaa;
+    opacity: 0.7;
+}
+
+.hm-upcoming-holiday{
+    background: linear-gradient(90deg, rgba(208,64,240,.3), rgba(71,183,222,.3));
+    position: relative;
+}
+.hm-upcoming-holiday-thumb{
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    opacity: .1;
+}
 /* --------------------user image uploder------------------------ */
 .hm-user-img-wrapper{
     display: block;
@@ -110,5 +139,18 @@
 
 .hm-has-error .form-control {
     background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #f44336 1px, rgba(210, 210, 210, 0) 1px);
+}
+
+/* --------------------under-construction ------------------------ */
+
+.hm-under-const-dark{
+    opacity: .5;
+    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.2), rgba(255,255,255,.2) 1px, rgba(0,0,0,.3) 0, rgba(0,0,0,.3) 8px);
+    cursor: not-allowed;
+}
+.hm-under-const-light{
+    opacity: .7;
+    background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.1), rgba(0,0,0,.1) 2px, rgba(255,255,255,.2) 0, rgba(255,255,255,.2) 8px);
+    cursor: not-allowed;
 }
 

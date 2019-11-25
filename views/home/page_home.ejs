@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body class="hm hm-has-top-menu hm-has-side-menu">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <aside>
+        <% include ../partials/side-menu %>
+    </aside>
+    
+    <main class="hm-main-view">
+        <div class="p-3">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetTimesheet/widget_Timesheet %>
+                </div>
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetTodo/widget_Todo %>
+                </div>
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetUpcomingHolidays/widget_UpcomingHolidays %>
+                </div>
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetNotApproved/widget_NotApproved %>
+                </div>
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetQuickLinks/widget_QuickLinks %>
+                </div>
+                <div class="col-12 col-md-4">
+                    <% include home-dashboard-widgets/widgetAnnouncements/widget_Announcements %>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <% include ../partials/footer %>
+        <% include js/js_home %>
+    </footer>
+
+</body>
+</html>

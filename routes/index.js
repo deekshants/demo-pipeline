@@ -4,9 +4,7 @@ var app = require('./../app.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log("process.env.BASE_URL");
-	console.log(process.env);
-  res.render('index', {baseUrl: process.env.BASE_URL});
+  res.render('home/page_home', {baseUrl: process.env.BASE_URL});
 });
 
 
