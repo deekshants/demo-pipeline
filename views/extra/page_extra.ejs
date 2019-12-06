@@ -415,8 +415,23 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+
                     </div>
                 </div>
+            </div>
+
+            <div class="p-5">
+                <!-- simple default -->
+              <div   hm-chart-type="multiValueDonut" hm-chart-data='[{"options":[{"name": "Lorem ipsum dolor sit amet","value": 50,"percent": 50}, {"name": "Donec rutrum odio eget nisi porttitor","value": 50,"percent": 12}, {"name": "Pellentesque nulla libero, varius","value": 50,"percent": 12}, {"name": "Sed tristique, nibh eget maximus","value": 50,"percent": 26}], "radius": 100}]'></div>
+
+              <!-- custom tool tip -->
+              <div   hm-chart-type="multiValueDonut" hm-chart-data='[{"options":[{"name": "Lorem ipsum dolor sit amet","value": 50,"percent": 50}, {"name": "Donec rutrum odio eget nisi porttitor","value": 50,"percent": 12}, {"name": "Pellentesque nulla libero, varius","value": 50,"percent": 12}, {"name": "Sed tristique, nibh eget maximus","value": 50,"percent": 26}], "radius": 100,  "tipTemplateFn": "customTipFn"}]'></div>
+
+              <!-- custom thickness and color tip -->
+              <div   hm-chart-type="multiValueDonut" hm-chart-data='[{"options":[{"name": "Lorem ipsum dolor sit amet","value": 50,"percent": 50}, {"name": "Donec rutrum odio eget nisi porttitor","value": 50,"percent": 12}, {"name": "Pellentesque nulla libero, varius","value": 50,"percent": 12}, {"name": "Sed tristique, nibh eget maximus","value": 50,"percent": 26}], "radius": 150, "thickness": 50, "color": ["red", "green", "blue", "yellow"] }]'></div>
             </div>
         </main>
 

@@ -9,6 +9,13 @@ router.get('/', function(req, res, next) {
 
 
 
+router.get('/account-suspended', function(req, res) {
+    res.render('errorPage/page_accountSuspended', {baseUrl: process.env.BASE_URL});
+});
+router.get('/account-deactivated', function(req, res) {
+    res.render('errorPage/page_accountDeactivated', {baseUrl: process.env.BASE_URL});
+});
+
 router.get('/signup', function(req, res) {
     res.render('signups/page_Signup', {baseUrl: process.env.BASE_URL});
 });

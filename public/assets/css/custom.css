@@ -27,6 +27,8 @@ background: #ccc;
   /* -----------min width style end----------------- */
   /* -----------max width style start----------------- */
   /* -----------max width style end----------------- */ }
+  .hm img {
+    max-width: 100%; }
   .hm .dropdown-toggle.hm-dropdown-no-arrow:before {
     display: none; }
   .hm footer {
@@ -1073,14 +1075,15 @@ background: #ccc;
     width: 1000px; }
   .hm .hm-side-panel.hm-side-panel-small {
     width: 500px; }
-  .hm .hm-donut-wrapper {
-    display: inline-block;
-    position: relative; }
-  .hm .hm-donut-center-text {
+  .hm .hm-donut-tooltip {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); }
+    display: none;
+    background: white;
+    border-radius: 4px;
+    box-shadow: -3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    min-width: 100px;
+    max-width: 250px; }
   .hm .hm-atten-color-strip {
     background: linear-gradient(to bottom, #4caf50 0%, #4caf50 49%, #dddddd 49%, #dddddd 100%);
     height: 20px;
@@ -1267,6 +1270,8 @@ background: #ccc;
       display: block;
       width: 50%;
       padding: 0.5em 0.75em 0.5em 50% !important; } }
+  .hm .animate-wrapper {
+    overflow: hidden; }
 
 @-webkit-keyframes fadeInLeft {
   from {
@@ -1287,12 +1292,29 @@ background: #ccc;
     opacity: 1;
     -webkit-transform: none;
     transform: none; } }
-  .hm .animate-wrapper {
-    overflow: hidden; }
   .hm .animate-fade-left {
     opacity: 0;
     -webkit-animation: fadeInLeft .5s ease-in-out 0s forwards;
     animation: fadeInLeft .5s ease-in-out 0s forwards; }
+  .hm .animate-zoomIn {
+    -webkit-animation-name: zoomIn ease 1s;
+    animation: zoomIn ease 1s; }
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  50% {
+    opacity: 1; } }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  50% {
+    opacity: 1; } }
   .hm a.hm-link-white,
   .hm .hm-link-white a,
   .hm a.hm-link-white:hover,
