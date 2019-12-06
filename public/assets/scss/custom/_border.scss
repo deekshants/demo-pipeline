@@ -54,6 +54,15 @@
 .hm-line-semi-black-dashed-around{
   border:1px dashed rgba(0,0,0,.2);
 }
+
+.hm-line-next-bottom + .hm-line-next-bottom{
+  border-bottom:1px solid #eee;
+}
+
+.hm-line-next-top + .hm-line-next-top{
+  border-top:1px solid #eee;
+}
+
 .hm-line-none{
 	border:none;
 }
