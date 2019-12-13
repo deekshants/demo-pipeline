@@ -1,9 +1,9 @@
 .hm-donut-tooltip {
     position: absolute;
     display: none;
-    background: white;
+    background: $HMwhite;
     border-radius: 4px;
-    box-shadow: -3px 3px 15px rgba(0,0,0,.2);
+    box-shadow: -3px 3px 15px rgba($HMblack,.2);
     padding: 5px 10px;
     min-width: 100px;
     max-width: 250px;

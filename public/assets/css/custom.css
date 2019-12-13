@@ -200,7 +200,7 @@ be a descendant of the grid when it is being dragged.
     padding: 5px; }
   .hm .table thead th {
     font-weight: normal;
-    color: #999; }
+    color: #999999; }
   .hm .form-check .form-check-label {
     line-height: 1.5; }
   .hm .hm-col {
@@ -225,19 +225,19 @@ be a descendant of the grid when it is being dragged.
 
 @-webkit-keyframes pulse {
   0% {
-    background-color: rgba(165, 165, 165, 0.1); }
+    background-color: rgba(0, 0, 0, 0.07); }
   50% {
-    background-color: rgba(165, 165, 165, 0.3); }
+    background-color: rgba(0, 0, 0, 0.15); }
   100% {
-    background-color: rgba(165, 165, 165, 0.1); } }
+    background-color: rgba(0, 0, 0, 0.07); } }
 
 @keyframes pulse {
   0% {
-    background-color: rgba(165, 165, 165, 0.1); }
+    background-color: rgba(0, 0, 0, 0.07); }
   50% {
-    background-color: rgba(165, 165, 165, 0.3); }
+    background-color: rgba(0, 0, 0, 0.15); }
   100% {
-    background-color: rgba(165, 165, 165, 0.1); } }
+    background-color: rgba(0, 0, 0, 0.07); } }
   .hm .croppie-container {
     width: 100%;
     height: 100%; }
@@ -259,7 +259,7 @@ be a descendant of the grid when it is being dragged.
   .hm .croppie-container .cr-viewport,
   .hm .croppie-container .cr-resizer {
     position: absolute;
-    border: 2px solid #fff;
+    border: 2px solid white;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -281,7 +281,7 @@ be a descendant of the grid when it is being dragged.
     position: absolute;
     box-sizing: border-box;
     border: 1px solid black;
-    background: #fff;
+    background: white;
     width: 10px;
     height: 10px;
     content: ''; }
@@ -349,7 +349,7 @@ be a descendant of the grid when it is being dragged.
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: gray;
     margin-top: -6px; }
   .hm .cr-slider:focus {
     outline: none; }
@@ -364,7 +364,7 @@ be a descendant of the grid when it is being dragged.
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: gray;
     margin-top: -6px; }
   .hm .cr-slider:-moz-focusring {
     outline: 1px solid white;
@@ -390,7 +390,7 @@ be a descendant of the grid when it is being dragged.
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: gray;
     margin-top: 1px; }
   .hm .cr-slider:focus::-ms-fill-lower {
     background: rgba(0, 0, 0, 0.5); }
@@ -857,7 +857,7 @@ be a descendant of the grid when it is being dragged.
   .hm .fc-unthemed .fc-popover .fc-header .fc-close {
     color: #666; }
   .hm .fc-unthemed td.fc-today {
-    background: #fcf8e3; }
+    background: #f4def8; }
   .hm .fc-unthemed .fc-disabled-day {
     background: #d7d7d7;
     opacity: .3; }
@@ -1335,11 +1335,11 @@ be a descendant of the grid when it is being dragged.
     color: white;
     margin: 2px; }
   .hm .hm-cal-event-dot.hm-cal-event-leave {
-    background: #fe4a5d; }
+    background: #9c27b0; }
   .hm .hm-cal-event-dot.hm-cal-event-holiday {
-    background: #66ccff; }
+    background: #999999; }
   .hm .hm-select-text-dull {
-    color: #999; }
+    color: #999999; }
   .hm .select2-container {
     box-sizing: border-box;
     display: inline-block;
@@ -1446,7 +1446,7 @@ be a descendant of the grid when it is being dragged.
     width: auto;
     opacity: 0;
     z-index: 99;
-    background-color: #fff;
+    background-color: white;
     filter: alpha(opacity=0); }
   .hm .select2-hidden-accessible {
     border: 0 !important;
@@ -1461,17 +1461,17 @@ be a descendant of the grid when it is being dragged.
     white-space: nowrap !important; }
   .hm .select2-container--default .select2-selection--single {
     background-color: transparent;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid #b3b3b3;
     /* border-radius: 4px */ }
   .hm .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #444;
+    color: #b3b3b3;
     line-height: 28px; }
   .hm .select2-container--default .select2-selection--single .select2-selection__clear {
     cursor: pointer;
     float: right;
     font-weight: bold; }
   .hm .select2-container--default .select2-selection--single .select2-selection__placeholder {
-    color: #999; }
+    color: #eeeeee; }
   .hm .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 26px;
     position: absolute;
@@ -1479,7 +1479,7 @@ be a descendant of the grid when it is being dragged.
     right: 1px;
     width: 20px; }
   .hm .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: #888 transparent transparent transparent;
+    border-color: #404040 transparent transparent transparent;
     border-style: solid;
     border-width: 5px 4px 0 4px;
     height: 0;
@@ -1495,16 +1495,16 @@ be a descendant of the grid when it is being dragged.
     left: 1px;
     right: auto; }
   .hm .select2-container--default.select2-container--disabled .select2-selection--single {
-    background-color: #eee;
+    background-color: #eeeeee;
     cursor: default; }
   .hm .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
     display: none; }
   .hm .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-color: transparent transparent #888 transparent;
+    border-color: transparent transparent #404040 transparent;
     border-width: 0 4px 5px 4px; }
   .hm .select2-container--default .select2-selection--multiple {
     background-color: transparent;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid #cccccc;
     /* border-radius: 4px; */
     cursor: text; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -1526,7 +1526,7 @@ be a descendant of the grid when it is being dragged.
     padding: 1px; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__choice {
     background-color: white;
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee;
     border-radius: 500px;
     cursor: default;
     display: inline-flex;
@@ -1534,13 +1534,13 @@ be a descendant of the grid when it is being dragged.
     margin-top: 5px;
     padding: 0 10px; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    color: #999;
+    color: #b3b3b3;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-    color: #333; }
+    color: #1a1a1a; }
   .hm .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice, .hm .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline {
     float: right; }
   .hm .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
@@ -1554,7 +1554,7 @@ be a descendant of the grid when it is being dragged.
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
     outline: 0; }
   .hm .select2-container--default.select2-container--disabled .select2-selection--multiple {
-    background-color: #eee;
+    background-color: #eeeeee;
     cursor: default; }
   .hm .select2-container--default.select2-container--disabled .select2-selection__choice__remove {
     display: none; }
@@ -1565,7 +1565,7 @@ be a descendant of the grid when it is being dragged.
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
   .hm .select2-container--default .select2-search--dropdown .select2-search__field {
-    border: 1px solid #aaa; }
+    border: 1px solid #b3b3b3; }
   .hm .select2-container--default .select2-search--inline .select2-search__field {
     background: transparent;
     border: none;
@@ -1578,9 +1578,9 @@ be a descendant of the grid when it is being dragged.
   .hm .select2-container--default .select2-results__option[role=group] {
     padding: 0; }
   .hm .select2-container--default .select2-results__option[aria-disabled=true] {
-    color: #999; }
+    color: #eeeeee; }
   .hm .select2-container--default .select2-results__option[aria-selected=true] {
-    background-color: #ddd; }
+    background-color: #eeeeee; }
   .hm .select2-container--default .select2-results__option .select2-results__option {
     padding-left: 1em; }
   .hm .select2-container--default .select2-results__option .select2-results__option .select2-results__group {
@@ -1610,8 +1610,8 @@ be a descendant of the grid when it is being dragged.
     display: block;
     padding: 6px; }
   .hm .select2-container--classic .select2-selection--single {
-    background-color: #f7f7f7;
-    border: 1px solid #aaa;
+    background-color: #f7f8f9;
+    border: 1px solid #b3b3b3;
     border-radius: 4px;
     outline: 0;
     background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%);
@@ -1622,7 +1622,7 @@ be a descendant of the grid when it is being dragged.
   .hm .select2-container--classic .select2-selection--single:focus {
     border: 1px solid #9c27b0; }
   .hm .select2-container--classic .select2-selection--single .select2-selection__rendered {
-    color: #444;
+    color: #b3b3b3;
     line-height: 28px; }
   .hm .select2-container--classic .select2-selection--single .select2-selection__clear {
     cursor: pointer;
@@ -1632,9 +1632,9 @@ be a descendant of the grid when it is being dragged.
   .hm .select2-container--classic .select2-selection--single .select2-selection__placeholder {
     color: #999; }
   .hm .select2-container--classic .select2-selection--single .select2-selection__arrow {
-    background-color: #ddd;
+    background-color: #cccccc;
     border: none;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid #cccccc;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 26px;
@@ -1642,13 +1642,13 @@ be a descendant of the grid when it is being dragged.
     top: 1px;
     right: 1px;
     width: 20px;
-    background-image: -webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
-    background-image: -o-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
-    background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
+    background-image: -webkit-linear-gradient(top, #b3b3b3 50%, #a6a6a6 100%);
+    background-image: -o-linear-gradient(top, #b3b3b3 50%, #a6a6a6 100%);
+    background-image: linear-gradient(to bottom, #b3b3b3 50%, #a6a6a6 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0); }
   .hm .select2-container--classic .select2-selection--single .select2-selection__arrow b {
-    border-color: #888 transparent transparent transparent;
+    border-color: #cccccc transparent transparent transparent;
     border-style: solid;
     border-width: 5px 4px 0 4px;
     height: 0;
@@ -1662,7 +1662,7 @@ be a descendant of the grid when it is being dragged.
     float: left; }
   .hm .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
     border: none;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #b3b3b3;
     border-radius: 0;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -1674,7 +1674,7 @@ be a descendant of the grid when it is being dragged.
     background: transparent;
     border: none; }
   .hm .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-color: transparent transparent #888 transparent;
+    border-color: transparent transparent #cccccc transparent;
     border-width: 0 4px 5px 4px; }
   .hm .select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
     border-top: none;
@@ -1696,7 +1696,7 @@ be a descendant of the grid when it is being dragged.
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0); }
   .hm .select2-container--classic .select2-selection--multiple {
     background-color: white;
-    border: 1px solid #aaa;
+    border: 1px solid #b3b3b3;
     border-radius: 4px;
     cursor: text;
     outline: 0; }
@@ -1709,8 +1709,8 @@ be a descendant of the grid when it is being dragged.
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__clear {
     display: none; }
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__choice {
-    background-color: #e4e4e4;
-    border: 1px solid #aaa;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     cursor: default;
     float: left;
@@ -1718,13 +1718,13 @@ be a descendant of the grid when it is being dragged.
     margin-top: 5px;
     padding: 0 5px; }
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
-    color: #888;
+    color: #cccccc;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
-    color: #555; }
+    color: #cccccc; }
   .hm .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
     float: right;
     margin-left: 5px;
@@ -1743,7 +1743,7 @@ be a descendant of the grid when it is being dragged.
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
   .hm .select2-container--classic .select2-search--dropdown .select2-search__field {
-    border: 1px solid #aaa;
+    border: 1px solid #b3b3b3;
     outline: 0; }
   .hm .select2-container--classic .select2-search--inline .select2-search__field {
     outline: 0;
@@ -1763,7 +1763,7 @@ be a descendant of the grid when it is being dragged.
   .hm .select2-container--classic .select2-results__option[aria-disabled=true] {
     color: grey; }
   .hm .select2-container--classic .select2-results__option--highlighted[aria-selected] {
-    background-color: #3875d7;
+    background-color: #9c27b0;
     color: white; }
   .hm .select2-container--classic .select2-results__group {
     cursor: default;
@@ -1790,10 +1790,10 @@ be a descendant of the grid when it is being dragged.
     padding-bottom: 5px; }
   .hm .hm-simple-tab-nav {
     display: flex;
-    border-bottom: 1px solid #ddd; }
+    border-bottom: 1px solid #cccccc; }
   .hm .hm-simple-tab-nav .hm-tab-link {
     background-color: transparent;
-    color: #333;
+    color: black;
     box-shadow: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -1838,7 +1838,7 @@ be a descendant of the grid when it is being dragged.
     height: 1px;
     left: 0;
     top: 16px;
-    background: #ddd; }
+    background: #b3b3b3; }
   .hm .hm-wizard-step-inner {
     display: inline-flex;
     align-items: center;
@@ -1867,15 +1867,15 @@ be a descendant of the grid when it is being dragged.
     text-align: center;
     line-height: 32px;
     border-radius: 50%;
-    color: #fff;
+    color: white;
     font-weight: normal;
     position: relative;
     z-index: 1;
     flex: none; }
   .hm .hm-wizard-step-count {
-    background: #bbb; }
+    background: #b3b3b3; }
   .hm .hm-wizard-step-text {
-    color: #999; }
+    color: #999999; }
   .hm .hm-wizard-step-check {
     background: #4caf50;
     display: none; }
@@ -1883,7 +1883,7 @@ be a descendant of the grid when it is being dragged.
     line-height: 32px; }
   .hm .hm-wizard-step.active .hm-wizard-step-count {
     background: #9c27b0;
-    box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2); }
+    box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.08), 0 1px 10px 0 rgba(156, 39, 176, 0.05), 0 2px 4px -1px rgba(156, 39, 176, 0.02); }
   .hm .hm-wizard-step.active .hm-wizard-step-text {
     font-weight: bold;
     color: inherit; }
@@ -1904,11 +1904,11 @@ be a descendant of the grid when it is being dragged.
     width: 32px;
     text-align: center;
     line-height: 32px;
-    background: #999;
+    background: #999999;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff; }
+    color: white; }
   .hm .hm-name-circle-40 {
     height: 40px;
     width: 40px;
@@ -2058,7 +2058,7 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-navbar {
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #ccccff;
+    border-bottom: 1px solid #cccccc;
     position: fixed;
     top: 0;
     left: 0;
@@ -2076,11 +2076,10 @@ be a descendant of the grid when it is being dragged.
     left: 0;
     bottom: 0;
     transition: all ease .25s;
-    background: #0a2240; }
+    background: #4a2051; }
   .hm .hm-side-menu-link {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    text-shadow: 0 -1px 0 black;
     padding-top: .5rem;
     padding-bottom: .5rem;
     position: relative;
@@ -2090,7 +2089,7 @@ be a descendant of the grid when it is being dragged.
     color: white;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5); }
   .hm .hm-side-menu-link:hover, .hm .hm-side-menu-link:focus {
-    background: #0d3059;
+    background: #6b2e76;
     color: white;
     box-shadow: none; }
   .hm .hm-side-submenu {
@@ -2101,7 +2100,7 @@ be a descendant of the grid when it is being dragged.
     min-width: 50px;
     height: 100%;
     z-index: 600;
-    background: #0d3059;
+    background: #6b2e76;
     display: none; }
   .hm .hm-side-menu-link.focus:hover .hm-side-submenu {
     display: block; }
@@ -2113,16 +2112,12 @@ be a descendant of the grid when it is being dragged.
     color: white;
     text-decoration: none;
     display: block; }
-  .hm .hm-side-submenu-item:hover {
+  .hm .hm-side-submenu-item:hover, .hm .hm-side-submenu-item.active {
     background: rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    color: #fff; }
+    color: white; }
   .hm .hm-side-submenu-item:focus {
-    color: #fff; }
-  .hm .hm-side-submenu-item.active {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    color: #fff; }
+    color: white; }
   .hm .hm-side-panel-wrapper {
     position: fixed;
     top: 0;
@@ -2142,7 +2137,7 @@ be a descendant of the grid when it is being dragged.
     flex-direction: column;
     width: 800px;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: white;
     background-clip: padding-box;
     outline: 0;
     margin-left: auto;
@@ -2234,13 +2229,13 @@ be a descendant of the grid when it is being dragged.
     border-radius: 0 500px 500px 0;
     margin-bottom: .5rem; }
   .hm .hm-setup-menu-item:hover {
-    background: linear-gradient(90deg, #dcf6ff, #f2c5fc); }
+    background: linear-gradient(90deg, rgba(176, 39, 82, 0.2), rgba(156, 39, 176, 0.2)); }
   .hm .hm-setup-menu-item.active {
     color: inherit;
     background: #f2c5fc;
     /* Old browsers */
-    background: linear-gradient(90deg, #dcf6ff, #f2c5fc);
-    box-shadow: inset -1px 1px 4px rgba(204, 51, 153, 0.2); }
+    background: linear-gradient(90deg, rgba(176, 39, 82, 0.2), rgba(156, 39, 176, 0.2));
+    box-shadow: inset -1px 1px 4px rgba(156, 39, 176, 0.2); }
   .hm .hm-setup-menu-item.active .hm-setup-menu-item-sub {
     font-weight: bold; }
   .hm .hm-widget-warpper {
@@ -2254,10 +2249,10 @@ be a descendant of the grid when it is being dragged.
     left: 0px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: #aaa;
+    background: gray;
     opacity: 0.7; }
   .hm .hm-upcoming-holiday {
-    background: linear-gradient(90deg, rgba(208, 64, 240, 0.3), rgba(71, 183, 222, 0.3));
+    background: linear-gradient(90deg, rgba(176, 39, 82, 0.2), rgba(156, 39, 176, 0.2));
     position: relative; }
   .hm .hm-upcoming-holiday-thumb {
     position: absolute;
@@ -2274,7 +2269,7 @@ be a descendant of the grid when it is being dragged.
     margin: 0;
     position: relative;
     text-align: center;
-    background: #eee;
+    background: #eeeeee;
     overflow: hidden;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px; }
@@ -2286,7 +2281,7 @@ be a descendant of the grid when it is being dragged.
     position: absolute;
     bottom: 10px;
     right: 10px;
-    color: #fff;
+    color: white;
     text-shadow: 0 0 10px #000; }
   .hm .hm-company-logo-wrapper {
     display: block;
@@ -2296,7 +2291,7 @@ be a descendant of the grid when it is being dragged.
     margin: 0;
     position: relative;
     text-align: center;
-    background: #eee;
+    background: #eeeeee;
     border-radius: 4px;
     margin-right: 30px; }
   .hm .hm-edit-logo-icon {
@@ -2331,7 +2326,7 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-has-error .hm-input-error-msg {
     display: block; }
   .hm .hm-has-error .form-control {
-    background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #f44336 1px, rgba(210, 210, 210, 0) 1px); }
+    background-image: linear-gradient(to top, #f44336 2px, white 2px), linear-gradient(to top, #f44336 1px, white 1px); }
   .hm .hm-under-const-dark {
     opacity: .5;
     background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 1px, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 8px);
@@ -2348,7 +2343,7 @@ be a descendant of the grid when it is being dragged.
       position: absolute;
       left: 2em;
       content: attr(head-title);
-      color: #999;
+      color: #999999;
       width: 45%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -2517,25 +2512,23 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-text-normal {
     font-weight: normal; }
   .hm .hm-text-default {
-    color: #333; }
-  .hm .hm-text-dark-blue {
-    color: #16325c; }
-  .hm .hm-text-gray {
-    color: #5876a3; }
-  .hm .hm-text-weak {
-    color: #706e6b; }
-  .hm .hm-text-blue {
+    color: black; }
+  .hm .hm-text-primary {
+    color: #9c27b0; }
+  .hm .hm-text-secondary {
+    color: #b02752; }
+  .hm .hm-text-cyan {
     color: #00bcd4; }
   .hm .hm-text-orange {
-    color: #f2ac57; }
+    color: #ff9800; }
   .hm .hm-text-red {
-    color: #c23934; }
+    color: #f44336; }
   .hm .hm-text-green {
     color: #4caf50; }
   .hm .hm-text-dull {
-    color: #999; }
+    color: #999999; }
   .hm .hm-text-white {
-    color: #ffffff; }
+    color: white; }
   .hm .hm-text-size-normal {
     font-size: normal; }
   .hm .hm-text-size-inherit {
@@ -2554,16 +2547,18 @@ be a descendant of the grid when it is being dragged.
     vertical-align: middle; }
   .hm .hm-bg-dull {
     background: #f7f8f9; }
-  .hm .hm-bg-dark-blue {
-    background: #16325c; }
+  .hm .hm-bg-primary {
+    background: #9c27b0; }
+  .hm .hm-bg-secondary {
+    background: #b02752; }
   .hm .hm-bg-orange {
-    background: #ffb75d; }
+    background: #ff9800; }
   .hm .hm-bg-green {
     background: #4caf50; }
   .hm .hm-bg-red {
-    background: #c23934; }
+    background: #f44336; }
   .hm .hm-bg-white {
-    background: #ffffff; }
+    background: white; }
   .hm .hm-bg-none {
     background: none; }
   .hm .hm-radius-0 {
@@ -2679,13 +2674,13 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-min-h-full-vh {
     min-height: 100vh; }
   .hm .hm-line-top {
-    border-top: 1px solid #eee; }
+    border-top: 1px solid #eeeeee; }
   .hm .hm-line-bottom {
-    border-bottom: 1px solid #eee; }
+    border-bottom: 1px solid #eeeeee; }
   .hm .hm-line-left {
-    border-left: 1px solid #eee; }
+    border-left: 1px solid #eeeeee; }
   .hm .hm-line-right {
-    border-right: 1px solid #eee; }
+    border-right: 1px solid #eeeeee; }
   .hm .hm-line-semi-white-top {
     border-top: 1px solid rgba(255, 255, 255, 0.5); }
   .hm .hm-line-semi-white-bottom {
@@ -2703,13 +2698,13 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-line-semi-black-right {
     border-right: 1px solid rgba(0, 0, 0, 0.2); }
   .hm .hm-line-dottedtop {
-    border-top: 1px dotted #eee; }
+    border-top: 1px dotted #eeeeee; }
   .hm .hm-line-dottedbottom {
-    border-bottom: 1px dotted #eee; }
+    border-bottom: 1px dotted #eeeeee; }
   .hm .hm-line-dottedleft {
-    border-left: 1px dotted #eee; }
+    border-left: 1px dotted #eeeeee; }
   .hm .hm-line-dottedright {
-    border-right: 1px dotted #eee; }
+    border-right: 1px dotted #eeeeee; }
   .hm .hm-line-semi-black-dotted-top {
     border-top: 1px dotted rgba(0, 0, 0, 0.2); }
   .hm .hm-line-semi-black-dotted-bottom {
@@ -2719,13 +2714,13 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-line-semi-black-dotted-right {
     border-right: 1px dotted rgba(0, 0, 0, 0.2); }
   .hm .hm-line-dashedtop {
-    border-top: 1px dashed #eee; }
+    border-top: 1px dashed #eeeeee; }
   .hm .hm-line-dashedbottom {
-    border-bottom: 1px dashed #eee; }
+    border-bottom: 1px dashed #eeeeee; }
   .hm .hm-line-dashedleft {
-    border-left: 1px dashed #eee; }
+    border-left: 1px dashed #eeeeee; }
   .hm .hm-line-dashedright {
-    border-right: 1px dashed #eee; }
+    border-right: 1px dashed #eeeeee; }
   .hm .hm-line-semi-black-dashed-top {
     border-top: 1px dashed rgba(0, 0, 0, 0.2); }
   .hm .hm-line-semi-black-dashed-bottom {
@@ -2735,19 +2730,19 @@ be a descendant of the grid when it is being dragged.
   .hm .hm-line-semi-black-dashed-right {
     border-right: 1px dashed rgba(0, 0, 0, 0.2); }
   .hm .hm-line-around {
-    border: 1px solid #eee; }
+    border: 1px solid #eeeeee; }
   .hm .hm-line-dotted-around {
-    border: 1px dotted #eee; }
+    border: 1px dotted #eeeeee; }
   .hm .hm-line-semi-black-dotted-around {
     border: 1px dotted rgba(0, 0, 0, 0.2); }
   .hm .hm-line-dashed-around {
-    border: 1px dashed #eee; }
+    border: 1px dashed #eeeeee; }
   .hm .hm-line-semi-black-dashed-around {
     border: 1px dashed rgba(0, 0, 0, 0.2); }
   .hm .hm-line-next-bottom + .hm-line-next-bottom {
-    border-bottom: 1px solid #eee; }
+    border-bottom: 1px solid #eeeeee; }
   .hm .hm-line-next-top + .hm-line-next-top {
-    border-top: 1px solid #eee; }
+    border-top: 1px solid #eeeeee; }
   .hm .hm-line-none {
     border: none; }
   .hm .hm-first-line-top-0 > li:first-child {
@@ -3520,13 +3515,13 @@ be a descendant of the grid when it is being dragged.
       .hm .hm-md-text-right {
         text-align: right; }
       .hm .hm-md-line-top {
-        border-top: 1px solid #eee; }
+        border-top: 1px solid #eeeeee; }
       .hm .hm-md-line-bottom {
-        border-bottom: 1px solid #eee; }
+        border-bottom: 1px solid #eeeeee; }
       .hm .hm-md-line-left {
-        border-left: 1px solid #eee; }
+        border-left: 1px solid #eeeeee; }
       .hm .hm-md-line-right {
-        border-right: 1px solid #eee; }
+        border-right: 1px solid #eeeeee; }
       .hm .hm-md-line-top-none {
         border-top: none; }
       .hm .hm-md-line-bottom-none {
@@ -4334,13 +4329,13 @@ be a descendant of the grid when it is being dragged.
       .hm .hm-sm-text-right {
         text-align: right; }
       .hm .hm-sm-line-top {
-        border-top: 1px solid #eee; }
+        border-top: 1px solid #eeeeee; }
       .hm .hm-sm-line-bottom {
-        border-bottom: 1px solid #eee; }
+        border-bottom: 1px solid #eeeeee; }
       .hm .hm-sm-line-left {
-        border-left: 1px solid #eee; }
+        border-left: 1px solid #eeeeee; }
       .hm .hm-sm-line-right {
-        border-right: 1px solid #eee; }
+        border-right: 1px solid #eeeeee; }
       .hm .hm-sm-line-top-none {
         border-top: none; }
       .hm .hm-sm-line-bottom-none {

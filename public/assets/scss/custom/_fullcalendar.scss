@@ -618,7 +618,7 @@ TODO: more distinction between this file and common.css
   color: #666; }
 
 .fc-unthemed td.fc-today {
-  background: #fcf8e3; }
+  background: lighten($HMprimary, 50%); }
 
 .fc-unthemed .fc-disabled-day {
   background: #d7d7d7;
@@ -1315,8 +1315,8 @@ be a descendant of the grid when it is being dragged.
       margin: 2px;
   }
   .hm-cal-event-dot.hm-cal-event-leave{
-      background: #fe4a5d;
+      background: $HMprimary;
   }
   .hm-cal-event-dot.hm-cal-event-holiday{
-      background: #66ccff;
+      background: $HMtextDull;
   }

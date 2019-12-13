@@ -1,23 +1,26 @@
 .hm-bg-dull{
-    background: $bgDull;
+    background: $HMbgDull;
 }
-.hm-bg-dark-blue{
-    background: $txtDarkBlue;
+.hm-bg-primary{
+    background: $HMbgPrimary;
+}
+.hm-bg-secondary{
+    background: $HMbgSecondary;
 }
 .hm-bg-orange{
-    background: $bgOrange;
+    background: $HMbgOrange;
 }
 
 .hm-bg-green{
-    background: $txtGreen;
+    background: $HMbgGreen;
 }
 
 .hm-bg-red{
-    background: $txtSFred;
+    background: $HMbgRed;
 }
 
 .hm-bg-white{
-    background: $white;
+    background: $HMwhite;
 }
 
 .hm-bg-none{
