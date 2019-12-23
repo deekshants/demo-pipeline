@@ -1,146 +1,117 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.1/fullcalendar.js" integrity="sha256-7fAwy2CPkvc+LijqhS3DoLQx3Pd/UjtpK4mvrzbLWSk=" crossorigin="anonymous"></script>
-<script>
-	$(document).ready(function () {
+<script>    
+    $(document).ready(function(){
+        initTeamLeaveCal('#teamLeaveCal');
+    });
 
-		$('#datetimepicker12').datetimepicker({
-			inline: true,
-			sideBySide: true,
-			format: 'DD/MM/YYYY',
-			icons: {
-				time: "fa fa-clock-o",
-				date: "fa fa-calendar",
-				up: "fa fa-chevron-up",
-				down: "fa fa-chevron-down",
-				previous: 'fa fa-chevron-left',
-				next: 'fa fa-chevron-right',
-				today: 'fa fa-screenshot',
-				clear: 'fa fa-trash',
-				close: 'fa fa-remove'
-			}
-		});
 
-	});
-
-	$(document).ready(() => {
-		var myCalendar = $('#fullCalendar').fullCalendar({
-			header: {
-				left: 'prev',
-				center: 'title',
-				right: 'next'
-			},
-			events: [{
-				start: '2019-12-14',
-				dateEvents: [{
-					type: 'holiday',
-					name: 'Diwali',
+    /*-----------------fullCalendar js start-----------------------------*/
+	function initTeamLeaveCal(id){
+			var myCalendar = $(id).fullCalendar({
+				header: {
+					left: 'prev',
+					center: 'title',
+					right: 'next'
+				},
+				events: [{
+					start: '2019-12-14',
+					dateEvents: [{
+						type: 'holiday',
+						name: 'Diwali',
+					}]
 				},
 				{
-					type: 'leave',
-					name: 'Deekshant',
-					imgUrl: 'https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg'
-				}]
-			},
-			{
-				start: '2019-12-12',
-				dateEvents: [{
-					type: 'leave',
-					name: 'Hemant',
-					imgUrl: 'https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg'
+					start: '2019-12-12',
+					dateEvents: [{
+						type: 'leave',
+						name: 'Hemant',
+						imgUrl: 'https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg'
+					},
+					{
+						type: 'leave',
+						name: 'Chetna',
+						imgUrl: 'https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg'
+					}]
 				},
 				{
-					type: 'leave',
-					name: 'Chetna',
-					imgUrl: 'https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg'
-				}]
-			},
-			{
-				start: '2019-12-25',
-				dateEvents: [{
-					type: 'holiday',
-					name: 'Christmas',
-				}]
-			}],
-			eventAfterRender: (event, element) => {
-				var parentElement = element.parent();
-				element.remove();
-				var holidayBadgeCreated = false;
-				var leaveBadgeCreated = false;
-				var holidayContent = '';
-				var leaveContent = '';
+					start: '2019-12-25',
+					dateEvents: [{
+						type: 'holiday',
+						name: 'Christmas',
+					}]
+				}],
+				eventAfterRender: (event, element) => {
+					var parentElement = element.parent();
+					element.remove();
+					var holidayBadgeCreated = false;
+					var leaveBadgeCreated = false;
+					var holidayContent = '';
+					var leaveContent = '';
 
-				for (let i = 0; i < event.dateEvents.length; i++) {
-					if (event.dateEvents[i].type == 'holiday') {
-						if (!holidayBadgeCreated) {
-							parentElement.append(`<svg height="12" width="12">
-								<circle cx="6" cy="6" r="6"  fill="#eb6565" />
-								</svg>`);
-							holidayBadgeCreated = true;
+					for (let i = 0; i < event.dateEvents.length; i++) {
+						if (event.dateEvents[i].type == 'holiday') {
+							if (!holidayBadgeCreated) {
+								parentElement.append(`<span class="hm-cal-event-dot hm-cal-event-holiday">W</span>`);
+								holidayBadgeCreated = true;
+							}
+							holidayContent += `<div class="">
+													<div class="hm-text-dull hm-text-size-11">
+														Holiday
+													</div>
+													<div class="hm-text-size-16">
+														${event.dateEvents[i].name}
+													</div>
+													<div class="hm-text-dull hm-text-size-12">
+														${moment(event.start).format('MMM Do YYYY')}
+													</div>
+												</div>
+												`
 						}
-						holidayContent += `<div style="padding:5px"><div style="font-size:20px">${event.dateEvents[i].name}</div><div style="margin-top:10px">
-							Hooray! ${moment(event.start).format('dddd')}, <b>${moment(event.start).format('MMMM Do YYYY')}</b> is a holiday.</div></div><hr>`
-
-					}
-					else if (event.dateEvents[i].type == 'leave') {
-						if (!leaveBadgeCreated) {
-							parentElement.append(`<svg height="12" width="12">
-								<circle cx="6" cy="6" r="6"  fill="#63c1ff" />
-								</svg>`);
-							leaveBadgeCreated = true;
+						else if (event.dateEvents[i].type == 'leave') {
+							if (!leaveBadgeCreated) {
+								parentElement.append(`<span class=" hm-cal-event-dot hm-cal-event-leave">L</span>`);
+								leaveBadgeCreated = true;
+							}
+							leaveContent += `<div class="hm-line-next-top py-1 ">
+												<div class="row no-gutters">
+													<div class="pr-1">
+														<img class="hm-name-circle" src="${event.dateEvents[i].imgUrl}">
+													</div>
+													<div class="hm-col">
+														<div class="">
+															${event.dateEvents[i].name}
+														</div>
+														<div class="hm-text-dull hm-text-size-11 ">
+															On Leave:  ${moment(event.start).format('MMM Do YYYY')}
+														</div>
+													</div>
+												</div>
+											</div>
+											`
 						}
-						leaveContent += `<div style="padding:5px"><div class="row"><div class="col-4"><img class="hm-name-circle" src="${event.dateEvents[i].imgUrl}">
-							</div><div style="font-size:20px" class="col-8">${event.dateEvents[i].name}</div></div><div style="margin-top:10px">is on leave 
-							on ${moment(event.start).format('dddd')},<b>${moment(event.start).format('MMMM Do YYYY')}</b></div></div><hr>`
-						
 					}
-				}
-				if (holidayContent != '') {
-					holidayContent = holidayContent.slice(0, holidayContent.length-4);
-					parentElement.children().first().popover({
-						html: true,
-						content: holidayContent,
-						trigger: 'hover',
-						placement: 'top',
-						container: 'body'
-					});
-				}
-				if(leaveContent != ''){
-					leaveContent = leaveContent.slice(0, leaveContent.length-4);
-					parentElement.children().last().popover({
-						html: true,
-						content: leaveContent,
-						trigger: 'hover',
-						placement: 'top',
-						container: 'body'
-					});
-				}
+					if (holidayContent != '') {
+						holidayContent = holidayContent.slice(0, holidayContent.length-4);
+						parentElement.children().first().popover({
+							html: true,
+							content: holidayContent,
+							trigger: 'hover',
+							placement: 'top',
+							container: 'body'
+						});
+					}
+					if(leaveContent != ''){
+						leaveContent = leaveContent.slice(0, leaveContent.length-4);
+						parentElement.children().last().popover({
+							html: true,
+							content: leaveContent,
+							trigger: 'hover',
+							placement: 'top',
+							container: 'body'
+						});
+					}
 
-			}
-		});
-
-		$('.fc-toolbar h2').css('color', 'black');
-		$(function () {
-			$('.btn-secondary').popover({
-				container: 'body'
-			})
-		})
-	})
-
+				}
+			});
+		}
+		/*-----------------fullCalendar js end-----------------------------*/
 </script>
-
-<!-- 
-	Event JSON:
-
-	{
-		start : 'startDate',
-		dateEvents : [{
-			type : 'holiday/leave',
-			name : 'holidayName/employeeName',
-			imgurl : 'imageUrl for emp profile photo'
-		},
-		{
-			type : 'holiday/leave',
-			name : 'holidayName/employeeName',
-			imgurl : 'image url for emp profile photo'
-		}]
-	}
- -->

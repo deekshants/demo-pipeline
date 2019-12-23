@@ -1,11 +1,11 @@
 .hm-simple-tab-nav{
     display: flex;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid lighten( $HMblack, 80%);
 }
 
 .hm-simple-tab-nav .hm-tab-link {
     background-color: transparent;
-    color: #333;
+    color: $HMblack;
     box-shadow: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -14,7 +14,7 @@
 }
 .hm-simple-tab-nav .hm-tab-link:after {
     content: ""; 
-    background:#9c27b0; 
+    background:$HMprimary; 
     height: 2px; 
     position: absolute; 
     width: 100%; 
@@ -28,10 +28,10 @@
 }
 .hm-simple-tab-nav .hm-tab-link:hover {
     background-color: transparent;
-    color: #9c27b0;
+    color: $HMprimary;
 }
 .hm-simple-tab-nav .hm-tab-link.active {
-    color: #9c27b0;
+    color: $HMprimary;
    
 }
 .hm-simple-tab-nav .hm-tab-link.active:after {

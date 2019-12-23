@@ -1,3 +1,6 @@
+.animate-wrapper {
+    overflow: hidden;
+}
 @-webkit-keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -22,11 +25,39 @@
     transform: none;
   }
 }
-.animate-wrapper {
-    overflow: hidden;
-}
+
 .animate-fade-left {
   opacity: 0;
   -webkit-animation: fadeInLeft .5s ease-in-out 0s forwards;
           animation: fadeInLeft .5s ease-in-out 0s forwards;
+}
+
+
+.animate-zoomIn {
+  -webkit-animation-name: zoomIn ease 1s;
+  animation: zoomIn ease 1s;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  50% {
+    opacity: 1;
+  }
 }

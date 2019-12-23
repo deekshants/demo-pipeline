@@ -1,5 +1,5 @@
 .hm-select-text-dull{
-  color: #999;
+  color: $HMtextDull;
 }
 .select2-container {
   box-sizing: border-box;
@@ -54,7 +54,7 @@
   background-color: white;
   /* border: 1px solid #aaa;
   border-radius: 4px; */
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba($HMblack, 0.26);
   box-sizing: border-box;
   display: block;
   position: absolute;
@@ -116,7 +116,7 @@
   width: auto;
   opacity: 0;
   z-index: 99;
-  background-color: #fff;
+  background-color: $HMwhite;
   filter: alpha(opacity=0); }
 
 .select2-hidden-accessible {
@@ -133,17 +133,17 @@
 
 .select2-container--default .select2-selection--single {
   background-color: transparent;
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: 1px solid lighten($HMblack, 70%);
   /* border-radius: 4px */; }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #444;
+    color: lighten($HMblack, 70%);
     line-height: 28px; }
   .select2-container--default .select2-selection--single .select2-selection__clear {
     cursor: pointer;
     float: right;
     font-weight: bold; }
   .select2-container--default .select2-selection--single .select2-selection__placeholder {
-    color: #999; }
+    color: $HMgray; }
   .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 26px;
     position: absolute;
@@ -151,7 +151,7 @@
     right: 1px;
     width: 20px; }
     .select2-container--default .select2-selection--single .select2-selection__arrow b {
-      border-color: #888 transparent transparent transparent;
+      border-color: lighten($HMblack, 25%) transparent transparent transparent;
       border-style: solid;
       border-width: 5px 4px 0 4px;
       height: 0;
@@ -170,18 +170,18 @@
   right: auto; }
 
 .select2-container--default.select2-container--disabled .select2-selection--single {
-  background-color: #eee;
+  background-color: $HMgray;
   cursor: default; }
   .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
     display: none; }
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-  border-color: transparent transparent #888 transparent;
+  border-color: transparent transparent lighten($HMblack, 25%) transparent;
   border-width: 0 4px 5px 4px; }
 
 .select2-container--default .select2-selection--multiple {
   background-color: transparent;
-  border-bottom: 1px solid #d2d2d2;
+  border-bottom: 1px solid lighten($HMblack, 80%);
   /* border-radius: 4px; */
   cursor: text; }
   .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -203,7 +203,7 @@
     padding: 1px; }
   .select2-container--default .select2-selection--multiple .select2-selection__choice {
     background-color: white;
-    border: 1px solid #eee;
+    border: 1px solid $HMgray;
      border-radius: 500px; 
     cursor: default;
     display: inline-flex;
@@ -211,13 +211,13 @@
     margin-top: 5px;
     padding: 0 10px; }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    color: #999;
+    color: lighten($HMblack, 70%);
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
     .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-      color: #333; }
+      color: lighten($HMblack, 10%); }
 
 .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice, .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline {
   float: right; }
@@ -232,11 +232,11 @@
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
   background: white;
-  box-shadow: inset 0 0 3px rgba(0,0,0,.2);
+  box-shadow: inset 0 0 3px rgba($HMblack,.2);
   outline: 0; }
 
 .select2-container--default.select2-container--disabled .select2-selection--multiple {
-  background-color: #eee;
+  background-color: $HMgray;
   cursor: default; }
 
 .select2-container--default.select2-container--disabled .select2-selection__choice__remove {
@@ -251,7 +251,7 @@
   border-bottom-right-radius: 0; }
 
 .select2-container--default .select2-search--dropdown .select2-search__field {
-  border: 1px solid #aaa; }
+  border: 1px solid lighten($HMblack, 70%); }
 
 .select2-container--default .select2-search--inline .select2-search__field {
   background: transparent;
@@ -268,10 +268,10 @@
   padding: 0; }
 
 .select2-container--default .select2-results__option[aria-disabled=true] {
-  color: #999; }
+  color: $HMgray; }
 
 .select2-container--default .select2-results__option[aria-selected=true] {
-  background-color: #ddd; }
+  background-color: $HMgray; }
 
 .select2-container--default .select2-results__option .select2-results__option {
   padding-left: 1em; }
@@ -294,12 +294,12 @@
             padding-left: 6em; }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #9c27b0;
-  color: white; }
+  background-color: $HMprimary;
+  color: $HMwhite; }
 
   .select2-results__option--highlighted[aria-selected] .hm-select-text-dull {
   
-  color: white; }
+  color: $HMwhite; }
 
 .select2-container--default .select2-results__group {
   cursor: default;
@@ -307,19 +307,19 @@
   padding: 6px; }
 
 .select2-container--classic .select2-selection--single {
-  background-color: #f7f7f7;
-  border: 1px solid #aaa;
+  background-color: $HMbgDull;
+  border: 1px solid lighten($HMblack, 70%);
   border-radius: 4px;
   outline: 0;
-  background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%);
-  background-image: -o-linear-gradient(top, white 50%, #eeeeee 100%);
-  background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%);
+  background-image: -webkit-linear-gradient(top, white 50%, $HMgray 100%);
+  background-image: -o-linear-gradient(top, white 50%, $HMgray 100%);
+  background-image: linear-gradient(to bottom, white 50%, $HMgray 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0); }
   .select2-container--classic .select2-selection--single:focus {
-    border: 1px solid #9c27b0; }
+    border: 1px solid $HMprimary; }
   .select2-container--classic .select2-selection--single .select2-selection__rendered {
-    color: #444;
+    color: lighten($HMblack, 70%);
     line-height: 28px; }
   .select2-container--classic .select2-selection--single .select2-selection__clear {
     cursor: pointer;
@@ -329,9 +329,9 @@
   .select2-container--classic .select2-selection--single .select2-selection__placeholder {
     color: #999; }
   .select2-container--classic .select2-selection--single .select2-selection__arrow {
-    background-color: #ddd;
+    background-color: lighten($HMblack, 80%);
     border: none;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid lighten($HMblack, 80%);
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 26px;
@@ -339,13 +339,13 @@
     top: 1px;
     right: 1px;
     width: 20px;
-    background-image: -webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
-    background-image: -o-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
-    background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
+    background-image: -webkit-linear-gradient(top, lighten($HMblack, 70%) 50%, lighten($HMblack, 65%) 100%);
+    background-image: -o-linear-gradient(top, lighten($HMblack, 70%) 50%, lighten($HMblack, 65%) 100%);
+    background-image: linear-gradient(to bottom, lighten($HMblack, 70%) 50%, lighten($HMblack, 65%) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0); }
     .select2-container--classic .select2-selection--single .select2-selection__arrow b {
-      border-color: #888 transparent transparent transparent;
+      border-color: lighten($HMblack, 80%) transparent transparent transparent;
       border-style: solid;
       border-width: 5px 4px 0 4px;
       height: 0;
@@ -361,7 +361,7 @@
 
 .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
   border: none;
-  border-right: 1px solid #aaa;
+  border-right: 1px solid lighten($HMblack, 70%);
   border-radius: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -369,21 +369,21 @@
   right: auto; }
 
 .select2-container--classic.select2-container--open .select2-selection--single {
-  border: 1px solid #9c27b0; }
+  border: 1px solid $HMprimary; }
   .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
     background: transparent;
     border: none; }
     .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
-      border-color: transparent transparent #888 transparent;
+      border-color: transparent transparent lighten($HMblack, 80%) transparent;
       border-width: 0 4px 5px 4px; }
 
 .select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  background-image: -webkit-linear-gradient(top, white 0%, #eeeeee 50%);
-  background-image: -o-linear-gradient(top, white 0%, #eeeeee 50%);
-  background-image: linear-gradient(to bottom, white 0%, #eeeeee 50%);
+  background-image: -webkit-linear-gradient(top, white 0%, $HMgray 50%);
+  background-image: -o-linear-gradient(top, white 0%, $HMgray 50%);
+  background-image: linear-gradient(to bottom, white 0%, $HMgray 50%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0); }
 
@@ -391,20 +391,20 @@
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  background-image: -webkit-linear-gradient(top, #eeeeee 50%, white 100%);
-  background-image: -o-linear-gradient(top, #eeeeee 50%, white 100%);
-  background-image: linear-gradient(to bottom, #eeeeee 50%, white 100%);
+  background-image: -webkit-linear-gradient(top, $HMgray 50%, white 100%);
+  background-image: -o-linear-gradient(top, $HMgray 50%, white 100%);
+  background-image: linear-gradient(to bottom, $HMgray 50%, white 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0); }
 
 .select2-container--classic .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #aaa;
+  border: 1px solid lighten($HMblack, 70%);
   border-radius: 4px;
   cursor: text;
   outline: 0; }
   .select2-container--classic .select2-selection--multiple:focus {
-    border: 1px solid #9c27b0; }
+    border: 1px solid $HMprimary; }
   .select2-container--classic .select2-selection--multiple .select2-selection__rendered {
     list-style: none;
     margin: 0;
@@ -412,8 +412,8 @@
   .select2-container--classic .select2-selection--multiple .select2-selection__clear {
     display: none; }
   .select2-container--classic .select2-selection--multiple .select2-selection__choice {
-    background-color: #e4e4e4;
-    border: 1px solid #aaa;
+    background-color: $HMgray;
+    border: 1px solid lighten($HMblack, 80%);
     border-radius: 4px;
     cursor: default;
     float: left;
@@ -421,13 +421,13 @@
     margin-top: 5px;
     padding: 0 5px; }
   .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
-    color: #888;
+    color: lighten($HMblack, 80%);
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
     .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
-      color: #555; }
+      color: lighten($HMblack, 80%); }
 
 .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
   float: right;
@@ -439,7 +439,7 @@
   margin-right: auto; }
 
 .select2-container--classic.select2-container--open .select2-selection--multiple {
-  border: 1px solid #9c27b0; }
+  border: 1px solid $HMprimary; }
 
 .select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
   border-top: none;
@@ -452,7 +452,7 @@
   border-bottom-right-radius: 0; }
 
 .select2-container--classic .select2-search--dropdown .select2-search__field {
-  border: 1px solid #aaa;
+  border: 1px solid lighten($HMblack, 70%);
   outline: 0; }
 
 .select2-container--classic .select2-search--inline .select2-search__field {
@@ -460,7 +460,7 @@
   box-shadow: none; }
 
 .select2-container--classic .select2-dropdown {
-  background-color: white;
+  background-color: $HMwhite;
   /* border: 1px solid transparent */; }
 
 .select2-container--classic .select2-dropdown--above {
@@ -480,7 +480,7 @@
   color: grey; }
 
 .select2-container--classic .select2-results__option--highlighted[aria-selected] {
-  background-color: #3875d7;
+  background-color: $HMprimary;
   color: white; }
 
 .select2-container--classic .select2-results__group {

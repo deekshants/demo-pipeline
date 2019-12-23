@@ -37,7 +37,7 @@
   /* -----------border style start----------------- */
     @each $side in $sides{
       .hm-md-line-#{$side} {
-        border-#{$side}: 1px solid #eee;
+        border-#{$side}: 1px solid $HMgray;
       }
     }
 
@@ -49,13 +49,13 @@
 
     @each $side in $sides{
       .hm-md-line-semi-black-#{$side} {
-        border-#{$side}: 1px solid rgba(0,0,0,.2);
+        border-#{$side}: 1px solid rgba($HMblack,.2);
       }
     }
 
     @each $side in $sides{
       .hm-md-line-semi-white-#{$side} {
-        border-#{$side}: 1px solid rgba(255,255,255,.5);
+        border-#{$side}: 1px solid rgba($HMwhite,.5);
       }
     }
 

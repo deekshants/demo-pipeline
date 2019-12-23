@@ -1,7 +1,7 @@
 .hm-spinner-svg{
   -webkit-animation: rotation 1.35s linear infinite;
   animation: rotation 1.35s linear infinite;
-  stroke:#9c27b0;
+  stroke:$HMprimary;
 }
 
 @-webkit-keyframes rotation
@@ -80,7 +80,7 @@
 
 .hm-spinner-wrapper{
     position: fixed;
-    background: rgba(255,255,255,.8);
+    background: rgba($HMwhite,.8);
     left: 0;
     right: 0;
     bottom: 0;
@@ -93,7 +93,7 @@
 
 .hm-local-spinner-wrapper {
     position: absolute;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba($HMwhite, 0.8);
     left: 0;
     right: 0;
     bottom: 0;

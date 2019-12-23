@@ -302,8 +302,8 @@ $blue-grey-a400: #78909c !default;
 $blue-grey-a700: #455a64 !default;
 $blue-grey: $blue-grey-500 !default;
 
-$black: #000;
-$white: #fff;
+//$black: #000;
+//$white: #fff;
 
 // New colors
 $gray-color:  #999999 !default;
@@ -311,3 +311,32 @@ $black-color: #3C4858 !default;
 
 $black: #000000; $rgb-black: "0,0,0" !default;
 $white: #ffffff; $rgb-white: "255,255,255" !default;
+
+
+
+
+//--------hm custon css color customization---------------
+
+// brand color
+$HMprimary: #9c27b0; //#9c27b0
+$HMsecondary: adjust-hue($HMprimary, 50% ); 
+
+//other color
+$HMwhite: white;
+$HMblack: black;
+$HMgray: #eeeeee;
+
+//bg color
+$HMbgPrimary:	$HMprimary;
+$HMbgSecondary:	$HMsecondary;
+$HMbgCyan:	 $cyan-500;
+$HMbgGreen:	 $green-500;
+$HMbgOrange: $orange-500;
+$HMbgRed:	$red-500;
+$HMbgDull:	#f7f8f9;
+$HMbgGray:	$HMgray;
+
+//text color
+$HMtextDefault:$HMblack;
+$HMtextDull:#999999;
+

@@ -100,8 +100,7 @@
                             }' hm-select="select2"></select>
                         </div>
                         <div class="text-center py-4">
-                            <button type="button" class="btn btn-primary"
-                                onclick="dummySuccessToast('Request Added Successfully !')">
+                            <button type="button" class="btn btn-primary" onclick="dummySuccessToastAuto('Request Added Successfully !')">
                                 Add Leave Request
                             </button>
                         </div>
@@ -136,16 +135,9 @@
             </div>
 
             <div class="col-12 col-md-4">
-                <section>
-                    <div class="form-group">
-                        <div class="text-center">
-                            <h4>Team Leave Calendar</h4>
-                            <div class="hm-max-w-400 hm-view-inline" style="position: relative; z-index: 5;">
-                                <!-- <div id="datetimepicker12"></div> -->
-                                <div id="fullCalendar">
-                                </div>
-                            </div>
-                        </div>
+                <section class="px-4">
+                    <h4 class="hm-line-bottom">Team Leave Calendar</h4>
+                    <div id="teamLeaveCal"></div>
                 </section>
             </div>
         </div>

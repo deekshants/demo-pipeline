@@ -9,6 +9,8 @@ $(document).ready(function () {
     activeSideMenuChildLink();
     InitRadioExtraView();
     InitCheckboxExtraView();
+    singleDonutChart();
+    multiValDonutChart();
 });
 $('[hm-hook="click"]').click(function (e) {
     var hmFn = $(e.target).closest('[hm-action]').attr('hm-action');
@@ -274,11 +276,6 @@ function checkboxExtraView() {
     }
 }
 
-/*--------------Toggle view js--------------*/
-function hmToggleView(id1, id2) {
-    $(id1).add(id2).toggleClass('hide');
-}
-
 /* -------------Get Notifications------------------ */
 
 function getNotifications() {
@@ -312,4 +309,271 @@ function getNotifications() {
         })
         
     }
+}
+/*--------------Toggle view js--------------*/
+function hmToggleView(id1, id2) {
+    $(id1).add(id2).toggleClass('hide');
+}
+
+/*--------------chart js--------------*/
+/* attribute can pass
+    "radius": 50
+    "color": 'red'
+    "percent": 10
+    "centerLabel": "Available"
+    "centerValue": 2
+    "centervalueSize": 2
+    "labelSize": 2
+    "labelYPos": 2
+   */
+function singleDonutChart() {
+var array1 = [];
+var eleArr = $('[hm-chart-type="singleValueDonut"]');
+for (i = 0; i < eleArr.length; i++) {
+    if(eleArr[i].childElementCount > 0) continue;           //Continue if div already has a chart.
+    var ctData = JSON.parse(($(eleArr[i]).attr('hm-chart-data')));
+    var r = ctData.radius;
+    var w = r*2;
+    var h = w;
+    var insideradius = r - ((ctData.thickness == undefined) ? r / 4 : ctData.thickness);
+    var centerTxtValueSize = (ctData.centervalueSize == undefined) ? w / 4 : ctData.centervalueSize;
+    var centerTxtLabelSize = (ctData.labelSize == undefined) ? w / 8 : ctData.labelSize;
+    var centerTxtLabelYaxis = (ctData.labelYPos == undefined) ? w / 6 : ctData.labelYPos;
+    var color = d3.scaleOrdinal([ctData.color, '#ddd']);
+    var dataset = [{ title: "percent", value: ctData.percent }, { title: "remain", value: (100 - ctData.percent) }];
+    
+    var dountPie = d3.pie(dataset)
+        .value(function (d) {
+            return d.value;
+        }).sort(null);
+
+    var donutArc = d3.arc()
+        .innerRadius(insideradius) // NEW
+        .outerRadius(r);
+
+    var donutSVG = d3.select(eleArr[i])
+        .append('svg')
+        .attr('width', w)
+        .attr('height', w)
+        .append('g')
+        .attr('transform', 'translate(' + (w / 2) + ',' + (h / 2) + ')');
+
+    var donutPath = donutSVG.selectAll('path')
+        .data(dountPie(dataset))
+        .enter()
+        .append('path')
+        .attr('d', donutArc)
+        .attr('fill', function (d, i) { return color(d.data.title) });
+
+    if (ctData.centerLabel) {
+        donutSVG.append("text")
+            .attr("text-anchor", "middle")
+            .attr('font-size', centerTxtLabelSize)
+            .attr('y', centerTxtLabelYaxis)
+            .text(ctData.centerLabel);
+    }
+    if (ctData.centerValue) {
+        donutSVG.append("text")
+            .attr("text-anchor", "middle")
+            .attr('font-size', centerTxtValueSize)
+            .text(ctData.centerValue);
+    }
+
+    donutAnimate(donutPath, donutArc);
+}
+}
+
+
+/*
+attribute can pass
+    "options": [{"name": "Lorem ipsum","value": 50,"percent": 50}]
+    "color": ["red", "green", "blue"] / "schemePaired"
+    "tipTemplateFn": "functionName"
+    "radius": 100 
+    "centerTxtSize": 14
+    "legendRectSize": 16                                  
+    "legendSpacing": 10
+    "thickness": 30
+*/
+function multiValDonutChart(){
+  var eleArr = $('[hm-chart-type="multiValueDonut"]');
+  
+    for (i = 0; i < eleArr.length; i++) {
+        var totalValue = 0;
+        var donutColor = d3.schemePaired;
+        var width = $(eleArr[i]).parent().width(); 
+        var ctData = JSON.parse(($(eleArr[i]).attr('hm-chart-data')));
+        var donutData = ctData[0];
+            var radius = (donutData.radius == undefined) ? width / 4 : donutData.radius;
+        var height = (radius*2)+20;
+        var centerTxtSize = (donutData.valueSize == undefined) ? radius / 4 : donutData.valueSize;
+        var legendRectSize = donutData.legendRectSize == undefined ? 16 : donutData.legendRectSize;                                  
+        var legendSpacing = donutData.legendSpacing == undefined ? 10 : donutData.legendSpacing; 
+        var thickness = donutData.thickness != undefined ? donutData.thickness: radius/4;
+        var allLegendHeight = donutData.options.length*(legendRectSize+legendSpacing);
+        var donutPOS = radius+10;
+        var tipDiv = d3.select("body").append("div").attr("class", "hm-donut-tooltip");
+        
+        for(var j=0 ; j < donutData.options.length ; j++ ){
+            totalValue = totalValue + donutData.options[j].value;   
+        } 
+
+        if(allLegendHeight >= height){
+          height = allLegendHeight+20; 
+        }
+        
+        if(donutData.color != undefined && !($.isArray(donutData.color))){
+            donutColor = d3[donutData.color];
+        }
+        else if(donutData.color != undefined && $.isArray(donutData.color)){
+            donutColor = donutData.color;
+        }
+      
+        var color = d3.scaleOrdinal(donutColor);
+
+        var svg = d3.select(eleArr[i])
+        .append('svg')
+        .attr('class', 'pie')
+        .attr('width', width)
+        .attr('height', height);
+        
+        var g = svg.append('g')
+          .attr('transform', 'translate(' + donutPOS + ',' + donutPOS + ')');
+
+        var arc = d3.arc()
+          .innerRadius(radius - thickness)
+          .outerRadius(radius);
+
+        var pie = d3.pie()
+          .value(function(d) { 
+            d.totalValue = totalValue;
+            return d.percent;
+          }).sort(null);
+
+        /*--------create arc and assign tip fn and hover fn--------------*/
+        var path = g.selectAll('path')
+          .data(pie(donutData.options))
+          .enter()
+          .append("g")
+          .on("mouseover", showDonutTip)
+          .on("mouseout", function(d) {
+            d3.selectAll(".hm-donut-center-txt").text('')
+          })
+          .append('path')
+          .attr('d', arc)
+          .attr('radius', radius)
+          .attr('thickness', thickness)
+          .attr('tipTemplate',function(d,i){
+              if(donutData.tipTemplateFn === undefined){
+                  return '';
+              }
+              else{
+                  return donutData.tipTemplateFn;
+              }
+          })   
+          .attr('hasTooltip', true)
+          .attr('fill', (d,i) => color(i))
+          
+          .on("mouseover",  function(d) {
+            d3.select(this)
+            .transition()
+            .duration(100)
+            .attr('d', function (d) {
+              const radius = parseFloat($(this).attr('radius'));
+              const thickness = parseFloat($(this).attr('thickness'));
+              d.radius = radius;
+              d.thickness = thickness;
+              return arcOver(d);;
+            })
+          })
+          
+          .on("mouseout",  function(d) {
+            d3.select(this)
+            .transition()
+            .duration(100)
+            .attr('d',function (d) {
+              const radius = parseFloat($(this).attr('radius'));
+              const thickness = parseFloat($(this).attr('thickness'));
+              d.radius = radius;
+              d.thickness = thickness;
+              return arcOut(d);
+            })
+            tipDiv.style("display", "none");
+          })
+
+        var arcOver =  d3.arc().innerRadius((d,i) => {
+             return (d.radius - d.thickness)
+        }).outerRadius((d) => {return (d.radius + 5)})
+
+        var arcOut = d3.arc()
+        .innerRadius((d,i) => {
+          return (d.radius - d.thickness)
+        }).outerRadius((d) => {return (d.radius)})
+
+        /*--------center text--------------*/
+        g.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('class', 'hm-donut-center-txt')
+        .attr('font-size', centerTxtSize)
+        .attr('dy', centerTxtSize/3);
+
+        /*--------create tooltip--------------*/
+        d3.selectAll('[hasTooltip="true"]').on("mousemove", function(d) {
+          var fn = $(this).attr('tipTemplate');
+          if(fn === ''){
+            var clr = $(event.target).attr('fill');
+            tipDiv.html('<div><span style="color:'+clr+';">&#9679;</span> <span>'+(d.data.name)+"</span></div><div> <small>"+(d.data.value) + " out of "+ d.data.totalValue+"</small></div>");
+          }
+          else{
+              var html = window[fn](d);
+              tipDiv.html(html);
+          }
+          tipDiv.style("left", d3.event.pageX+10+"px");
+          tipDiv.style("top", d3.event.pageY-25+"px");
+          tipDiv.style("display", "inline-block");
+        });
+        
+        donutAnimate(path, arc);
+        
+        /*--------create legends--------------*/
+        var horz = 2*radius+50; 
+        var legend = svg.selectAll('.legend')                    
+          .data(donutData.options)                         
+          .enter()                                               
+          .append('g')                                           
+          .attr('class', 'legend')
+          .attr('title','title')                                
+          .attr('transform', function(d, i) {                     
+            var height = legendRectSize + legendSpacing;
+            var vert = (i * height)+20;      
+            return 'translate(' + horz + ',' + vert + ')';        
+          });                                                     
+
+        legend.append('rect')                                     
+          .attr('width', legendRectSize)                          
+          .attr('height', legendRectSize)                         
+          .style('fill', (d,i) => color(i))                       
+          .style('stroke',(d,i) => color(i));                     
+          
+        legend.append('text')                                     
+          .attr('x', legendRectSize + 5)              
+          .attr('y', (legendRectSize/2 + 5))
+          .attr('font-size','13')              
+          .text(function(d) { return d.name; }); 
+      }
+  }
+
+  function showDonutTip(d, i){
+      $(this).parent().find('.hm-donut-center-txt').text(d.data.percent + "%");
+  }
+
+function donutAnimate(path, arc){
+path.transition()
+  .duration(1000)
+  .attrTween('d', function(d) {
+  var interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
+  return function(t) {
+    return arc(interpolate(t));
+  };
+});
 }

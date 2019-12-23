@@ -7,7 +7,7 @@
         position: absolute;
         left: 2em;
         content: attr(head-title);
-        color: #999;
+        color: $HMtextDull;
         width: 45%;
         overflow: hidden;
         text-overflow: ellipsis;

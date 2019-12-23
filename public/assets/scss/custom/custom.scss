@@ -1,6 +1,5 @@
-
-    @import 'theme';
-
+    @import "../material-kit/variables/colors";
+    @import 'hm-variables';
     
 .hm{
     @import 'override';
@@ -8,6 +7,7 @@
     //specific
     @import 'skeleton-line';
     @import 'croppie';
+    @import 'fullcalendar';
     @import 'select2';
     @import 'hm-autocomp';
     @import 'simple-tab';
@@ -44,12 +44,5 @@
 	@import 'media767';
 }
 
-.hm-has-top-menu .hm-main-view, .hm.hm-has-top-menu .hm-main-view{
-    margin-top: 60px;
-}
-.hm-has-side-menu .hm-main-view, .hm.hm-has-side-menu .hm-main-view{
-    margin-left: 80px;
-}
-.hm-has-side-menu .hm-navbar, .hm.hm-has-side-menu  .hm-navbar{
-    margin-left: 80px;
-}
+@import 'out-from-scope';
+

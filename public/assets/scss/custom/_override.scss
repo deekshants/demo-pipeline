@@ -1,3 +1,6 @@
+img{
+	max-width: 100%;
+}
 .dropdown-toggle.hm-dropdown-no-arrow:before{
     display: none;
 }
@@ -11,7 +14,7 @@ footer {
 
 .table thead th {
     font-weight: normal;
-    color: #999;
+    color: $HMtextDull;
 }
 .form-check .form-check-label {
     line-height: 1.5;
