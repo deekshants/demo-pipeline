@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('home/page_home', {baseUrl: process.env.BASE_URL, user: req.session.user});
 });
 router.get('/getNotifications', utils.getNotifications)
-router.get('/getRolesTable', utils.getRolesTable);
+//router.get('/getRolesTable', utils.getRolesTable);
 router.post('/signupUser', loginController.signup)
 router.get('/logout', loginController.logout);
 router.post('/loginAuth', loginController.authorizeUser);

@@ -28,7 +28,7 @@ exports.getNotifications = function (req, res) {
 }
 
 //  --------- TO BE PLACED IN ROLES CONTROLLER LATER -----------
-exports.getRolesTable = async function (req, res) {
+/* exports.getRolesTable = async function (req, res) {
     var data = req.query;
     const { docs, pages, total } = await roles.paginate({
         page: data.pageNumber,
@@ -39,4 +39,4 @@ exports.getRolesTable = async function (req, res) {
         }
     });
     res.send(JSON.stringify(docs));
-}
+} */
