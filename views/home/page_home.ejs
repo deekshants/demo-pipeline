@@ -18,21 +18,31 @@
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetTimesheet/widget_Timesheet %>
                 </div>
+                <% if(user.role.canView.includes('wid2')){ %>
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetTodo/widget_Todo %>
                 </div>
+                <% } %>
+                <% if(user.role.canView.includes('wid3')){ %>
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetUpcomingHolidays/widget_UpcomingHolidays %>
                 </div>
+                <% } %>
+                <% if(user.role.canView.includes('wid4')){ %>
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetNotApproved/widget_NotApproved %>
                 </div>
+                <% } %>
+                <% if(user.role.canView.includes('wid5')){ %>
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetQuickLinks/widget_QuickLinks %>
                 </div>
+                <% } %>
+                <% if(user.role.canView.includes('wid6')){ %>
                 <div class="col-12 col-md-4">
                     <% include home-dashboard-widgets/widgetAnnouncements/widget_Announcements %>
                 </div>
+                <% } %>
             </div>
         </div>
     </main>

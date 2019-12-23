@@ -7,9 +7,11 @@
             <div class=" hm-tab-link  btn" hmtab="planLeaves" hm-hook="click" hm-action="hmTab">
                 Leaves
             </div>
+            <% if(user.role.canView.includes('approvalNotification')){ %>
             <div class=" hm-tab-link  btn" hmtab="notify" hm-hook="click" hm-action="hmTab">
                 Approval Notification
             </div>
+            <% } %>
         </div>
         <div class="hm-tab-content-wrapper">
             <div class="hm-tab-content active" hmtab="holidays">

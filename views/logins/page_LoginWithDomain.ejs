@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 
-                <form class="form" method="" action="">
+                <form class="form" method="post" action="/loginAuth">
                     <div class="">
                         <div class="form-group">
                             <div class="input-group">
@@ -39,7 +39,7 @@
                                         <i class="material-icons">mail</i>
                                     </span>
                                 </div>
-                                <input type="email" class="form-control" placeholder="Email" required="">
+                                <input type="email" name="email" class="form-control" placeholder="Email" required="">
                             </div>
                             <div class="hm-input-error-msg">
                                 Required Field!
@@ -52,7 +52,7 @@
                                         <i class="material-icons">lock_outline</i>
                                     </span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Password" required="">
+                                <input type="password" name="password" class="form-control" placeholder="Password" required="">
                             </div>
                             <div class="hm-input-error-msg">
                                 Required Field!
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="pl-3">
-                                <button type="button" class="btn btn-primary " onclick="dummyLogin()">
+                                <button type="submit" class="btn btn-primary ">
                                     Login
                                 </button>
                             </div>

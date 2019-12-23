@@ -1,29 +1,42 @@
 <div class="card p-3 hm-tmr-0">
     <section class="hm-tab-wrapper">
         <div class="hm-tab-nav-wrapper hm-simple-tab-nav">
+            <% if(user.role.canView.includes('workShifts')){ %>
             <div class=" hm-tab-link active btn" hmtab="workShifts" hm-hook="click" hm-action="hmTab">
                 Work Shifts
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('weekOffs')){ %>
             <div class=" hm-tab-link  btn" hmtab="weekOffs" hm-hook="click" hm-action="hmTab">
                 Week Offs
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('timeTrackingPolicies')){ %>
             <div class=" hm-tab-link  btn" hmtab="TimeTracking" hm-hook="click" hm-action="hmTab">
                 Time Tracking Policies
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('workFromHome')){ %>
             <div class=" hm-tab-link  btn" hmtab="workFromHome" hm-hook="click" hm-action="hmTab">
                 Work From Home
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('otPolicies')){ %>
             <div class=" hm-tab-link  btn" hmtab="otPolicies" hm-hook="click" hm-action="hmTab">
                 OT Policies
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('ipNetworks')){ %>
             <div class=" hm-tab-link  btn" hmtab="ipNetworks" hm-hook="click" hm-action="hmTab">
                 IP Networks
             </div>
+            <% } %>
             <!-- <div class=" hm-tab-link  btn" hmtab="attendanceGeneralSett" hm-hook="click" hm-action="hmTab">
                 Settings
             </div> -->
         </div>
         <div class="hm-tab-content-wrapper">
+            <% if(user.role.canView.includes('workShifts')){ %>
             <div class="hm-tab-content active" hmtab="workShifts">
                 <div class="">
                     <div class="pt-2">
@@ -121,6 +134,8 @@
                     </table>
                 </div>
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('weekOffs')){ %>
             <div class="hm-tab-content " hmtab="weekOffs">
                 <div class="">
                     <div class="pt-2">
@@ -222,6 +237,8 @@
                     </table>
                 </div>
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('timeTrackingPolicies')){ %>
             <div class="hm-tab-content " hmtab="TimeTracking">
                 <div class="">
                     <div class="pt-2">
@@ -331,6 +348,8 @@
                     </table>
                 </div>
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('workFromHome')){ %>
             <div class="hm-tab-content " hmtab="workFromHome">
                 <div class="">
                     <div class="pt-2">
@@ -403,6 +422,8 @@
                     </div>
                 </div>
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('otPolicies')){ %>
             <div class="hm-tab-content " hmtab="otPolicies">
                 <div class="">
                     <div class="pt-2">
@@ -481,6 +502,8 @@
                     </table>
                 </div>
             </div>
+            <% } %>
+            <% if(user.role.canView.includes('ipNetworks')){ %>
             <div class="hm-tab-content " hmtab="ipNetworks">
                 <div class="">
                     <div class="pt-2">
@@ -575,6 +598,7 @@
                     </table>
                 </div>
             </div>
+            <% } %>
             
         </div>
     </section>

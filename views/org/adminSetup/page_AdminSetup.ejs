@@ -26,6 +26,7 @@
                         <div class="pr-3" style="width: 250px;">
                             <div class="card pr-3 py-3 hm-tmr-0">
                                 <div class="hm-tab-nav-wrapper">
+                                    <% if(user.role.canView.includes('companySettings')){ %>
                                     <div class="hm-setup-menu-item hm-tab-link active" hmtab="setupCompanyInfo" hm-hook="click" hm-action="hmTab">
                                         <div class="hm-setup-menu-item-sub">   
                                             Company Settings
@@ -34,6 +35,8 @@
                                             General Info
                                         </small>
                                     </div>
+                                    <% } %>
+                                    <% if(user.role.canView.includes('leaveAndHolidays')){ %>
                                     <div class="hm-setup-menu-item hm-tab-link" hmtab="setupLeaves" hm-hook="click" hm-action="hmTab">
                                         <div class="hm-setup-menu-item-sub">   
                                             Leave & Holidays
@@ -42,6 +45,8 @@
                                             Plan Leaves and Holidays 
                                         </small>
                                     </div>
+                                    <% } %>
+                                    <% if(user.role.canView.includes('employeeSettings')){ %>
                                     <div class="hm-setup-menu-item hm-tab-link" hmtab="setupEmployee" hm-hook="click" hm-action="hmTab">
                                         <div class="hm-setup-menu-item-sub">   
                                             Employee Settings
@@ -50,6 +55,8 @@
                                             Manage Employee Settings
                                         </small>
                                     </div>
+                                    <% } %>
+                                    <% if(user.role.canView.includes('onboardingAndExit')){ %>
                                     <div class="hm-setup-menu-item hm-tab-link" hmtab="setupOnboardExit" hm-hook="click" hm-action="hmTab">
                                         <div class="hm-setup-menu-item-sub">   
                                             Onboarding & Exit
@@ -58,6 +65,8 @@
                                             Welcome and Re.targetaving
                                         </small>
                                     </div>
+                                    <% } %>
+                                    <% if(user.role.canView.includes('attendance')){ %>
                                     <div class="hm-setup-menu-item hm-tab-link" hmtab="setupAttendance" hm-hook="click" hm-action="hmTab">
                                         <div class="hm-setup-menu-item-sub">   
                                             Attendance
@@ -66,6 +75,7 @@
                                             Shift, Weekoff, Time Tracking
                                         </small>
                                     </div>
+                                    <% } %>
                                     <div class="hm-setup-menu-item hm-under-const-light">
                                         <div class="hm-setup-menu-item-sub">   
                                             Payroll Setup
@@ -82,6 +92,7 @@
                                             Manage Timesneet, Approval and Billing
                                         </small>
                                     </div>
+                                    <% if(user.role.id == 1){ %>
                                     <div class="hm-setup-menu-item hm-tab-link" hmtab="setupRolesPermissions" hm-hook="click" hm-action="hmTab">
                                         <div class="hm-setup-menu-item-sub">   
                                             Roles & Permissions
@@ -90,6 +101,7 @@
                                             Manage roles and Permissions
                                         </small>
                                     </div>
+                                    <% } %>
                                     <div class="hm-setup-menu-item hm-under-const-light">
                                         <div class="hm-setup-menu-item-sub">   
                                             Imports Data
@@ -105,29 +117,41 @@
                         <div class="hm-col">
                             <div class="hm-tab-content-wrapper">
                                 <!-- company info -->
+                                <% if(user.role.canView.includes('companySettings')){ %>
                                 <div class="hm-tab-content active" hmtab="setupCompanyInfo">
                                     <% include company/view_CompanySetting %>
                                 </div>
+                                <% } %>
                                 <!-- leaves -->
+                                <% if(user.role.canView.includes('leaveAndHolidays')){ %>
                                 <div class="hm-tab-content" hmtab="setupLeaves">
                                     <% include leaveHolidays/view_LeavesHolidays %>
                                 </div>
+                                <% } %>
                                 <!-- setup employee -->
+                                <% if(user.role.canView.includes('employeeSettings')){ %>
                                 <div class="hm-tab-content" hmtab="setupEmployee">
                                     <% include employees/view_EmployeeSettings %>
                                 </div>
+                                <% } %>
                                 <!-- setup OnboardingExit -->
+                                <% if(user.role.canView.includes('onboardingAndExit')){ %>
                                 <div class="hm-tab-content" hmtab="setupOnboardExit">
                                     <% include onboardingExit/view_OnboardExitSettings %>
                                 </div>
+                                <% } %>
                                 <!-- setup attendance -->
+                                <% if(user.role.canView.includes('attendance')){ %>
                                 <div class="hm-tab-content" hmtab="setupAttendance">
                                     <% include attendanceSettings/view_Attendance %>
                                 </div>
+                                <% } %>
                                 <!-- setup Roles and Permissions -->
+                                <% if(user.role.id == 1){ %>
                                 <div class="hm-tab-content" hmtab="setupRolesPermissions">
                                     <% include rolesPermissions/view_RolesPermissionsSettings %>
                                 </div>
+                                <% } %>
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
 <div class="p-3">
-    
+
     <div>
         <div class="row">
             <div class="col-12 col-md-4">
 
                 <section>
                     <h4 class="hm-mr-0 p-2 hm-bg-dull">
-                      Leave Request
+                        Leave Request
                     </h4>
                     <div class="p-3">
                         <div class="row no-gutters mb-3">
@@ -23,7 +23,8 @@
                             <div class="pl-3">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value="" onchange="hmToggleView('#fullDayLv', '#halfDayLv')">
+                                        <input class="form-check-input" type="checkbox" value=""
+                                            onchange="hmToggleView('#fullDayLv', '#halfDayLv')">
                                         Half Day
                                         <span class="form-check-sign">
                                             <span class="check"></span>
@@ -81,26 +82,34 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="form-group pb-3">
                             <label for="" class="">Reason</label>
-                            <textarea class="form-control" id="" ></textarea>
+                            <textarea class="form-control" id=""></textarea>
                         </div>
 
-                        <div class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0 hm-autocomp-multi-bpd-5 ">
+                        <div
+                            class="form-group hm-autocomp-reverse-close-btn hm-autocomp-close-btn-padding-5 hm-autocomp-pill-padding-0 hm-autocomp-multi-bpd-5 ">
                             <label for="" class="">Notify</label>
-                            <select  class="form-control multiSelect"  multiple="multiple" style="width: 100%;" data-placeholder="Select User"></select>
+                            <select id="multiselect1" class="form-control multiSelect" multiple="multiple"
+                                style="width: 100%;" data-placeholder="Select User" hm-select-data='{
+                                "selectionTemplate": "template1",
+                                "resultTemplate":"template1",
+                                "type":"multiple",
+                                "url": "https://reqres.in/api/users"
+                            }' hm-select="select2"></select>
                         </div>
                         <div class="text-center py-4">
-                            <button type="button" class="btn btn-primary" onclick="dummySuccessToast('Request Added Successfully !')">
+                            <button type="button" class="btn btn-primary"
+                                onclick="dummySuccessToast('Request Added Successfully !')">
                                 Add Leave Request
                             </button>
                         </div>
                     </div>
-                    
+
                 </section>
             </div>
-            
+
             <div class="col-12 col-md-4">
                 <section>
                     <div class="hm-text-dull text-uppercase hm-text-size-11">
@@ -109,7 +118,9 @@
                     <h4 class="title hm-tmr-0">Paid Leave</h4>
                     <ul>
                         <li class="mb-3">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed repudiandae labore voluptatum laborum dicta quo consequuntur earum veritatis qui cumque voluptates impedit, vitae ut fugit debitis dolores minima, nam illo.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed repudiandae labore voluptatum
+                            laborum dicta quo consequuntur earum veritatis qui cumque voluptates impedit, vitae ut fugit
+                            debitis dolores minima, nam illo.
                         </li>
                         <li class="mb-3">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -119,6 +130,9 @@
                         </li>
                     </ul>
                 </section>
+                <div id="selectionHtml">
+
+                </div>
             </div>
 
             <div class="col-12 col-md-4">
@@ -127,14 +141,28 @@
                         <div class="text-center">
                             <h4>Team Leave Calendar</h4>
                             <div class="hm-max-w-400 hm-view-inline" style="position: relative; z-index: 5;">
-                                <div id="datetimepicker12"></div>
+                                <!-- <div id="datetimepicker12"></div> -->
+                                <div id="fullCalendar">
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
-        
-        </div>   
-       
+        </div>
+
+
     </div>
+
 </div>
+</div>
+
+
+<!-- 
+    hm-select-data JSON
+        {
+            type: "single/multiple",
+            selectionTemplate: "functionName",
+            resultTemplate: "functionName",
+            url: "AJAXUrl"
+        }
+ -->

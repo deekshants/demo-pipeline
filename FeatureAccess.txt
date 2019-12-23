@@ -1,0 +1,42 @@
+timeIn/timeOut
+
+widgets:
+    wid1
+    wid2
+    wid3
+
+admin:
+    companySettings
+    leaveAndHolidays
+        approvalNotification
+    empoyeeSettings
+        jobTitles
+        departments
+        employeeDefaults
+        employeeNumber
+        documents
+        noticePeriods
+    onboardingAndExit
+    attendance
+        workShifts
+        weekOffs
+        timeTrackingPolicies
+        workFromHome
+        otPolicies
+        ipNetworks
+    rolesAndPermissions (AVAILABLE ONLY TO ADMIN)
+
+myTeam
+
+organization:
+    dashboard
+    employees
+    orgStructure
+    exitDetails
+    documents
+    engage
+    assets
+    helpdesk
+
+projects
+
