@@ -25,7 +25,7 @@
     height: 1px;
     left: 0;
     top: 16px;
-    background: #ddd;
+    background: lighten( $HMblack, 70% );
 }
 
 .hm-wizard-step-inner{
@@ -61,28 +61,28 @@
     text-align: center;
     line-height: 32px;
     border-radius: 50%;
-    color: #fff;
+    color: $HMwhite;
     font-weight: normal;
     position: relative;
     z-index: 1;
     flex: none;
 }
 .hm-wizard-step-count{
-    background: #bbb;
+    background: lighten( $HMblack, 70% );
 }
 .hm-wizard-step-text{
-    color: #999;
+    color: $HMtextDull;
 }
 .hm-wizard-step-check{
-    background: #4caf50;
+    background: $HMbgGreen;
     display: none;
 }
 .hm-wizard-step-check i{
     line-height: 32px;
 }
 .hm-wizard-step.active .hm-wizard-step-count{
-    background: #9c27b0;
-    box-shadow: 0 4px 5px 0 rgba(156,39,176,.14), 0 1px 10px 0 rgba(156,39,176,.12), 0 2px 4px -1px rgba(156,39,176,.2);
+    background: $HMprimary;
+    box-shadow: 0 4px 5px 0 rgba($HMprimary,.08), 0 1px 10px 0 rgba($HMprimary,.05), 0 2px 4px -1px rgba($HMprimary,.02);
 }
 .hm-wizard-step.active .hm-wizard-step-text{
     font-weight: bold;

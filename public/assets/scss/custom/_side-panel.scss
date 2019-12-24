@@ -8,7 +8,7 @@
     display: none; 
     overflow: hidden;
     outline: 0;
-    background: rgba(0,0,0,.5);
+    background: rgba($HMblack,.5);
 }
 .hm-side-panel{
     position: relative;
@@ -18,7 +18,7 @@
     flex-direction: column;
     width: 800px;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: $HMwhite;
     background-clip: padding-box;
     outline: 0;
     margin-left: auto;

@@ -6,14 +6,14 @@
     margin-bottom: .5rem;
 }
 .hm-setup-menu-item:hover{
-    background: linear-gradient(90deg, #dcf6ff, #f2c5fc);
+    background: linear-gradient(90deg, rgba( $HMsecondary, .2 ), rgba( $HMprimary, .2 ));
 }
 
 .hm-setup-menu-item.active{
     color: inherit;
     background: #f2c5fc; /* Old browsers */
-    background: linear-gradient(90deg, #dcf6ff, #f2c5fc);
-    box-shadow: inset -1px 1px 4px rgba(204, 51, 153, 0.2);
+    background: linear-gradient(90deg, rgba( $HMsecondary, .2 ), rgba( $HMprimary, .2 ));
+    box-shadow: inset -1px 1px 4px rgba($HMprimary, 0.2);
 }
 .hm-setup-menu-item.active .hm-setup-menu-item-sub{
     font-weight: bold;
@@ -31,12 +31,12 @@
     left: 0px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: #aaa;
+    background: lighten( $HMblack, 50% );
     opacity: 0.7;
 }
 
 .hm-upcoming-holiday{
-    background: linear-gradient(90deg, rgba(208,64,240,.3), rgba(71,183,222,.3));
+    background: linear-gradient(90deg, rgba( $HMsecondary, .2 ), rgba( $HMprimary, .2 ));
     position: relative;
 }
 .hm-upcoming-holiday-thumb{
@@ -56,7 +56,7 @@
     margin: 0;
     position: relative;
     text-align: center;
-    background: #eee;
+    background: $HMgray;
     overflow: hidden;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
@@ -72,7 +72,7 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
-    color: #fff;
+    color: $HMwhite;
     text-shadow: 0 0 10px #000;
 }
 /* --------------------company logo uploder------------------------ */
@@ -84,7 +84,7 @@
     margin: 0;
     position: relative;
     text-align: center;
-    background: #eee;
+    background: $HMgray;
     border-radius: 4px;
     margin-right: 30px;
 }
@@ -92,7 +92,7 @@
     position: absolute;
     bottom: 0;
     right: -24px;
-    color: #9c27b0;
+    color: $HMprimary;
 }
 /* --------------------leave approval level------------------------ */
 .hm-leave-approval-level-wrapper{
@@ -106,8 +106,7 @@
     content: '';
     position: absolute;
     width: 1px;
-    
-    border: 1px dashed #00bcd4;
+    border: 1px dashed $HMbgCyan;
     left: 15px;
     top:10px;
     bottom: -25px;
@@ -128,9 +127,8 @@
 
 /* --------------------error ------------------------ */
 .hm-input-error-msg{
-    
     font-size: 80%;
-    color: #f44336;
+    color: $HMbgRed;
     display: none;
 }
 .hm-has-error .hm-input-error-msg{
@@ -138,19 +136,19 @@
 }
 
 .hm-has-error .form-control {
-    background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #f44336 1px, rgba(210, 210, 210, 0) 1px);
+    background-image: linear-gradient(to top, $HMbgRed 2px, $HMwhite 2px), linear-gradient(to top, $HMbgRed 1px, $HMwhite 1px);
 }
 
 /* --------------------under-construction ------------------------ */
 
 .hm-under-const-dark{
     opacity: .5;
-    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.2), rgba(255,255,255,.2) 1px, rgba(0,0,0,.3) 0, rgba(0,0,0,.3) 8px);
+    background-image: repeating-linear-gradient(45deg, rgba($HMwhite,.2), rgba($HMwhite,.2) 1px, rgba($HMblack,.3) 0, rgba($HMblack,.3) 8px);
     cursor: not-allowed;
 }
 .hm-under-const-light{
     opacity: .7;
-    background-image: repeating-linear-gradient(45deg, rgba(0,0,0,.1), rgba(0,0,0,.1) 2px, rgba(255,255,255,.2) 0, rgba(255,255,255,.2) 8px);
+    background-image: repeating-linear-gradient(45deg, rgba($HMblack,.1), rgba($HMblack,.1) 2px, rgba($HMwhite,.2) 0, rgba($HMwhite,.2) 8px);
     cursor: not-allowed;
 }
 

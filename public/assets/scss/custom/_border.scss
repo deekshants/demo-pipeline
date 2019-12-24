@@ -1,59 +1,68 @@
 @each $side in $sides{
   .hm-line-#{$side} {
-    border-#{$side}: 1px solid #eee;
+    border-#{$side}: 1px solid $HMgray;
   }
 }
 
 @each $side in $sides{
   .hm-line-semi-white-#{$side} {
-    border-#{$side}: 1px solid rgba(255,255,255,.5);
+    border-#{$side}: 1px solid rgba( $HMwhite, .5 );
   }
 }
 
 @each $side in $sides{
   .hm-line-semi-black-#{$side} {
-    border-#{$side}: 1px solid rgba(0,0,0,.2);
+    border-#{$side}: 1px solid rgba( $HMblack, .2 );
   }
 }
 
 @each $side in $sides{
   .hm-line-dotted#{$side} {
-    border-#{$side}: 1px dotted #eee;
+    border-#{$side}: 1px dotted $HMgray;
   }
 }
 
 @each $side in $sides{
   .hm-line-semi-black-dotted-#{$side} {
-    border-#{$side}: 1px dotted rgba(0,0,0,.2);
+    border-#{$side}: 1px dotted rgba( $HMblack, .2 );
   }
 }
 
 @each $side in $sides{
   .hm-line-dashed#{$side} {
-    border-#{$side}: 1px dashed #eee;
+    border-#{$side}: 1px dashed $HMgray;
   }
 }
 
 @each $side in $sides{
   .hm-line-semi-black-dashed-#{$side} {
-    border-#{$side}: 1px dashed rgba(0,0,0,.2);
+    border-#{$side}: 1px dashed rgba( $HMblack, .2 );
   }
 }
 .hm-line-around{
-	border:1px solid #eee;
+	border:1px solid $HMgray;
 }
 .hm-line-dotted-around{
-  border:1px dotted #eee;
+  border:1px dotted $HMgray;
 }
 .hm-line-semi-black-dotted-around{
-  border:1px dotted rgba(0,0,0,.2);
+  border:1px dotted rgba( $HMblack, .2 );
 }
 .hm-line-dashed-around{
-  border:1px dashed #eee;
+  border:1px dashed $HMgray;
 }
 .hm-line-semi-black-dashed-around{
-  border:1px dashed rgba(0,0,0,.2);
+  border:1px dashed rgba( $HMblack, .2 );
 }
+
+.hm-line-next-bottom + .hm-line-next-bottom{
+  border-bottom:1px solid $HMgray;
+}
+
+.hm-line-next-top + .hm-line-next-top{
+  border-top:1px solid $HMgray;
+}
+
 .hm-line-none{
 	border:none;
 }

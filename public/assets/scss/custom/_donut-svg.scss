@@ -1,10 +1,10 @@
-.hm-donut-wrapper{
-    display: inline-block;
-    position: relative;
-}
-.hm-donut-center-text{
+.hm-donut-tooltip {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: none;
+    background: $HMwhite;
+    border-radius: 4px;
+    box-shadow: -3px 3px 15px rgba($HMblack,.2);
+    padding: 5px 10px;
+    min-width: 100px;
+    max-width: 250px;
 }

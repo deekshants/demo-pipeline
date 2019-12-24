@@ -25,13 +25,13 @@
 .croppie-container .cr-viewport,
 .croppie-container .cr-resizer {
     position: absolute;
-    border: 2px solid #fff;
+    border: 2px solid $HMwhite;
     margin: auto;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
-    box-shadow: 0 0 2000px 2000px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 2000px 2000px rgba($HMblack, 0.5);
     z-index: 0;
 }
 
@@ -52,8 +52,8 @@
     display: block;
     position: absolute;
     box-sizing: border-box;
-    border: 1px solid black;
-    background: #fff;
+    border: 1px solid $HMblack;
+    background: $HMwhite;
     width: 10px;
     height: 10px;
     content: '';
@@ -143,7 +143,7 @@
 .cr-slider::-webkit-slider-runnable-track {
     width: 100%;
     height: 3px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba($HMblack, 0.5);
     border: 0;
     border-radius: 3px;
 }
@@ -154,7 +154,7 @@
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: lighten( $HMblack, 50% );
     margin-top: -6px;
 }
 
@@ -170,7 +170,7 @@ background: #ccc;
 .cr-slider::-moz-range-track {
     width: 100%;
     height: 3px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba($HMblack, 0.5);
     border: 0;
     border-radius: 3px;
 }
@@ -180,13 +180,13 @@ background: #ccc;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: lighten( $HMblack, 50% );
     margin-top: -6px;
 }
 
 /*hide the outline behind the border*/
 .cr-slider:-moz-focusring {
-    outline: 1px solid white;
+    outline: 1px solid $HMwhite;
     outline-offset: -1px;
 }
 
@@ -200,11 +200,11 @@ background: #ccc;
   color: transparent;/*remove default tick marks*/
 }
 .cr-slider::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba($HMblack, 0.5);
   border-radius: 10px;
 }
 .cr-slider::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba($HMblack, 0.5);
   border-radius: 10px;
 }
 .cr-slider::-ms-thumb {
@@ -212,14 +212,14 @@ background: #ccc;
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: #ddd;
+  background: lighten( $HMblack, 50% );
   margin-top:1px;
 }
 .cr-slider:focus::-ms-fill-lower {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba($HMblack, 0.5);
 }
 .cr-slider:focus::-ms-fill-upper {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba($HMblack, 0.5);
 }
 /*******************************************/
 

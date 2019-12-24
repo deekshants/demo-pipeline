@@ -52,34 +52,35 @@
 
 
 .hm-text-default {
-    color: $txtDefault;
+    color: $HMtextDefault;
 }
-.hm-text-dark-blue {
-    color: $txtDarkBlue;
+
+.hm-text-primary {
+    color: $HMprimary;
 }
-.hm-text-gray {
-    color: $txtGray;
+
+.hm-text-secondary {
+    color: $HMsecondary;
 }
-.hm-text-weak {
-    color: $txtWeak; 
+
+.hm-text-cyan {
+    color: $HMbgCyan;
 }
-.hm-text-blue {
-    color: $txtBlue;
-}
+
 .hm-text-orange {
-    color: $txtOrange;
+    color: $HMbgOrange;
 }
 .hm-text-red {
-    color: $txtSFred;
+    color: $HMbgRed;
 }
 .hm-text-green {
-    color: $txtGreen;
+    color: $HMbgGreen;
 }
 .hm-text-dull {
-    color: $txtDull;
+    color: $HMtextDull;
 }
 .hm-text-white {
-    color: $white;
+    color: $HMwhite;
 }
 
 .hm-text-size-normal {

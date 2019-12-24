@@ -15,6 +15,168 @@ background: #ccc;
   /***********************************/
   /* Rotation Tools */
   /***********************************/
+  /*!
+ * FullCalendar v3.10.1
+ * Docs & License: https://fullcalendar.io/
+ * (c) 2019 Adam Shaw
+ */
+  /* Colors
+--------------------------------------------------------------------------------------------------*/
+  /* Buttons (styled <button> tags, normalized to work cross-browser)
+--------------------------------------------------------------------------------------------------*/
+  /* Firefox has an annoying inner border */
+  /* icons in buttons */
+  /*
+  button states
+  borrowed from twitter bootstrap (http://twitter.github.com/bootstrap/)
+*/
+  /* Buttons Groups
+--------------------------------------------------------------------------------------------------*/
+  /*
+every button that is not first in a button group should scootch over one pixel and cover the
+previous button's border...
+*/
+  /* Popover
+--------------------------------------------------------------------------------------------------*/
+  /* Misc Reusable Components
+--------------------------------------------------------------------------------------------------*/
+  /* Tables
+--------------------------------------------------------------------------------------------------*/
+  /* Internal Nav Links
+--------------------------------------------------------------------------------------------------*/
+  /* Fake Table Rows
+--------------------------------------------------------------------------------------------------*/
+  /* Day Row (used within the header and the DayGrid)
+--------------------------------------------------------------------------------------------------*/
+  /* highlighting cells & background event skeleton */
+  /*
+row content (which contains day/week numbers and events) as well as "helper" (which contains
+temporary rendered events).
+*/
+  /* Scrolling Container
+--------------------------------------------------------------------------------------------------*/
+  /* TODO: move to agenda/basic */
+  /* Global Event Styles
+--------------------------------------------------------------------------------------------------*/
+  /* resizer (cursor AND touch devices) */
+  /* resizer (touch devices) */
+  /* hit area */
+  /* Event Selection (only for touch devices)
+--------------------------------------------------------------------------------------------------*/
+  /* Horizontal Events
+--------------------------------------------------------------------------------------------------*/
+  /* bigger touch area when selected */
+  /* events that are continuing to/from another week. kill rounded corners and butt up against edge */
+  /* resizer (cursor AND touch devices) */
+  /* left resizer  */
+  /* right resizer */
+  /* resizer (mouse devices) */
+  /* resizer (touch devices) */
+  /* left resizer  */
+  /* right resizer */
+  /* DayGrid events
+----------------------------------------------------------------------------------------------------
+We use the full "fc-day-grid-event" class instead of using descendants because the event won't
+be a descendant of the grid when it is being dragged.
+*/
+  /* resizer (cursor devices) */
+  /* left resizer  */
+  /* right resizer */
+  /* Event Limiting
+--------------------------------------------------------------------------------------------------*/
+  /* "more" link that represents hidden events */
+  /* popover that appears when "more" link is clicked */
+  /* Now Indicator
+--------------------------------------------------------------------------------------------------*/
+  /* Utilities
+--------------------------------------------------------------------------------------------------*/
+  /*
+TODO: more distinction between this file and common.css
+*/
+  /* Colors
+--------------------------------------------------------------------------------------------------*/
+  /* Icons (inline elements with styled text that mock arrow icons)
+--------------------------------------------------------------------------------------------------*/
+  /*
+Acceptable font-family overrides for individual icons:
+  "Arial", sans-serif
+  "Times New Roman", serif
+
+NOTE: use percentage font sizes or else old IE chokes
+*/
+  /* Popover
+--------------------------------------------------------------------------------------------------*/
+  /* List View
+--------------------------------------------------------------------------------------------------*/
+  /* Colors
+--------------------------------------------------------------------------------------------------*/
+  /* Popover
+--------------------------------------------------------------------------------------------------*/
+  /* Global Event Styles
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid axis running down the side (for both the all-day area and the slot area)
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Slats (lines that run horizontally)
+--------------------------------------------------------------------------------------------------*/
+  /* Popover
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Slats (lines that run horizontally)
+--------------------------------------------------------------------------------------------------*/
+  /* Popover
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Slats (lines that run horizontally)
+--------------------------------------------------------------------------------------------------*/
+  /* Toolbar
+--------------------------------------------------------------------------------------------------*/
+  /* the things within each left/right/center section */
+  /* the first thing within each left/center/right section */
+  /* title text */
+  /* button layering (for border precedence) */
+  /* View Structure
+--------------------------------------------------------------------------------------------------*/
+  /* undo twitter bootstrap's box-sizing rules. normalizes positioning techniques */
+  /* don't do this for the toolbar because we'll want bootstrap to style those buttons as some pt */
+  /* BasicView
+--------------------------------------------------------------------------------------------------*/
+  /* day row structure */
+  /* a "rigid" row will take up a constant amount of height because content-skeleton is absolute */
+  /* week and day number styling */
+  /* when week/day number have own column */
+  /* AgendaView all-day area
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid axis running down the side (for both the all-day area and the slot area)
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Structure
+--------------------------------------------------------------------------------------------------*/
+  /* divs within a cell within the fc-content-skeleton */
+  /* TimeGrid Slats (lines that run horizontally)
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Highlighting Slots
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Event Containment
+--------------------------------------------------------------------------------------------------*/
+  /* Generic Vertical Event
+--------------------------------------------------------------------------------------------------*/
+  /* TimeGrid Event Styling
+----------------------------------------------------------------------------------------------------
+We use the full "fc-time-grid-event" class instead of using descendants because the event won't
+be a descendant of the grid when it is being dragged.
+*/
+  /* short mode, where time and title are on the same line */
+  /* resizer (cursor device) */
+  /* resizer (touch device) */
+  /* Now Indicator
+--------------------------------------------------------------------------------------------------*/
+  /* arrow on axis */
+  /* List View
+--------------------------------------------------------------------------------------------------*/
+  /* possibly reusable */
+  /* view wrapper */
+  /* table resets */
+  /* day headings with the list */
+  /* event list items */
+  /* make the dot closer to the event title */
+  /* message when no events */
   /* --------------------company setup vertical tab------------------------ */
   /* --------------------widget style------------------------ */
   /* --------------------user image uploder------------------------ */
@@ -27,6 +189,8 @@ background: #ccc;
   /* -----------min width style end----------------- */
   /* -----------max width style start----------------- */
   /* -----------max width style end----------------- */ }
+  .hm img {
+    max-width: 100%; }
   .hm .dropdown-toggle.hm-dropdown-no-arrow:before {
     display: none; }
   .hm footer {
@@ -36,7 +200,7 @@ background: #ccc;
     padding: 5px; }
   .hm .table thead th {
     font-weight: normal;
-    color: #999; }
+    color: #999999; }
   .hm .form-check .form-check-label {
     line-height: 1.5; }
   .hm .hm-col {
@@ -61,19 +225,19 @@ background: #ccc;
 
 @-webkit-keyframes pulse {
   0% {
-    background-color: rgba(165, 165, 165, 0.1); }
+    background-color: rgba(0, 0, 0, 0.07); }
   50% {
-    background-color: rgba(165, 165, 165, 0.3); }
+    background-color: rgba(0, 0, 0, 0.15); }
   100% {
-    background-color: rgba(165, 165, 165, 0.1); } }
+    background-color: rgba(0, 0, 0, 0.07); } }
 
 @keyframes pulse {
   0% {
-    background-color: rgba(165, 165, 165, 0.1); }
+    background-color: rgba(0, 0, 0, 0.07); }
   50% {
-    background-color: rgba(165, 165, 165, 0.3); }
+    background-color: rgba(0, 0, 0, 0.15); }
   100% {
-    background-color: rgba(165, 165, 165, 0.1); } }
+    background-color: rgba(0, 0, 0, 0.07); } }
   .hm .croppie-container {
     width: 100%;
     height: 100%; }
@@ -95,7 +259,7 @@ background: #ccc;
   .hm .croppie-container .cr-viewport,
   .hm .croppie-container .cr-resizer {
     position: absolute;
-    border: 2px solid #fff;
+    border: 2px solid white;
     margin: auto;
     top: 0;
     bottom: 0;
@@ -117,7 +281,7 @@ background: #ccc;
     position: absolute;
     box-sizing: border-box;
     border: 1px solid black;
-    background: #fff;
+    background: white;
     width: 10px;
     height: 10px;
     content: ''; }
@@ -185,7 +349,7 @@ background: #ccc;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: gray;
     margin-top: -6px; }
   .hm .cr-slider:focus {
     outline: none; }
@@ -200,7 +364,7 @@ background: #ccc;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: gray;
     margin-top: -6px; }
   .hm .cr-slider:-moz-focusring {
     outline: 1px solid white;
@@ -226,7 +390,7 @@ background: #ccc;
     height: 16px;
     width: 16px;
     border-radius: 50%;
-    background: #ddd;
+    background: gray;
     margin-top: 1px; }
   .hm .cr-slider:focus::-ms-fill-lower {
     background: rgba(0, 0, 0, 0.5); }
@@ -249,8 +413,933 @@ background: #ccc;
     content: '↺'; }
   .hm .cr-rotate-r i:before {
     content: '↻'; }
+  .hm .fc {
+    direction: ltr;
+    text-align: left; }
+  .hm .fc-rtl {
+    text-align: right; }
+  .hm body .fc {
+    /* extra precedence to overcome jqui */
+    font-size: 1em; }
+  .hm .fc-highlight {
+    /* when user is selecting cells */
+    background: #bce8f1;
+    opacity: .3; }
+  .hm .fc-bgevent {
+    /* default look for background events */
+    background: #8fdf82;
+    opacity: .3; }
+  .hm .fc-nonbusiness {
+    /* default look for non-business-hours areas */
+    /* will inherit .fc-bgevent's styles */
+    background: #d7d7d7; }
+  .hm .fc button {
+    /* force height to include the border and padding */
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* dimensions */
+    margin: 0;
+    height: 2.1em;
+    padding: 0 .6em;
+    /* text & cursor */
+    font-size: 1em;
+    /* normalize */
+    white-space: nowrap;
+    cursor: pointer; }
+  .hm .fc button::-moz-focus-inner {
+    margin: 0;
+    padding: 0; }
+  .hm .fc-state-default {
+    /* non-theme */
+    border: 1px solid; }
+  .hm .fc-state-default.fc-corner-left {
+    /* non-theme */
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px; }
+  .hm .fc-state-default.fc-corner-right {
+    /* non-theme */
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px; }
+  .hm .fc button .fc-icon {
+    /* non-theme */
+    position: relative;
+    top: -0.05em;
+    /* seems to be a good adjustment across browsers */
+    margin: 0 .2em;
+    vertical-align: middle; }
+  .hm .fc-state-default {
+    background-color: white;
+    border: 0;
+    outline: 0;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: box-shadow, transform;
+    color: #333;
+    box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12);
+    /* background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf; 
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); 
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); */ }
+  .hm .fc-state-hover,
+  .hm .fc-state-down,
+  .hm .fc-state-active,
+  .hm .fc-state-disabled {
+    color: #333333;
+    background-color: #e6e6e6; }
+  .hm .fc-state-hover {
+    color: #333333;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear; }
+  .hm .fc-state-down,
+  .hm .fc-state-active {
+    background-color: #cccccc;
+    background-image: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); }
+  .hm .fc-state-disabled {
+    cursor: default;
+    background-image: none;
+    opacity: 0.65;
+    box-shadow: none; }
+  .hm .fc-button-group {
+    display: inline-block; }
+  .hm .fc .fc-button-group > * {
+    /* extra precedence b/c buttons have margin set to zero */
+    float: left;
+    margin: 0 0 0 -1px; }
+  .hm .fc .fc-button-group > :first-child {
+    /* same */
+    margin-left: 0; }
+  .hm .fc-popover {
+    position: absolute;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); }
+  .hm .fc-popover .fc-header {
+    /* TODO: be more consistent with fc-head/fc-body */
+    padding: 2px 4px; }
+  .hm .fc-popover .fc-header .fc-title {
+    margin: 0 2px; }
+  .hm .fc-popover .fc-header .fc-close {
+    cursor: pointer; }
+  .hm .fc-ltr .fc-popover .fc-header .fc-title,
+  .hm .fc-rtl .fc-popover .fc-header .fc-close {
+    float: left; }
+  .hm .fc-rtl .fc-popover .fc-header .fc-title,
+  .hm .fc-ltr .fc-popover .fc-header .fc-close {
+    float: right; }
+  .hm .fc-divider {
+    border-style: solid;
+    border-width: 1px; }
+  .hm hr.fc-divider {
+    height: 0;
+    margin: 0;
+    padding: 0 0 2px;
+    /* height is unreliable across browsers, so use padding */
+    border-width: 1px 0; }
+  .hm .fc-clear {
+    clear: both; }
+  .hm .fc-bg,
+  .hm .fc-bgevent-skeleton,
+  .hm .fc-highlight-skeleton,
+  .hm .fc-helper-skeleton {
+    /* these element should always cling to top-left/right corners */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .hm .fc-bg {
+    bottom: 0;
+    /* strech bg to bottom edge */ }
+  .hm .fc-bg table {
+    height: 100%;
+    /* strech bg to bottom edge */ }
+  .hm .fc table {
+    width: 100%;
+    box-sizing: border-box;
+    /* fix scrollbar issue in firefox */
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 1em;
+    /* normalize cross-browser */ }
+  .hm .fc th {
+    text-align: center; }
+  .hm .fc th,
+  .hm .fc td {
+    border-style: solid;
+    border-width: 1px;
+    padding: 0;
+    vertical-align: top; }
+  .hm .fc td.fc-today {
+    border-style: double;
+    /* overcome neighboring borders */ }
+  .hm a[data-goto] {
+    cursor: pointer; }
+  .hm a[data-goto]:hover {
+    text-decoration: underline; }
+  .hm .fc .fc-row {
+    /* extra precedence to overcome themes w/ .ui-widget-content forcing a 1px border */
+    /* no visible border by default. but make available if need be (scrollbar width compensation) */
+    border-style: solid;
+    border-width: 0; }
+  .hm .fc-row table {
+    /* don't put left/right border on anything within a fake row.
+     the outer tbody will worry about this */
+    border-left: 0 hidden transparent;
+    border-right: 0 hidden transparent;
+    /* no bottom borders on rows */
+    border-bottom: 0 hidden transparent; }
+  .hm .fc-row:first-child table {
+    border-top: 0 hidden transparent;
+    /* no top border on first row */ }
+  .hm .fc-row {
+    position: relative; }
+  .hm .fc-row .fc-bg {
+    z-index: 1; }
+  .hm .fc-row .fc-bgevent-skeleton,
+  .hm .fc-row .fc-highlight-skeleton {
+    bottom: 0;
+    /* stretch skeleton to bottom of row */ }
+  .hm .fc-row .fc-bgevent-skeleton table,
+  .hm .fc-row .fc-highlight-skeleton table {
+    height: 100%;
+    /* stretch skeleton to bottom of row */ }
+  .hm .fc-row .fc-highlight-skeleton td,
+  .hm .fc-row .fc-bgevent-skeleton td {
+    border-color: transparent; }
+  .hm .fc-row .fc-bgevent-skeleton {
+    z-index: 2; }
+  .hm .fc-row .fc-highlight-skeleton {
+    z-index: 3; }
+  .hm .fc-row .fc-content-skeleton {
+    position: relative;
+    z-index: 4;
+    padding-bottom: 2px;
+    /* matches the space above the events */ }
+  .hm .fc-row .fc-helper-skeleton {
+    z-index: 5; }
+  .hm .fc .fc-row .fc-content-skeleton table,
+  .hm .fc .fc-row .fc-content-skeleton td,
+  .hm .fc .fc-row .fc-helper-skeleton td {
+    /* see-through to the background below */
+    /* extra precedence to prevent theme-provided backgrounds */
+    background: none;
+    /* in case <td>s are globally styled */
+    border-color: transparent; }
+  .hm .fc-row .fc-content-skeleton td,
+  .hm .fc-row .fc-helper-skeleton td {
+    /* don't put a border between events and/or the day number */
+    border-bottom: 0; }
+  .hm .fc-row .fc-content-skeleton tbody td,
+  .hm .fc-row .fc-helper-skeleton tbody td {
+    /* don't put a border between event cells */
+    border-top: 0; }
+  .hm .fc-scroller {
+    -webkit-overflow-scrolling: touch; }
+  .hm .fc-scroller > .fc-day-grid,
+  .hm .fc-scroller > .fc-time-grid {
+    position: relative;
+    /* re-scope all positions */
+    width: 100%;
+    /* hack to force re-sizing this inner element when scrollbars appear/disappear */ }
+  .hm .fc-event {
+    position: relative;
+    /* for resize handle and other inner positioning */
+    display: block;
+    /* make the <a> tag block */
+    font-size: .85em;
+    line-height: 1.3;
+    border-radius: 3px;
+    border: 1px solid #3a87ad;
+    /* default BORDER color */ }
+  .hm .fc-event,
+  .hm .fc-event-dot {
+    background-color: #3a87ad;
+    /* default BACKGROUND color */ }
+  .hm .fc-event,
+  .hm .fc-event:hover {
+    color: #fff;
+    /* default TEXT color */
+    text-decoration: none;
+    /* if <a> has an href */ }
+  .hm .fc-event[href],
+  .hm .fc-event.fc-draggable {
+    cursor: pointer;
+    /* give events with links and draggable events a hand mouse pointer */ }
+  .hm .fc-not-allowed,
+  .hm .fc-not-allowed .fc-event {
+    /* to override an event's custom cursor */
+    cursor: not-allowed; }
+  .hm .fc-event .fc-bg {
+    /* the generic .fc-bg already does position */
+    z-index: 1;
+    background: #fff;
+    opacity: .25; }
+  .hm .fc-event .fc-content {
+    position: relative;
+    z-index: 2; }
+  .hm .fc-event .fc-resizer {
+    position: absolute;
+    z-index: 4; }
+  .hm .fc-event .fc-resizer {
+    display: none; }
+  .hm .fc-event.fc-allow-mouse-resize .fc-resizer,
+  .hm .fc-event.fc-selected .fc-resizer {
+    /* only show when hovering or selected (with touch) */
+    display: block; }
+  .hm .fc-event.fc-selected .fc-resizer:before {
+    /* 40x40 touch area */
+    content: "";
+    position: absolute;
+    z-index: 9999;
+    /* user of this util can scope within a lower z-index */
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+    margin-top: -20px; }
+  .hm .fc-event.fc-selected {
+    z-index: 9999 !important;
+    /* overcomes inline z-index */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+  .hm .fc-event.fc-selected.fc-dragging {
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3); }
+  .hm .fc-h-event.fc-selected:before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    /* below resizers */
+    top: -10px;
+    bottom: -10px;
+    left: 0;
+    right: 0; }
+  .hm .fc-ltr .fc-h-event.fc-not-start,
+  .hm .fc-rtl .fc-h-event.fc-not-end {
+    margin-left: 0;
+    border-left-width: 0;
+    padding-left: 1px;
+    /* replace the border with padding */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0; }
+  .hm .fc-ltr .fc-h-event.fc-not-end,
+  .hm .fc-rtl .fc-h-event.fc-not-start {
+    margin-right: 0;
+    border-right-width: 0;
+    padding-right: 1px;
+    /* replace the border with padding */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
+  .hm .fc-ltr .fc-h-event .fc-start-resizer,
+  .hm .fc-rtl .fc-h-event .fc-end-resizer {
+    cursor: w-resize;
+    left: -1px;
+    /* overcome border */ }
+  .hm .fc-ltr .fc-h-event .fc-end-resizer,
+  .hm .fc-rtl .fc-h-event .fc-start-resizer {
+    cursor: e-resize;
+    right: -1px;
+    /* overcome border */ }
+  .hm .fc-h-event.fc-allow-mouse-resize .fc-resizer {
+    width: 7px;
+    top: -1px;
+    /* overcome top border */
+    bottom: -1px;
+    /* overcome bottom border */ }
+  .hm .fc-h-event.fc-selected .fc-resizer {
+    /* 8x8 little dot */
+    border-radius: 4px;
+    border-width: 1px;
+    width: 6px;
+    height: 6px;
+    border-style: solid;
+    border-color: inherit;
+    background: #fff;
+    /* vertically center */
+    top: 50%;
+    margin-top: -4px; }
+  .hm .fc-ltr .fc-h-event.fc-selected .fc-start-resizer,
+  .hm .fc-rtl .fc-h-event.fc-selected .fc-end-resizer {
+    margin-left: -4px;
+    /* centers the 8x8 dot on the left edge */ }
+  .hm .fc-ltr .fc-h-event.fc-selected .fc-end-resizer,
+  .hm .fc-rtl .fc-h-event.fc-selected .fc-start-resizer {
+    margin-right: -4px;
+    /* centers the 8x8 dot on the right edge */ }
+  .hm .fc-day-grid-event {
+    margin: 1px 2px 0;
+    /* spacing between events and edges */
+    padding: 0 1px; }
+  .hm tr:first-child > td > .fc-day-grid-event {
+    margin-top: 2px;
+    /* a little bit more space before the first event */ }
+  .hm .fc-day-grid-event.fc-selected:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    /* same z-index as fc-bg, behind text */
+    /* overcome the borders */
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    /* darkening effect */
+    background: #000;
+    opacity: .25; }
+  .hm .fc-day-grid-event .fc-content {
+    /* force events to be one-line tall */
+    white-space: nowrap;
+    overflow: hidden; }
+  .hm .fc-day-grid-event .fc-time {
+    font-weight: bold; }
+  .hm .fc-ltr .fc-day-grid-event.fc-allow-mouse-resize .fc-start-resizer,
+  .hm .fc-rtl .fc-day-grid-event.fc-allow-mouse-resize .fc-end-resizer {
+    margin-left: -2px;
+    /* to the day cell's edge */ }
+  .hm .fc-ltr .fc-day-grid-event.fc-allow-mouse-resize .fc-end-resizer,
+  .hm .fc-rtl .fc-day-grid-event.fc-allow-mouse-resize .fc-start-resizer {
+    margin-right: -2px;
+    /* to the day cell's edge */ }
+  .hm a.fc-more {
+    margin: 1px 3px;
+    font-size: .85em;
+    cursor: pointer;
+    text-decoration: none; }
+  .hm a.fc-more:hover {
+    text-decoration: underline; }
+  .hm .fc-limited {
+    /* rows and cells that are hidden because of a "more" link */
+    display: none; }
+  .hm .fc-day-grid .fc-row {
+    z-index: 1;
+    /* make the "more" popover one higher than this */ }
+  .hm .fc-more-popover {
+    z-index: 2;
+    width: 220px; }
+  .hm .fc-more-popover .fc-event-container {
+    padding: 10px; }
+  .hm .fc-now-indicator {
+    position: absolute;
+    border: 0 solid red; }
+  .hm .fc-unselectable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+  .hm .fc-unthemed th,
+  .hm .fc-unthemed td,
+  .hm .fc-unthemed thead,
+  .hm .fc-unthemed tbody,
+  .hm .fc-unthemed .fc-divider,
+  .hm .fc-unthemed .fc-row,
+  .hm .fc-unthemed .fc-content,
+  .hm .fc-unthemed .fc-popover,
+  .hm .fc-unthemed .fc-list-view,
+  .hm .fc-unthemed .fc-list-heading td {
+    border-color: #ddd; }
+  .hm .fc-unthemed .fc-popover {
+    background-color: #fff; }
+  .hm .fc-unthemed .fc-divider,
+  .hm .fc-unthemed .fc-popover .fc-header,
+  .hm .fc-unthemed .fc-list-heading td {
+    background: #eee; }
+  .hm .fc-unthemed .fc-popover .fc-header .fc-close {
+    color: #666; }
+  .hm .fc-unthemed td.fc-today {
+    background: #f4def8; }
+  .hm .fc-unthemed .fc-disabled-day {
+    background: #d7d7d7;
+    opacity: .3; }
+  .hm .fc-icon {
+    display: inline-block;
+    height: 1em;
+    line-height: 1em;
+    font-size: 1em;
+    text-align: center;
+    overflow: hidden;
+    font-family: "Courier New", Courier, monospace;
+    /* don't allow browser text-selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+  .hm .fc-icon:after {
+    position: relative; }
+  .hm .fc-icon-left-single-arrow:after {
+    content: "\2039";
+    font-weight: bold;
+    font-size: 200%;
+    top: -7%; }
+  .hm .fc-icon-right-single-arrow:after {
+    content: "\203A";
+    font-weight: bold;
+    font-size: 200%;
+    top: -7%; }
+  .hm .fc-icon-left-double-arrow:after {
+    content: "\AB";
+    font-size: 160%;
+    top: -7%; }
+  .hm .fc-icon-right-double-arrow:after {
+    content: "\BB";
+    font-size: 160%;
+    top: -7%; }
+  .hm .fc-icon-left-triangle:after {
+    content: "\25C4";
+    font-size: 125%;
+    top: 3%; }
+  .hm .fc-icon-right-triangle:after {
+    content: "\25BA";
+    font-size: 125%;
+    top: 3%; }
+  .hm .fc-icon-down-triangle:after {
+    content: "\25BC";
+    font-size: 125%;
+    top: 2%; }
+  .hm .fc-icon-x:after {
+    content: "\D7";
+    font-size: 200%;
+    top: 6%; }
+  .hm .fc-unthemed .fc-popover {
+    border-width: 1px;
+    border-style: solid; }
+  .hm .fc-unthemed .fc-popover .fc-header .fc-close {
+    font-size: .9em;
+    margin-top: 2px; }
+  .hm .fc-unthemed .fc-list-item:hover td {
+    background-color: #f5f5f5; }
+  .hm .ui-widget .fc-disabled-day {
+    background-image: none; }
+  .hm .fc-popover > .ui-widget-header + .ui-widget-content {
+    border-top: 0;
+    /* where they meet, let the header have the border */ }
+  .hm .ui-widget .fc-event {
+    /* overpower jqui's styles on <a> tags. TODO: more DRY */
+    color: #fff;
+    /* default TEXT color */
+    text-decoration: none;
+    /* if <a> has an href */
+    /* undo ui-widget-header bold */
+    font-weight: normal; }
+  .hm .ui-widget td.fc-axis {
+    font-weight: normal;
+    /* overcome bold */ }
+  .hm .fc-time-grid .fc-slats .ui-widget-content {
+    background: none;
+    /* see through to fc-bg */ }
+  .hm .fc.fc-bootstrap3 a {
+    text-decoration: none; }
+  .hm .fc.fc-bootstrap3 a[data-goto]:hover {
+    text-decoration: underline; }
+  .hm .fc-bootstrap3 hr.fc-divider {
+    border-color: inherit; }
+  .hm .fc-bootstrap3 .fc-today.alert {
+    border-radius: 0; }
+  .hm .fc-bootstrap3 .fc-popover .panel-body {
+    padding: 0; }
+  .hm .fc-bootstrap3 .fc-time-grid .fc-slats table {
+    /* some themes have background color. see through to slats */
+    background: none; }
+  .hm .fc.fc-bootstrap4 a {
+    text-decoration: none; }
+  .hm .fc.fc-bootstrap4 a[data-goto]:hover {
+    text-decoration: underline; }
+  .hm .fc-bootstrap4 hr.fc-divider {
+    border-color: inherit; }
+  .hm .fc-bootstrap4 .fc-today.alert {
+    border-radius: 0; }
+  .hm .fc-bootstrap4 a.fc-event:not([href]):not([tabindex]) {
+    color: #fff; }
+  .hm .fc-bootstrap4 .fc-popover.card {
+    position: absolute; }
+  .hm .fc-bootstrap4 .fc-popover .card-body {
+    padding: 0; }
+  .hm .fc-bootstrap4 .fc-time-grid .fc-slats table {
+    /* some themes have background color. see through to slats */
+    background: none; }
+  .hm .fc-toolbar {
+    text-align: center; }
+  .hm .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 1em; }
+  .hm .fc-toolbar.fc-footer-toolbar {
+    margin-top: 1em; }
+  .hm .fc-toolbar .fc-left {
+    float: left; }
+  .hm .fc-toolbar .fc-right {
+    float: right; }
+  .hm .fc-toolbar .fc-center {
+    display: inline-block; }
+  .hm .fc-toolbar .fc-center h2 {
+    font-size: 18px;
+    color: #333; }
+  .hm .fc .fc-toolbar > * > * {
+    /* extra precedence to override button border margins */
+    float: left;
+    margin-left: .75em; }
+  .hm .fc .fc-toolbar > * > :first-child {
+    /* extra precedence to override button border margins */
+    margin-left: 0; }
+  .hm .fc-toolbar h2 {
+    margin: 0; }
+  .hm .fc-toolbar button {
+    position: relative; }
+  .hm .fc-toolbar .fc-state-hover,
+  .hm .fc-toolbar .ui-state-hover {
+    z-index: 2; }
+  .hm .fc-toolbar .fc-state-down {
+    z-index: 3; }
+  .hm .fc-toolbar .fc-state-active,
+  .hm .fc-toolbar .ui-state-active {
+    z-index: 4; }
+  .hm .fc-toolbar button:focus {
+    z-index: 5; }
+  .hm .fc-view-container *,
+  .hm .fc-view-container *:before,
+  .hm .fc-view-container *:after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box; }
+  .hm .fc-view,
+  .hm .fc-view > table {
+    /* so dragged elements can be above the view's main element */
+    position: relative;
+    z-index: 1; }
+  .hm .fc-basicWeek-view .fc-content-skeleton,
+  .hm .fc-basicDay-view .fc-content-skeleton {
+    /* there may be week numbers in these views, so no padding-top */
+    padding-bottom: 1em;
+    /* ensure a space at bottom of cell for user selecting/clicking */ }
+  .hm .fc-basic-view .fc-body .fc-row {
+    min-height: 4em;
+    /* ensure that all rows are at least this tall */ }
+  .hm .fc-row.fc-rigid {
+    overflow: hidden; }
+  .hm .fc-row.fc-rigid .fc-content-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .hm .fc-day-top.fc-other-month {
+    opacity: 0.3; }
+  .hm .fc-basic-view .fc-week-number,
+  .hm .fc-basic-view .fc-day-number {
+    padding: 2px; }
+  .hm .fc-basic-view th.fc-week-number,
+  .hm .fc-basic-view th.fc-day-number {
+    padding: 0 2px;
+    /* column headers can't have as much v space */ }
+  .hm .fc-ltr .fc-basic-view .fc-day-top .fc-day-number {
+    float: right; }
+  .hm .fc-rtl .fc-basic-view .fc-day-top .fc-day-number {
+    float: left; }
+  .hm .fc-ltr .fc-basic-view .fc-day-top .fc-week-number {
+    float: left;
+    border-radius: 0 0 3px 0; }
+  .hm .fc-rtl .fc-basic-view .fc-day-top .fc-week-number {
+    float: right;
+    border-radius: 0 0 0 3px; }
+  .hm .fc-basic-view .fc-day-top .fc-week-number {
+    min-width: 1.5em;
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #808080; }
+  .hm .fc-basic-view td.fc-week-number {
+    text-align: center; }
+  .hm .fc-basic-view td.fc-week-number > * {
+    /* work around the way we do column resizing and ensure a minimum width */
+    display: inline-block;
+    min-width: 1.25em; }
+  .hm .fc-agenda-view .fc-day-grid {
+    position: relative;
+    z-index: 2;
+    /* so the "more.." popover will be over the time grid */ }
+  .hm .fc-agenda-view .fc-day-grid .fc-row {
+    min-height: 3em;
+    /* all-day section will never get shorter than this */ }
+  .hm .fc-agenda-view .fc-day-grid .fc-row .fc-content-skeleton {
+    padding-bottom: 1em;
+    /* give space underneath events for clicking/selecting days */ }
+  .hm .fc .fc-axis {
+    /* .fc to overcome default cell styles */
+    vertical-align: middle;
+    padding: 0 4px;
+    white-space: nowrap; }
+  .hm .fc-ltr .fc-axis {
+    text-align: right; }
+  .hm .fc-rtl .fc-axis {
+    text-align: left; }
+  .hm .fc-time-grid-container,
+  .hm .fc-time-grid {
+    /* so slats/bg/content/etc positions get scoped within here */
+    position: relative;
+    z-index: 1; }
+  .hm .fc-time-grid {
+    min-height: 100%;
+    /* so if height setting is 'auto', .fc-bg stretches to fill height */ }
+  .hm .fc-time-grid table {
+    /* don't put outer borders on slats/bg/content/etc */
+    border: 0 hidden transparent; }
+  .hm .fc-time-grid > .fc-bg {
+    z-index: 1; }
+  .hm .fc-time-grid .fc-slats,
+  .hm .fc-time-grid > hr {
+    /* the <hr> AgendaView injects when grid is shorter than scroller */
+    position: relative;
+    z-index: 2; }
+  .hm .fc-time-grid .fc-content-col {
+    position: relative;
+    /* because now-indicator lives directly inside */ }
+  .hm .fc-time-grid .fc-content-skeleton {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0; }
+  .hm .fc-time-grid .fc-business-container {
+    position: relative;
+    z-index: 1; }
+  .hm .fc-time-grid .fc-bgevent-container {
+    position: relative;
+    z-index: 2; }
+  .hm .fc-time-grid .fc-highlight-container {
+    position: relative;
+    z-index: 3; }
+  .hm .fc-time-grid .fc-event-container {
+    position: relative;
+    z-index: 4; }
+  .hm .fc-time-grid .fc-now-indicator-line {
+    z-index: 5; }
+  .hm .fc-time-grid .fc-helper-container {
+    /* also is fc-event-container */
+    position: relative;
+    z-index: 6; }
+  .hm .fc-time-grid .fc-slats td {
+    height: 1.5em;
+    border-bottom: 0;
+    /* each cell is responsible for its top border */ }
+  .hm .fc-time-grid .fc-slats .fc-minor td {
+    border-top-style: dotted; }
+  .hm .fc-time-grid .fc-highlight-container {
+    /* a div within a cell within the fc-highlight-skeleton */
+    position: relative;
+    /* scopes the left/right of the fc-highlight to be in the column */ }
+  .hm .fc-time-grid .fc-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    /* top and bottom will be in by JS */ }
+  .hm .fc-ltr .fc-time-grid .fc-event-container {
+    /* space on the sides of events for LTR (default) */
+    margin: 0 2.5% 0 2px; }
+  .hm .fc-rtl .fc-time-grid .fc-event-container {
+    /* space on the sides of events for RTL */
+    margin: 0 2px 0 2.5%; }
+  .hm .fc-time-grid .fc-event,
+  .hm .fc-time-grid .fc-bgevent {
+    position: absolute;
+    z-index: 1;
+    /* scope inner z-index's */ }
+  .hm .fc-time-grid .fc-bgevent {
+    /* background events always span full width */
+    left: 0;
+    right: 0; }
+  .hm .fc-v-event.fc-not-start {
+    /* events that are continuing from another day */
+    /* replace space made by the top border with padding */
+    border-top-width: 0;
+    padding-top: 1px;
+    /* remove top rounded corners */
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+  .hm .fc-v-event.fc-not-end {
+    /* replace space made by the top border with padding */
+    border-bottom-width: 0;
+    padding-bottom: 1px;
+    /* remove bottom rounded corners */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0; }
+  .hm .fc-time-grid-event {
+    overflow: hidden;
+    /* don't let the bg flow over rounded corners */ }
+  .hm .fc-time-grid-event.fc-selected {
+    /* need to allow touch resizers to extend outside event's bounding box */
+    /* common fc-selected styles hide the fc-bg, so don't need this anyway */
+    overflow: visible; }
+  .hm .fc-time-grid-event.fc-selected .fc-bg {
+    display: none;
+    /* hide semi-white background, to appear darker */ }
+  .hm .fc-time-grid-event .fc-content {
+    overflow: hidden;
+    /* for when .fc-selected */ }
+  .hm .fc-time-grid-event .fc-time,
+  .hm .fc-time-grid-event .fc-title {
+    padding: 0 1px; }
+  .hm .fc-time-grid-event .fc-time {
+    font-size: .85em;
+    white-space: nowrap; }
+  .hm .fc-time-grid-event.fc-short .fc-content {
+    /* don't wrap to second line (now that contents will be inline) */
+    white-space: nowrap; }
+  .hm .fc-time-grid-event.fc-short .fc-time,
+  .hm .fc-time-grid-event.fc-short .fc-title {
+    /* put the time and title on the same line */
+    display: inline-block;
+    vertical-align: top; }
+  .hm .fc-time-grid-event.fc-short .fc-time span {
+    display: none;
+    /* don't display the full time text... */ }
+  .hm .fc-time-grid-event.fc-short .fc-time:before {
+    content: attr(data-start);
+    /* ...instead, display only the start time */ }
+  .hm .fc-time-grid-event.fc-short .fc-time:after {
+    content: "\A0-\A0";
+    /* seperate with a dash, wrapped in nbsp's */ }
+  .hm .fc-time-grid-event.fc-short .fc-title {
+    font-size: .85em;
+    /* make the title text the same size as the time */
+    padding: 0;
+    /* undo padding from above */ }
+  .hm .fc-time-grid-event.fc-allow-mouse-resize .fc-resizer {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 8px;
+    overflow: hidden;
+    line-height: 8px;
+    font-size: 11px;
+    font-family: monospace;
+    text-align: center;
+    cursor: s-resize; }
+  .hm .fc-time-grid-event.fc-allow-mouse-resize .fc-resizer:after {
+    content: "="; }
+  .hm .fc-time-grid-event.fc-selected .fc-resizer {
+    /* 10x10 dot */
+    border-radius: 5px;
+    border-width: 1px;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-color: inherit;
+    background: #fff;
+    /* horizontally center */
+    left: 50%;
+    margin-left: -5px;
+    /* center on the bottom edge */
+    bottom: -5px; }
+  .hm .fc-time-grid .fc-now-indicator-line {
+    border-top-width: 1px;
+    left: 0;
+    right: 0; }
+  .hm .fc-time-grid .fc-now-indicator-arrow {
+    margin-top: -5px;
+    /* vertically center on top coordinate */ }
+  .hm .fc-ltr .fc-time-grid .fc-now-indicator-arrow {
+    left: 0;
+    /* triangle pointing right... */
+    border-width: 5px 0 5px 6px;
+    border-top-color: transparent;
+    border-bottom-color: transparent; }
+  .hm .fc-rtl .fc-time-grid .fc-now-indicator-arrow {
+    right: 0;
+    /* triangle pointing left... */
+    border-width: 5px 6px 5px 0;
+    border-top-color: transparent;
+    border-bottom-color: transparent; }
+  .hm .fc-event-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px; }
+  .hm .fc-rtl .fc-list-view {
+    direction: rtl;
+    /* unlike core views, leverage browser RTL */ }
+  .hm .fc-list-view {
+    border-width: 1px;
+    border-style: solid; }
+  .hm .fc .fc-list-table {
+    table-layout: auto;
+    /* for shrinkwrapping cell content */ }
+  .hm .fc-list-table td {
+    border-width: 1px 0 0;
+    padding: 8px 14px; }
+  .hm .fc-list-table tr:first-child td {
+    border-top-width: 0; }
+  .hm .fc-list-heading {
+    border-bottom-width: 1px; }
+  .hm .fc-list-heading td {
+    font-weight: bold; }
+  .hm .fc-ltr .fc-list-heading-main {
+    float: left; }
+  .hm .fc-ltr .fc-list-heading-alt {
+    float: right; }
+  .hm .fc-rtl .fc-list-heading-main {
+    float: right; }
+  .hm .fc-rtl .fc-list-heading-alt {
+    float: left; }
+  .hm .fc-list-item.fc-has-url {
+    cursor: pointer;
+    /* whole row will be clickable */ }
+  .hm .fc-list-item-marker,
+  .hm .fc-list-item-time {
+    white-space: nowrap;
+    width: 1px; }
+  .hm .fc-ltr .fc-list-item-marker {
+    padding-right: 0; }
+  .hm .fc-rtl .fc-list-item-marker {
+    padding-left: 0; }
+  .hm .fc-list-item-title a {
+    /* every event title cell has an <a> tag */
+    text-decoration: none;
+    color: inherit; }
+  .hm .fc-list-item-title a[href]:hover {
+    /* hover effect only on titles with hrefs */
+    text-decoration: underline; }
+  .hm .fc-list-empty-wrap2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .hm .fc-list-empty-wrap1 {
+    width: 100%;
+    height: 100%;
+    display: table; }
+  .hm .fc-list-empty {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center; }
+  .hm .fc-unthemed .fc-list-empty {
+    /* theme will provide own background */
+    background-color: #eee; }
+  .hm .hm-cal-event-dot {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #ddd;
+    text-align: center;
+    font-size: 10px;
+    line-height: 21px;
+    color: white;
+    margin: 2px; }
+  .hm .hm-cal-event-dot.hm-cal-event-leave {
+    background: #9c27b0; }
+  .hm .hm-cal-event-dot.hm-cal-event-holiday {
+    background: #999999; }
   .hm .hm-select-text-dull {
-    color: #999; }
+    color: #999999; }
   .hm .select2-container {
     box-sizing: border-box;
     display: inline-block;
@@ -357,7 +1446,7 @@ background: #ccc;
     width: auto;
     opacity: 0;
     z-index: 99;
-    background-color: #fff;
+    background-color: white;
     filter: alpha(opacity=0); }
   .hm .select2-hidden-accessible {
     border: 0 !important;
@@ -372,17 +1461,17 @@ background: #ccc;
     white-space: nowrap !important; }
   .hm .select2-container--default .select2-selection--single {
     background-color: transparent;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid #b3b3b3;
     /* border-radius: 4px */ }
   .hm .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #444;
+    color: #b3b3b3;
     line-height: 28px; }
   .hm .select2-container--default .select2-selection--single .select2-selection__clear {
     cursor: pointer;
     float: right;
     font-weight: bold; }
   .hm .select2-container--default .select2-selection--single .select2-selection__placeholder {
-    color: #999; }
+    color: #eeeeee; }
   .hm .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 26px;
     position: absolute;
@@ -390,7 +1479,7 @@ background: #ccc;
     right: 1px;
     width: 20px; }
   .hm .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: #888 transparent transparent transparent;
+    border-color: #404040 transparent transparent transparent;
     border-style: solid;
     border-width: 5px 4px 0 4px;
     height: 0;
@@ -406,16 +1495,16 @@ background: #ccc;
     left: 1px;
     right: auto; }
   .hm .select2-container--default.select2-container--disabled .select2-selection--single {
-    background-color: #eee;
+    background-color: #eeeeee;
     cursor: default; }
   .hm .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {
     display: none; }
   .hm .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-color: transparent transparent #888 transparent;
+    border-color: transparent transparent #404040 transparent;
     border-width: 0 4px 5px 4px; }
   .hm .select2-container--default .select2-selection--multiple {
     background-color: transparent;
-    border-bottom: 1px solid #d2d2d2;
+    border-bottom: 1px solid #cccccc;
     /* border-radius: 4px; */
     cursor: text; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__rendered {
@@ -437,7 +1526,7 @@ background: #ccc;
     padding: 1px; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__choice {
     background-color: white;
-    border: 1px solid #eee;
+    border: 1px solid #eeeeee;
     border-radius: 500px;
     cursor: default;
     display: inline-flex;
@@ -445,13 +1534,13 @@ background: #ccc;
     margin-top: 5px;
     padding: 0 10px; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    color: #999;
+    color: #b3b3b3;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
   .hm .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-    color: #333; }
+    color: #1a1a1a; }
   .hm .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice, .hm .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline {
     float: right; }
   .hm .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
@@ -465,7 +1554,7 @@ background: #ccc;
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
     outline: 0; }
   .hm .select2-container--default.select2-container--disabled .select2-selection--multiple {
-    background-color: #eee;
+    background-color: #eeeeee;
     cursor: default; }
   .hm .select2-container--default.select2-container--disabled .select2-selection__choice__remove {
     display: none; }
@@ -476,7 +1565,7 @@ background: #ccc;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
   .hm .select2-container--default .select2-search--dropdown .select2-search__field {
-    border: 1px solid #aaa; }
+    border: 1px solid #b3b3b3; }
   .hm .select2-container--default .select2-search--inline .select2-search__field {
     background: transparent;
     border: none;
@@ -489,9 +1578,9 @@ background: #ccc;
   .hm .select2-container--default .select2-results__option[role=group] {
     padding: 0; }
   .hm .select2-container--default .select2-results__option[aria-disabled=true] {
-    color: #999; }
+    color: #eeeeee; }
   .hm .select2-container--default .select2-results__option[aria-selected=true] {
-    background-color: #ddd; }
+    background-color: #eeeeee; }
   .hm .select2-container--default .select2-results__option .select2-results__option {
     padding-left: 1em; }
   .hm .select2-container--default .select2-results__option .select2-results__option .select2-results__group {
@@ -521,8 +1610,8 @@ background: #ccc;
     display: block;
     padding: 6px; }
   .hm .select2-container--classic .select2-selection--single {
-    background-color: #f7f7f7;
-    border: 1px solid #aaa;
+    background-color: #f7f8f9;
+    border: 1px solid #b3b3b3;
     border-radius: 4px;
     outline: 0;
     background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%);
@@ -533,7 +1622,7 @@ background: #ccc;
   .hm .select2-container--classic .select2-selection--single:focus {
     border: 1px solid #9c27b0; }
   .hm .select2-container--classic .select2-selection--single .select2-selection__rendered {
-    color: #444;
+    color: #b3b3b3;
     line-height: 28px; }
   .hm .select2-container--classic .select2-selection--single .select2-selection__clear {
     cursor: pointer;
@@ -543,9 +1632,9 @@ background: #ccc;
   .hm .select2-container--classic .select2-selection--single .select2-selection__placeholder {
     color: #999; }
   .hm .select2-container--classic .select2-selection--single .select2-selection__arrow {
-    background-color: #ddd;
+    background-color: #cccccc;
     border: none;
-    border-left: 1px solid #aaa;
+    border-left: 1px solid #cccccc;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 26px;
@@ -553,13 +1642,13 @@ background: #ccc;
     top: 1px;
     right: 1px;
     width: 20px;
-    background-image: -webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
-    background-image: -o-linear-gradient(top, #eeeeee 50%, #cccccc 100%);
-    background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
+    background-image: -webkit-linear-gradient(top, #b3b3b3 50%, #a6a6a6 100%);
+    background-image: -o-linear-gradient(top, #b3b3b3 50%, #a6a6a6 100%);
+    background-image: linear-gradient(to bottom, #b3b3b3 50%, #a6a6a6 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0); }
   .hm .select2-container--classic .select2-selection--single .select2-selection__arrow b {
-    border-color: #888 transparent transparent transparent;
+    border-color: #cccccc transparent transparent transparent;
     border-style: solid;
     border-width: 5px 4px 0 4px;
     height: 0;
@@ -573,7 +1662,7 @@ background: #ccc;
     float: left; }
   .hm .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
     border: none;
-    border-right: 1px solid #aaa;
+    border-right: 1px solid #b3b3b3;
     border-radius: 0;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -585,7 +1674,7 @@ background: #ccc;
     background: transparent;
     border: none; }
   .hm .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-color: transparent transparent #888 transparent;
+    border-color: transparent transparent #cccccc transparent;
     border-width: 0 4px 5px 4px; }
   .hm .select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
     border-top: none;
@@ -607,7 +1696,7 @@ background: #ccc;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFFFFFFF', GradientType=0); }
   .hm .select2-container--classic .select2-selection--multiple {
     background-color: white;
-    border: 1px solid #aaa;
+    border: 1px solid #b3b3b3;
     border-radius: 4px;
     cursor: text;
     outline: 0; }
@@ -620,8 +1709,8 @@ background: #ccc;
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__clear {
     display: none; }
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__choice {
-    background-color: #e4e4e4;
-    border: 1px solid #aaa;
+    background-color: #eeeeee;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     cursor: default;
     float: left;
@@ -629,13 +1718,13 @@ background: #ccc;
     margin-top: 5px;
     padding: 0 5px; }
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
-    color: #888;
+    color: #cccccc;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
   .hm .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
-    color: #555; }
+    color: #cccccc; }
   .hm .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
     float: right;
     margin-left: 5px;
@@ -654,7 +1743,7 @@ background: #ccc;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0; }
   .hm .select2-container--classic .select2-search--dropdown .select2-search__field {
-    border: 1px solid #aaa;
+    border: 1px solid #b3b3b3;
     outline: 0; }
   .hm .select2-container--classic .select2-search--inline .select2-search__field {
     outline: 0;
@@ -674,7 +1763,7 @@ background: #ccc;
   .hm .select2-container--classic .select2-results__option[aria-disabled=true] {
     color: grey; }
   .hm .select2-container--classic .select2-results__option--highlighted[aria-selected] {
-    background-color: #3875d7;
+    background-color: #9c27b0;
     color: white; }
   .hm .select2-container--classic .select2-results__group {
     cursor: default;
@@ -701,10 +1790,10 @@ background: #ccc;
     padding-bottom: 5px; }
   .hm .hm-simple-tab-nav {
     display: flex;
-    border-bottom: 1px solid #ddd; }
+    border-bottom: 1px solid #cccccc; }
   .hm .hm-simple-tab-nav .hm-tab-link {
     background-color: transparent;
-    color: #333;
+    color: black;
     box-shadow: none;
     margin-top: 0;
     margin-bottom: 0;
@@ -749,7 +1838,7 @@ background: #ccc;
     height: 1px;
     left: 0;
     top: 16px;
-    background: #ddd; }
+    background: #b3b3b3; }
   .hm .hm-wizard-step-inner {
     display: inline-flex;
     align-items: center;
@@ -778,15 +1867,15 @@ background: #ccc;
     text-align: center;
     line-height: 32px;
     border-radius: 50%;
-    color: #fff;
+    color: white;
     font-weight: normal;
     position: relative;
     z-index: 1;
     flex: none; }
   .hm .hm-wizard-step-count {
-    background: #bbb; }
+    background: #b3b3b3; }
   .hm .hm-wizard-step-text {
-    color: #999; }
+    color: #999999; }
   .hm .hm-wizard-step-check {
     background: #4caf50;
     display: none; }
@@ -794,7 +1883,7 @@ background: #ccc;
     line-height: 32px; }
   .hm .hm-wizard-step.active .hm-wizard-step-count {
     background: #9c27b0;
-    box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2); }
+    box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.08), 0 1px 10px 0 rgba(156, 39, 176, 0.05), 0 2px 4px -1px rgba(156, 39, 176, 0.02); }
   .hm .hm-wizard-step.active .hm-wizard-step-text {
     font-weight: bold;
     color: inherit; }
@@ -815,11 +1904,11 @@ background: #ccc;
     width: 32px;
     text-align: center;
     line-height: 32px;
-    background: #999;
+    background: #999999;
     display: inline-block;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff; }
+    color: white; }
   .hm .hm-name-circle-40 {
     height: 40px;
     width: 40px;
@@ -969,7 +2058,7 @@ background: #ccc;
   .hm .hm-navbar {
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-    border-bottom: 1px solid #ccccff;
+    border-bottom: 1px solid #cccccc;
     position: fixed;
     top: 0;
     left: 0;
@@ -987,11 +2076,10 @@ background: #ccc;
     left: 0;
     bottom: 0;
     transition: all ease .25s;
-    background: #0a2240; }
+    background: #4a2051; }
   .hm .hm-side-menu-link {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    text-shadow: 0 -1px 0 black;
     padding-top: .5rem;
     padding-bottom: .5rem;
     position: relative;
@@ -1001,7 +2089,7 @@ background: #ccc;
     color: white;
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5); }
   .hm .hm-side-menu-link:hover, .hm .hm-side-menu-link:focus {
-    background: #0d3059;
+    background: #6b2e76;
     color: white;
     box-shadow: none; }
   .hm .hm-side-submenu {
@@ -1012,7 +2100,7 @@ background: #ccc;
     min-width: 50px;
     height: 100%;
     z-index: 600;
-    background: #0d3059;
+    background: #6b2e76;
     display: none; }
   .hm .hm-side-menu-link.focus:hover .hm-side-submenu {
     display: block; }
@@ -1024,16 +2112,12 @@ background: #ccc;
     color: white;
     text-decoration: none;
     display: block; }
-  .hm .hm-side-submenu-item:hover {
+  .hm .hm-side-submenu-item:hover, .hm .hm-side-submenu-item.active {
     background: rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    color: #fff; }
+    color: white; }
   .hm .hm-side-submenu-item:focus {
-    color: #fff; }
-  .hm .hm-side-submenu-item.active {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-    color: #fff; }
+    color: white; }
   .hm .hm-side-panel-wrapper {
     position: fixed;
     top: 0;
@@ -1053,7 +2137,7 @@ background: #ccc;
     flex-direction: column;
     width: 800px;
     pointer-events: auto;
-    background-color: #fff;
+    background-color: white;
     background-clip: padding-box;
     outline: 0;
     margin-left: auto;
@@ -1073,14 +2157,15 @@ background: #ccc;
     width: 1000px; }
   .hm .hm-side-panel.hm-side-panel-small {
     width: 500px; }
-  .hm .hm-donut-wrapper {
-    display: inline-block;
-    position: relative; }
-  .hm .hm-donut-center-text {
+  .hm .hm-donut-tooltip {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); }
+    display: none;
+    background: white;
+    border-radius: 4px;
+    box-shadow: -3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    min-width: 100px;
+    max-width: 250px; }
   .hm .hm-atten-color-strip {
     background: linear-gradient(to bottom, #4caf50 0%, #4caf50 49%, #dddddd 49%, #dddddd 100%);
     height: 20px;
@@ -1144,13 +2229,13 @@ background: #ccc;
     border-radius: 0 500px 500px 0;
     margin-bottom: .5rem; }
   .hm .hm-setup-menu-item:hover {
-    background: linear-gradient(90deg, #dcf6ff, #f2c5fc); }
+    background: linear-gradient(90deg, rgba(176, 39, 82, 0.2), rgba(156, 39, 176, 0.2)); }
   .hm .hm-setup-menu-item.active {
     color: inherit;
     background: #f2c5fc;
     /* Old browsers */
-    background: linear-gradient(90deg, #dcf6ff, #f2c5fc);
-    box-shadow: inset -1px 1px 4px rgba(204, 51, 153, 0.2); }
+    background: linear-gradient(90deg, rgba(176, 39, 82, 0.2), rgba(156, 39, 176, 0.2));
+    box-shadow: inset -1px 1px 4px rgba(156, 39, 176, 0.2); }
   .hm .hm-setup-menu-item.active .hm-setup-menu-item-sub {
     font-weight: bold; }
   .hm .hm-widget-warpper {
@@ -1164,10 +2249,10 @@ background: #ccc;
     left: 0px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: #aaa;
+    background: gray;
     opacity: 0.7; }
   .hm .hm-upcoming-holiday {
-    background: linear-gradient(90deg, rgba(208, 64, 240, 0.3), rgba(71, 183, 222, 0.3));
+    background: linear-gradient(90deg, rgba(176, 39, 82, 0.2), rgba(156, 39, 176, 0.2));
     position: relative; }
   .hm .hm-upcoming-holiday-thumb {
     position: absolute;
@@ -1184,7 +2269,7 @@ background: #ccc;
     margin: 0;
     position: relative;
     text-align: center;
-    background: #eee;
+    background: #eeeeee;
     overflow: hidden;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px; }
@@ -1196,7 +2281,7 @@ background: #ccc;
     position: absolute;
     bottom: 10px;
     right: 10px;
-    color: #fff;
+    color: white;
     text-shadow: 0 0 10px #000; }
   .hm .hm-company-logo-wrapper {
     display: block;
@@ -1206,7 +2291,7 @@ background: #ccc;
     margin: 0;
     position: relative;
     text-align: center;
-    background: #eee;
+    background: #eeeeee;
     border-radius: 4px;
     margin-right: 30px; }
   .hm .hm-edit-logo-icon {
@@ -1241,7 +2326,7 @@ background: #ccc;
   .hm .hm-has-error .hm-input-error-msg {
     display: block; }
   .hm .hm-has-error .form-control {
-    background-image: linear-gradient(to top, #f44336 2px, rgba(244, 67, 54, 0) 2px), linear-gradient(to top, #f44336 1px, rgba(210, 210, 210, 0) 1px); }
+    background-image: linear-gradient(to top, #f44336 2px, white 2px), linear-gradient(to top, #f44336 1px, white 1px); }
   .hm .hm-under-const-dark {
     opacity: .5;
     background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2) 1px, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0.3) 8px);
@@ -1258,7 +2343,7 @@ background: #ccc;
       position: absolute;
       left: 2em;
       content: attr(head-title);
-      color: #999;
+      color: #999999;
       width: 45%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1267,6 +2352,8 @@ background: #ccc;
       display: block;
       width: 50%;
       padding: 0.5em 0.75em 0.5em 50% !important; } }
+  .hm .animate-wrapper {
+    overflow: hidden; }
 
 @-webkit-keyframes fadeInLeft {
   from {
@@ -1287,12 +2374,29 @@ background: #ccc;
     opacity: 1;
     -webkit-transform: none;
     transform: none; } }
-  .hm .animate-wrapper {
-    overflow: hidden; }
   .hm .animate-fade-left {
     opacity: 0;
     -webkit-animation: fadeInLeft .5s ease-in-out 0s forwards;
     animation: fadeInLeft .5s ease-in-out 0s forwards; }
+  .hm .animate-zoomIn {
+    -webkit-animation-name: zoomIn ease 1s;
+    animation: zoomIn ease 1s; }
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  50% {
+    opacity: 1; } }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  50% {
+    opacity: 1; } }
   .hm a.hm-link-white,
   .hm .hm-link-white a,
   .hm a.hm-link-white:hover,
@@ -1408,25 +2512,23 @@ background: #ccc;
   .hm .hm-text-normal {
     font-weight: normal; }
   .hm .hm-text-default {
-    color: #333; }
-  .hm .hm-text-dark-blue {
-    color: #16325c; }
-  .hm .hm-text-gray {
-    color: #5876a3; }
-  .hm .hm-text-weak {
-    color: #706e6b; }
-  .hm .hm-text-blue {
+    color: black; }
+  .hm .hm-text-primary {
+    color: #9c27b0; }
+  .hm .hm-text-secondary {
+    color: #b02752; }
+  .hm .hm-text-cyan {
     color: #00bcd4; }
   .hm .hm-text-orange {
-    color: #f2ac57; }
+    color: #ff9800; }
   .hm .hm-text-red {
-    color: #c23934; }
+    color: #f44336; }
   .hm .hm-text-green {
     color: #4caf50; }
   .hm .hm-text-dull {
-    color: #999; }
+    color: #999999; }
   .hm .hm-text-white {
-    color: #ffffff; }
+    color: white; }
   .hm .hm-text-size-normal {
     font-size: normal; }
   .hm .hm-text-size-inherit {
@@ -1445,16 +2547,18 @@ background: #ccc;
     vertical-align: middle; }
   .hm .hm-bg-dull {
     background: #f7f8f9; }
-  .hm .hm-bg-dark-blue {
-    background: #16325c; }
+  .hm .hm-bg-primary {
+    background: #9c27b0; }
+  .hm .hm-bg-secondary {
+    background: #b02752; }
   .hm .hm-bg-orange {
-    background: #ffb75d; }
+    background: #ff9800; }
   .hm .hm-bg-green {
     background: #4caf50; }
   .hm .hm-bg-red {
-    background: #c23934; }
+    background: #f44336; }
   .hm .hm-bg-white {
-    background: #ffffff; }
+    background: white; }
   .hm .hm-bg-none {
     background: none; }
   .hm .hm-radius-0 {
@@ -1570,13 +2674,13 @@ background: #ccc;
   .hm .hm-min-h-full-vh {
     min-height: 100vh; }
   .hm .hm-line-top {
-    border-top: 1px solid #eee; }
+    border-top: 1px solid #eeeeee; }
   .hm .hm-line-bottom {
-    border-bottom: 1px solid #eee; }
+    border-bottom: 1px solid #eeeeee; }
   .hm .hm-line-left {
-    border-left: 1px solid #eee; }
+    border-left: 1px solid #eeeeee; }
   .hm .hm-line-right {
-    border-right: 1px solid #eee; }
+    border-right: 1px solid #eeeeee; }
   .hm .hm-line-semi-white-top {
     border-top: 1px solid rgba(255, 255, 255, 0.5); }
   .hm .hm-line-semi-white-bottom {
@@ -1594,13 +2698,13 @@ background: #ccc;
   .hm .hm-line-semi-black-right {
     border-right: 1px solid rgba(0, 0, 0, 0.2); }
   .hm .hm-line-dottedtop {
-    border-top: 1px dotted #eee; }
+    border-top: 1px dotted #eeeeee; }
   .hm .hm-line-dottedbottom {
-    border-bottom: 1px dotted #eee; }
+    border-bottom: 1px dotted #eeeeee; }
   .hm .hm-line-dottedleft {
-    border-left: 1px dotted #eee; }
+    border-left: 1px dotted #eeeeee; }
   .hm .hm-line-dottedright {
-    border-right: 1px dotted #eee; }
+    border-right: 1px dotted #eeeeee; }
   .hm .hm-line-semi-black-dotted-top {
     border-top: 1px dotted rgba(0, 0, 0, 0.2); }
   .hm .hm-line-semi-black-dotted-bottom {
@@ -1610,13 +2714,13 @@ background: #ccc;
   .hm .hm-line-semi-black-dotted-right {
     border-right: 1px dotted rgba(0, 0, 0, 0.2); }
   .hm .hm-line-dashedtop {
-    border-top: 1px dashed #eee; }
+    border-top: 1px dashed #eeeeee; }
   .hm .hm-line-dashedbottom {
-    border-bottom: 1px dashed #eee; }
+    border-bottom: 1px dashed #eeeeee; }
   .hm .hm-line-dashedleft {
-    border-left: 1px dashed #eee; }
+    border-left: 1px dashed #eeeeee; }
   .hm .hm-line-dashedright {
-    border-right: 1px dashed #eee; }
+    border-right: 1px dashed #eeeeee; }
   .hm .hm-line-semi-black-dashed-top {
     border-top: 1px dashed rgba(0, 0, 0, 0.2); }
   .hm .hm-line-semi-black-dashed-bottom {
@@ -1626,15 +2730,19 @@ background: #ccc;
   .hm .hm-line-semi-black-dashed-right {
     border-right: 1px dashed rgba(0, 0, 0, 0.2); }
   .hm .hm-line-around {
-    border: 1px solid #eee; }
+    border: 1px solid #eeeeee; }
   .hm .hm-line-dotted-around {
-    border: 1px dotted #eee; }
+    border: 1px dotted #eeeeee; }
   .hm .hm-line-semi-black-dotted-around {
     border: 1px dotted rgba(0, 0, 0, 0.2); }
   .hm .hm-line-dashed-around {
-    border: 1px dashed #eee; }
+    border: 1px dashed #eeeeee; }
   .hm .hm-line-semi-black-dashed-around {
     border: 1px dashed rgba(0, 0, 0, 0.2); }
+  .hm .hm-line-next-bottom + .hm-line-next-bottom {
+    border-bottom: 1px solid #eeeeee; }
+  .hm .hm-line-next-top + .hm-line-next-top {
+    border-top: 1px solid #eeeeee; }
   .hm .hm-line-none {
     border: none; }
   .hm .hm-first-line-top-0 > li:first-child {
@@ -2407,13 +3515,13 @@ background: #ccc;
       .hm .hm-md-text-right {
         text-align: right; }
       .hm .hm-md-line-top {
-        border-top: 1px solid #eee; }
+        border-top: 1px solid #eeeeee; }
       .hm .hm-md-line-bottom {
-        border-bottom: 1px solid #eee; }
+        border-bottom: 1px solid #eeeeee; }
       .hm .hm-md-line-left {
-        border-left: 1px solid #eee; }
+        border-left: 1px solid #eeeeee; }
       .hm .hm-md-line-right {
-        border-right: 1px solid #eee; }
+        border-right: 1px solid #eeeeee; }
       .hm .hm-md-line-top-none {
         border-top: none; }
       .hm .hm-md-line-bottom-none {
@@ -3221,13 +4329,13 @@ background: #ccc;
       .hm .hm-sm-text-right {
         text-align: right; }
       .hm .hm-sm-line-top {
-        border-top: 1px solid #eee; }
+        border-top: 1px solid #eeeeee; }
       .hm .hm-sm-line-bottom {
-        border-bottom: 1px solid #eee; }
+        border-bottom: 1px solid #eeeeee; }
       .hm .hm-sm-line-left {
-        border-left: 1px solid #eee; }
+        border-left: 1px solid #eeeeee; }
       .hm .hm-sm-line-right {
-        border-right: 1px solid #eee; }
+        border-right: 1px solid #eeeeee; }
       .hm .hm-sm-line-top-none {
         border-top: none; }
       .hm .hm-sm-line-bottom-none {

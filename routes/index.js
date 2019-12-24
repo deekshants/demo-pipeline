@@ -13,6 +13,16 @@ router.get('/getRolesTable', utils.getRolesTable);
 router.post('/signupUser', loginController.signup)
 router.get('/logout', loginController.logout);
 router.post('/loginAuth', loginController.authorizeUser);
+
+
+
+router.get('/account-suspended', function(req, res) {
+    res.render('errorPage/page_accountSuspended', {baseUrl: process.env.BASE_URL});
+});
+router.get('/account-deactivated', function(req, res) {
+    res.render('errorPage/page_accountDeactivated', {baseUrl: process.env.BASE_URL});
+});
+
 router.get('/signup', function(req, res) {
     res.render('signups/page_Signup', {baseUrl: process.env.BASE_URL, user: req.session.user});
 });
