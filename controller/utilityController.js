@@ -11,7 +11,6 @@ exports.addNotification = function (notificationJson) {
 
 exports.testApi = function (req, res) {
     console.log('::::::::' + JSON.stringify(req.query));
-    console.log('::::::Test Api ::' + JSON.stringify(req.query));
     res.send(':::::::::' + JSON.stringify(req.query));
 }
 
