@@ -1,0 +1,110 @@
+<script>
+
+    
+    function switchEmployeeRegisterForm(){
+        window.location.href = "/company/signup?domain="+getParameterByName("domain");
+    }
+    
+    function forgetPasswordForm(){
+        window.location.href = "/reset-password?domain="+getParameterByName("domain");
+    }
+
+    function validateDomainName(ele) {
+        showLoader('#siteLoader');
+        var domain = $("input[name=signInDomainName]").val().trim();
+        if(domain != '' ){
+            $.ajax({
+                type: 'POST',
+                url: '/validateDomain',
+                contentType: 'application/json',
+                dataType: "JSON",
+                data: JSON.stringify({"domain":domain}),
+                success: function (response) {
+                    if(response.registered == true){
+                        hideLoader('#siteLoader');
+                        window.location.href = "/company/login?domain="+response.domain;
+                        
+                    }
+                    else{
+                        hideLoader('#siteLoader');
+                        $(ele).closest(".hm-main-view").addClass("hm-has-error");  
+                        $('.input-group').siblings().text(response.data);                   
+                    }
+                },
+                error: function (response) {
+                    hideLoader('#siteLoader');
+                    console.log(response);
+                }
+            });
+        }
+        else{
+            hideLoader('#siteLoader');
+            $(ele).closest(".hm-main-view").addClass("hm-has-error"); 
+            $('.input-group').siblings().text('Enter Registered Domain Name'); 
+        }
+    }
+
+    function login(formId){
+        
+        if($("#email").val().trim() != '' && !checkValidEmail($("#email").val().trim())){
+            $("#email").closest('.bmd-form-group').addClass(' hm-has-error');
+            $("#email").closest('.bmd-form-group').find('.hm-input-error-msg').text('Invalid Email!');
+            return 0;
+        }else{
+            $("#email").closest('.bmd-form-group').removeClass(' hm-has-error');
+            $("#email").closest('.bmd-form-group').find('.hm-input-error-msg').text('Required Field!');
+        }        
+       
+        var loginDetails = createJSONForForm(formId);
+        loginDetails["companyUrl"] = getParameterByName("domain");
+        if($("#remember_me").is(":checked") == true){
+            loginDetails["remember_me"] = true;
+        }
+        else{
+            loginDetails["remember_me"] = false;
+        }
+        if((loginDetails["email"] != '' && loginDetails["email"] != undefined) && (loginDetails["password"] != '' && loginDetails["password"] != undefined)){
+            $.ajax({
+                type: 'POST',
+                url: '/loginUser',
+                contentType: 'application/json',
+                dataType: "JSON",
+                data: JSON.stringify(loginDetails),
+                success: function (response) {
+                    if(response.res.userExist == false || response.res.activated == false){
+                        showToast(
+                            { 
+                            eleWrapper: '#siteToast',
+                            msg: response.res.message,
+                            theme: 'error',
+                            autoClose: true
+                            } 
+                        );
+                    }
+                    else if(response.res.passwordCorrect == false){
+                        showToast(
+                            { 
+                            eleWrapper: '#siteToast',
+                            msg: 'You have entered wrong password. Please enter password correctly.',
+                            theme: 'error',
+                            autoClose: true
+                            } 
+                        );
+                    }
+                    else{
+                        if(response.res.userType == "admin"){
+                            window.location.href = "/org/admin-setup";
+                        }
+                        else{
+                            window.location.href = "/org/employees";
+                        }
+                    }
+                },
+                error: function (response) {
+                    console.log(response);
+                }
+            });
+        }
+    }
+
+</script>
