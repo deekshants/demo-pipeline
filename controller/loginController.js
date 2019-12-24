@@ -46,6 +46,7 @@ exports.signup = function (req, res) {
         })
         .then(users => {
             if (users.length == 0) {
+                console.log('Git Test');
                 createUser();
             } else {
                 res.send('User already exists');
