@@ -87,7 +87,7 @@ function findById(id, fn) {
 
 passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallback: true },
   function (req, email, password, done) {
-    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     console.log("LocalStrategy");

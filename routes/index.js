@@ -33,7 +33,7 @@ router.get('/company/login', loginController.showLoginPage);
 router.get('/company/logout', loginController.logout);
 
 router.get('/signup-step2', function (req, res) {
-    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
     var mystr = mykey.update(req.query.domain, 'hex', 'utf8')
     mystr += mykey.final('utf8');
     res.render('signups/page_SignupStep2', { baseUrl: process.env.BASE_URL, companyUrl: mystr });

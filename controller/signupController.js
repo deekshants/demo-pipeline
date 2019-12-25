@@ -62,7 +62,7 @@ exports.signUp = function (req, res) {
       res.end();
     }
     else {
-      var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
+      var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
       var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
       decryptUrl += mykey.final('utf8');
       console.log("decryptUrl step-->");
