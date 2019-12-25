@@ -9,7 +9,7 @@ exports.checkLogin = function (req, res, next) {
             next();
         }
         else {
-            res.redirect('/company/login');
+            res.redirect('/login');
         }
     }
 }
@@ -50,8 +50,19 @@ exports.developmentErrorHandler = function (err, req, res, next) {
 }
 
 var allowedUrls = [
-  '/company/login',
-  '/loginAuth',
-  '/company/signup',
-  '/signupUser'
+    '/company/login',
+    '/login',
+    '/signup',
+    '/signup-step2',
+    '/validateDomain',
+    '/validateDomainforSignup',
+    '/adminRegisteration',
+    '/loginUser',
+    '/employeeRegisteration',
+    '/resetPassword',
+    '/createNewPassword',
+    '/create-password',
+    '/loginAuth',
+    '/company/signup',
+    '/signupUser'
 ];
