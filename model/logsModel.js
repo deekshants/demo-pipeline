@@ -1,6 +1,5 @@
 var Sequelize = require("sequelize");
 var sequelize = require('../config/sequelizeCon').sequelize;
-var employee = require('./employeeModel');
 var sequelizePaginate = require('sequelize-paginate');
 
 var logs = sequelize.define('Logs', {
