@@ -10,7 +10,7 @@
             <div class="mt-5">
                 <div class="text-center">   
                     <a href="">
-                        <img src="<%= baseUrl %>/img/logo.svg" alt="" height="24">
+                        <img src="<%= baseUrl %>/img/logo.png" alt="" height="24">
                     </a>
                 </div>
             </div>
@@ -27,10 +27,10 @@
                     </div>
                 </div>
 
-                <form class="form" method="" action="">
+                <div>
                     <div class="form-group">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="your_domain_name " required="" maxlength="20">
+                            <input type="text" class="form-control" name="signUpDomainName" id="signUpDomainName" placeholder="your_domain_name " required="" maxlength="20" onclick="hideErrorMessage(this);">
                             <div class="input-group-append">
                                 <span class="input-group-text" >.hrm.com</span>
                             </div>
@@ -46,13 +46,13 @@
 
                             </div>
                             <div class="pl-3">
-                                <a href="/signup-step2" class="btn btn-primary">
+                                <button type="button" onclick="validateDomainforSignup(this);" class="btn btn-primary" id="validateDomainforSignup">
                                     Continue
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
 
             </div>
 
@@ -62,8 +62,14 @@
     </main>
     <footer>
         <% include ../partials/footer %>
+        <% include js/validateDomainJs %>
         <script>
-
+                $('#signUpDomainName').keydown(function(event){
+                    var keyCode = (event.keyCode ? event.keyCode : event.which);
+                    if (keyCode == 13) {
+                        $('#validateDomainforSignup').click();
+                    }
+                });
         </script>
     </footer>
 </body>

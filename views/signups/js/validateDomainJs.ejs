@@ -1,0 +1,46 @@
+<script>
+    function hideErrorMessage(ele){
+        if($(ele).closest(".hm-main-view").hasClass("hm-has-error") == true ){
+            $(ele).closest(".hm-main-view").removeClass("hm-has-error"); 
+            $('.input-group').siblings('.hm-input-error-msg').text(''); 
+        }
+    }
+
+    function validateDomainforSignup(ele){
+        var domain = $("input[name=signUpDomainName]").val().trim();
+        if(domain != ''){
+        checkValidDomain(domain, function (isValid) {
+            if(isValid){
+                $.ajax({
+                    type: 'POST',
+                    url: '/validateDomainforSignup',
+                    contentType: 'application/json',
+                    dataType: "JSON",
+                    data: JSON.stringify({"domain":domain}),
+                    success: function (response) {
+                        if(response.registered == false){
+                            window.location.href = "/signup-step2?domain="+response.domain;
+
+                        }
+                        else{
+                            $(ele).closest(".hm-main-view").addClass("hm-has-error"); 
+                            $('.input-group').siblings('.hm-input-error-msg').text(response.message); 
+                        }                    
+                    },
+                    error: function (response) {
+                        console.log(response);
+                    }
+                });
+            }
+            else{
+                $(ele).closest(".hm-main-view").addClass("hm-has-error"); 
+                $('.input-group').siblings('.hm-input-error-msg').text('Domain Name must contains letters, number and dashes only');
+            }
+        })
+    }
+    else{
+        $(ele).closest(".hm-main-view").addClass("hm-has-error"); 
+        $('.input-group').siblings('.hm-input-error-msg').text('Enter Domain Name');
+    }
+    }
+</script>
