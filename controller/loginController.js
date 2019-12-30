@@ -101,7 +101,7 @@ exports.validateDomain = function (req, res) {
 }
 
 exports.showLoginPage = function (req, res) {
-    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.query.domain, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     registerModel
@@ -133,7 +133,7 @@ exports.login = function (req, res) {
     console.log(req.body);
     console.log(req.user);
     console.log(req.session);
-    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     passport.authenticate('user', function (err, user, info) {

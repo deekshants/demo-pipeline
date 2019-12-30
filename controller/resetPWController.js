@@ -54,7 +54,7 @@ exports.sendResetPasswordMail = (req,res) => {
 exports.showPasswordPage = (req, res) =>{
   console.log("showPasswordPage");
   console.log(req.query.domain);
-  var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
+  var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
   var decryptUrl = mykey.update(req.query.domain, 'hex', 'utf8')
   decryptUrl += mykey.final('utf8');
   res.render('resetPass/page_CreatePass', {baseUrl: process.env.BASE_URL, domain: decryptUrl, encryptedURL: req.query.domain});
