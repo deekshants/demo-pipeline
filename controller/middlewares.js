@@ -50,10 +50,10 @@ exports.developmentErrorHandler = function (err, req, res, next) {
 }
 
 var allowedUrls = [
-    '/company/login',
+    '/company/login*',
     '/login',
     '/signup',
-    '/signup-step2/*',
+    '/signup-step2*',
     '/validateDomain',
     '/validateDomainforSignup',
     '/adminRegisteration',
