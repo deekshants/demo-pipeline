@@ -5,7 +5,7 @@ exports.checkLogin = function (req, res, next) {
         checkAccess(req, res, next);
     }
     else {
-        if (allowedUrls.includes(req.originalUrl)) {
+        if (allowedUrls.includes(req.originalUrl.split('?')[0])) {
             next();
         }
         else {
@@ -50,10 +50,10 @@ exports.developmentErrorHandler = function (err, req, res, next) {
 }
 
 var allowedUrls = [
-    '/company/login*',
+    '/company/login',
     '/login',
     '/signup',
-    '/signup-step2*',
+    '/signup-step2',
     '/validateDomain',
     '/validateDomainforSignup',
     '/adminRegisteration',

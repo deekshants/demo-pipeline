@@ -17,12 +17,12 @@ sequelizePaginate.paginate(roles);
 sequelize.sync();
 module.exports = roles;
 
-roles.create({
+/* roles.create({
     roleName: 'admin',
     canView: ['widgets', 'wid1', 'wid2', 'wid3', 'admin', 'companySettings', 'leaveAndHolidays', 'approvalNotification', 'employeeSettings', 'jobTitles', 'departments', 'employeeDefaults', 'employeeNumber', 'documents', 'noticePeriods', 'onboardingAndExit', 'attendance', 'workShifts', 'weekOffs', 'timeTrackingPolicies', 'workFromHome', 'otPolicies', 'ipNetworks', 'rolesAndPermissions', 'myTeam', 'organization', 'dashboard', 'employees', 'orgStructure', 'exitDetails', 'documents', 'engage', 'assets', 'helpdesk', 'projects'],
     canViewAndEdit: ['admin' ,'attendance', 'org']
 });
-/* roles.create({
+roles.create({
     roleName: 'developer',
     canView: ['widgets', 'wid1', 'wid2'],
     canViewAndEdit: [''],
