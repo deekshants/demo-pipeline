@@ -20,7 +20,7 @@ exports.sendResetPasswordMail = (req,res) => {
     employeeRegister
     .findAll({  
         where: {
-            companyId: req.cookies.companyId,
+          CompanyDetailId: req.cookies.companyId,
             email: req.body.email
         },
         raw:true
@@ -79,7 +79,7 @@ exports.createNewPassword = (req, res) =>{
         .update(
           {password : encrypted},
           {returning : true,
-            where : {companyId: req.cookies.companyId}}
+            where : {CompanyDetailId: req.cookies.companyId}}
         )
         .then((users) => {
           console.log("users createNew Password");

@@ -11,7 +11,6 @@ var logs = sequelize.define('Logs', {
     isNew: Sequelize.BOOLEAN
 });
 
-employee.hasMany(logs, { as: 'NotificationLogs', constraints: false, foreignKey: { allowNull: false } });
 sequelizePaginate.paginate(logs);
 
 sequelize.sync();

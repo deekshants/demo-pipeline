@@ -1,12 +1,10 @@
 var Sequelize = require("sequelize");
 var sequelize = require('../config/sequelizeCon').sequelize;
-var roles = require('../model/roleModel');
+var logs = require('../model/logsModel');
 var sequelizePaginate = require('sequelize-paginate');
 var attendance = require('./attendanceModel');
 
 var employee = sequelize.define("EmployeeDetails", {
-  companyId: Sequelize.INTEGER, 
-  managerId: Sequelize.INTEGER,
   firstName: Sequelize.STRING,
   lastName: Sequelize.STRING,
   email: Sequelize.STRING,
@@ -20,9 +18,7 @@ var employee = sequelize.define("EmployeeDetails", {
 });
 
 // ------- Associations ----------
-
-employee.belongsTo(roles, {as: 'Role', foreignKey: {allowNull: false} });
-roles.hasMany(employee, {as: 'Employees'});
+employee.hasMany(logs, { as: 'NotificationLogs', constraints: false, foreignKey: { allowNull: false } });
 employee.belongsTo(employee, {as: 'ReportingManager', allowNull: true});
 employee.hasMany(attendance, {as: 'Attendance'});
 sequelize.sync();

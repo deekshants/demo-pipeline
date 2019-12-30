@@ -118,11 +118,11 @@ exports.showLoginPage = function (req, res) {
                         { where: { id: req.query.id } }
                     )
                     .then((users) => {
-                        res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company[0].company, logo: '' });
+                        res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company[0].company, logo: '' , user: req.session.user});
                     })
             }
             else {
-                res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company[0].company, logo: '' });
+                res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company[0].company, logo: '', user: req.session.user });
             }
         })
 

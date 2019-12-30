@@ -93,12 +93,12 @@ exports.signUp = function (req, res) {
               if (user.length != 0) {
                 return employeeRegister
                   .create({
-                    companyId: user.dataValues.id,
+                    CompanyDetailId: user.dataValues.id,
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     email: signupEmail,
                     password: encrypted,
-                    userType: "admin",
+                    RoleId: 1,
                     activated: false
                   }
                     ,
@@ -122,7 +122,7 @@ exports.signUp = function (req, res) {
                         console.log(email);
                         emailTemplatehtml = email.html;
                         if (email.id != null) {
-                          var link = 'http://localhost:8080/company/login?domain='+req.body.companyUrl+'&id='+dataObj.id;
+                          var link = 'http://hrm-merged.herokuapp.com/company/login?domain='+req.body.companyUrl+'&id='+dataObj.id;
                           emailTemplatehtml = emailTemplatehtml.split('[userName]').join(dataObj.firstName+' '+dataObj.lastName);
                           emailTemplatehtml = emailTemplatehtml.split('[companyUrl]').join(decryptUrl);
                           emailTemplatehtml = emailTemplatehtml.split('[link]').join(link);
@@ -194,7 +194,7 @@ exports.signupEmployee = function (req, res) {
         .findAll({
           where: {
             email: req.body.signupEmail,
-            companyId: req.cookies.companyId
+            CompanyDetailId: req.cookies.companyId
           },
           raw: true
         })
@@ -207,7 +207,7 @@ exports.signupEmployee = function (req, res) {
             try {
               employeeRegister
                 .create({
-                  companyId: req.cookies.companyId,
+                  CompanyDetailId: req.cookies.companyId,
                   email: req.body.signupEmail,
                   password: encrypted,
                   userType: "employee",

@@ -53,7 +53,7 @@ var allowedUrls = [
     '/company/login',
     '/login',
     '/signup',
-    '/signup-step2',
+    '/signup-step2/*',
     '/validateDomain',
     '/validateDomainforSignup',
     '/adminRegisteration',

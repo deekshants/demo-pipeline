@@ -61,14 +61,7 @@ router.get('/company/signup', function (req, res) {
 router.get('/login', function (req, res) {
     res.render('logins/page_Login', { baseUrl: process.env.BASE_URL, user: req.session.user });
 });
-router.get('/company/login', function (req, res) {
-    if (!req.session.loggedIn) {
-        res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, user: req.session.user });
-    }
-    else {
-        res.redirect('/');
-    }
-});
+router.get('/company/login', loginController.showLoginPage);
 router.get('/reset-password', function (req, res) {
     res.render('resetPass/page_ResetPass', { baseUrl: process.env.BASE_URL, user: req.session.user });
 });
