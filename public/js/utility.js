@@ -577,3 +577,118 @@ path.transition()
   };
 });
 }
+
+// ================
+function getParameterByName(name) {
+    var url = window.location;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function checkValidDomain(domain,callback){
+    var format = /^[a-zA-Z0-9][a-zA-Z0-9-.]{1,61}[a-zA-Z0-9]$/;
+    if(format.test(domain)){
+        return callback(true);
+    } else {
+        return callback(false);
+    }
+}
+
+function checkValidEmail(email){
+    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+    if(emailReg.test(email)){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function hideErrorMessage(ele){
+    if($(ele).closest(".hm-main-view").hasClass("hm-has-error") == true ){
+        $(ele).closest(".hm-main-view").removeClass("hm-has-error"); 
+        $('.input-group').siblings('.hm-input-error-msg').text(''); 
+    }
+}
+
+function createJSONForForm(formId) {
+    var formData = {};
+    $(formId + " [getData]").each(function () {
+        var eleType = $(this).prop('nodeName');
+        var fieldName = $(this).attr('id');
+        if(eleType == "INPUT" && $('#'+fieldName).val().trim() == ''){
+            $("#"+fieldName).closest('.bmd-form-group').addClass(' hm-has-error');
+            $("#"+fieldName).closest('.bmd-form-group').find('.hm-input-error-msg').text('Required Field!');
+            return false;
+        }
+        else{ 
+            formData[fieldName] = $('#'+fieldName).val().trim();         
+            $("#"+fieldName).closest('.bmd-form-group').removeClass(' hm-has-error');
+        }
+    });
+    return formData;
+}
+
+function resetForm(formId){
+        $(formId + " [reset]").each(function () {
+            var eleType = $(this).prop('nodeName');
+            var fieldName = $(this).attr('id');
+            if(eleType == "INPUT" && $('#'+fieldName).val().trim() == ''){
+                $("#"+fieldName).closest('.bmd-form-group').addClass(' hm-has-error');
+                $("#"+fieldName).closest('.bmd-form-group').find('.hm-input-error-msg').text('Required Field!');
+                return false;
+            }
+            else{ 
+                formData[fieldName] = $('#'+fieldName).val().trim();         
+                $("#"+fieldName).closest('.bmd-form-group').removeClass(' hm-has-error');
+            }
+        });
+}
+
+function startTimer(){
+    console.log('Time In');
+    $.ajax({
+        type: 'GET',
+        url: '/getTimeInfo',
+        contentType: 'application/json',
+        dataType: "JSON",
+        success: function (response) {
+            if(response != undefined && response.currentTime != null){
+                $('#timeId').html('Last Time In : '+response.currentTime);
+                //$("#timeInId").attr("disabled",true);
+                //$("#timeOutId").attr("disabled",false);
+            }   
+        },
+        error: function (response) {
+            hideLoader('#siteLoader');
+            console.log(response);
+        }
+    });        
+}
+
+function stopTimer(){
+    $.ajax({
+        type: 'GET',
+        url: '/getTimeOutInfo',
+        contentType: 'application/json',
+        dataType: "JSON",
+        success: function (response) {
+            console.log(response);
+            if(response != undefined && response.currentTime != null){
+                $('#timeId').html('Last Time Out : '+response.currentTime);
+                //$("#timeInId").attr("disabled",false);
+                //$("#timeOutId").attr("disabled",true);
+            }            
+        },
+        error: function (response) {
+            hideLoader('#siteLoader');
+            console.log(response);
+        }
+    });   
+}
+
+// =================
