@@ -11,7 +11,8 @@ var logs = require('./model/logsModel');
 var routes = require('./routes/index.js');
 var middleware = require('./controller/middlewares')
 var app = express();
-
+var passport = require('passport')
+require('./connection/passport')
 // view engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +27,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }))
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.authenticate('remember-me'));
 //custom middlewares
 
 app.use('/', middleware.checkLogin);

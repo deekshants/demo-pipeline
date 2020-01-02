@@ -69,6 +69,7 @@ var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt');
 var crypto = require('crypto');
 var passport = require('passport');
+var responseHandler = require('./responseHandler');
 exports.validateDomain = function (req, res) {
     var companyUrl = req.body.domain + '.hrm.com';
     registerModel
@@ -101,7 +102,7 @@ exports.validateDomain = function (req, res) {
 }
 
 exports.showLoginPage = function (req, res) {
-    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.query.domain, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     registerModel
@@ -133,9 +134,10 @@ exports.login = function (req, res) {
     console.log(req.body);
     console.log(req.user);
     console.log(req.session);
-    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
+    console.log('decURL::::'+decryptUrl);
     passport.authenticate('user', function (err, user, info) {
         console.log("step1-->");
         console.log(err);
@@ -185,11 +187,13 @@ exports.login = function (req, res) {
                         }
                     } else {
                         console.debug("success step3--->" + info);
+                        responseHandler.sendResponse(res, info);
                     }
                 });
             }
             else {
                 console.log("step4 -->"+info);
+                responseHandler.sendResponse(res, info);
             }
         }
     })(req, res);

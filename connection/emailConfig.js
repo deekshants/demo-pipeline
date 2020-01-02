@@ -6,11 +6,12 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'testmailforemail@tutanota.com',
-        pass: 'deekshant@123'
+        user: 'deeksharma02@gmail.com',
+        pass: 'deekshant'
     }
   });
-
+//   testmailforemail@tutanota.com
+//   deekshant@123
 exports.sendMail = (req, res, next) => {
     return transporter.sendMail(req, function(error, info){
         if(error){

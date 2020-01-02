@@ -62,7 +62,7 @@ exports.signUp = function (req, res) {
       res.end();
     }
     else {
-      var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
+      var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
       var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
       decryptUrl += mykey.final('utf8');
       console.log("decryptUrl step-->");
@@ -106,7 +106,6 @@ exports.signUp = function (req, res) {
               }
 
             }).then(function (result) {         
-              t.commit();     
               const dataObj = result.get({ plain: true })
               console.log('dataObj');
               console.log(dataObj);
@@ -122,7 +121,7 @@ exports.signUp = function (req, res) {
                         console.log(email);
                         emailTemplatehtml = email.html;
                         if (email.id != null) {
-                          var link = 'http://hrm-merged.herokuapp.com/company/login?domain='+req.body.companyUrl+'&id='+dataObj.id;
+                          var link = 'http://localhost:3000/company/login?domain='+req.body.companyUrl+'&id='+dataObj.id;
                           emailTemplatehtml = emailTemplatehtml.split('[userName]').join(dataObj.firstName+' '+dataObj.lastName);
                           emailTemplatehtml = emailTemplatehtml.split('[companyUrl]').join(decryptUrl);
                           emailTemplatehtml = emailTemplatehtml.split('[link]').join(link);

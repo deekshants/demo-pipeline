@@ -3,6 +3,7 @@ var sequelize = require("../config/sequelizeCon").sequelize;
 const crypto = require('crypto');
 var companyModel = require("../model/companyModel");
 var employeeModel = require("../model/employeeModel");
+var roleModel = require('../model/roleModel');
 var attendanceDetail = require("../model/attendanceModel");
 var bcrypt = require('bcrypt');
 const { Strategy: LocalStrategy } = require('passport-local');
@@ -38,7 +39,7 @@ function findById(id, fn) {
       },
       raw: true
     }).then((employee) => {
-      sequelize.query(
+      /*sequelize.query(
         'Select "id", "timeIn", "timeOut" FROM "AttendanceDetails" where "userId" = ' + id + ' order by "createdAt" desc limit 1;',
         { raw: false }
       ).then((displayRecord) => {
@@ -56,7 +57,7 @@ function findById(id, fn) {
             employee[0].timeOut = '';
           }
         }
-      })
+      })*/
 
       if (employee[0].id == undefined) {
         fn(true, null);
@@ -73,7 +74,7 @@ function findById(id, fn) {
 
 passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallback: true },
   function (req, email, password, done) {
-    var mykey = crypto.createDecipheriv('aes-128-cbc', 'encryptUrl');
+    var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     companyModel.
@@ -89,8 +90,7 @@ passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallba
             where: {
               email: email.toLowerCase(),
               CompanyDetailId: company[0].id
-            },
-            raw: true
+            }
           }).then((user) => {
             if (user.length != 0) {
               if (user[0].activated == false) {
@@ -101,13 +101,15 @@ passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallba
                 return done(null, user, info);
               }
               else {
+                
                 bcrypt.compare(password, user[0].password, function (err, same) {
                   if (same) {
-                    req.session.loggedin = true;
+                    req.session.loggedIn = true;
                     req.session.domainName = domainName;
-
+                    
                     user[0].getRole()
                     .then((role) => {
+                      console.log(role);
                       req.session.user = {
                         email: email.toLowerCase(),
                         userId: user[0].id,
@@ -115,11 +117,14 @@ passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallba
                         firstName: user[0].firstName,
                         lastName: user[0].lastName
                       }
+                      console.log(':::::::::');
+                      console.log(req.session);
+                      var info = {};
+                      info.userType = user[0].role;
+                      info.passwordCorrect = true;
+                      return done(null, user, info);
+                    
                     })
-                    var info = {};
-                    info.userType = user[0].role;
-                    info.passwordCorrect = true;
-                    return done(null, user, info);
                   }
                   else {
                     var info = {};

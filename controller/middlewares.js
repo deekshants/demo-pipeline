@@ -14,6 +14,10 @@ exports.checkLogin = function (req, res, next) {
     }
 }
 function checkAccess(req, res, next) {
+    console.log('SESSION::::');
+    
+    console.log(req.session);
+    
     if (req.session.user.role.cannotAccess.includes(req.originalUrl)) {
         res.send('Restricted BROOOOOOOOOOOOOOOOOOOOOOOO');
     }

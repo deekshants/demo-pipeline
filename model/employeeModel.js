@@ -24,7 +24,8 @@ employee.hasMany(attendance, {as: 'Attendance'});
 sequelize.sync();
 
 sequelizePaginate.paginate(employee);
-
+console.log('EMPLOYEE::::');
+console.log(employee);
 module.exports = employee;
 
 

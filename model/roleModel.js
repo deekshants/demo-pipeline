@@ -15,6 +15,9 @@ roles.hasMany(employee, {as: 'Employees'});
 employee.belongsTo(roles, {as: 'Role', foreignKey: {allowNull: false} });
 sequelizePaginate.paginate(roles);
 sequelize.sync();
+console.log('ROLES::::');
+console.log(roles);
+
 module.exports = roles;
 
 /* roles.create({
