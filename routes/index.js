@@ -17,6 +17,7 @@ router.get('/getNotifications', utils.getNotifications)
 router.post('/signupUser', loginController.signup)
 router.get('/logout', loginController.logout);
 router.post('/loginAuth', loginController.authorizeUser);
+router.post('/resetPassword',resetPWController.sendResetPasswordMail);
 // ============
 router.post('/validateDomain', loginController.validateDomain);
 router.post('/validateDomainforSignup', signupController.validateDomainforSignup);

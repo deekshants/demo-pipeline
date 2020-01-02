@@ -27,6 +27,13 @@ exports.getNotifications = function (req, res) {
     })
 }
 
+exports.noCache = function (req, res, next) {
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+    res.header('Expires', '-1');
+    res.header('Pragma', 'no-cache');
+    next()
+}
+
 //  --------- TO BE PLACED IN ROLES CONTROLLER LATER -----------
 /* exports.getRolesTable = async function (req, res) {
     var data = req.query;

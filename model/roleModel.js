@@ -20,6 +20,12 @@ console.log(roles);
 
 module.exports = roles;
 
+roles.create({
+    roleName: 'developer',
+    canView: ['widgets', 'wid1', 'wid2'],
+    canViewAndEdit: [''],
+});
+
 /* roles.create({
     roleName: 'admin',
     canView: ['widgets', 'wid1', 'wid2', 'wid3', 'admin', 'companySettings', 'leaveAndHolidays', 'approvalNotification', 'employeeSettings', 'jobTitles', 'departments', 'employeeDefaults', 'employeeNumber', 'documents', 'noticePeriods', 'onboardingAndExit', 'attendance', 'workShifts', 'weekOffs', 'timeTrackingPolicies', 'workFromHome', 'otPolicies', 'ipNetworks', 'rolesAndPermissions', 'myTeam', 'organization', 'dashboard', 'employees', 'orgStructure', 'exitDetails', 'documents', 'engage', 'assets', 'helpdesk', 'projects'],

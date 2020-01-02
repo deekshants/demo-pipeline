@@ -1,9 +1,10 @@
 var companyModel = require("../model/companyModel");
 var employeeRegister = require("../model/employeeModel");
+var emailTemplate = require("../model/emailTemplateModel");
+var email = require('../connection/emailConfig');
 const passport = require('passport');
 var bcrypt = require('bcrypt');
 var ValidatePassword = require('validate-password');
-var email =require('../connection/resetPWJs');
 var crypto = require('crypto');
 
 var options = {
@@ -18,29 +19,47 @@ var validator = new ValidatePassword(options);
 
 exports.sendResetPasswordMail = (req,res) => {
     employeeRegister
-    .findAll({  
+    .findOne({  
         where: {
           CompanyDetailId: req.cookies.companyId,
-            email: req.body.email
+          email: req.body.email
         },
         raw:true
-      }).then((company) => {
+      }).then((employee) => {
         console.log('sendResetPasswordMail');
-        console.log(company);
-            if(company.length == 0){
+        console.log(employee);
+            if(!employee){
                 res.send({"emailExist":false,"message":"Please Enter Valid Email"});                
             }
             else{
-                if(company[0].activated){
-                    var token= "http://localhost:8080/create-password?domain="+req.body.domain+"&id="+company[0].id;
-                    var name= (company[0].lastName != null) ? company[0].firstName+' '+company[0].lastName : "";
-                    email.sendPasswordReset(req.body.email, name, token,function(error, info) {
+                if(employee.activated){
+                  emailTemplate
+                  .findOne({
+                    where: {
+                      id: 3
+                    },
+                    raw:true
+                  }).then((emailTemplate) =>{
+                    var token= process.env.BASE_URL+"/create-password?domain="+req.body.domain+"&id="+employee.id;
+                    var name= (employee.lastName != null) ? employee.firstName+' '+employee.lastName : "";
+                    var emailTemplatehtml = emailTemplate.html;
+                    emailTemplatehtml = emailTemplatehtml.split('[name]').join(name);
+                    emailTemplatehtml = emailTemplatehtml.split('[token]').join(token);
+                    const mailOptions = {
+                      from: "demologin@athenalogics.com",
+                      to: req.body.email,
+                      subject: 'Reset Password',
+                      html: emailTemplatehtml
+                    };
+                    req.mailoptions = mailOptions;
+                    return email.sendMail(mailOptions, res, function(error, info) {
                         if (error) {                
                           res.send({"emailExist":true, "activated":true, "message":"There is some issue. Please Contact Administrator"});
                         } else {
                           res.send({"emailExist":true, "activated":true, "message":"Email Exist"});
                         }
                       });
+                  })
                 }
                 else{
                   res.send({"emailExist":true, "activated":false, "message":"Your Account is not activated. Please check mail and activate account"});

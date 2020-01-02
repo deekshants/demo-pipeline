@@ -25,18 +25,18 @@ var validator = new ValidatePassword(options);
 exports.validateDomainforSignup = (req, res) => {
   var companyUrl = req.body.domain + '.hrm.com';
   companyRegister
-    .findAll({
+    .findOne({
       where: {
         companyURL: companyUrl
       },
       raw: true
     })
     .then(company => {
-      if (company.length == 0) {
+      if (!company) {
         var mykey = crypto.createCipher('aes-128-cbc', 'encryptUrl');
-        var encrptUrl = mykey.update(companyUrl, 'utf8', 'hex')
-        encrptUrl += mykey.final('hex');
-        res.send({ "domain": encrptUrl, "registered": false, "message": "Domain does not Exist!" });
+        var encryptUrl = mykey.update(companyUrl, 'utf8', 'hex')
+        encryptUrl += mykey.final('hex');
+        res.send({ "domain": encryptUrl, "registered": false, "message": "Domain does not Exist!" });
       }
       else {
         res.send({ "domain": companyUrl, "registered": true, "message": "Domain already Exist!" });
@@ -68,89 +68,125 @@ exports.signUp = function (req, res) {
       console.log("decryptUrl step-->");
       console.log(decryptUrl);
       bcrypt.hash(req.body.password, 12, function (err, encrypted) {
-        return sequelize.transaction(function (t) {
-          return companyRegister
-            .findAll({
+        return sequelize.transaction().then(function (t) {
+          companyRegister
+            .findOne({
               where: {
                 companyURL: decryptUrl
               },
               raw: true
-            }).then(function (company) {
+            }, { transaction: t }).then(function (company) {
               console.log("signup step2-->");
               console.log(company);
-              console.log(company.length);
-              if (company.length != 0) {
+              if (company) {
                 res.send({ "error": true, "message": "Domain already Registered!", "passwordError": false, "alreadyExist": true });
-              }
-              else {
-                return companyRegister
-                  .create({
-                    company: req.body.companyName,
-                    companyURL: decryptUrl
-                  }, { transaction: t });
-              }
-            }).then(function (user) {
-              if (user.length != 0) {
-                return employeeRegister
-                  .create({
-                    CompanyDetailId: user.dataValues.id,
-                    firstName: req.body.firstName,
-                    lastName: req.body.lastName,
-                    email: signupEmail,
-                    password: encrypted,
-                    RoleId: 1,
-                    activated: false
-                  }
-                    ,
-                    { transaction: t });
-              }
-
-            }).then(function (result) {         
-              const dataObj = result.get({ plain: true })
-              console.log('dataObj');
-              console.log(dataObj);
-              var emailTemplatehtml = '';
-              return emailTemplate
-                      .findOne({
-                          where:{
-                              id : 1
+              } else {
+                return companyRegister.create({
+                  company: req.body.companyName,
+                  companyURL: decryptUrl
+                }, { transaction: t })
+                  .then(function (insertedCompanyData) {
+                    console.log(insertedCompanyData);
+                    employeeRegister.create({
+                      CompanyDetailId: insertedCompanyData.dataValues.id,
+                      firstName: req.body.firstName,
+                      lastName: req.body.lastName,
+                      email: signupEmail,
+                      password: encrypted,
+                      RoleId: 1,
+                      activated: false,
+                      img: "https://raw.githubusercontent.com/bumbeishvili/Assets/master/Projects/D3/Organization%20Chart/general.jpg"
+                    },
+                      { transaction: t })
+                      .then(function (result) {
+                        const dataObj = result.get({ plain: true })
+                        console.log('dataObj');
+                        console.log(dataObj);
+                        var emailTemplatehtml = '';
+                        return emailTemplate.findOne({
+                          where: {
+                            id: 1
                           },
                           raw: true
-                      }).then(function (email) {
-                        console.log('email --->');
-                        console.log(email);
-                        emailTemplatehtml = email.html;
-                        if (email.id != null) {
-                          var link = 'http://localhost:3000/company/login?domain='+req.body.companyUrl+'&id='+dataObj.id;
-                          emailTemplatehtml = emailTemplatehtml.split('[userName]').join(dataObj.firstName+' '+dataObj.lastName);
-                          emailTemplatehtml = emailTemplatehtml.split('[companyUrl]').join(decryptUrl);
-                          emailTemplatehtml = emailTemplatehtml.split('[link]').join(link);
-                          console.log('emailTemplatehtml step1 --->');
-                          console.log(emailTemplatehtml);
-                          const mailOptions = {
-                            from: "demologin@athenalogics.com",
-                            to: dataObj.email,
-                            subject: 'welcome to HRM',
-                            html: emailTemplatehtml
-                          };
-                          req.mailoptions = mailOptions;
-                          sendEmail.sendMail(mailOptions, res, function (error, info) {
-                            if (error) {
-                              console.log('error in sending email');
-                              console.log(error);
+                        },
+                          { transaction: t }).then(function (email) {
+                            console.log('email --->');
+                            console.log(email);
+                            emailTemplatehtml = email.html;
+                            if (email.id != null) {
+                              var link = process.env.BASE_URL + '/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id;
+                              emailTemplatehtml = emailTemplatehtml.split('[userName]').join(dataObj.firstName + ' ' + dataObj.lastName);
+                              emailTemplatehtml = emailTemplatehtml.split('[companyUrl]').join(decryptUrl);
+                              emailTemplatehtml = emailTemplatehtml.split('[link]').join(link);
+                              console.log('emailTemplatehtml step1 --->');
+                              console.log(emailTemplatehtml);
+                              const mailOptions = {
+                                from: "demologin@athenalogics.com",
+                                to: dataObj.email,
+                                subject: 'welcome to HRM',
+                                html: emailTemplatehtml
+                              };
+                              req.mailoptions = mailOptions;
+                              return sendEmail.sendMail(mailOptions, res, function (error, info) {
+                                if (error) {
+                                  console.log('error in sending email');
+                                  console.log(error);
+                                  //return t.rollBack();
+                                  return res.json({
+                                    error: true,
+                                    message: "There are Some Issues, Please Contact Admininstrator",
+                                    rollBackError: true,
+                                    passwordError: false
+                                  })
+                                } else {
+                                  console.log('Message sent: ' + info.response);
+                                  t.commit();
+                                  return res.json({
+                                    error: false,
+                                    rollBackError: false
+                                  })
+                                }
+                              });
                             } else {
-                              console.log('Message sent: ' + info.response);
+                              console.log('email id is null');
+                              //return t.rollBack();
+                              return res.json({
+                                error: true,
+                                message: "There are Some Issues, Please Contact Admininstrator",
+                                rollBackError: true,
+                                passwordError: false
+                              })
                             }
+                          }).catch(function (err) {
+                            //return t.rollback();
+                            return res.json({
+                              error: true,
+                              message: "There are Some Issues, Please Contact Admininstrator",
+                              rollBackError: true,
+                              passwordError: false
+                            })
                           });
-                          return res.json({
-                            error: false,
-                            rollBackError: false
-                          })
-                        }
-                      })
+                      }).catch(function (err) {
+                        //return t.rollback();
+                        return res.json({
+                          error: true,
+                          message: "There are Some Issues, Please Contact Admininstrator",
+                          rollBackError: true,
+                          passwordError: false
+                        })
+                      });
+                  }).catch(function (err) {
+                    //return t.rollback();
+                    return res.json({
+                      error: true,
+                      message: "There are Some Issues, Please Contact Admininstrator",
+                      rollBackError: true,
+                      passwordError: false
+                    })
+                  });
+              }
             }).catch(function (err) {
-              console.log(err);
-              t.rollback();
+              //return t.rollback();
               return res.json({
                 error: true,
                 message: "There are Some Issues, Please Contact Admininstrator",
@@ -159,7 +195,7 @@ exports.signUp = function (req, res) {
               })
             });
 
-        })
+        });
       })
     }
   })
@@ -189,72 +225,91 @@ exports.signupEmployee = function (req, res) {
     bcrypt.hash(req.body.signupPassword, 12, function (err, encrypted) {
       console.log("signupEmployee step2--->");
       console.log(encrypted);
-      employeeRegister
-        .findAll({
-          where: {
-            email: req.body.signupEmail,
-            CompanyDetailId: req.cookies.companyId
-          },
-          raw: true
-        })
-        .then(company => {
-          console.log("signupEmployee step3--->");
-          console.log(company);
-          console.log(company.length);
-          console.log(req.cookies.companyId);
-          if (company.length == 0) {
-            try {
+      return sequelize.transaction().then(function (t) {
+        employeeRegister
+          .findOne({
+            where: {
+              email: req.body.signupEmail,
+              CompanyDetailId: req.cookies.companyId
+            },
+            raw: true
+          }, { transaction: t }).then(function (employee) {
+            console.log("signupEmployee step3--->");
+            console.log(employee);
+            console.log(req.cookies.companyId);
+            if (!employee) {
               employeeRegister
                 .create({
                   CompanyDetailId: req.cookies.companyId,
                   email: req.body.signupEmail,
                   password: encrypted,
-                  userType: "employee",
-                  activated: false
-                }).then((result) => {
+                  RoleId: 2,
+                  activated: false,
+                  img: "https://raw.githubusercontent.com/bumbeishvili/Assets/master/Projects/D3/Organization%20Chart/general.jpg"
+                }, { transaction: t }).then((result) => {
                   console.log("signupEmployee step4--->");
                   console.log(result);
-                  const dataObj = result.get({ plain: true })
-                  var html = '<html>' +
-                    '<body>' +
-                    '<div>' +
-                    '<p>Hi,</br>' +
-                    'Thank You! For Signup HRM.</br></br>' +
-                    '<b>Please Click on link to activate account.</b></br></br>' +
-                    '<a href="http://localhost:8080/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id + '">http://localhost:8080/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id + '</a>' +
-                    '</br></br>' +
-                    'Thanks' +
-                    '</div>' +
-                    '</body>' +
-                    '</html>';
-                  const mailOptions = {
-                    from: "demologin@athenalogics.com",
-                    to: dataObj.email,
-                    subject: 'welcome to HRM',
-                    html: html
-                  };
-                  req.mailoptions = mailOptions;
-                  email.sendMail(mailOptions, res, function(error, info) {
-                    if (error) {
-                      console.log('error in sending email');
-                      console.log(error);
-                      next(error, null);
+                  var adminEmail;
+                  employeeRegister.findOne({
+                    where: {
+                      CompanyDetailId: result.dataValues.CompanyDetailId,
+                      RoleId: 1
+                    },
+                    raw: true
+                  }, { transaction: t }).then((admin) => {
+                    if (admin) {
+                      adminEmail = admin.email
+                      const dataObj = result.get({ plain: true })
+                      var html = '<html>' +
+                        '<body>' +
+                        '<div>' +
+                        '<p>Hi,</br>' +
+                        'Thank You! For Signup HRM.</br></br>' +
+                        '<b>Please Click on link to activate account.</b></br></br>' +
+                        '<a href="' + process.env.BASE_URL + '/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id + '">' + process.env.BASE_URL + '/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id + '</a>' +
+                        '</br></br>' +
+                        'Thanks' +
+                        '</div>' +
+                        '</body>' +
+                        '</html>';
+                      const mailOptions = {
+                        from: "demologin@athenalogics.com",
+                        to: adminEmail,
+                        subject: 'welcome to HRM',
+                        html: html
+                      };
+                      req.mailoptions = mailOptions;
+                      sendEmail.sendMail(mailOptions, res, function (error, info) {
+                        if (error) {
+                          console.log('error in sending email');
+                          console.log(error);
+                          res.send({ "error": true, "emailExist": false, "rollBackError": true, "message": "There are Some Issues, Please Contact Admininstrator." });
+                        } else {
+                          console.log('Message sent: ' + info.response);
+                          t.commit();
+                          res.send({ "error": false, "emailExist": false, "message": "", "company": req.cookies.company });
+                        }
+                      });
                     } else {
-                      console.log('Message sent: ' + info.response);
-                      res.send({"error":false, "emailExist":false, "message":"", "company": req.cookies.company});
+                      res.send({ "error": true, "emailExist": false, "rollBackError": false, "message": "There are Some Issues, Please Contact Admininstrator." });
                     }
-                  });    
+                  })
+                    .catch(function (err) {
+                      res.send({ "error": true, "emailExist": false, "rollBackError": true, "message": "There are Some Issues, Please Contact Admininstrator." });
+                    })
                 })
+                .catch(function (err) {
+                  res.send({ "error": true, "emailExist": false, "rollBackError": true, "message": "There are Some Issues, Please Contact Admininstrator." });
+                });
             }
-            catch (exp) {
-              console.log("exception in Login");
-              console.log(exp);
+            else {
+              res.send({ "error": true, "emailExist": true, "rollBackError": false, "message": "Email already Registered." });
             }
-          }
-          else {
-            res.send({ "error": true, "emailExist": true, "message": "Email already Registered." });
-          }
-        });
+          })
+          .catch(function (err) {
+            res.send({ "error": true, "emailExist": false, "rollBackError": true, "message": "There are Some Issues, Please Contact Admininstrator." });
+          });
+      });
     })
   }
 

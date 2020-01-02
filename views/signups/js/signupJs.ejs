@@ -29,10 +29,10 @@
             var companyDetail = createJSONForForm(formId);
             companyDetail.companyUrl = getParameterByName("domain");
 
-            if(companyDetail[password] == '' || companyDetail[confirmPassword] == ''){
+            if(companyDetail.password == '' || companyDetail.confirmPassword == ''){
                 return 0;
             }
-            if(companyDetail[password] == companyDetail[confirmPassword]){
+            if(companyDetail.password == companyDetail.confirmPassword){
                 $.ajax({
                 type: 'POST',
                 url: '/adminRegisteration',

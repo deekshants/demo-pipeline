@@ -73,25 +73,25 @@ var responseHandler = require('./responseHandler');
 exports.validateDomain = function (req, res) {
     var companyUrl = req.body.domain + '.hrm.com';
     registerModel
-        .findAll({
+        .findOne({
             where: {
                 companyURL: companyUrl
             },
             raw: true
         }).then((company) => {
             console.log('validateDomain');
-            console.log(company);
-            if (company.length == 0) {
+            console.log(!company);
+            if (!company) {
                 res.send({ "data": "Domain Name is not registered", "message": "already Exist!", "registered": false });
             }
             else {
-                res.cookie("company", company[0].company);
-                res.cookie("companyId", company[0].id);
-                if (company[0].logo == null) {
+                res.cookie("company", company.company);
+                res.cookie("companyId", company.id);
+                if (company.logo == null) {
                     res.cookie("logo", '');
                 }
                 else {
-                    res.cookie("logo", company[0].logo);
+                    res.cookie("logo", company.logo);
                 }
                 var mykey = crypto.createCipher('aes-128-cbc', 'encryptUrl');
                 var encrptUrl = mykey.update(companyUrl, 'utf8', 'hex')
@@ -106,40 +106,34 @@ exports.showLoginPage = function (req, res) {
     var decryptUrl = mykey.update(req.query.domain, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     registerModel
-        .findAll({
+        .findOne({
             where: {
                 companyURL: decryptUrl
             },
             raw: true
         }).then((company) => {
-            if (company.length != 0 && req.query.id != undefined) {
+            if (company && req.query.id != undefined) {
                 employeeRegister
                     .update(
                         { activated: true },
                         { where: { id: req.query.id } }
                     )
                     .then((users) => {
-                        res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company[0].company, logo: '' , user: req.session.user});
+                        res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company.company, logo: '', user: req.session.user });
                     })
             }
             else {
-                res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company[0].company, logo: '', user: req.session.user });
+                res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company.company, logo: '', user: req.session.user });
             }
         })
 
 }
 
 exports.login = function (req, res) {
-    console.log("login user");
-    console.log(req.body);
-    console.log(req.user);
-    console.log(req.session);
     var mykey = crypto.createDecipher('aes-128-cbc', 'encryptUrl');
     var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
-    console.log('decURL::::'+decryptUrl);
     passport.authenticate('user', function (err, user, info) {
-        console.log("step1-->");
         console.log(err);
         console.log(user);
         console.log(info);
@@ -192,7 +186,7 @@ exports.login = function (req, res) {
                 });
             }
             else {
-                console.log("step4 -->"+info);
+                console.log("step4 -->" + info);
                 responseHandler.sendResponse(res, info);
             }
         }

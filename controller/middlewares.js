@@ -15,15 +15,24 @@ exports.checkLogin = function (req, res, next) {
 }
 function checkAccess(req, res, next) {
     console.log('SESSION::::');
-    
+
     console.log(req.session);
-    
+
     if (req.session.user.role.cannotAccess.includes(req.originalUrl)) {
-        res.send('Restricted BROOOOOOOOOOOOOOOOOOOOOOOO');
+        res.send('Restricted');
     }
     else {
         next();
     }
+}
+
+exports.noCache = function (req, res, next) {
+    if (!allowedUrls.includes(req.originalUrl.split('?')[0])) {
+        res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+        res.header('Expires', '-1');
+        res.header('Pragma', 'no-cache');
+    }
+    next()
 }
 
 // catch 404 and forward to error handler
@@ -68,5 +77,6 @@ var allowedUrls = [
     '/create-password',
     '/loginAuth',
     '/company/signup',
-    '/signupUser'
+    '/signupUser',
+    '/reset-password'
 ];

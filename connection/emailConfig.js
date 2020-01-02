@@ -13,6 +13,8 @@ const transporter = nodemailer.createTransport({
 //   testmailforemail@tutanota.com
 //   deekshant@123
 exports.sendMail = (req, res, next) => {
+    console.log('sendMail')
+    console.log(req)
     return transporter.sendMail(req, function(error, info){
         if(error){
             next(error,null);

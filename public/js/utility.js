@@ -634,19 +634,32 @@ function createJSONForForm(formId) {
 }
 
 function resetForm(formId){
-        $(formId + " [reset]").each(function () {
-            var eleType = $(this).prop('nodeName');
-            var fieldName = $(this).attr('id');
-            if(eleType == "INPUT" && $('#'+fieldName).val().trim() == ''){
-                $("#"+fieldName).closest('.bmd-form-group').addClass(' hm-has-error');
-                $("#"+fieldName).closest('.bmd-form-group').find('.hm-input-error-msg').text('Required Field!');
-                return false;
+    $(formId + " [reset]").each(function () {
+        var eleType = $(this).prop('nodeName');
+        var fieldId = $(this).attr('id');
+        var fieldType = $(this).attr('type');
+        var readonly = $(this).attr('readonly');
+        if(eleType == "INPUT" && readonly != 'readonly'){
+            if(fieldType == 'text'){
+                $(this).val('');
+            }else if(fieldType == 'checkbox'){
+                $(this).prop("checked", false);
+            }else if(fieldType == 'email'){
+                $(this).val('');
+            }else if(fieldType == 'file'){
+                $(this).siblings("img").attr("src", "/img/company-logo-placeholder-img.png");
+            }else if(fieldType == 'number'){
+                $(this).val('1');
             }
-            else{ 
-                formData[fieldName] = $('#'+fieldName).val().trim();         
-                $("#"+fieldName).closest('.bmd-form-group').removeClass(' hm-has-error');
-            }
-        });
+        }else if(eleType == "TEXTAREA"  && readonly != 'readonly'){
+            $(this).val('');
+        }else if(eleType == "SELECT" ){
+            $(this).prop("selectedIndex", 0);
+        }else{
+            var radioList = $('input[name='+fieldId+']');
+            radioList[0].checked = true;
+        }
+    });
 }
 
 function startTimer(){

@@ -78,22 +78,22 @@ passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallba
     var decryptUrl = mykey.update(req.body.companyUrl, 'hex', 'utf8')
     decryptUrl += mykey.final('utf8');
     companyModel.
-      findAll({
+      findOne({
         where: {
           companyURL: decryptUrl
         },
         raw: true
       }).then((company) => {
-        if (company.length != 0) {
-          var domainName = company[0].companyURL;
-          employeeModel.findAll({
+        if (company) {
+          var domainName = company.companyURL;
+          employeeModel.findOne({
             where: {
               email: email.toLowerCase(),
-              CompanyDetailId: company[0].id
+              CompanyDetailId: company.id
             }
           }).then((user) => {
-            if (user.length != 0) {
-              if (user[0].activated == false) {
+            if (user) {
+              if (user.activated == false) {
                 var info = {};
                 info.userExist = true;
                 info.activated = false;
@@ -102,25 +102,27 @@ passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallba
               }
               else {
                 
-                bcrypt.compare(password, user[0].password, function (err, same) {
+                bcrypt.compare(password, user.password, function (err, same) {
                   if (same) {
                     req.session.loggedIn = true;
                     req.session.domainName = domainName;
                     
-                    user[0].getRole()
+                    user.getRole()
                     .then((role) => {
-                      console.log(role);
                       req.session.user = {
                         email: email.toLowerCase(),
-                        userId: user[0].id,
+                        userId: user.id,
                         role: role.dataValues,
-                        firstName: user[0].firstName,
-                        lastName: user[0].lastName
+                        firstName: user.firstName,
+                        lastName: user.lastName
                       }
-                      console.log(':::::::::');
-                      console.log(req.session);
                       var info = {};
-                      info.userType = user[0].role;
+                      if (role.id == 1) {
+                        info.userType = 'admin'  
+                      }
+                      else{
+                        info.userType = 'employee'
+                      }
                       info.passwordCorrect = true;
                       return done(null, user, info);
                     
@@ -128,7 +130,7 @@ passport.use('user', new LocalStrategy({ usernameField: 'email', passReqToCallba
                   }
                   else {
                     var info = {};
-                    info.userType = user[0].role;
+                    info.userType = user.role;
                     info.passwordCorrect = false;
                     return done(null, null, info);
                   }

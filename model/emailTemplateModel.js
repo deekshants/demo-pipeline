@@ -13,3 +13,9 @@ module.exports = email;
 // email.create({
 //   html: tempHtml
 // });
+
+// var recoveryMailHtmlTemp = '<tr><td align="left" style="padding:0px 40px 40px 40px"><pstyle="color:#262626; font-size:32px; text-align:left; font-family: Verdana, Geneva, sans-serif">Hello [name]</p><br style="color:#000000; font-size:16px; text-align:left; font-family: Verdana, Geneva, sans-serif; line-height:22px ">You requested for a password reset.</br>Please complete your password reset by clicking the below link</br><a href="[token]">[token]</a> <br/><br/></p></td></tr>'
+
+// email.create({
+//   html: recoveryMailHtmlTemp
+// });
