@@ -116,7 +116,7 @@ exports.showLoginPage = function (req, res) {
                 employeeRegister
                     .update(
                         { activated: true },
-                        { where: { id: req.query.id } }
+                        { where: [{ id: req.query.id },{CompanyDetailId: company.id}] }
                     )
                     .then((users) => {
                         res.render('logins/page_LoginWithDomain', { baseUrl: process.env.BASE_URL, companyUrl: company.company, logo: '', user: req.session.user });

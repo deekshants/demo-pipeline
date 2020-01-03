@@ -16,7 +16,7 @@ exports.testApi = function (req, res) {
 
 exports.getNotifications = function (req, res) {
     employeeTable.findOne({
-        where: { email: req.session.user.email }
+        where: [{ email: req.user.email }, {CompanyDetailId: req.user.CompanyDetailId}]
     }).then((employee) => {
         employee.getNotificationLogs({ where: { isNew: true } })
             .then((notif) => {

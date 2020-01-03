@@ -6,6 +6,7 @@ const passport = require('passport');
 var replace = require("batch-replace");
 var ValidatePassword = require('validate-password');
 var bcrypt = require('bcrypt');
+var logs = require('../model/logsModel');
 const cls = require('continuation-local-storage');
 const namespace = cls.createNamespace('my-very-own-namespace');
 var sendEmail = require('../connection/emailConfig');
@@ -264,7 +265,7 @@ exports.signupEmployee = function (req, res) {
                         '<body>' +
                         '<div>' +
                         '<p>Hi,</br>' +
-                        'Thank You! For Signup HRM.</br></br>' +
+                        'There is a new signup request in HRM</br></br>' +
                         '<b>Please Click on link to activate account.</b></br></br>' +
                         '<a href="' + process.env.BASE_URL + '/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id + '">' + process.env.BASE_URL + '/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id + '</a>' +
                         '</br></br>' +
@@ -275,7 +276,7 @@ exports.signupEmployee = function (req, res) {
                       const mailOptions = {
                         from: "demologin@athenalogics.com",
                         to: adminEmail,
-                        subject: 'welcome to HRM',
+                        subject: 'New signup request in HRM!',
                         html: html
                       };
                       req.mailoptions = mailOptions;
@@ -286,6 +287,13 @@ exports.signupEmployee = function (req, res) {
                           res.send({ "error": true, "emailExist": false, "rollBackError": true, "message": "There are Some Issues, Please Contact Admininstrator." });
                         } else {
                           console.log('Message sent: ' + info.response);
+                          logs.create({
+                            title: 'New employee signup request!',
+                            details: 'A new employee <b>'+result.dataValues.email+'</b> has request to signup for your organization<br>CLICK TO ACTIVATE',
+                            isNew: true,
+                            onClickLink: process.env.BASE_URL + '/company/login?domain=' + req.body.companyUrl + '&id=' + dataObj.id,
+                            EmployeeDetailId: admin.id
+                          });
                           t.commit();
                           res.send({ "error": false, "emailExist": false, "message": "", "company": req.cookies.company });
                         }

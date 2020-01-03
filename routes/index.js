@@ -7,6 +7,7 @@ var crypto = require('crypto');
 const signupController = require('../controller/signupController');
 const resetPWController = require('../controller/resetPWController');
 const timeController = require('../controller/timeInTimeout');
+const orgStructure  = require('../controller/organisationStructure');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -27,7 +28,7 @@ router.post('/employeeRegisteration', signupController.signupEmployee);
 router.post('/resetPassword', resetPWController.sendResetPasswordMail);
 router.post('/createNewPassword', resetPWController.createNewPassword);
 
-
+router.get('/showOrgStructure', orgStructure.showOrgStructure);
 router.get('/getTimeInfo', timeController.getTimeInfo);
 router.get('/getTimeOutInfo', timeController.getTimeOutInfo);
 router.get('/company/login', loginController.showLoginPage);

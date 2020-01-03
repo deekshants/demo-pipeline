@@ -30,7 +30,7 @@ app.use(passport.session());
 app.use(passport.authenticate('remember-me'));
 app.use(session({
   store: new PgStore({
-    url: "postgres://postgres:deeksh123@localhost:5432/postgres",
+    url: process.env.DATABASE_URL,
     autoReconnect: true,
   }),
   secret:'hrmSession',
