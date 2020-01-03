@@ -10,7 +10,7 @@
             <div class="mt-5">
                 <div class="text-center">   
                      <a href="">
-                        <img src="<%= baseUrl %>/img/logo.svg" alt="" height="21">
+                        <img src="<%= baseUrl %>/img/logo.png" alt="" height="21">
                     </a>
                 </div>
             </div>
@@ -34,14 +34,14 @@
                         <div class="col-12 col-md-8">
                             <div class="form-group ">
                                 <label class=""><sup class="text-danger">*</sup>Email</label>
-                                <input type="email" class="form-control" required="">
+                                <input type="email" class="form-control" required="" id="email">
                                 <div class="hm-input-error-msg">
                                     Please provide a valid email.
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
-                            <button type="button" class="btn btn-primary btn-block" onclick="dummySuccessToast('A reset password link has been sent to your resgiter email address')">
+                            <button type="button" class="btn btn-primary btn-block" id="resetPasswordButton" onclick="resetPassword(this)">
                                 Reset Password
                             </button>
                         </div>
@@ -64,8 +64,14 @@
     </main>
     <footer>
         <% include ../partials/footer %>
+        <% include js/resetPasswordJs %>
         <script>
-             
+            $('#email').keydown(function(event){
+                var keyCode = (event.keyCode ? event.keyCode : event.which);
+                if (keyCode == 13) {
+                    $('#resetPasswordButton').click();
+                }
+            });
         </script>
     </footer>
 </body>

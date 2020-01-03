@@ -1,0 +1,151 @@
+<script>    
+    function hideErrorMessage(ele){
+        if($(ele).closest(".bmd-form-group").hasClass("hm-has-error") == true ){
+            $(ele).closest(".bmd-form-group").removeClass("hm-has-error"); 
+            $('.input-group').siblings('.hm-input-error-msg').text(''); 
+        }
+    }
+
+    function boxDisable(ele) {
+        if ($(ele).is(':checked')) {
+          $('#registerButton').attr('disabled', false);
+        } else {
+            $('#registerButton').attr('disabled',true);
+        }
+    }
+
+    function signupHrm(formId,ele){
+            
+            if($("#email").val().trim() != '' && !checkValidEmail($("#email").val().trim())){
+                $("#email").closest('.bmd-form-group').addClass(' hm-has-error');
+                $("#email").closest('.bmd-form-group').find('.hm-input-error-msg').text('Invalid Email!');
+                return 0;
+            }
+            else{
+                $("#email").closest('.bmd-form-group').removeClass(' hm-has-error');
+                $("#email").closest('.bmd-form-group').find('.hm-input-error-msg').text('Required Field!');
+            }
+
+            var companyDetail = createJSONForForm(formId);
+            companyDetail.companyUrl = getParameterByName("domain");
+
+            if(companyDetail.password == '' || companyDetail.confirmPassword == ''){
+                return 0;
+            }
+            if(companyDetail.password == companyDetail.confirmPassword){
+                $.ajax({
+                type: 'POST',
+                url: '/adminRegisteration',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify(companyDetail),
+                success: function (response) { 
+                    if(response.error == true && (response.rollBackError == true || response.alreadyExist == true)){
+                        showToast(
+                            { 
+                            eleWrapper: '#siteToast',
+                            msg: response.message,
+                            theme: 'error',
+                            autoClose: true
+                            } 
+                        );
+                    }
+                    else if(response.error == true && response.passwordError == true){
+                        $('#password').closest(".bmd-form-group").addClass("hm-has-error"); 
+                        $('#password').siblings('.hm-input-error-msg').text(response.message);
+                    }     
+                    else{
+                        $('#password').closest(".bmd-form-group").removeClass("hm-has-error"); 
+                        $('#password').siblings('.hm-input-error-msg').text('Required Field!');
+                        showToast(
+                            { 
+                            eleWrapper: '#siteToast',
+                            msg: 'We sent you an activation mail. Please check mail and activate account to login',
+                            theme: 'success',
+                            autoClose: true
+                            } 
+                        );
+                    }                              
+                    },
+                    error: function (response) {
+                        
+                    }
+                });
+            }
+            else{
+                showToast(
+                    { 
+                    eleWrapper: '#siteToast',
+                    msg: 'Password do not Match, Try again.',
+                    theme: 'error',
+                    autoClose: true
+                    } 
+                );
+                return 0;
+            }            
+        }
+
+        function employeeSignup(formId){
+
+            if(!checkValidEmail($(signupEmail).val().trim())){
+                $("#signupEmail").closest('.bmd-form-group').addClass(' hm-has-error');
+                $("#signupEmail").closest('.bmd-form-group').find('.hm-input-error-msg').text('Invalid Email!');
+                return 0;
+            }
+            else{
+                $("#signupEmail").closest('.bmd-form-group').removeClass(' hm-has-error');
+                $("#signupEmail").closest('.bmd-form-group').find('.hm-input-error-msg').text('Required Field!');
+            }
+
+            var empSignupDet = createJSONForForm(formId);;
+            empSignupDet.companyUrl = getParameterByName("domain");            
+
+            if(empSignupDet.signupPassword == '' || empSignupDet.signupPassword == undefined || empSignupDet.signupConfirmPW == '' || empSignupDet.signupConfirmPW == undefined){
+                return 0;
+            }
+            if(empSignupDet.signupPassword == empSignupDet.signupConfirmPW){
+                $.ajax({
+                type: 'POST',
+                url: '/employeeRegisteration',
+                contentType: 'application/json',
+                dataType: 'json',
+                data: JSON.stringify(empSignupDet),
+                success: function (response) { 
+                        if(response.error == true && response.validPass == false){
+                            $('#signupPassword').closest(".bmd-form-group").addClass("hm-has-error"); 
+                            $('#signupPassword').siblings('.hm-input-error-msg').text(response.message);
+                        }       
+                        else if(response.error == true && response.emailExist == true){
+                            $('#signupEmail').closest(".bmd-form-group").addClass("hm-has-error"); 
+                            $('#signupEmail').siblings('.hm-input-error-msg').text(response.message);
+                        }  
+                        else{
+                            showToast(
+                                { 
+                                eleWrapper: '#siteToast',
+                                msg: "Thank you! for registering at "+response.company+" Company. We will notify you on your email once your account is approved by the company admin.",
+                                theme: 'success',
+                                autoClose: true
+                                } 
+                            );
+                        }
+                    },
+                    error: function (response) {
+                        
+                    }
+                });
+            }
+            else{
+                showToast(
+                    { 
+                    eleWrapper: '#siteToast',
+                    msg: 'Password do not Match, Try again.',
+                    theme: 'error',
+                    autoClose: true
+                    } 
+                );
+                return 0;
+            }       
+        }
+
+    </script>

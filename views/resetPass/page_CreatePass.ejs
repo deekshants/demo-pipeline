@@ -9,7 +9,7 @@
         <section class="ml-auto mr-auto hm-max-w-500 px-3">
             <div class="mt-5">
                 <div class="text-center">   
-                    <img src="<%= baseUrl %>/img/logo.svg" alt="" height="32">
+                    <img src="<%= baseUrl %>/img/logo.png" alt="" height="32">
                 </div>
                 
             </div>
@@ -22,7 +22,7 @@
                         </h3>
                         <div>
                             <span class="text-muted">For:</span>
-                            user@company.com
+                            <%= domain %>
                         </div>
                     </div>
                     <div class="pl-3">
@@ -38,7 +38,7 @@
                             New Password Created Successfully!
                         </div>
                         <div class="hm-text-size-16">
-                            Please <u><a href="/login" >Login Now</a></u>.    
+                            Please <u><a href="/company/login?domain=<%= encryptedURL %>" </a>  >Login Now</a></u>.    
                         </div>
                     </div>
                 </div>
@@ -46,16 +46,16 @@
                     <div class="">
                         <div class="form-group">
                             <label class="bmd-label-floating"><sup class="text-danger">*</sup>New Password</label>
-                            <input type="password" class="form-control" required="">
-                            <span class="bmd-help hm-text-dull">Minimum 6 characters.</span>
+                            <input type="password" class="form-control" required="" id="newPassword" getData onclick="hideErrorMessage(this)">
+                            <span class="bmd-help hm-text-dull">Minimum 8 or more characters with a mix of uppercase and lowercase letter, numbers & special Character.</span>
                             <div class="hm-input-error-msg">
                                 Required Field!
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="bmd-label-floating"><sup class="text-danger">*</sup>Confirm Password</label>
-                            <input type="password" class="form-control" required="">
-                            <span class="bmd-help hm-text-dull">Minimum 6 characters. </span>
+                            <input type="password" class="form-control" required="" id="confirmNewPassword" getData onclick="hideErrorMessage(this)">
+                            <span class="bmd-help hm-text-dull">Required Field!</span>
                             <div class="hm-input-error-msg">
                                 Required Field!
                             </div>
@@ -67,7 +67,7 @@
                                 
                             </div>
                             <div class="pl-3">
-                                <button type="button" class="btn btn-primary " onclick="dummyCreatePass('#createPassSuccsess', '#createPassForm')">
+                                <button type="button" class="btn btn-primary " id="createNewPasswordButton" onclick="createNewPassWord('#createPassSuccsess', '#createPassForm',this)">
                                     Create Password
                                 </button>
                             </div>
@@ -82,10 +82,17 @@
     </main>
     <footer>
         <% include ../partials/footer %>
+        <% include js/resetPasswordJs %>
         <script>
              function dummyCreatePass(id1, id2){
                 $(id1).add(id2).toggleClass('hide');
              }
+             $('#confirmNewPassword').keydown(function(event){
+                var keyCode = (event.keyCode ? event.keyCode : event.which);
+                if (keyCode == 13) {
+                    $('#createNewPasswordButton').click();
+                }
+            });
         </script>
     </footer>
 </body>

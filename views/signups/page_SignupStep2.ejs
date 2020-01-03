@@ -9,7 +9,7 @@
        <section class="hm-mr-0-auto hm-max-w-800">
             <div class="text-center pt-5">
                 <a href="">
-                    <img src="<%= baseUrl %>/img/logo.svg" alt="" height="24">
+                    <img src="<%= baseUrl %>/img/logo.png" alt="" height="24">
                 </a>
             </div>
 
@@ -21,17 +21,17 @@
                     </span>
                    
                     <span class="title">
-                        athena.hrm.com
+                        <%= companyUrl %>
                     </span>
                 </h3>
-                <form class="form" method="" action="">
+                <div id="signupForm">
                     <div class="">
                         
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <div class="form-group ">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup>First Name</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="firstName" getData>
                                     <div class="hm-input-error-msg">
                                         Required Field!
                                     </div>
@@ -40,7 +40,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group ">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup>Last Name</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="lastName" getData>
                                     <div class="hm-input-error-msg">
                                         Required Field!
                                     </div>
@@ -52,7 +52,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group ">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup>Company Name</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" id="companyName" getData>
                                     <div class="hm-input-error-msg">
                                         Required Field!
                                     </div>
@@ -61,7 +61,7 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group ">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup>Business Email</label>
-                                    <input type="email" class="form-control">
+                                    <input type="email" class="form-control" id="email" getData>
                                     <div class="hm-input-error-msg">
                                         Required Field!
                                     </div>
@@ -72,8 +72,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup>Password</label>
-                                    <input type="password" class="form-control" required="">
-                                    <span class="bmd-help hm-text-dull">Minimum 6 characters.</span>
+                                    <input type="password" class="form-control" required="" id="password" getData onClick="hideErrorMessage(this)">
+                                    <span class="bmd-help hm-text-dull">Minimum 8 or more characters with a mix of uppercase and lowercase letter, numbers & special Character.</span>
                                     <div class="hm-input-error-msg">
                                         Required Field!
                                     </div>
@@ -83,8 +83,8 @@
                             <div class="col-12 col-md-6">
                                 <div class="form-group">
                                     <label class="bmd-label-floating"><sup class="text-danger">*</sup>Confirm Password</label>
-                                    <input type="password" class="form-control" required="">
-                                   
+                                    <input type="password" class="form-control" required="" id="confirmPassword" getData onClick="hideErrorMessage(this)">
+                                    <span class="bmd-help hm-text-dull"></span>
                                     <div class="hm-input-error-msg">
                                         Required Field!
                                     </div>
@@ -98,7 +98,7 @@
                             <div class="hm-col">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" value=""> Accept 
+                                        <input class="form-check-input" type="checkbox" value="" id="termAndConditionId" onclick="boxDisable(this);"> Accept 
                                         <span class="form-check-sign">
                                             <span class="check"></span>
                                         </span>
@@ -107,13 +107,13 @@
                                 </div>
                             </div>
                             <div class="pl-3">
-                                <button type="button" class="btn btn-primary " onclick="dummyRegistration()">
+                                <button type="button" class="btn btn-primary " id="registerButton" onclick="signupHrm('#signupForm',this);" disabled>
                                     Register Now
                                 </button>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
 
             </div>
             <div class="text-center">
@@ -128,8 +128,26 @@
     </main>
     <footer>
         <% include ../partials/footer %>
+        <% include js/signupJs %>
         <script>
-
+                $('#confirmPassword').keydown(function(event){
+                    var keyCode = (event.keyCode ? event.keyCode : event.which);
+                    if (keyCode == 13) {                        
+                        if($('#termAndConditionId').is(':checked') == true){
+                            $('#registerButton').click();
+                        }
+                        else{
+                            showToast(
+                            { 
+                            eleWrapper: '#siteToast',
+                            msg: "Please indicate that you accept the Terms and Conditions",
+                            theme: 'error',
+                            autoClose: true
+                            } 
+                        );
+                        }
+                    }
+                });
         </script>
     </footer>
 </body>
